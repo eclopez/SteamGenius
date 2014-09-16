@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Battle" representedClassName="Battle" syncable="YES">
+        <attribute name="armyPoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="controlPoints" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <attribute name="killPoints" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="points" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="battles" inverseEntity="Event" syncable="YES"/>
+        <relationship name="opponent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Opponent" inverseName="battles" inverseEntity="Opponent" syncable="YES"/>
+        <relationship name="opponentCaster" maxCount="1" deletionRule="Nullify" destinationEntity="Caster" inverseName="opponentBattles" inverseEntity="Caster" syncable="YES"/>
+        <relationship name="playerCaster" maxCount="1" deletionRule="Nullify" destinationEntity="Caster" inverseName="playerBattles" inverseEntity="Caster" syncable="YES"/>
+        <relationship name="result" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="battles" inverseEntity="Result" syncable="YES"/>
+        <relationship name="scenario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scenario" inverseName="battles" inverseEntity="Scenario" syncable="YES"/>
+    </entity>
+    <entity name="Caster" representedClassName="Caster" syncable="YES">
+        <relationship name="faction" maxCount="1" deletionRule="Deny" destinationEntity="Faction" inverseName="casters" inverseEntity="Faction" syncable="YES"/>
+        <relationship name="model" maxCount="1" deletionRule="Deny" destinationEntity="Model" inverseName="casters" inverseEntity="Model" syncable="YES"/>
+        <relationship name="opponentBattles" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Battle" inverseName="opponentCaster" inverseEntity="Battle" syncable="YES"/>
+        <relationship name="playerBattles" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Battle" inverseName="playerCaster" inverseEntity="Battle" syncable="YES"/>
+    </entity>
+    <entity name="DataVersion" representedClassName="DataVersion" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="version" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <attribute name="isTournament" attributeType="Boolean" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="battles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Battle" inverseName="event" inverseEntity="Battle" syncable="YES"/>
+    </entity>
+    <entity name="Faction" representedClassName="Faction" syncable="YES">
+        <attribute name="imageName" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="releaseOrder" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="shortName" attributeType="String" syncable="YES"/>
+        <relationship name="casters" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Caster" inverseName="faction" inverseEntity="Caster" syncable="YES"/>
+        <relationship name="game" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="factions" inverseEntity="Game" syncable="YES"/>
+    </entity>
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="shortName" attributeType="String" syncable="YES"/>
+        <relationship name="factions" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Faction" inverseName="game" inverseEntity="Faction" syncable="YES"/>
+    </entity>
+    <entity name="Model" representedClassName="Model" syncable="YES">
+        <attribute name="incarnation" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isBattleEngine" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isCavalry" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isEpic" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="shortName" attributeType="String" syncable="YES"/>
+        <relationship name="casters" toMany="YES" deletionRule="Deny" destinationEntity="Caster" inverseName="model" inverseEntity="Caster" syncable="YES"/>
+    </entity>
+    <entity name="Opponent" representedClassName="Opponent" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="battles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Battle" inverseName="opponent" inverseEntity="Battle" syncable="YES"/>
+    </entity>
+    <entity name="Result" representedClassName="Result" syncable="YES">
+        <attribute name="displayOrder" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="winValue" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="battles" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Battle" inverseName="result" inverseEntity="Battle" syncable="YES"/>
+    </entity>
+    <entity name="Scenario" representedClassName="Scenario" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="battles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Battle" inverseName="scenario" inverseEntity="Battle" syncable="YES"/>
+    </entity>
+    <fetchRequest name="GlobalBattleFetch" entity="Battle" predicateString="playerCaster.faction IN $FACTIONS AND (NOT playerCaster.faction IN $OMIT_FACTIONS)"/>
+    <elements>
+        <element name="Battle" positionX="378" positionY="258" width="128" height="210"/>
+        <element name="Caster" positionX="169" positionY="288" width="128" height="103"/>
+        <element name="DataVersion" positionX="-54" positionY="-129" width="128" height="75"/>
+        <element name="Event" positionX="574" positionY="198" width="128" height="120"/>
+        <element name="Faction" positionX="-36" positionY="156" width="128" height="133"/>
+        <element name="Game" positionX="-54" positionY="-18" width="128" height="88"/>
+        <element name="Model" positionX="-38" positionY="315" width="128" height="148"/>
+        <element name="Opponent" positionX="378" positionY="99" width="128" height="75"/>
+        <element name="Result" positionX="378" positionY="477" width="128" height="103"/>
+        <element name="Scenario" positionX="574" positionY="369" width="128" height="73"/>
+    </elements>
+</model>

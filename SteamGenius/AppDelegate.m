@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "SGPreferencesManager.h"
+#import "SGSettingsManager.h"
 #import "DetailViewController.h"
-#import "MasterViewController.h"
+#import "SGBattleListViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -19,16 +19,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    [SGPreferencesManager initUserPreferences];
+    [SGSettingsManager initUserPreferences];
+    
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
 
-    UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-    MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    //UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
+    //SGBattleListViewController *controller = (SGBattleListViewController *)masterNavigationController.topViewController;
+    //controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }
 

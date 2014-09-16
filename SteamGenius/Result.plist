@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Assassination Win</string>
+		<key>value</key>
+		<integer>1</integer>
+		<key>sort</key>
+		<integer>1</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Scenario Win</string>
+		<key>value</key>
+		<integer>1</integer>
+		<key>sort</key>
+		<integer>2</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Clock Win</string>
+		<key>value</key>
+		<integer>1</integer>
+		<key>sort</key>
+		<integer>3</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>1st Tiebreaker Win</string>
+		<key>value</key>
+		<integer>1</integer>
+		<key>sort</key>
+		<integer>4</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>2nd Tiebreaker Win</string>
+		<key>value</key>
+		<integer>1</integer>
+		<key>sort</key>
+		<integer>5</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>3rd Tiebreaker Win</string>
+		<key>value</key>
+		<integer>1</integer>
+		<key>sort</key>
+		<integer>6</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>4th Tiebreaker Win</string>
+		<key>value</key>
+		<integer>1</integer>
+		<key>sort</key>
+		<integer>7</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Draw</string>
+		<key>value</key>
+		<integer>0</integer>
+		<key>sort</key>
+		<integer>8</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Assassination Loss</string>
+		<key>value</key>
+		<integer>-1</integer>
+		<key>sort</key>
+		<integer>9</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Scenario Loss</string>
+		<key>value</key>
+		<integer>-1</integer>
+		<key>sort</key>
+		<integer>10</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Clock Loss</string>
+		<key>value</key>
+		<integer>-1</integer>
+		<key>sort</key>
+		<integer>11</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>1st Tiebreaker Loss</string>
+		<key>value</key>
+		<integer>-1</integer>
+		<key>sort</key>
+		<integer>12</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>2nd Tiebreaker Loss</string>
+		<key>value</key>
+		<integer>-1</integer>
+		<key>sort</key>
+		<integer>13</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>3rd Tiebreaker Loss</string>
+		<key>value</key>
+		<integer>-1</integer>
+		<key>sort</key>
+		<integer>14</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>4th Tiebreaker Loss</string>
+		<key>value</key>
+		<integer>-1</integer>
+		<key>sort</key>
+		<integer>15</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+</array>
+</plist>
