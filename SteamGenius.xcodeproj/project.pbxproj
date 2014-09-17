@@ -15,7 +15,8 @@
 		0325714219C49AD900634776 /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325714119C49AD900634776 /* Model.plist */; };
 		0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715519C7DB1F00634776 /* SGSettingsForm.m */; };
 		0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715819C7DE1000634776 /* SGSettingsFormViewController.m */; };
-		0325715D19C80D8C00634776 /* ThemeValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715C19C80D8C00634776 /* ThemeValueTransformer.m */; };
+		0325716C19C9504300634776 /* SGThemeValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325716B19C9504300634776 /* SGThemeValueTransformer.m */; };
+		0325716F19C950E900634776 /* SGThemeOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325716E19C950E900634776 /* SGThemeOptionsViewController.m */; };
 		0349E2AB19C17F510091FF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AA19C17F510091FF21 /* main.m */; };
 		0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AD19C17F510091FF21 /* AppDelegate.m */; };
 		0349E2B719C17F510091FF21 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2B619C17F510091FF21 /* DetailViewController.m */; };
@@ -52,8 +53,10 @@
 		0325715519C7DB1F00634776 /* SGSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsForm.m; sourceTree = "<group>"; };
 		0325715719C7DE1000634776 /* SGSettingsFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSettingsFormViewController.h; sourceTree = "<group>"; };
 		0325715819C7DE1000634776 /* SGSettingsFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsFormViewController.m; sourceTree = "<group>"; };
-		0325715B19C80D8C00634776 /* ThemeValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeValueTransformer.h; sourceTree = "<group>"; };
-		0325715C19C80D8C00634776 /* ThemeValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeValueTransformer.m; sourceTree = "<group>"; };
+		0325716A19C9504300634776 /* SGThemeValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGThemeValueTransformer.h; sourceTree = "<group>"; };
+		0325716B19C9504300634776 /* SGThemeValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGThemeValueTransformer.m; sourceTree = "<group>"; };
+		0325716D19C950E900634776 /* SGThemeOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGThemeOptionsViewController.h; sourceTree = "<group>"; };
+		0325716E19C950E900634776 /* SGThemeOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGThemeOptionsViewController.m; sourceTree = "<group>"; };
 		0349E2A519C17F510091FF21 /* SteamGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteamGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0349E2A919C17F510091FF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0349E2AA19C17F510091FF21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,13 +115,13 @@
 			name = Dismiss;
 			sourceTree = "<group>";
 		};
-		0325713919C491C300634776 /* Model */ = {
+		0325713919C491C300634776 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				0325713A19C4929900634776 /* Raw Data */,
 				0325713619C491B300634776 /* SteamGenius.xcdatamodeld */,
+				0325713A19C4929900634776 /* Raw Data */,
 			);
-			name = Model;
+			name = "Data Models";
 			sourceTree = "<group>";
 		};
 		0325713A19C4929900634776 /* Raw Data */ = {
@@ -137,8 +140,6 @@
 			children = (
 				0325715419C7DB1F00634776 /* SGSettingsForm.h */,
 				0325715519C7DB1F00634776 /* SGSettingsForm.m */,
-				0325715719C7DE1000634776 /* SGSettingsFormViewController.h */,
-				0325715819C7DE1000634776 /* SGSettingsFormViewController.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -146,18 +147,30 @@
 		0325715A19C80CB700634776 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
-				0325715B19C80D8C00634776 /* ThemeValueTransformer.h */,
-				0325715C19C80D8C00634776 /* ThemeValueTransformer.m */,
+				0325716A19C9504300634776 /* SGThemeValueTransformer.h */,
+				0325716B19C9504300634776 /* SGThemeValueTransformer.m */,
 			);
 			name = Transformers;
+			sourceTree = "<group>";
+		};
+		0325715E19C9432600634776 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0325715719C7DE1000634776 /* SGSettingsFormViewController.h */,
+				0325715819C7DE1000634776 /* SGSettingsFormViewController.m */,
+				0325716D19C950E900634776 /* SGThemeOptionsViewController.h */,
+				0325716E19C950E900634776 /* SGThemeOptionsViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		0335019C19C33A0B004AA293 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				0325715E19C9432600634776 /* Controllers */,
 				0325715A19C80CB700634776 /* Transformers */,
 				0325715319C7DAF800634776 /* Models */,
-				0349E2DB19C1D8EC0091FF21 /* SettingsManager */,
+				0349E2DB19C1D8EC0091FF21 /* Manager */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -188,7 +201,7 @@
 			children = (
 				0349E2AC19C17F510091FF21 /* AppDelegate.h */,
 				0349E2AD19C17F510091FF21 /* AppDelegate.m */,
-				0325713919C491C300634776 /* Model */,
+				0325713919C491C300634776 /* Data Models */,
 				0349E2D419C180340091FF21 /* Classes */,
 				0349E2B519C17F510091FF21 /* DetailViewController.h */,
 				0349E2B619C17F510091FF21 /* DetailViewController.m */,
@@ -246,13 +259,13 @@
 			name = Battles;
 			sourceTree = "<group>";
 		};
-		0349E2DB19C1D8EC0091FF21 /* SettingsManager */ = {
+		0349E2DB19C1D8EC0091FF21 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				0349E2D519C1805E0091FF21 /* SGSettingsManager.h */,
 				0349E2D619C1805E0091FF21 /* SGSettingsManager.m */,
 			);
-			name = SettingsManager;
+			name = Manager;
 			sourceTree = "<group>";
 		};
 		47148A91232B4766B1D74C11 /* Frameworks */ = {
@@ -403,10 +416,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0325716C19C9504300634776 /* SGThemeValueTransformer.m in Sources */,
 				0349E2B719C17F510091FF21 /* DetailViewController.m in Sources */,
 				0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
-				0325715D19C80D8C00634776 /* ThemeValueTransformer.m in Sources */,
+				0325716F19C950E900634776 /* SGThemeOptionsViewController.m in Sources */,
 				0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */,
 				0325713819C491B300634776 /* SteamGenius.xcdatamodeld in Sources */,
 				0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */,

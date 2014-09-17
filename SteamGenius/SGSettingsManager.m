@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "SGBattleListViewController.h"
 
-static NSInteger const defaultTheme = 1;
+static NSInteger const defaultTheme = 0;
 
 @implementation SGSettingsManager
 

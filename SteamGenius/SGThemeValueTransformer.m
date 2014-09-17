@@ -1,14 +1,14 @@
 //
-//  ThemeValueTransformer.m
+//  SGThemeValueTransformer.m
 //  SteamGenius
 //
-//  Created by Erik Lopez on 9/15/14.
+//  Created by Erik Lopez on 9/16/14.
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import "ThemeValueTransformer.h"
+#import "SGThemeValueTransformer.h"
 
-@implementation ThemeValueTransformer
+@implementation SGThemeValueTransformer
 
 + (Class)transformedValueClass
 {

@@ -7,7 +7,6 @@
 //
 
 #import "SGSettingsForm.h"
-#import "ThemeValueTransformer.h"
 
 @implementation SGSettingsForm
 
@@ -23,10 +22,11 @@
     }
     
     return @[@{ FXFormFieldKey: @"theme",
+                FXFormFieldViewController: @"SGThemeOptionsViewController",
                 FXFormFieldHeader: @"Appearance",
                 FXFormFieldOptions: themeList,
                 FXFormFieldDefaultValue: currentTheme,
-                FXFormFieldValueTransformer: [[ThemeValueTransformer alloc] init] }];
+                FXFormFieldValueTransformer: @"SGThemeValueTransformer" }];
 }
 
 @end
