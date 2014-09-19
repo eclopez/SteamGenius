@@ -1,0 +1,1529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Artificer General Nemo</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Captain Allister Caine</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Captain E. Dominic Darius</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Captain Jeremiah Kraye</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Captain Kara Sloan</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Captain Victoria Haley</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Commander Adept Nemo</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Commander Coleman Stryker</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Commander Dalin Sturgis</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>General Adept Nemo</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lieutenant Allister Caine</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lord Commander Stryker</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Major Markus &quot;Siege&quot; Brisbane</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Major Victoria Haley</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lord General Coleman Stryker</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Feora, Priestess of the Flame</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Feora, Protector of the Flame</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Grand Exemplar Kreoss</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Grand Scrutator Severius</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hierarch Severius</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>High Allegiant Amon Ad-Raza</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>High Executioner Servath Reznik</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>High Exemplar Kreoss</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Intercessor Kreoss</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Servath Reznik, Wrath of Ages</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Testament of Menoth</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>The Harbinger of Menoth</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>The High Reclaimer</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Thyra, Flame of Sorrow</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Vice Scrutator Vindictus</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Forward Kommander Sorscha</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Karchev the Terrible</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Koldun Kommander Zerkova</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kommandant Irusk</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kommander Harkevich, The Iron Wolf</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kommander Orsus Zoktavir</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kommander Sorscha</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kommander Strakhov</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kommander Zoktavir, The Butcher Unleashed</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Supreme Kommandant Irusk</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>The Butcher of Khardov</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>The Old Witch of Khador &amp; Scrapjack</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Vladimir Tzepesci, Great Prince of Umbrey</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Vladimir Tzepesci, The Dark Champion</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Vladimir Tzepesci, The Dark Prince</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Asphyxious the Hellbringer</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Goreshade the Bastard</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Goreshade the Cursed</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Goreshade, Lord of Ruin</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Iron Lich Asphyxious</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lich Lord Asphyxious</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lich Lord Terminus</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lich Lord Venethrax</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lord Exhumator Scaverous</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Master Necrotech Mortenebra</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Pirate Queen Skarre</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Skarre, Queen of the Broken Coast</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Sturgis the Corrupted</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>The Witch Coven of Garlghast</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Warwitch Deneghra</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Wraith Witch Deneghra</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Adeptis Rahn</string>
+		<key>factions</key>
+		<array>
+			<string>Retribution of Scyrah</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Dawnlord Vyros</string>
+		<key>factions</key>
+		<array>
+			<string>Retribution of Scyrah</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Garryth, Blade of Retribution</string>
+		<key>factions</key>
+		<array>
+			<string>Retribution of Scyrah</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Issyria, Sybil of Dawn</string>
+		<key>factions</key>
+		<array>
+			<string>Retribution of Scyrah</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kaelyssa, Night&apos;s Whisper</string>
+		<key>factions</key>
+		<array>
+			<string>Retribution of Scyrah</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lord Arcanist Ossyan</string>
+		<key>factions</key>
+		<array>
+			<string>Retribution of Scyrah</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Ravyn, The Eternal Light</string>
+		<key>factions</key>
+		<array>
+			<string>Retribution of Scyrah</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Vyros, Incissar of the Dawnguard</string>
+		<key>factions</key>
+		<array>
+			<string>Retribution of Scyrah</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Aurora, Numen of Aerogenesis</string>
+		<key>factions</key>
+		<array>
+			<string>Convergence of Cyriss</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Axis, the Harmonic Enforcer</string>
+		<key>factions</key>
+		<array>
+			<string>Convergence of Cyriss</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Father Lucant, Divinity Architect</string>
+		<key>factions</key>
+		<array>
+			<string>Convergence of Cyriss</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Forge Master Syntherion</string>
+		<key>factions</key>
+		<array>
+			<string>Convergence of Cyriss</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Iron Mother Directrix</string>
+		<key>factions</key>
+		<array>
+			<string>Convergence of Cyriss</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Ashlynn D&apos;Elyse</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Highborn Covenant</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Captain Bartolo Montador</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Highborn Covenant</string>
+			<string>Talion Charter</string>
+			<string>Four Star Syndicate</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Captain Damiano</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Highborn Covenant</string>
+			<string>Four Star Syndicate</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Captain Phinneus Shae</string>
+		<key>factions</key>
+		<array>
+			<string>Talion Charter</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Constance Blaize, Knight of the Prophet</string>
+		<key>factions</key>
+		<array>
+			<string>Highborn Covenant</string>
+			<string>Cygnar</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Drake MacBain</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Highborn Covenant</string>
+			<string>Four Star Syndicate</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Durgen Madhammer</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Highborn Covenant</string>
+			<string>Searforge Commission</string>
+			<string>Four Star Syndicate</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Exulon Thexus</string>
+		<key>factions</key>
+		<array>
+			<string>Puppet Masters</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Fiona the Black</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Highborn Covenant</string>
+			<string>Talion Charter</string>
+			<string>Four Star Syndicate</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>General Ossrum</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Highborn Covenant</string>
+			<string>Searforge Commission</string>
+			<string>Four Star Syndicate</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Gorten Grundback</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Highborn Covenant</string>
+			<string>Searforge Commission</string>
+			<string>Four Star Syndicate</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Magnus the Traitor</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Four Star Syndicate</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Magnus the Warlord</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Four Star Syndicate</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Borka Kegslayer</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Borka, Vengeance of the Rimeshaws</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Calandra Truthsayer, Oracle of the Glimmerwood</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Captain Gunnbjorn</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Grim Angus</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Grissel Bloodsong, Fell Caller</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Grissel Bloodsong, Marshal of the Kriels</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hoarluk Doomshaper, Rage of Dhunia</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hoarluk Doomshaper, Shaman of the Gnarls</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hunters Grim</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Jarl Skuld, Devil of the Thornwood</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Madrak Ironhide, Thornwood Chieftain</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Madrak Ironhide, World Ender</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Baldur the Stonecleaver</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Baldur the Stonesoul</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bradigus Thorle the Runecarver</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Cassius the Oathkeeper</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Grayle the Farstrider</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kaya the Moonhunter</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kaya the Wildborne</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kromac the Ravenous</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Krueger the Stormlord</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Krueger the Stormwrath</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Mohsar the Desertwalker</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Morvahna the Autumnblade</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Morvahna the Dawnshadow</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Absylonia, Daughter of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Absylonia, Terror of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bethayne, Voice of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kallus, Wrath of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lylyth, Herald of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lylyth, Reckoning of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lylyth, Shadow of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Rhyas, Sigil of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Saeryn, Omen of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Thagrosh, Prophet of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Thagrosh, the Messiah</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Vayl, Consul of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Vayl, Disciple of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Archdomina Makeda</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Dominar Rasheth</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lord Arbiter Hexeris</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lord Assassin Morghoul</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lord Tyrant Hexeris</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Makeda</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Master Ascetic Naaresh</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Master Tormentor Morghoul</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Supreme Aptimus Zaal</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Supreme Archdomina Makeda</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Tyrant Xerxis</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Void Seer Mordikaar</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Xerxis, Fury of Halaak</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bloody Barnabas</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Blindwater Congregation</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Calaban, the Grave Walker</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Blindwater Congregation</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Dr. Arkadius</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Thornfall Alliance</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Helga the Conqueror</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Thornfall Alliance</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Jaga-Jaga the Death Charmer</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Blindwater Congregation</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lord Carver, BMMD, Esq. III</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Thornfall Alliance</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Maelok the Dreadbound</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Blindwater Congregation</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Midas</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Thornfall Alliance</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Rask</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Blindwater Congregation</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Sturm &amp; Drang</string>
+		<key>factions</key>
+		<array>
+			<string>Minions</string>
+			<string>Thornfall Alliance</string>
+		</array>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+</array>
+</plist>

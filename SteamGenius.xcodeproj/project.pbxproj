@@ -27,6 +27,7 @@
 		0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2D619C1805E0091FF21 /* SGSettingsManager.m */; };
 		0349E2DE19C1D9300091FF21 /* SGBattleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2DD19C1D9300091FF21 /* SGBattleListViewController.m */; };
 		0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0349E2E619C2C3520091FF21 /* SGTheme.plist */; };
+		038DAAC319CCE67D00A224F7 /* Caster.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038DAAC219CCE67D00A224F7 /* Caster.plist */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		0349E2DC19C1D9300091FF21 /* SGBattleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleListViewController.h; sourceTree = "<group>"; };
 		0349E2DD19C1D9300091FF21 /* SGBattleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleListViewController.m; sourceTree = "<group>"; };
 		0349E2E619C2C3520091FF21 /* SGTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGTheme.plist; sourceTree = "<group>"; };
+		038DAAC219CCE67D00A224F7 /* Caster.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Caster.plist; sourceTree = "<group>"; };
 		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 				0325713D19C4932600634776 /* Faction.plist */,
 				0325713F19C4987C00634776 /* Result.plist */,
 				0325714119C49AD900634776 /* Model.plist */,
+				038DAAC219CCE67D00A224F7 /* Caster.plist */,
 			);
 			name = "Raw Data";
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0325714019C4987C00634776 /* Result.plist in Resources */,
+				038DAAC319CCE67D00A224F7 /* Caster.plist in Resources */,
 				0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */,
 				0325713C19C492BA00634776 /* Game.plist in Resources */,
 				0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */,

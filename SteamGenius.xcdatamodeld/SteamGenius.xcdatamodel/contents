@@ -68,15 +68,15 @@
     </entity>
     <fetchRequest name="GlobalBattleFetch" entity="Battle" predicateString="playerCaster.faction IN $FACTIONS AND (NOT playerCaster.faction IN $OMIT_FACTIONS)"/>
     <elements>
-        <element name="Battle" positionX="378" positionY="258" width="128" height="210"/>
+        <element name="Battle" positionX="378" positionY="213" width="128" height="210"/>
         <element name="Caster" positionX="169" positionY="288" width="128" height="103"/>
-        <element name="DataVersion" positionX="-54" positionY="-129" width="128" height="75"/>
-        <element name="Event" positionX="574" positionY="198" width="128" height="120"/>
+        <element name="DataVersion" positionX="-47" positionY="-102" width="128" height="75"/>
+        <element name="Event" positionX="574" positionY="153" width="128" height="120"/>
         <element name="Faction" positionX="-36" positionY="156" width="128" height="133"/>
-        <element name="Game" positionX="-54" positionY="-18" width="128" height="88"/>
+        <element name="Game" positionX="-45" positionY="2" width="128" height="88"/>
         <element name="Model" positionX="-38" positionY="315" width="128" height="148"/>
-        <element name="Opponent" positionX="378" positionY="99" width="128" height="75"/>
-        <element name="Result" positionX="378" positionY="477" width="128" height="103"/>
-        <element name="Scenario" positionX="574" positionY="369" width="128" height="73"/>
+        <element name="Opponent" positionX="378" positionY="54" width="128" height="75"/>
+        <element name="Result" positionX="378" positionY="432" width="128" height="103"/>
+        <element name="Scenario" positionX="574" positionY="324" width="128" height="73"/>
     </elements>
 </model>
