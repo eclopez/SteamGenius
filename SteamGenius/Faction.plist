@@ -5,13 +5,13 @@
 	<dict>
 		<key>name</key>
 		<string>Cygnar</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>CYG</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Cygnar</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>1</integer>
 		<key>version</key>
 		<integer>1</integer>
@@ -19,13 +19,13 @@
 	<dict>
 		<key>name</key>
 		<string>Protectorate of Menoth</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>POM</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Protectorate</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>2</integer>
 		<key>version</key>
 		<integer>1</integer>
@@ -33,13 +33,13 @@
 	<dict>
 		<key>name</key>
 		<string>Khador</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>KHD</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Khador</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>3</integer>
 		<key>version</key>
 		<integer>1</integer>
@@ -47,13 +47,13 @@
 	<dict>
 		<key>name</key>
 		<string>Cryx</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>CRX</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Cryx</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>4</integer>
 		<key>version</key>
 		<integer>1</integer>
@@ -61,13 +61,13 @@
 	<dict>
 		<key>name</key>
 		<string>Retribution of Scyrah</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>RET</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Retribution</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>5</integer>
 		<key>version</key>
 		<integer>1</integer>
@@ -75,13 +75,13 @@
 	<dict>
 		<key>name</key>
 		<string>Convergence of Cyriss</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>CON</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Convergence</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>6</integer>
 		<key>version</key>
 		<integer>1</integer>
@@ -89,13 +89,13 @@
 	<dict>
 		<key>name</key>
 		<string>Highborn Covenant</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>HBC</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>7</integer>
 		<key>version</key>
 		<integer>1</integer>
@@ -103,13 +103,13 @@
 	<dict>
 		<key>name</key>
 		<string>Searforge Commission</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>SFC</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>8</integer>
 		<key>version</key>
 		<integer>1</integer>
@@ -117,13 +117,13 @@
 	<dict>
 		<key>name</key>
 		<string>Talion Charter</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>TLC</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>9</integer>
 		<key>version</key>
 		<integer>1</integer>
@@ -131,126 +131,140 @@
 	<dict>
 		<key>name</key>
 		<string>Four Star Syndicate</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>FSS</string>
-		<key>image</key>
+		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>10</integer>
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Mercenaries</string>
-		<key>short</key>
-		<string>MRC</string>
-		<key>image</key>
+		<string>Puppet Masters</string>
+		<key>shortName</key>
+		<string>PMA</string>
+		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
 		<string>Warmachine</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>11</integer>
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Trollblood</string>
-		<key>short</key>
-		<string>TRL</string>
-		<key>image</key>
-		<string>Trollbloods</string>
+		<string>Mercenaries</string>
+		<key>shortName</key>
+		<string>MRC</string>
+		<key>imageName</key>
+		<string>Mercenaries</string>
 		<key>game</key>
-		<string>Hordes</string>
-		<key>sort</key>
+		<string>Warmachine</string>
+		<key>releaseOrder</key>
 		<integer>12</integer>
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Circle Orboros</string>
-		<key>short</key>
-		<string>COR</string>
-		<key>image</key>
-		<string>Circle</string>
+		<string>Trollblood</string>
+		<key>shortName</key>
+		<string>TRL</string>
+		<key>imageName</key>
+		<string>Trollbloods</string>
 		<key>game</key>
 		<string>Hordes</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>13</integer>
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Skorne</string>
-		<key>short</key>
-		<string>SKR</string>
-		<key>image</key>
-		<string>Skorne</string>
+		<string>Circle Orboros</string>
+		<key>shortName</key>
+		<string>COR</string>
+		<key>imageName</key>
+		<string>Circle</string>
 		<key>game</key>
 		<string>Hordes</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>14</integer>
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Legion of Everblight</string>
-		<key>short</key>
-		<string>LOW</string>
-		<key>image</key>
-		<string>Legion</string>
+		<string>Skorne</string>
+		<key>shortName</key>
+		<string>SKR</string>
+		<key>imageName</key>
+		<string>Skorne</string>
 		<key>game</key>
 		<string>Hordes</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>15</integer>
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Blindwater Congregation</string>
-		<key>short</key>
-		<string>BWC</string>
-		<key>image</key>
-		<string>Minions</string>
+		<string>Legion of Everblight</string>
+		<key>shortName</key>
+		<string>LOW</string>
+		<key>imageName</key>
+		<string>Legion</string>
 		<key>game</key>
 		<string>Hordes</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>16</integer>
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Thornfall Alliance</string>
-		<key>short</key>
-		<string>TFA</string>
-		<key>image</key>
+		<string>Blindwater Congregation</string>
+		<key>shortName</key>
+		<string>BWC</string>
+		<key>imageName</key>
 		<string>Minions</string>
 		<key>game</key>
 		<string>Hordes</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>17</integer>
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Minions</string>
-		<key>short</key>
-		<string>MIN</string>
-		<key>image</key>
+		<string>Thornfall Alliance</string>
+		<key>shortName</key>
+		<string>TFA</string>
+		<key>imageName</key>
 		<string>Minions</string>
 		<key>game</key>
 		<string>Hordes</string>
-		<key>sort</key>
+		<key>releaseOrder</key>
 		<integer>18</integer>
+		<key>version</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Minions</string>
+		<key>shortName</key>
+		<string>MIN</string>
+		<key>imageName</key>
+		<string>Minions</string>
+		<key>game</key>
+		<string>Hordes</string>
+		<key>releaseOrder</key>
+		<integer>19</integer>
 		<key>version</key>
 		<integer>1</integer>
 	</dict>

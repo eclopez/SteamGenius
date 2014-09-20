@@ -5,7 +5,7 @@
 	<dict>
 		<key>name</key>
 		<string>Artificer General Nemo</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Nemo</string>
 		<key>incarnation</key>
 		<integer>3</integer>
@@ -21,7 +21,7 @@
 	<dict>
 		<key>name</key>
 		<string>Captain Allister Caine</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Caine</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -37,7 +37,7 @@
 	<dict>
 		<key>name</key>
 		<string>Captain E. Dominic Darius</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Darius</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -53,7 +53,7 @@
 	<dict>
 		<key>name</key>
 		<string>Captain Jeremiah Kraye</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Kraye</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -69,7 +69,7 @@
 	<dict>
 		<key>name</key>
 		<string>Captain Kara Sloan</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Sloan</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -85,7 +85,7 @@
 	<dict>
 		<key>name</key>
 		<string>Captain Victoria Haley</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Haley</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -101,7 +101,7 @@
 	<dict>
 		<key>name</key>
 		<string>Commander Adept Nemo</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Nemo</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -117,7 +117,7 @@
 	<dict>
 		<key>name</key>
 		<string>Commander Coleman Stryker</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Stryker</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -133,7 +133,7 @@
 	<dict>
 		<key>name</key>
 		<string>Commander Dalin Sturgis</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Sturgis</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -149,7 +149,7 @@
 	<dict>
 		<key>name</key>
 		<string>General Adept Nemo</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Nemo</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -165,7 +165,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lieutenant Allister Caine</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Caine</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -181,7 +181,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lord Commander Stryker</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Stryker</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -197,7 +197,7 @@
 	<dict>
 		<key>name</key>
 		<string>Major Markus &quot;Siege&quot; Brisbane</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Siege</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -213,7 +213,7 @@
 	<dict>
 		<key>name</key>
 		<string>Major Victoria Haley</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Haley</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -229,7 +229,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lord General Coleman Stryker</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Stryker</string>
 		<key>incarnation</key>
 		<integer>3</integer>
@@ -245,7 +245,7 @@
 	<dict>
 		<key>name</key>
 		<string>Feora, Priestess of the Flame</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Feora</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -261,7 +261,7 @@
 	<dict>
 		<key>name</key>
 		<string>Feora, Protector of the Flame</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Feora</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -277,7 +277,7 @@
 	<dict>
 		<key>name</key>
 		<string>Grand Exemplar Kreoss</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Kreoss</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -293,7 +293,7 @@
 	<dict>
 		<key>name</key>
 		<string>Grand Scrutator Severius</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Severius</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -309,7 +309,7 @@
 	<dict>
 		<key>name</key>
 		<string>Hierarch Severius</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Severius</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -325,7 +325,7 @@
 	<dict>
 		<key>name</key>
 		<string>High Allegiant Amon Ad-Raza</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Amon</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -341,7 +341,7 @@
 	<dict>
 		<key>name</key>
 		<string>High Executioner Servath Reznik</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Reznik</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -357,7 +357,7 @@
 	<dict>
 		<key>name</key>
 		<string>High Exemplar Kreoss</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Kreoss</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -373,7 +373,7 @@
 	<dict>
 		<key>name</key>
 		<string>Intercessor Kreoss</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Kreoss</string>
 		<key>incarnation</key>
 		<integer>3</integer>
@@ -389,7 +389,7 @@
 	<dict>
 		<key>name</key>
 		<string>Servath Reznik, Wrath of Ages</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Reznik</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -405,7 +405,7 @@
 	<dict>
 		<key>name</key>
 		<string>Testament of Menoth</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Testament</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -421,7 +421,7 @@
 	<dict>
 		<key>name</key>
 		<string>The Harbinger of Menoth</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Harbinger</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -437,7 +437,7 @@
 	<dict>
 		<key>name</key>
 		<string>The High Reclaimer</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Reclaimer</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -453,7 +453,7 @@
 	<dict>
 		<key>name</key>
 		<string>Thyra, Flame of Sorrow</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Thyra</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -469,7 +469,7 @@
 	<dict>
 		<key>name</key>
 		<string>Vice Scrutator Vindictus</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Vindictus</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -485,7 +485,7 @@
 	<dict>
 		<key>name</key>
 		<string>Forward Kommander Sorscha</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Sorscha</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -501,7 +501,7 @@
 	<dict>
 		<key>name</key>
 		<string>Karchev the Terrible</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Karchev</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -517,7 +517,7 @@
 	<dict>
 		<key>name</key>
 		<string>Koldun Kommander Zerkova</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Zerkova</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -533,7 +533,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kommandant Irusk</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Irusk</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -549,7 +549,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kommander Harkevich, The Iron Wolf</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Harkevich</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -565,7 +565,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kommander Orsus Zoktavir</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Butcher</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -581,7 +581,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kommander Sorscha</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Sorscha</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -597,7 +597,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kommander Strakhov</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Strakhov</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -613,7 +613,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kommander Zoktavir, The Butcher Unleashed</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Butcher</string>
 		<key>incarnation</key>
 		<integer>3</integer>
@@ -629,7 +629,7 @@
 	<dict>
 		<key>name</key>
 		<string>Supreme Kommandant Irusk</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Irusk</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -645,7 +645,7 @@
 	<dict>
 		<key>name</key>
 		<string>The Butcher of Khardov</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Butcher</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -661,7 +661,7 @@
 	<dict>
 		<key>name</key>
 		<string>The Old Witch of Khador &amp; Scrapjack</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Old Witch</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -677,7 +677,7 @@
 	<dict>
 		<key>name</key>
 		<string>Vladimir Tzepesci, Great Prince of Umbrey</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Vlad</string>
 		<key>incarnation</key>
 		<integer>3</integer>
@@ -693,7 +693,7 @@
 	<dict>
 		<key>name</key>
 		<string>Vladimir Tzepesci, The Dark Champion</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Vlad</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -709,7 +709,7 @@
 	<dict>
 		<key>name</key>
 		<string>Vladimir Tzepesci, The Dark Prince</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Vlad</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -725,7 +725,7 @@
 	<dict>
 		<key>name</key>
 		<string>Asphyxious the Hellbringer</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Asphyxious</string>
 		<key>incarnation</key>
 		<integer>3</integer>
@@ -741,7 +741,7 @@
 	<dict>
 		<key>name</key>
 		<string>Goreshade the Bastard</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Goreshade</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -757,7 +757,7 @@
 	<dict>
 		<key>name</key>
 		<string>Goreshade the Cursed</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Goreshade</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -773,7 +773,7 @@
 	<dict>
 		<key>name</key>
 		<string>Goreshade, Lord of Ruin</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Goreshade</string>
 		<key>incarnation</key>
 		<integer>3</integer>
@@ -789,7 +789,7 @@
 	<dict>
 		<key>name</key>
 		<string>Iron Lich Asphyxious</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Asphyxious</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -805,7 +805,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lich Lord Asphyxious</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Asphyxious</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -821,7 +821,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lich Lord Terminus</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Terminus</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -837,7 +837,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lich Lord Venethrax</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Venethrax</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -853,7 +853,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lord Exhumator Scaverous</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Scaverous</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -869,7 +869,7 @@
 	<dict>
 		<key>name</key>
 		<string>Master Necrotech Mortenebra</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Mortenebra</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -885,7 +885,7 @@
 	<dict>
 		<key>name</key>
 		<string>Pirate Queen Skarre</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Skarre</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -901,7 +901,7 @@
 	<dict>
 		<key>name</key>
 		<string>Skarre, Queen of the Broken Coast</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Skarre</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -917,7 +917,7 @@
 	<dict>
 		<key>name</key>
 		<string>Sturgis the Corrupted</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Sturgis</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -933,7 +933,7 @@
 	<dict>
 		<key>name</key>
 		<string>The Witch Coven of Garlghast</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Coven</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -949,7 +949,7 @@
 	<dict>
 		<key>name</key>
 		<string>Warwitch Deneghra</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Deneghra</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -965,7 +965,7 @@
 	<dict>
 		<key>name</key>
 		<string>Wraith Witch Deneghra</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Deneghra</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -981,7 +981,7 @@
 	<dict>
 		<key>name</key>
 		<string>Adeptis Rahn</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Rahn</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -997,7 +997,7 @@
 	<dict>
 		<key>name</key>
 		<string>Dawnlord Vyros</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Vyros</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1013,7 +1013,7 @@
 	<dict>
 		<key>name</key>
 		<string>Garryth, Blade of Retribution</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Garryth</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1029,7 +1029,7 @@
 	<dict>
 		<key>name</key>
 		<string>Issyria, Sybil of Dawn</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Issyria</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1045,7 +1045,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kaelyssa, Night&apos;s Whisper</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Kaelyssa</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1061,7 +1061,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lord Arcanist Ossyan</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Ossyan</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1077,7 +1077,7 @@
 	<dict>
 		<key>name</key>
 		<string>Ravyn, The Eternal Light</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Ravyn</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1093,7 +1093,7 @@
 	<dict>
 		<key>name</key>
 		<string>Vyros, Incissar of the Dawnguard</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Vyros</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1109,7 +1109,7 @@
 	<dict>
 		<key>name</key>
 		<string>Aurora, Numen of Aerogenesis</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Aurora</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1125,7 +1125,7 @@
 	<dict>
 		<key>name</key>
 		<string>Axis, the Harmonic Enforcer</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Axis</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1141,7 +1141,7 @@
 	<dict>
 		<key>name</key>
 		<string>Father Lucant, Divinity Architect</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Lucant</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1157,7 +1157,7 @@
 	<dict>
 		<key>name</key>
 		<string>Forge Master Syntherion</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Syntherion</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1173,7 +1173,7 @@
 	<dict>
 		<key>name</key>
 		<string>Iron Mother Directrix</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Directrix</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1189,7 +1189,7 @@
 	<dict>
 		<key>name</key>
 		<string>Ashlynn D&apos;Elyse</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Ashlynn</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1205,7 +1205,7 @@
 	<dict>
 		<key>name</key>
 		<string>Captain Bartolo Montador</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Bartolo</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1221,7 +1221,7 @@
 	<dict>
 		<key>name</key>
 		<string>Captain Damiano</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Damiano</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1237,7 +1237,7 @@
 	<dict>
 		<key>name</key>
 		<string>Captain Phinneus Shae</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Shae</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1253,7 +1253,7 @@
 	<dict>
 		<key>name</key>
 		<string>Constance Blaize, Knight of the Prophet</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Blaize</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1269,7 +1269,7 @@
 	<dict>
 		<key>name</key>
 		<string>Drake MacBain</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Drake</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1285,7 +1285,7 @@
 	<dict>
 		<key>name</key>
 		<string>Durgen Madhammer</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Durgen</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1301,7 +1301,7 @@
 	<dict>
 		<key>name</key>
 		<string>Exulon Thexus</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Thexus</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1317,7 +1317,7 @@
 	<dict>
 		<key>name</key>
 		<string>Fiona the Black</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Fiona</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1333,7 +1333,7 @@
 	<dict>
 		<key>name</key>
 		<string>General Ossrum</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Ossrum</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1349,7 +1349,7 @@
 	<dict>
 		<key>name</key>
 		<string>Gorten Grundback</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Gorten</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1365,7 +1365,7 @@
 	<dict>
 		<key>name</key>
 		<string>Magnus the Traitor</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Magnus</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1381,7 +1381,7 @@
 	<dict>
 		<key>name</key>
 		<string>Magnus the Warlord</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Magnus</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1397,7 +1397,7 @@
 	<dict>
 		<key>name</key>
 		<string>Borka Kegslayer</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Borka</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1413,7 +1413,7 @@
 	<dict>
 		<key>name</key>
 		<string>Borka, Vengeance of the Rimeshaws</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Borka</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1429,7 +1429,7 @@
 	<dict>
 		<key>name</key>
 		<string>Calandra Truthsayer, Oracle of the Glimmerwood</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Calandra</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1445,7 +1445,7 @@
 	<dict>
 		<key>name</key>
 		<string>Captain Gunnbjorn</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Gunnbjorn</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1461,7 +1461,7 @@
 	<dict>
 		<key>name</key>
 		<string>Grim Angus</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Angus</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1477,7 +1477,7 @@
 	<dict>
 		<key>name</key>
 		<string>Grissel Bloodsong, Fell Caller</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Grissel</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1493,7 +1493,7 @@
 	<dict>
 		<key>name</key>
 		<string>Grissel Bloodsong, Marshal of the Kriels</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Grissel</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1509,7 +1509,7 @@
 	<dict>
 		<key>name</key>
 		<string>Hoarluk Doomshaper, Rage of Dhunia</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Doomshaper</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1525,7 +1525,7 @@
 	<dict>
 		<key>name</key>
 		<string>Hoarluk Doomshaper, Shaman of the Gnarls</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Doomshaper</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1541,7 +1541,7 @@
 	<dict>
 		<key>name</key>
 		<string>Hunters Grim</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Grim</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1557,7 +1557,7 @@
 	<dict>
 		<key>name</key>
 		<string>Jarl Skuld, Devil of the Thornwood</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Jarl</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1573,7 +1573,7 @@
 	<dict>
 		<key>name</key>
 		<string>Madrak Ironhide, Thornwood Chieftain</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Madrak</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1589,7 +1589,7 @@
 	<dict>
 		<key>name</key>
 		<string>Madrak Ironhide, World Ender</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Madrak</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1605,7 +1605,7 @@
 	<dict>
 		<key>name</key>
 		<string>Baldur the Stonecleaver</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Baldur</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1621,7 +1621,7 @@
 	<dict>
 		<key>name</key>
 		<string>Baldur the Stonesoul</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Baldur</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1637,7 +1637,7 @@
 	<dict>
 		<key>name</key>
 		<string>Bradigus Thorle the Runecarver</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Bradigus</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1653,7 +1653,7 @@
 	<dict>
 		<key>name</key>
 		<string>Cassius the Oathkeeper</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Cassius</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1669,7 +1669,7 @@
 	<dict>
 		<key>name</key>
 		<string>Grayle the Farstrider</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Grayle</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1685,7 +1685,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kaya the Moonhunter</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Kaya</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1701,7 +1701,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kaya the Wildborne</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Kaya</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1717,7 +1717,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kromac the Ravenous</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Kromac</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1733,7 +1733,7 @@
 	<dict>
 		<key>name</key>
 		<string>Krueger the Stormlord</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Krueger</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1749,7 +1749,7 @@
 	<dict>
 		<key>name</key>
 		<string>Krueger the Stormwrath</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Krueger</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1765,7 +1765,7 @@
 	<dict>
 		<key>name</key>
 		<string>Mohsar the Desertwalker</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Mohsar</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1781,7 +1781,7 @@
 	<dict>
 		<key>name</key>
 		<string>Morvahna the Autumnblade</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Morvahna</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1797,7 +1797,7 @@
 	<dict>
 		<key>name</key>
 		<string>Morvahna the Dawnshadow</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Morvahna</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1813,7 +1813,7 @@
 	<dict>
 		<key>name</key>
 		<string>Absylonia, Daughter of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Absylonia</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1829,7 +1829,7 @@
 	<dict>
 		<key>name</key>
 		<string>Absylonia, Terror of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Absylonia</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1845,7 +1845,7 @@
 	<dict>
 		<key>name</key>
 		<string>Bethayne, Voice of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Bethayne</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1861,7 +1861,7 @@
 	<dict>
 		<key>name</key>
 		<string>Kallus, Wrath of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Kallus</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1877,7 +1877,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lylyth, Herald of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Lylyth</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1893,7 +1893,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lylyth, Reckoning of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Lylyth</string>
 		<key>incarnation</key>
 		<integer>3</integer>
@@ -1909,7 +1909,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lylyth, Shadow of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Lylyth</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1925,7 +1925,7 @@
 	<dict>
 		<key>name</key>
 		<string>Rhyas, Sigil of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Rhyas</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1941,7 +1941,7 @@
 	<dict>
 		<key>name</key>
 		<string>Saeryn, Omen of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Saeryn</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1957,7 +1957,7 @@
 	<dict>
 		<key>name</key>
 		<string>Thagrosh, Prophet of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Thagrosh</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -1973,7 +1973,7 @@
 	<dict>
 		<key>name</key>
 		<string>Thagrosh, the Messiah</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Thagrosh</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -1989,7 +1989,7 @@
 	<dict>
 		<key>name</key>
 		<string>Vayl, Consul of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Vayl</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -2005,7 +2005,7 @@
 	<dict>
 		<key>name</key>
 		<string>Vayl, Disciple of Everblight</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Vayl</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2021,7 +2021,7 @@
 	<dict>
 		<key>name</key>
 		<string>Archdomina Makeda</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Makeda</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2037,7 +2037,7 @@
 	<dict>
 		<key>name</key>
 		<string>Dominar Rasheth</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Rasheth</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2053,7 +2053,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lord Arbiter Hexeris</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Hexeris</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -2069,7 +2069,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lord Assassin Morghoul</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Morghoul</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -2085,7 +2085,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lord Tyrant Hexeris</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Hexeris</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2101,7 +2101,7 @@
 	<dict>
 		<key>name</key>
 		<string>Makeda</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Makeda</string>
 		<key>incarnation</key>
 		<integer>3</integer>
@@ -2117,7 +2117,7 @@
 	<dict>
 		<key>name</key>
 		<string>Master Ascetic Naaresh</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Naaresh</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2133,7 +2133,7 @@
 	<dict>
 		<key>name</key>
 		<string>Master Tormentor Morghoul</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Morghoul</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2149,7 +2149,7 @@
 	<dict>
 		<key>name</key>
 		<string>Supreme Aptimus Zaal</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Zaal</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2165,7 +2165,7 @@
 	<dict>
 		<key>name</key>
 		<string>Supreme Archdomina Makeda</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Makeda</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -2181,7 +2181,7 @@
 	<dict>
 		<key>name</key>
 		<string>Tyrant Xerxis</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Xerxis</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2197,7 +2197,7 @@
 	<dict>
 		<key>name</key>
 		<string>Void Seer Mordikaar</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Mordikaar</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2213,7 +2213,7 @@
 	<dict>
 		<key>name</key>
 		<string>Xerxis, Fury of Halaak</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Xerxis</string>
 		<key>incarnation</key>
 		<integer>2</integer>
@@ -2229,7 +2229,7 @@
 	<dict>
 		<key>name</key>
 		<string>Bloody Barnabas</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Barnabas</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2245,7 +2245,7 @@
 	<dict>
 		<key>name</key>
 		<string>Calaban, the Grave Walker</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Calaban</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2261,7 +2261,7 @@
 	<dict>
 		<key>name</key>
 		<string>Dr. Arkadius</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Arkadius</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2277,7 +2277,7 @@
 	<dict>
 		<key>name</key>
 		<string>Helga the Conqueror</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Helga</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2293,7 +2293,7 @@
 	<dict>
 		<key>name</key>
 		<string>Jaga-Jaga the Death Charmer</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Jaga</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2309,7 +2309,7 @@
 	<dict>
 		<key>name</key>
 		<string>Lord Carver, BMMD, Esq. III</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Carver</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2325,7 +2325,7 @@
 	<dict>
 		<key>name</key>
 		<string>Maelok the Dreadbound</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Maelok</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2341,7 +2341,7 @@
 	<dict>
 		<key>name</key>
 		<string>Midas</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Midas</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2357,7 +2357,7 @@
 	<dict>
 		<key>name</key>
 		<string>Rask</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Rask</string>
 		<key>incarnation</key>
 		<integer>1</integer>
@@ -2373,7 +2373,7 @@
 	<dict>
 		<key>name</key>
 		<string>Sturm &amp; Drang</string>
-		<key>short</key>
+		<key>shortName</key>
 		<string>Sturm &amp; Drang</string>
 		<key>incarnation</key>
 		<integer>1</integer>

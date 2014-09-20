@@ -8,8 +8,15 @@
 
 #import "AppDelegate.h"
 #import "SGSettingsManager.h"
+#import "SGDataImport.h"
 #import "DetailViewController.h"
 #import "SGBattleListViewController.h"
+
+#define kCurrentGameVersion 1
+#define kCurrentFactionVersion 1
+#define kCurrentModelVersion 1
+#define kCurrentCasterVersion 1
+#define kCurrentResultVersion 1
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -19,6 +26,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self loadDefaultData];
     [SGSettingsManager initUserPreferences];
     
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -54,6 +62,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+#pragma mark -
+#pragma mark - Load Default Data
+
+- (void)loadDefaultData
+{
+    [SGDataImport importDataForEntityNamed:@"Game" version:kCurrentGameVersion entityType:SGEntityType_Game plistFileNamed:@"Game" context:self.managedObjectContext];
+    [SGDataImport importDataForEntityNamed:@"Faction" version:kCurrentFactionVersion entityType:SGEntityType_Faction plistFileNamed:@"Faction" context:self.managedObjectContext];
+    [SGDataImport importDataForEntityNamed:@"Model" version:kCurrentModelVersion entityType:SGEntityType_Model plistFileNamed:@"Model" context:self.managedObjectContext];
+    [SGDataImport importDataForEntityNamed:@"Caster" version:kCurrentCasterVersion entityType:SGEntityType_Caster plistFileNamed:@"Caster" context:self.managedObjectContext];
+    [SGDataImport importDataForEntityNamed:@"Result" version:kCurrentResultVersion entityType:SGEntityType_Result plistFileNamed:@"Result" context:self.managedObjectContext];
 }
 
 #pragma mark - Split view
