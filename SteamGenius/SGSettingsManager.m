@@ -51,7 +51,10 @@ static NSInteger const defaultTheme = 0;
     NSDictionary *currentTheme = [themes objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"theme"] intValue]];
     
     NSDictionary *bar = [currentTheme valueForKey:@"barColor"];
-    UIColor *barColor = [UIColor colorWithRed:[[bar valueForKey:@"red"] floatValue]/255.f green:[[bar valueForKey:@"green"] floatValue]/255.f blue:[[bar valueForKey:@"blue"] floatValue]/255.f alpha:[[bar valueForKey:@"alpha"] floatValue]];
+    UIColor *barColor = [UIColor colorWithRed:[[bar valueForKey:@"red"] floatValue]/255.f
+                                        green:[[bar valueForKey:@"green"] floatValue]/255.f
+                                         blue:[[bar valueForKey:@"blue"] floatValue]/255.f
+                                        alpha:[[bar valueForKey:@"alpha"] floatValue]];
     
     NSDictionary *tint = [currentTheme valueForKey:@"tintColor"];
     UIColor *tintColor = [UIColor colorWithRed:[[tint valueForKey:@"red"] floatValue]/255.f green:[[tint valueForKey:@"green"] floatValue]/255.f blue:[[tint valueForKey:@"blue"] floatValue]/255.f alpha:[[tint valueForKey:@"alpha"] floatValue]];

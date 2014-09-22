@@ -54,7 +54,7 @@
     return m;
 }
 
-+ (Caster *)initWithModelName:(NSString *)modelName factionName:(NSString *)factionName context:(NSManagedObjectContext *)context
++ (Caster *)initWithModelNamed:(NSString *)modelName factionName:(NSString *)factionName context:(NSManagedObjectContext *)context
 {
     Model *m = [SGGenericRepository findOneEntityOfType:@"Model" entityKey:modelName keyField:@"name" context:context];
     Faction *f = [SGGenericRepository findOneEntityOfType:@"Faction" entityKey:factionName keyField:@"name" context:context];
@@ -64,13 +64,53 @@
     return c;
 }
 
-+ (Result *)initWithResultName:(NSString *)resultName winValue:(NSNumber *)winValue displayOrder:(NSNumber *)displayOrder context:(NSManagedObjectContext *)context
++ (Result *)initWithResultNamed:(NSString *)resultName winValue:(NSNumber *)winValue displayOrder:(NSNumber *)displayOrder context:(NSManagedObjectContext *)context
 {
     Result *r = [NSEntityDescription insertNewObjectForEntityForName:@"Result" inManagedObjectContext:context];
     [r setValue:resultName forKey:@"name"];
     [r setValue:winValue forKey:@"winValue"];
     [r setValue:displayOrder forKey:@"displayOrder"];
     return r;
+}
+
++ (Opponent *)initWithOpponentNamed:(NSString *)opponentName context:(NSManagedObjectContext *)context
+{
+    Opponent *o = [NSEntityDescription insertNewObjectForEntityForName:@"Opponent" inManagedObjectContext:context];
+    [o setValue:opponentName forKey:@"name"];
+    return o;
+}
+
++ (Scenario *)initWithScenarioNamed:(NSString *)scenarioName context:(NSManagedObjectContext *)context
+{
+    Scenario *s = [NSEntityDescription insertNewObjectForEntityForName:@"Scenario" inManagedObjectContext:context];
+    [s setValue:scenarioName forKey:@"name"];
+    return s;
+}
+
++ (Event *)initWithEventNamed:(NSString *)eventName location:(NSString *)location date:(NSDate *)date isTournament:(BOOL)isTournament context:(NSManagedObjectContext *)context
+{
+    Event *e = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:context];
+    [e setValue:eventName forKey:@"name"];
+    [e setValue:location forKey:@"location"];
+    [e setValue:date forKey:@"date"];
+    [e setValue:[NSNumber numberWithBool:isTournament] forKey:@"isTournament"];
+    return e;
+}
+
++ (Battle *)initWithPlayerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints event:(Event *)event context:(NSManagedObjectContext *)context
+{
+    Battle *b = [NSEntityDescription insertNewObjectForEntityForName:@"Battle" inManagedObjectContext:context];
+    [b setValue:playerCaster forKey:@"playerCaster"];
+    [b setValue:opponentCaster forKey:@"opponentCaster"];
+    [b setValue:opponent forKey:@"opponent"];
+    [b setValue:date forKey:@"date"];
+    [b setValue:points forKey:@"points"];
+    [b setValue:result forKey:@"result"];
+    [b setValue:killPoints forKey:@"killPoints"];
+    [b setValue:scenario forKey:@"scenario"];
+    [b setValue:controlPoints forKey:@"controlPoints"];
+    [b setValue:event forKey:@"event"];
+    return b;
 }
 
 @end

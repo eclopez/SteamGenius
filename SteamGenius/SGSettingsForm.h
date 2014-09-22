@@ -11,6 +11,6 @@
 
 @interface SGSettingsForm : NSObject <FXForm>
 
-@property (nonatomic, assign) NSNumber *theme;
+@property (nonatomic, copy) NSNumber *theme;
 
 @end

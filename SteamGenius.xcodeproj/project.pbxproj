@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031D6AA819CEA463000B7D26 /* CircleOrboros.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6A9C19CEA463000B7D26 /* CircleOrboros.png */; };
+		031D6AA919CEA463000B7D26 /* Convergence.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6A9D19CEA463000B7D26 /* Convergence.png */; };
+		031D6AAA19CEA463000B7D26 /* Cryx.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6A9E19CEA463000B7D26 /* Cryx.png */; };
+		031D6AAB19CEA463000B7D26 /* Cygnar.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6A9F19CEA463000B7D26 /* Cygnar.png */; };
+		031D6AAC19CEA463000B7D26 /* Khador.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA019CEA463000B7D26 /* Khador.png */; };
+		031D6AAD19CEA463000B7D26 /* LegionOfEverblight.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA119CEA463000B7D26 /* LegionOfEverblight.png */; };
+		031D6AAE19CEA463000B7D26 /* Mercenaries.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA219CEA463000B7D26 /* Mercenaries.png */; };
+		031D6AAF19CEA463000B7D26 /* Minions.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA319CEA463000B7D26 /* Minions.png */; };
+		031D6AB019CEA463000B7D26 /* ProtectorateOfMenoth.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA419CEA463000B7D26 /* ProtectorateOfMenoth.png */; };
+		031D6AB119CEA463000B7D26 /* RetributionOfScyrah.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA519CEA463000B7D26 /* RetributionOfScyrah.png */; };
+		031D6AB219CEA463000B7D26 /* Skorne.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA619CEA463000B7D26 /* Skorne.png */; };
+		031D6AB319CEA463000B7D26 /* Trollbloods.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA719CEA463000B7D26 /* Trollbloods.png */; };
+		031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */; };
+		031D6AC319CF538A000B7D26 /* SGCasterFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AC219CF538A000B7D26 /* SGCasterFormCell.m */; };
+		031D6AC919CF5F49000B7D26 /* SGFactionOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AC819CF5F49000B7D26 /* SGFactionOptionsTableViewController.m */; };
+		031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */; };
 		0325712F19C376E900634776 /* SGDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325712E19C376E900634776 /* SGDismissSegue.m */; };
 		0325713819C491B300634776 /* SteamGenius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0325713619C491B300634776 /* SteamGenius.xcdatamodeld */; };
 		0325713C19C492BA00634776 /* Game.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325713B19C492BA00634776 /* Game.plist */; };
@@ -15,8 +31,6 @@
 		0325714219C49AD900634776 /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325714119C49AD900634776 /* Model.plist */; };
 		0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715519C7DB1F00634776 /* SGSettingsForm.m */; };
 		0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715819C7DE1000634776 /* SGSettingsFormViewController.m */; };
-		0325716C19C9504300634776 /* SGThemeValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325716B19C9504300634776 /* SGThemeValueTransformer.m */; };
-		0325716F19C950E900634776 /* SGThemeOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325716E19C950E900634776 /* SGThemeOptionsViewController.m */; };
 		0349E2AB19C17F510091FF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AA19C17F510091FF21 /* main.m */; };
 		0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AD19C17F510091FF21 /* AppDelegate.m */; };
 		0349E2B719C17F510091FF21 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2B619C17F510091FF21 /* DetailViewController.m */; };
@@ -42,6 +56,8 @@
 		038DAAE919CD019000A224F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038DAAE719CCFEF400A224F7 /* CoreData.framework */; };
 		038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAEC19CD3FA600A224F7 /* SGDataImport.m */; };
 		038DAAF019CD4A0300A224F7 /* SGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAEF19CD4A0300A224F7 /* SGRepository.m */; };
+		038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF319CDE70C00A224F7 /* SGBattleForm.m */; };
+		038DAAF819CDE8C500A224F7 /* SGBattleFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +73,26 @@
 
 /* Begin PBXFileReference section */
 		02659296C8D0414088F41B8A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		031D6A9C19CEA463000B7D26 /* CircleOrboros.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleOrboros.png; sourceTree = "<group>"; };
+		031D6A9D19CEA463000B7D26 /* Convergence.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Convergence.png; sourceTree = "<group>"; };
+		031D6A9E19CEA463000B7D26 /* Cryx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cryx.png; sourceTree = "<group>"; };
+		031D6A9F19CEA463000B7D26 /* Cygnar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cygnar.png; sourceTree = "<group>"; };
+		031D6AA019CEA463000B7D26 /* Khador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Khador.png; sourceTree = "<group>"; };
+		031D6AA119CEA463000B7D26 /* LegionOfEverblight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LegionOfEverblight.png; sourceTree = "<group>"; };
+		031D6AA219CEA463000B7D26 /* Mercenaries.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mercenaries.png; sourceTree = "<group>"; };
+		031D6AA319CEA463000B7D26 /* Minions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Minions.png; sourceTree = "<group>"; };
+		031D6AA419CEA463000B7D26 /* ProtectorateOfMenoth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProtectorateOfMenoth.png; sourceTree = "<group>"; };
+		031D6AA519CEA463000B7D26 /* RetributionOfScyrah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RetributionOfScyrah.png; sourceTree = "<group>"; };
+		031D6AA619CEA463000B7D26 /* Skorne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skorne.png; sourceTree = "<group>"; };
+		031D6AA719CEA463000B7D26 /* Trollbloods.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trollbloods.png; sourceTree = "<group>"; };
+		031D6AB519CEA5D0000B7D26 /* SGResizableImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGResizableImageViewCell.h; sourceTree = "<group>"; };
+		031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGResizableImageViewCell.m; sourceTree = "<group>"; };
+		031D6AC119CF538A000B7D26 /* SGCasterFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCasterFormCell.h; sourceTree = "<group>"; };
+		031D6AC219CF538A000B7D26 /* SGCasterFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCasterFormCell.m; sourceTree = "<group>"; };
+		031D6AC719CF5F49000B7D26 /* SGFactionOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionOptionsTableViewController.h; sourceTree = "<group>"; };
+		031D6AC819CF5F49000B7D26 /* SGFactionOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionOptionsTableViewController.m; sourceTree = "<group>"; };
+		031D6ACC19CF6A39000B7D26 /* SGCasterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCasterOptionsTableViewController.h; sourceTree = "<group>"; };
+		031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCasterOptionsTableViewController.m; sourceTree = "<group>"; };
 		0325712D19C376E900634776 /* SGDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDismissSegue.h; sourceTree = "<group>"; };
 		0325712E19C376E900634776 /* SGDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDismissSegue.m; sourceTree = "<group>"; };
 		0325713719C491B300634776 /* SteamGenius.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SteamGenius.xcdatamodel; sourceTree = "<group>"; };
@@ -68,10 +104,6 @@
 		0325715519C7DB1F00634776 /* SGSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsForm.m; sourceTree = "<group>"; };
 		0325715719C7DE1000634776 /* SGSettingsFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSettingsFormViewController.h; sourceTree = "<group>"; };
 		0325715819C7DE1000634776 /* SGSettingsFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsFormViewController.m; sourceTree = "<group>"; };
-		0325716A19C9504300634776 /* SGThemeValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGThemeValueTransformer.h; sourceTree = "<group>"; };
-		0325716B19C9504300634776 /* SGThemeValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGThemeValueTransformer.m; sourceTree = "<group>"; };
-		0325716D19C950E900634776 /* SGThemeOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGThemeOptionsViewController.h; sourceTree = "<group>"; };
-		0325716E19C950E900634776 /* SGThemeOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGThemeOptionsViewController.m; sourceTree = "<group>"; };
 		0349E2A519C17F510091FF21 /* SteamGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteamGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0349E2A919C17F510091FF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0349E2AA19C17F510091FF21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -119,6 +151,10 @@
 		038DAAEC19CD3FA600A224F7 /* SGDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDataImport.m; sourceTree = "<group>"; };
 		038DAAEE19CD4A0300A224F7 /* SGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGRepository.h; sourceTree = "<group>"; };
 		038DAAEF19CD4A0300A224F7 /* SGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGRepository.m; sourceTree = "<group>"; };
+		038DAAF219CDE70C00A224F7 /* SGBattleForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleForm.h; sourceTree = "<group>"; };
+		038DAAF319CDE70C00A224F7 /* SGBattleForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleForm.m; sourceTree = "<group>"; };
+		038DAAF619CDE8C500A224F7 /* SGBattleFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleFormViewController.h; sourceTree = "<group>"; };
+		038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleFormViewController.m; sourceTree = "<group>"; };
 		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +178,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031D6A7019CE0BAF000B7D26 /* Form View */ = {
+			isa = PBXGroup;
+			children = (
+				038DAAF619CDE8C500A224F7 /* SGBattleFormViewController.h */,
+				038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */,
+			);
+			name = "Form View";
+			sourceTree = "<group>";
+		};
+		031D6A9219CE73F9000B7D26 /* Form Model */ = {
+			isa = PBXGroup;
+			children = (
+				0325715419C7DB1F00634776 /* SGSettingsForm.h */,
+				0325715519C7DB1F00634776 /* SGSettingsForm.m */,
+			);
+			name = "Form Model";
+			sourceTree = "<group>";
+		};
+		031D6A9719CE9FC8000B7D26 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				031D6ACA19CF6A07000B7D26 /* Faction */,
+				031D6ACB19CF6A11000B7D26 /* Caster */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
+		031D6A9B19CEA412000B7D26 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				031D6A9C19CEA463000B7D26 /* CircleOrboros.png */,
+				031D6A9D19CEA463000B7D26 /* Convergence.png */,
+				031D6A9E19CEA463000B7D26 /* Cryx.png */,
+				031D6A9F19CEA463000B7D26 /* Cygnar.png */,
+				031D6AA019CEA463000B7D26 /* Khador.png */,
+				031D6AA119CEA463000B7D26 /* LegionOfEverblight.png */,
+				031D6AA219CEA463000B7D26 /* Mercenaries.png */,
+				031D6AA319CEA463000B7D26 /* Minions.png */,
+				031D6AA419CEA463000B7D26 /* ProtectorateOfMenoth.png */,
+				031D6AA519CEA463000B7D26 /* RetributionOfScyrah.png */,
+				031D6AA619CEA463000B7D26 /* Skorne.png */,
+				031D6AA719CEA463000B7D26 /* Trollbloods.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		031D6AB419CEA5A6000B7D26 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				031D6AB519CEA5D0000B7D26 /* SGResizableImageViewCell.h */,
+				031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */,
+			);
+			name = Reusable;
+			sourceTree = "<group>";
+		};
+		031D6AC019CF5342000B7D26 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				031D6AC119CF538A000B7D26 /* SGCasterFormCell.h */,
+				031D6AC219CF538A000B7D26 /* SGCasterFormCell.m */,
+				031D6A9719CE9FC8000B7D26 /* Options */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		031D6ACA19CF6A07000B7D26 /* Faction */ = {
+			isa = PBXGroup;
+			children = (
+				031D6AC719CF5F49000B7D26 /* SGFactionOptionsTableViewController.h */,
+				031D6AC819CF5F49000B7D26 /* SGFactionOptionsTableViewController.m */,
+			);
+			name = Faction;
+			sourceTree = "<group>";
+		};
+		031D6ACB19CF6A11000B7D26 /* Caster */ = {
+			isa = PBXGroup;
+			children = (
+				031D6ACC19CF6A39000B7D26 /* SGCasterOptionsTableViewController.h */,
+				031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */,
+			);
+			name = Caster;
+			sourceTree = "<group>";
+		};
 		0325712B19C376C100634776 /* Segues */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,41 +301,11 @@
 			name = "Raw Data";
 			sourceTree = "<group>";
 		};
-		0325715319C7DAF800634776 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				0325715419C7DB1F00634776 /* SGSettingsForm.h */,
-				0325715519C7DB1F00634776 /* SGSettingsForm.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		0325715A19C80CB700634776 /* Transformers */ = {
-			isa = PBXGroup;
-			children = (
-				0325716A19C9504300634776 /* SGThemeValueTransformer.h */,
-				0325716B19C9504300634776 /* SGThemeValueTransformer.m */,
-			);
-			name = Transformers;
-			sourceTree = "<group>";
-		};
-		0325715E19C9432600634776 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				0325715719C7DE1000634776 /* SGSettingsFormViewController.h */,
-				0325715819C7DE1000634776 /* SGSettingsFormViewController.m */,
-				0325716D19C950E900634776 /* SGThemeOptionsViewController.h */,
-				0325716E19C950E900634776 /* SGThemeOptionsViewController.m */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
 		0335019C19C33A0B004AA293 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				0325715E19C9432600634776 /* Controllers */,
-				0325715A19C80CB700634776 /* Transformers */,
-				0325715319C7DAF800634776 /* Models */,
+				038DAAF919CDF06000A224F7 /* Form View */,
+				031D6A9219CE73F9000B7D26 /* Form Model */,
 				0349E2DB19C1D8EC0091FF21 /* Manager */,
 			);
 			name = Settings;
@@ -248,8 +337,9 @@
 			children = (
 				0349E2AC19C17F510091FF21 /* AppDelegate.h */,
 				0349E2AD19C17F510091FF21 /* AppDelegate.m */,
-				0349E2D419C180340091FF21 /* Classes */,
+				0349E2D419C180340091FF21 /* Views */,
 				0325713919C491C300634776 /* Models */,
+				031D6A9B19CEA412000B7D26 /* Images */,
 				0349E2B519C17F510091FF21 /* DetailViewController.h */,
 				0349E2B619C17F510091FF21 /* DetailViewController.m */,
 				0349E2B819C17F510091FF21 /* Main.storyboard */,
@@ -287,19 +377,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0349E2D419C180340091FF21 /* Classes */ = {
+		0349E2D419C180340091FF21 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				031D6AB419CEA5A6000B7D26 /* Reusable */,
 				0325712B19C376C100634776 /* Segues */,
 				0335019C19C33A0B004AA293 /* Settings */,
 				0349E2DA19C1D8E50091FF21 /* Battles */,
 			);
-			name = Classes;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		0349E2DA19C1D8E50091FF21 /* Battles */ = {
 			isa = PBXGroup;
 			children = (
+				038DAAF519CDE89800A224F7 /* View Controllers */,
 				0349E2DC19C1D9300091FF21 /* SGBattleListViewController.h */,
 				0349E2DD19C1D9300091FF21 /* SGBattleListViewController.m */,
 			);
@@ -361,6 +453,34 @@
 				038DAAEC19CD3FA600A224F7 /* SGDataImport.m */,
 			);
 			name = Import;
+			sourceTree = "<group>";
+		};
+		038DAAF119CDE65E00A224F7 /* Form Model */ = {
+			isa = PBXGroup;
+			children = (
+				038DAAF219CDE70C00A224F7 /* SGBattleForm.h */,
+				038DAAF319CDE70C00A224F7 /* SGBattleForm.m */,
+			);
+			name = "Form Model";
+			sourceTree = "<group>";
+		};
+		038DAAF519CDE89800A224F7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				031D6A7019CE0BAF000B7D26 /* Form View */,
+				038DAAF119CDE65E00A224F7 /* Form Model */,
+				031D6AC019CF5342000B7D26 /* Cells */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		038DAAF919CDF06000A224F7 /* Form View */ = {
+			isa = PBXGroup;
+			children = (
+				0325715719C7DE1000634776 /* SGSettingsFormViewController.h */,
+				0325715819C7DE1000634776 /* SGSettingsFormViewController.m */,
+			);
+			name = "Form View";
 			sourceTree = "<group>";
 		};
 		47148A91232B4766B1D74C11 /* Frameworks */ = {
@@ -454,15 +574,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031D6AAE19CEA463000B7D26 /* Mercenaries.png in Resources */,
 				0325714019C4987C00634776 /* Result.plist in Resources */,
 				038DAAC319CCE67D00A224F7 /* Caster.plist in Resources */,
 				0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */,
 				0325713C19C492BA00634776 /* Game.plist in Resources */,
+				031D6AB319CEA463000B7D26 /* Trollbloods.png in Resources */,
+				031D6AAD19CEA463000B7D26 /* LegionOfEverblight.png in Resources */,
+				031D6AA919CEA463000B7D26 /* Convergence.png in Resources */,
+				031D6AAF19CEA463000B7D26 /* Minions.png in Resources */,
+				031D6AAB19CEA463000B7D26 /* Cygnar.png in Resources */,
+				031D6AB019CEA463000B7D26 /* ProtectorateOfMenoth.png in Resources */,
 				0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */,
 				0349E2BF19C17F510091FF21 /* LaunchScreen.xib in Resources */,
+				031D6AB119CEA463000B7D26 /* RetributionOfScyrah.png in Resources */,
+				031D6AAC19CEA463000B7D26 /* Khador.png in Resources */,
+				031D6AA819CEA463000B7D26 /* CircleOrboros.png in Resources */,
 				0349E2BC19C17F510091FF21 /* Images.xcassets in Resources */,
+				031D6AAA19CEA463000B7D26 /* Cryx.png in Resources */,
 				0325714219C49AD900634776 /* Model.plist in Resources */,
 				0325713E19C4932600634776 /* Faction.plist in Resources */,
+				031D6AB219CEA463000B7D26 /* Skorne.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,17 +645,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0325716C19C9504300634776 /* SGThemeValueTransformer.m in Sources */,
 				038DAAD619CCFC3400A224F7 /* DataVersion.m in Sources */,
 				0349E2B719C17F510091FF21 /* DetailViewController.m in Sources */,
+				031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */,
 				038DAAF019CD4A0300A224F7 /* SGRepository.m in Sources */,
+				038DAAF819CDE8C500A224F7 /* SGBattleFormViewController.m in Sources */,
 				038DAAD919CCFC3400A224F7 /* Battle.m in Sources */,
 				0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */,
 				038DAAC719CCFC3400A224F7 /* Game.m in Sources */,
 				038DAADC19CCFC3400A224F7 /* Event.m in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
 				038DAADF19CCFC3400A224F7 /* Opponent.m in Sources */,
-				0325716F19C950E900634776 /* SGThemeOptionsViewController.m in Sources */,
 				038DAACA19CCFC3400A224F7 /* Caster.m in Sources */,
 				0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */,
 				0325713819C491B300634776 /* SteamGenius.xcdatamodeld in Sources */,
@@ -531,11 +663,15 @@
 				0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */,
 				0349E2AB19C17F510091FF21 /* main.m in Sources */,
 				038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */,
+				031D6AC319CF538A000B7D26 /* SGCasterFormCell.m in Sources */,
 				038DAACD19CCFC3400A224F7 /* Model.m in Sources */,
 				038DAAD019CCFC3400A224F7 /* Result.m in Sources */,
 				0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */,
+				038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */,
 				038DAAE619CCFDBB00A224F7 /* SGGenericRepository.m in Sources */,
 				038DAAE219CCFC3400A224F7 /* Faction.m in Sources */,
+				031D6AC919CF5F49000B7D26 /* SGFactionOptionsTableViewController.m in Sources */,
+				031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */,
 				0349E2DE19C1D9300091FF21 /* SGBattleListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -90,7 +90,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Battles" id="TM2-mf-tzr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="G8p-dJ-fP8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="G8p-dJ-fP8">
+                            <connections>
+                                <segue destination="ucP-BG-5wY" kind="presentation" id="HaL-5f-Nuh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRo-yx-L2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,8 +177,53 @@
             </objects>
             <point key="canvasLocation" x="1490" y="-665"/>
         </scene>
+        <!--Add Battle-->
+        <scene sceneID="Jgk-Zy-pfn">
+            <objects>
+                <viewController id="XMl-3U-Ejy" customClass="SGBattleFormViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dhm-AB-wcc"/>
+                        <viewControllerLayoutGuide type="bottom" id="aHp-Py-n4F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rs8-be-wjX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Battle" id="2OV-ur-9Bj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="w9G-XF-mn1">
+                            <connections>
+                                <segue destination="MQg-UV-Mm8" kind="custom" customClass="SGDismissSegue" id="htY-Su-P9n"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zbq-3J-fPM"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHd-f5-8eQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302" y="129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cpl-nw-l6I">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ucP-BG-5wY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="szv-tb-dst">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XMl-3U-Ejy" kind="relationship" relationship="rootViewController" id="Ox2-Iz-6Pd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o2V-oF-eKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1490" y="129"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="nNL-s5-ebF"/>
+        <segue reference="htY-Su-P9n"/>
     </inferredMetricsTieBreakers>
 </document>

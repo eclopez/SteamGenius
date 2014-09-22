@@ -46,11 +46,11 @@
                         break;
                     case SGEntityType_Caster:
                         for (id f in [d objectForKey:@"factions"]) {
-                            [SGRepository initWithModelName:[d objectForKey:@"name"] factionName:f context:context];
+                            [SGRepository initWithModelNamed:[d objectForKey:@"name"] factionName:f context:context];
                         }
                         break;
                     case SGEntityType_Result:
-                        [SGRepository initWithResultName:[d objectForKey:@"name"] winValue:[NSNumber numberWithInt:[[d objectForKey:@"winValue"] intValue]] displayOrder:[NSNumber numberWithInt:[[d objectForKey:@"displayOrder"] intValue]] context:context];
+                        [SGRepository initWithResultNamed:[d objectForKey:@"name"] winValue:[NSNumber numberWithInt:[[d objectForKey:@"winValue"] intValue]] displayOrder:[NSNumber numberWithInt:[[d objectForKey:@"displayOrder"] intValue]] context:context];
                         break;
                 }
             }
