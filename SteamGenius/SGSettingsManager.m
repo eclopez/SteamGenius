@@ -16,14 +16,12 @@ static NSInteger const defaultTheme = 0;
 
 #pragma mark - Public Methods
 
-+ (void)initUserPreferences
-{
++ (void)initUserPreferences {
     [self registerDefaultPreferences];
     [self setGlobalTheme];
 }
 
-+ (void)updateTheme:(NSInteger)newTheme
-{
++ (void)updateTheme:(NSInteger)newTheme {
     [[NSUserDefaults standardUserDefaults] setInteger:newTheme forKey:@"theme"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self setGlobalTheme];
@@ -38,14 +36,12 @@ static NSInteger const defaultTheme = 0;
 
 #pragma mark - Private Methods
 
-+ (void)registerDefaultPreferences
-{
++ (void)registerDefaultPreferences {
     NSDictionary *defaults = @{ @"theme" : [NSNumber numberWithInt:defaultTheme] };
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
-+ (void)setGlobalTheme
-{
++ (void)setGlobalTheme {
     NSString *themeFile = [[NSBundle mainBundle] pathForResource:@"SGTheme" ofType:@"plist"];
     NSArray *themes = [NSArray arrayWithContentsOfFile:themeFile];
     NSDictionary *currentTheme = [themes objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"theme"] intValue]];

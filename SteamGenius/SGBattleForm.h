@@ -8,20 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "FXForms.h"
-#import "Model.h"
-#import "Caster.h"
+#import "Faction.h"
+#import "Opponent.h"
+#import "Result.h"
+#import "Scenario.h"
+#import "Event.h"
 
 @interface SGBattleForm : NSObject <FXForm>
 
 @property (nonatomic, strong) Caster *playerCaster;
-@property (nonatomic, copy) Caster *opponentCaster;
-//@property (nonatomic, copy) Opponent *opponent;
-@property (nonatomic, copy) NSDate *date;
-@property (nonatomic, copy) NSNumber *points;
-//@property (nonatomic, copy) Result *result;
-@property (nonatomic, copy) NSNumber *killPoints;
-//@property (nonatomic, copy) Scenario *scenario;
+@property (nonatomic, strong) Caster *opponentCaster;
+@property (nonatomic, copy) Opponent *opponent;
+@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, strong) NSNumber *pointSize;
+@property (nonatomic, copy) Result *result;
+@property (nonatomic, strong) NSNumber *killPoints;
+@property (nonatomic, copy) Scenario *scenario;
 @property (nonatomic, copy) NSNumber *controlPoints;
-//@property (nonatomic, copy) Event *event;
+@property (nonatomic, copy) Event *event;
 
 @end

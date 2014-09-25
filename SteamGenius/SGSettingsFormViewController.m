@@ -15,8 +15,7 @@
 
 @implementation SGSettingsFormViewController
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     self.formController.form = [[SGSettingsForm alloc] init];
 }

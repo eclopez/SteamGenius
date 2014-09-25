@@ -9,12 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "FXForms.h"
 #import "Faction.h"
-#import "SGFactionOptionsTableViewController.h"
 
-@interface SGCasterOptionsTableViewController : UITableViewController <FXFormFieldViewController>
+@interface SGCasterOptionsTableViewController : UITableViewController <FXFormFieldViewController, NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) FXFormField *field;
 @property (strong, nonatomic) Faction *faction;
-@property (strong, nonatomic) SGFactionOptionsTableViewController *parent;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

@@ -15,10 +15,13 @@
 
 @implementation SGBattleFormViewController
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     self.formController.form = [[SGBattleForm alloc] init];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidLoad {
