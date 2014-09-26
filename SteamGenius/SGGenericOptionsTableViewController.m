@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import "SGGenericOptionsTableViewController.h"
 
 @interface SGGenericOptionsTableViewController ()
@@ -34,26 +35,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.field.optionCount;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"OptionCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
+    if (self.field.optionCount > 0) {
+        NSManagedObject *obj = [self.field optionAtIndex:indexPath.row];
+        cell.textLabel.text = [obj valueForKey:@"name"];
+    }
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

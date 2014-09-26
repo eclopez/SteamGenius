@@ -11,6 +11,7 @@
 #import "SGGenericRepository.h"
 #import "Caster.h"
 #import "Model.h"
+#import "Result.h"
 #import "SGFactionOptionsTableViewController.h"
 #import "SGGenericOptionsTableViewController.h"
 
@@ -20,7 +21,7 @@
     return @{ FXFormFieldHeader: @"Player Info",
               FXFormFieldTitle: @"Caster",
               FXFormFieldViewController: @"SGFactionOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKey:@"name" ascending:NO] };
+              FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKeys:@{ @"name": [NSNumber numberWithBool:NO] }] };
 }
 
 - (NSString *)playerCasterFieldDescription {
@@ -31,7 +32,7 @@
     return @{ FXFormFieldHeader: @"Opponent Info",
               FXFormFieldTitle: @"Caster",
               FXFormFieldViewController: @"SGFactionOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKey:@"name" ascending:NO] };
+              FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKeys:@{ @"name": [NSNumber numberWithBool:NO] }] };
 }
 
 - (NSString *)opponentCasterFieldDescription {
@@ -40,7 +41,7 @@
 
 - (NSDictionary *)opponentField {
     return @{ FXFormFieldViewController: @"SGGenericOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Opponent" sortKey:@"name" ascending:YES]};
+              FXFormFieldOptions: [self sortedObjectArray:@"Opponent" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }] };
 }
 
 - (NSDictionary *)dateField {
@@ -53,8 +54,16 @@
 }
 
 - (NSDictionary *)resultField {
-    return @{ FXFormFieldViewController: @"SGGenericOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Result" sortKey:@"name" ascending:YES]};
+    NSString *(^resultValueTransformer)(id) = ^(id value) {
+        return value ? ((Result *)value).name : nil;
+    };
+    
+    return @{ FXFormFieldOptions: [self sortedObjectArray:@"Result" sortKeys:@{ @"displayOrder": [NSNumber numberWithBool:YES] }],
+              FXFormFieldValueTransformer: resultValueTransformer };
+}
+
+- (NSString *)resultFieldDescription {
+    return self.result ? self.result.name : nil;
 }
 
 - (NSDictionary *)killPointsField {
@@ -64,7 +73,7 @@
 
 - (NSDictionary *)scenarioField {
     return @{ FXFormFieldViewController: @"SGGenericOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Scenario" sortKey:@"name" ascending:YES]};
+              FXFormFieldOptions: [self sortedObjectArray:@"Scenario" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }] };
 }
 
 - (NSDictionary *)controlPointsField {
@@ -73,15 +82,18 @@
 
 - (NSDictionary *)eventField {
     return @{ FXFormFieldViewController: @"SGGenericOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Event" sortKey:@"name" ascending:YES]};
+              FXFormFieldOptions: [self sortedObjectArray:@"Event" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }] };
 }
 
 #pragma mark - Class Methods
 
-- (NSArray *)sortedObjectArray:(NSString *)entityName sortKey:(NSString *)sortKey ascending:(BOOL)ascending {
+- (NSArray *)sortedObjectArray:(NSString *)entityName sortKeys:(NSDictionary *)sortKeys {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSSortDescriptor *sort = sortKey ? [[NSSortDescriptor alloc] initWithKey:sortKey ascending:ascending] : nil;
-    return [[SGGenericRepository findAllEntitiesOfType:entityName context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:@[sort]];
+    NSMutableArray *sortDescriptors = [[NSMutableArray alloc] init];
+    for (id sortKey in sortKeys) {
+        [sortDescriptors addObject:[[NSSortDescriptor alloc] initWithKey:sortKey ascending:[[sortKeys objectForKey:sortKey] boolValue]]];
+    }
+    return [[SGGenericRepository findAllEntitiesOfType:entityName context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 @end

@@ -92,7 +92,7 @@
                     <navigationItem key="navigationItem" title="Battles" id="TM2-mf-tzr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="G8p-dJ-fP8">
                             <connections>
-                                <segue destination="ucP-BG-5wY" kind="presentation" id="HaL-5f-Nuh"/>
+                                <segue destination="ucP-BG-5wY" kind="presentation" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="HaL-5f-Nuh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

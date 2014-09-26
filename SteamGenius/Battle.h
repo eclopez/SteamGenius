@@ -2,7 +2,7 @@
 //  Battle.h
 //  SteamGenius
 //
-//  Created by Erik Lopez on 9/19/14.
+//  Created by Erik Lopez on 9/25/14.
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSNumber * killPoints;
 @property (nonatomic, retain) NSNumber * points;
+@property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) Event *event;
 @property (nonatomic, retain) Opponent *opponent;
 @property (nonatomic, retain) Caster *opponentCaster;

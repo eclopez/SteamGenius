@@ -5,6 +5,7 @@
         <attribute name="controlPoints" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <attribute name="date" attributeType="Date" syncable="YES"/>
         <attribute name="killPoints" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="points" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="battles" inverseEntity="Event" syncable="YES"/>
         <relationship name="opponent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Opponent" inverseName="battles" inverseEntity="Opponent" syncable="YES"/>
@@ -68,7 +69,7 @@
     </entity>
     <fetchRequest name="GlobalBattleFetch" entity="Battle" predicateString="playerCaster.faction IN $FACTIONS AND (NOT playerCaster.faction IN $OMIT_FACTIONS)"/>
     <elements>
-        <element name="Battle" positionX="378" positionY="213" width="128" height="210"/>
+        <element name="Battle" positionX="378" positionY="213" width="128" height="223"/>
         <element name="Caster" positionX="169" positionY="288" width="128" height="103"/>
         <element name="DataVersion" positionX="-47" positionY="-102" width="128" height="75"/>
         <element name="Event" positionX="574" positionY="153" width="128" height="120"/>

@@ -41,6 +41,7 @@
 		0349E2DE19C1D9300091FF21 /* SGBattleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2DD19C1D9300091FF21 /* SGBattleListViewController.m */; };
 		0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0349E2E619C2C3520091FF21 /* SGTheme.plist */; };
 		0369594919D4D1BB0096CEBC /* SGGenericOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369594819D4D1BB0096CEBC /* SGGenericOptionsTableViewController.m */; };
+		0369594C19D501040096CEBC /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369594B19D501040096CEBC /* Battle.m */; };
 		038DAAC319CCE67D00A224F7 /* Caster.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038DAAC219CCE67D00A224F7 /* Caster.plist */; };
 		038DAAC719CCFC3400A224F7 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC619CCFC3400A224F7 /* Game.m */; };
 		038DAACA19CCFC3400A224F7 /* Caster.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC919CCFC3400A224F7 /* Caster.m */; };
@@ -48,7 +49,6 @@
 		038DAAD019CCFC3400A224F7 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAACF19CCFC3400A224F7 /* Result.m */; };
 		038DAAD319CCFC3400A224F7 /* Scenario.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAD219CCFC3400A224F7 /* Scenario.m */; };
 		038DAAD619CCFC3400A224F7 /* DataVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAD519CCFC3400A224F7 /* DataVersion.m */; };
-		038DAAD919CCFC3400A224F7 /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAD819CCFC3400A224F7 /* Battle.m */; };
 		038DAADC19CCFC3400A224F7 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAADB19CCFC3400A224F7 /* Event.m */; };
 		038DAADF19CCFC3400A224F7 /* Opponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAADE19CCFC3400A224F7 /* Opponent.m */; };
 		038DAAE219CCFC3400A224F7 /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAE119CCFC3400A224F7 /* Faction.m */; };
@@ -123,6 +123,8 @@
 		0349E2E619C2C3520091FF21 /* SGTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGTheme.plist; sourceTree = "<group>"; };
 		0369594719D4D1BB0096CEBC /* SGGenericOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGenericOptionsTableViewController.h; sourceTree = "<group>"; };
 		0369594819D4D1BB0096CEBC /* SGGenericOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGenericOptionsTableViewController.m; sourceTree = "<group>"; };
+		0369594A19D501040096CEBC /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
+		0369594B19D501040096CEBC /* Battle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Battle.m; sourceTree = "<group>"; };
 		038DAAC219CCE67D00A224F7 /* Caster.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Caster.plist; sourceTree = "<group>"; };
 		038DAAC519CCFC3300A224F7 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		038DAAC619CCFC3400A224F7 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
@@ -136,8 +138,6 @@
 		038DAAD219CCFC3400A224F7 /* Scenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scenario.m; sourceTree = "<group>"; };
 		038DAAD419CCFC3400A224F7 /* DataVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVersion.h; sourceTree = "<group>"; };
 		038DAAD519CCFC3400A224F7 /* DataVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVersion.m; sourceTree = "<group>"; };
-		038DAAD719CCFC3400A224F7 /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
-		038DAAD819CCFC3400A224F7 /* Battle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Battle.m; sourceTree = "<group>"; };
 		038DAADA19CCFC3400A224F7 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		038DAADB19CCFC3400A224F7 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		038DAADD19CCFC3400A224F7 /* Opponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opponent.h; sourceTree = "<group>"; };
@@ -415,8 +415,8 @@
 				038DAADE19CCFC3400A224F7 /* Opponent.m */,
 				038DAADA19CCFC3400A224F7 /* Event.h */,
 				038DAADB19CCFC3400A224F7 /* Event.m */,
-				038DAAD719CCFC3400A224F7 /* Battle.h */,
-				038DAAD819CCFC3400A224F7 /* Battle.m */,
+				0369594A19D501040096CEBC /* Battle.h */,
+				0369594B19D501040096CEBC /* Battle.m */,
 				038DAAD419CCFC3400A224F7 /* DataVersion.h */,
 				038DAAD519CCFC3400A224F7 /* DataVersion.m */,
 				038DAAD119CCFC3400A224F7 /* Scenario.h */,
@@ -650,7 +650,6 @@
 				031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */,
 				038DAAF019CD4A0300A224F7 /* SGRepository.m in Sources */,
 				038DAAF819CDE8C500A224F7 /* SGBattleFormViewController.m in Sources */,
-				038DAAD919CCFC3400A224F7 /* Battle.m in Sources */,
 				0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */,
 				038DAAC719CCFC3400A224F7 /* Game.m in Sources */,
 				038DAADC19CCFC3400A224F7 /* Event.m in Sources */,
@@ -673,6 +672,7 @@
 				031D6AC919CF5F49000B7D26 /* SGFactionOptionsTableViewController.m in Sources */,
 				031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */,
 				0349E2DE19C1D9300091FF21 /* SGBattleListViewController.m in Sources */,
+				0369594C19D501040096CEBC /* Battle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

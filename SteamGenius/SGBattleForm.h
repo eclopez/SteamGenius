@@ -21,10 +21,12 @@
 @property (nonatomic, copy) Opponent *opponent;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSNumber *pointSize;
-@property (nonatomic, copy) Result *result;
+@property (nonatomic, strong) Result *result;
 @property (nonatomic, strong) NSNumber *killPoints;
 @property (nonatomic, copy) Scenario *scenario;
 @property (nonatomic, copy) NSNumber *controlPoints;
 @property (nonatomic, copy) Event *event;
+
+- (NSArray *)sortedObjectArray:(NSString *)entityName sortKeys:(NSDictionary *)sortKeys;
 
 @end
