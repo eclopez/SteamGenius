@@ -40,8 +40,16 @@
 		0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2D619C1805E0091FF21 /* SGSettingsManager.m */; };
 		0349E2DE19C1D9300091FF21 /* SGBattleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2DD19C1D9300091FF21 /* SGBattleListViewController.m */; };
 		0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0349E2E619C2C3520091FF21 /* SGTheme.plist */; };
-		0369594919D4D1BB0096CEBC /* SGGenericOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369594819D4D1BB0096CEBC /* SGGenericOptionsTableViewController.m */; };
+		0369594919D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369594819D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.m */; };
 		0369594C19D501040096CEBC /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369594B19D501040096CEBC /* Battle.m */; };
+		0369595419D5418B0096CEBC /* SGOpponentForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369595319D5418B0096CEBC /* SGOpponentForm.m */; };
+		0369595819D542860096CEBC /* SGOpponentFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369595719D542860096CEBC /* SGOpponentFormViewController.m */; };
+		0369595E19D5F4680096CEBC /* SGGenericOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369595D19D5F4680096CEBC /* SGGenericOptionsTableViewController.m */; };
+		0369596319D5F9640096CEBC /* SGScenarioForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369596219D5F9640096CEBC /* SGScenarioForm.m */; };
+		0369596619D5F9AE0096CEBC /* SGScenarioFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369596519D5F9AE0096CEBC /* SGScenarioFormViewController.m */; };
+		0369596A19D5FC0B0096CEBC /* SGEventForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369596919D5FC0B0096CEBC /* SGEventForm.m */; };
+		0369596E19D6041C0096CEBC /* SGEventFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369596D19D6041C0096CEBC /* SGEventFormViewController.m */; };
+		0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369597119D621830096CEBC /* SGLongPressTableViewCell.m */; };
 		038DAAC319CCE67D00A224F7 /* Caster.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038DAAC219CCE67D00A224F7 /* Caster.plist */; };
 		038DAAC719CCFC3400A224F7 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC619CCFC3400A224F7 /* Game.m */; };
 		038DAACA19CCFC3400A224F7 /* Caster.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC919CCFC3400A224F7 /* Caster.m */; };
@@ -121,10 +129,26 @@
 		0349E2DC19C1D9300091FF21 /* SGBattleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleListViewController.h; sourceTree = "<group>"; };
 		0349E2DD19C1D9300091FF21 /* SGBattleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleListViewController.m; sourceTree = "<group>"; };
 		0349E2E619C2C3520091FF21 /* SGTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGTheme.plist; sourceTree = "<group>"; };
-		0369594719D4D1BB0096CEBC /* SGGenericOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGenericOptionsTableViewController.h; sourceTree = "<group>"; };
-		0369594819D4D1BB0096CEBC /* SGGenericOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGenericOptionsTableViewController.m; sourceTree = "<group>"; };
+		0369594719D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGenericAddOptionsTableViewController.h; sourceTree = "<group>"; };
+		0369594819D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGenericAddOptionsTableViewController.m; sourceTree = "<group>"; };
 		0369594A19D501040096CEBC /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
 		0369594B19D501040096CEBC /* Battle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Battle.m; sourceTree = "<group>"; };
+		0369595219D5418B0096CEBC /* SGOpponentForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGOpponentForm.h; sourceTree = "<group>"; };
+		0369595319D5418B0096CEBC /* SGOpponentForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGOpponentForm.m; sourceTree = "<group>"; };
+		0369595619D542860096CEBC /* SGOpponentFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGOpponentFormViewController.h; sourceTree = "<group>"; };
+		0369595719D542860096CEBC /* SGOpponentFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGOpponentFormViewController.m; sourceTree = "<group>"; };
+		0369595C19D5F4680096CEBC /* SGGenericOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGenericOptionsTableViewController.h; sourceTree = "<group>"; };
+		0369595D19D5F4680096CEBC /* SGGenericOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGenericOptionsTableViewController.m; sourceTree = "<group>"; };
+		0369596119D5F9640096CEBC /* SGScenarioForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScenarioForm.h; sourceTree = "<group>"; };
+		0369596219D5F9640096CEBC /* SGScenarioForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScenarioForm.m; sourceTree = "<group>"; };
+		0369596419D5F9AE0096CEBC /* SGScenarioFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScenarioFormViewController.h; sourceTree = "<group>"; };
+		0369596519D5F9AE0096CEBC /* SGScenarioFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScenarioFormViewController.m; sourceTree = "<group>"; };
+		0369596819D5FC0B0096CEBC /* SGEventForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEventForm.h; sourceTree = "<group>"; };
+		0369596919D5FC0B0096CEBC /* SGEventForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEventForm.m; sourceTree = "<group>"; };
+		0369596C19D6041C0096CEBC /* SGEventFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEventFormViewController.h; sourceTree = "<group>"; };
+		0369596D19D6041C0096CEBC /* SGEventFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEventFormViewController.m; sourceTree = "<group>"; };
+		0369597019D621830096CEBC /* SGLongPressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLongPressTableViewCell.h; sourceTree = "<group>"; };
+		0369597119D621830096CEBC /* SGLongPressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLongPressTableViewCell.m; sourceTree = "<group>"; };
 		038DAAC219CCE67D00A224F7 /* Caster.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Caster.plist; sourceTree = "<group>"; };
 		038DAAC519CCFC3300A224F7 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		038DAAC619CCFC3400A224F7 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
@@ -181,8 +205,10 @@
 		031D6A7019CE0BAF000B7D26 /* Form View */ = {
 			isa = PBXGroup;
 			children = (
-				038DAAF619CDE8C500A224F7 /* SGBattleFormViewController.h */,
-				038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */,
+				0369595A19D5B8640096CEBC /* Battle */,
+				0369595B19D5B86E0096CEBC /* Opponent */,
+				0369595F19D5F9240096CEBC /* Scenario */,
+				0369596B19D603F00096CEBC /* Event */,
 			);
 			name = "Form View";
 			sourceTree = "<group>";
@@ -196,13 +222,13 @@
 			name = "Form Model";
 			sourceTree = "<group>";
 		};
-		031D6A9719CE9FC8000B7D26 /* Options */ = {
+		031D6A9719CE9FC8000B7D26 /* Custom Options Views */ = {
 			isa = PBXGroup;
 			children = (
 				031D6ACA19CF6A07000B7D26 /* Faction */,
 				031D6ACB19CF6A11000B7D26 /* Caster */,
 			);
-			name = Options;
+			name = "Custom Options Views";
 			sourceTree = "<group>";
 		};
 		031D6A9B19CEA412000B7D26 /* Images */ = {
@@ -227,8 +253,8 @@
 		031D6AB419CEA5A6000B7D26 /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
-				031D6AB519CEA5D0000B7D26 /* SGResizableImageViewCell.h */,
-				031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */,
+				0369597419D623260096CEBC /* Long Press Gesture Cell */,
+				0369597319D6231C0096CEBC /* Resizable Image Cell */,
 			);
 			name = "Reusable Components";
 			sourceTree = "<group>";
@@ -400,10 +426,118 @@
 		0369594319D4D1710096CEBC /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
-				0369594719D4D1BB0096CEBC /* SGGenericOptionsTableViewController.h */,
-				0369594819D4D1BB0096CEBC /* SGGenericOptionsTableViewController.m */,
+				0369597619D6234F0096CEBC /* Options */,
+				0369597519D623400096CEBC /* Options with Add */,
 			);
 			name = "Reusable Components";
+			sourceTree = "<group>";
+		};
+		0369595519D5418F0096CEBC /* Opponent */ = {
+			isa = PBXGroup;
+			children = (
+				0369595219D5418B0096CEBC /* SGOpponentForm.h */,
+				0369595319D5418B0096CEBC /* SGOpponentForm.m */,
+			);
+			name = Opponent;
+			sourceTree = "<group>";
+		};
+		0369595919D5B84F0096CEBC /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				038DAAF219CDE70C00A224F7 /* SGBattleForm.h */,
+				038DAAF319CDE70C00A224F7 /* SGBattleForm.m */,
+			);
+			name = Battle;
+			sourceTree = "<group>";
+		};
+		0369595A19D5B8640096CEBC /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				038DAAF619CDE8C500A224F7 /* SGBattleFormViewController.h */,
+				038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */,
+			);
+			name = Battle;
+			sourceTree = "<group>";
+		};
+		0369595B19D5B86E0096CEBC /* Opponent */ = {
+			isa = PBXGroup;
+			children = (
+				0369595619D542860096CEBC /* SGOpponentFormViewController.h */,
+				0369595719D542860096CEBC /* SGOpponentFormViewController.m */,
+			);
+			name = Opponent;
+			sourceTree = "<group>";
+		};
+		0369595F19D5F9240096CEBC /* Scenario */ = {
+			isa = PBXGroup;
+			children = (
+				0369596419D5F9AE0096CEBC /* SGScenarioFormViewController.h */,
+				0369596519D5F9AE0096CEBC /* SGScenarioFormViewController.m */,
+			);
+			name = Scenario;
+			sourceTree = "<group>";
+		};
+		0369596019D5F94C0096CEBC /* Scenario */ = {
+			isa = PBXGroup;
+			children = (
+				0369596119D5F9640096CEBC /* SGScenarioForm.h */,
+				0369596219D5F9640096CEBC /* SGScenarioForm.m */,
+			);
+			name = Scenario;
+			sourceTree = "<group>";
+		};
+		0369596719D5FBEF0096CEBC /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				0369596819D5FC0B0096CEBC /* SGEventForm.h */,
+				0369596919D5FC0B0096CEBC /* SGEventForm.m */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
+		0369596B19D603F00096CEBC /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				0369596C19D6041C0096CEBC /* SGEventFormViewController.h */,
+				0369596D19D6041C0096CEBC /* SGEventFormViewController.m */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
+		0369597319D6231C0096CEBC /* Resizable Image Cell */ = {
+			isa = PBXGroup;
+			children = (
+				031D6AB519CEA5D0000B7D26 /* SGResizableImageViewCell.h */,
+				031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */,
+			);
+			name = "Resizable Image Cell";
+			sourceTree = "<group>";
+		};
+		0369597419D623260096CEBC /* Long Press Gesture Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0369597019D621830096CEBC /* SGLongPressTableViewCell.h */,
+				0369597119D621830096CEBC /* SGLongPressTableViewCell.m */,
+			);
+			name = "Long Press Gesture Cell";
+			sourceTree = "<group>";
+		};
+		0369597519D623400096CEBC /* Options with Add */ = {
+			isa = PBXGroup;
+			children = (
+				0369594719D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.h */,
+				0369594819D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.m */,
+			);
+			name = "Options with Add";
+			sourceTree = "<group>";
+		};
+		0369597619D6234F0096CEBC /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				0369595C19D5F4680096CEBC /* SGGenericOptionsTableViewController.h */,
+				0369595D19D5F4680096CEBC /* SGGenericOptionsTableViewController.m */,
+			);
+			name = Options;
 			sourceTree = "<group>";
 		};
 		038DAAC419CCFBBD00A224F7 /* Entity Classes */ = {
@@ -457,8 +591,10 @@
 		038DAAF119CDE65E00A224F7 /* Form Model */ = {
 			isa = PBXGroup;
 			children = (
-				038DAAF219CDE70C00A224F7 /* SGBattleForm.h */,
-				038DAAF319CDE70C00A224F7 /* SGBattleForm.m */,
+				0369595919D5B84F0096CEBC /* Battle */,
+				0369595519D5418F0096CEBC /* Opponent */,
+				0369596019D5F94C0096CEBC /* Scenario */,
+				0369596719D5FBEF0096CEBC /* Event */,
 			);
 			name = "Form Model";
 			sourceTree = "<group>";
@@ -469,7 +605,7 @@
 				0369594319D4D1710096CEBC /* Reusable Components */,
 				038DAAF119CDE65E00A224F7 /* Form Model */,
 				031D6A7019CE0BAF000B7D26 /* Form View */,
-				031D6A9719CE9FC8000B7D26 /* Options */,
+				031D6A9719CE9FC8000B7D26 /* Custom Options Views */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -645,6 +781,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0369596A19D5FC0B0096CEBC /* SGEventForm.m in Sources */,
 				038DAAD619CCFC3400A224F7 /* DataVersion.m in Sources */,
 				0349E2B719C17F510091FF21 /* DetailViewController.m in Sources */,
 				031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */,
@@ -658,21 +795,28 @@
 				038DAACA19CCFC3400A224F7 /* Caster.m in Sources */,
 				0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */,
 				0325713819C491B300634776 /* SteamGenius.xcdatamodeld in Sources */,
+				0369596319D5F9640096CEBC /* SGScenarioForm.m in Sources */,
 				038DAAD319CCFC3400A224F7 /* Scenario.m in Sources */,
 				0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */,
+				0369596E19D6041C0096CEBC /* SGEventFormViewController.m in Sources */,
 				0349E2AB19C17F510091FF21 /* main.m in Sources */,
 				038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */,
 				038DAACD19CCFC3400A224F7 /* Model.m in Sources */,
+				0369595819D542860096CEBC /* SGOpponentFormViewController.m in Sources */,
+				0369596619D5F9AE0096CEBC /* SGScenarioFormViewController.m in Sources */,
 				038DAAD019CCFC3400A224F7 /* Result.m in Sources */,
 				0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */,
+				0369595E19D5F4680096CEBC /* SGGenericOptionsTableViewController.m in Sources */,
 				038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */,
-				0369594919D4D1BB0096CEBC /* SGGenericOptionsTableViewController.m in Sources */,
+				0369594919D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.m in Sources */,
 				038DAAE619CCFDBB00A224F7 /* SGGenericRepository.m in Sources */,
 				038DAAE219CCFC3400A224F7 /* Faction.m in Sources */,
+				0369595419D5418B0096CEBC /* SGOpponentForm.m in Sources */,
 				031D6AC919CF5F49000B7D26 /* SGFactionOptionsTableViewController.m in Sources */,
 				031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */,
 				0349E2DE19C1D9300091FF21 /* SGBattleListViewController.m in Sources */,
 				0369594C19D501040096CEBC /* Battle.m in Sources */,
+				0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

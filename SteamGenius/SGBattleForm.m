@@ -13,6 +13,7 @@
 #import "Model.h"
 #import "Result.h"
 #import "SGFactionOptionsTableViewController.h"
+#import "SGGenericAddOptionsTableViewController.h"
 #import "SGGenericOptionsTableViewController.h"
 
 @implementation SGBattleForm
@@ -40,8 +41,12 @@
 }
 
 - (NSDictionary *)opponentField {
-    return @{ FXFormFieldViewController: @"SGGenericOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Opponent" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }] };
+    return @{ FXFormFieldViewController: @"SGGenericAddOptionsTableViewController",
+              FXFormFieldOptions: @[ ] };
+}
+
+- (NSString *)opponentFieldDescription {
+    return self.opponent ? self.opponent.name : nil;
 }
 
 - (NSDictionary *)dateField {
@@ -58,7 +63,8 @@
         return value ? ((Result *)value).name : nil;
     };
     
-    return @{ FXFormFieldOptions: [self sortedObjectArray:@"Result" sortKeys:@{ @"displayOrder": [NSNumber numberWithBool:YES] }],
+    return @{ FXFormFieldViewController: @"SGGenericOptionsTableViewController",
+              FXFormFieldOptions: [self sortedObjectArray:@"Result" sortKeys:@{ @"displayOrder": [NSNumber numberWithBool:YES] }],
               FXFormFieldValueTransformer: resultValueTransformer };
 }
 
@@ -72,8 +78,13 @@
 }
 
 - (NSDictionary *)scenarioField {
-    return @{ FXFormFieldViewController: @"SGGenericOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Scenario" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }] };
+    NSString *(^scenarioValueTransformer)(id) = ^(id value) {
+        return value ? ((Scenario *)value).name : nil;
+    };
+    
+    return @{ FXFormFieldViewController: @"SGGenericAddOptionsTableViewController",
+              FXFormFieldOptions: [self sortedObjectArray:@"Scenario" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
+              FXFormFieldValueTransformer: scenarioValueTransformer};
 }
 
 - (NSDictionary *)controlPointsField {
@@ -81,8 +92,12 @@
 }
 
 - (NSDictionary *)eventField {
-    return @{ FXFormFieldViewController: @"SGGenericOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Event" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }] };
+    return @{ FXFormFieldViewController: @"SGGenericAddOptionsTableViewController",
+              FXFormFieldOptions: [self sortedObjectArray:@"Event" sortKeys:@{ @"date": [NSNumber numberWithBool:NO] }] };
+}
+
+- (NSString *)eventFieldDescription {
+    return self.event ? self.event.name : nil;
 }
 
 #pragma mark - Class Methods

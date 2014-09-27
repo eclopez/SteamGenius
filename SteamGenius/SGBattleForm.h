@@ -18,14 +18,14 @@
 
 @property (nonatomic, strong) Caster *playerCaster;
 @property (nonatomic, strong) Caster *opponentCaster;
-@property (nonatomic, copy) Opponent *opponent;
+@property (nonatomic, strong) Opponent *opponent;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSNumber *pointSize;
 @property (nonatomic, strong) Result *result;
 @property (nonatomic, strong) NSNumber *killPoints;
-@property (nonatomic, copy) Scenario *scenario;
-@property (nonatomic, copy) NSNumber *controlPoints;
-@property (nonatomic, copy) Event *event;
+@property (nonatomic, strong) Scenario *scenario;
+@property (nonatomic, strong) NSNumber *controlPoints;
+@property (nonatomic, strong) Event *event;
 
 - (NSArray *)sortedObjectArray:(NSString *)entityName sortKeys:(NSDictionary *)sortKeys;
 

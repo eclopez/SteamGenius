@@ -10,6 +10,4 @@
 
 @interface SGBattleFormViewController : FXFormViewController <FXFormFieldViewController>
 
-@property (strong, nonatomic) FXFormField *field;
-
 @end
