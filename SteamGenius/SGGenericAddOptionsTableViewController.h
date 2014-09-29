@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 #import "FXForms.h"
 #import "SGLongPressTableViewCell.h"
 
 @interface SGGenericAddOptionsTableViewController : UITableViewController <FXFormFieldViewController, NSFetchedResultsControllerDelegate, SGLongPressTableViewCellDelegate>
 
+@property (strong, nonatomic) AppDelegate *appDelegate;
 @property (nonatomic, strong) FXFormField *field;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) UILongPressGestureRecognizer *longPressRecognizer;

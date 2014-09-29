@@ -30,6 +30,8 @@
 		0325714219C49AD900634776 /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325714119C49AD900634776 /* Model.plist */; };
 		0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715519C7DB1F00634776 /* SGSettingsForm.m */; };
 		0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715819C7DE1000634776 /* SGSettingsFormViewController.m */; };
+		032C1CF819D7D8F400FBDB49 /* SGBattleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C1CF719D7D8F400FBDB49 /* SGBattleCell.m */; };
+		032C1CFA19D7D95500FBDB49 /* SGBattleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032C1CF919D7D95500FBDB49 /* SGBattleCell.xib */; };
 		0349E2AB19C17F510091FF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AA19C17F510091FF21 /* main.m */; };
 		0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AD19C17F510091FF21 /* AppDelegate.m */; };
 		0349E2B719C17F510091FF21 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2B619C17F510091FF21 /* DetailViewController.m */; };
@@ -110,6 +112,9 @@
 		0325715519C7DB1F00634776 /* SGSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsForm.m; sourceTree = "<group>"; };
 		0325715719C7DE1000634776 /* SGSettingsFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSettingsFormViewController.h; sourceTree = "<group>"; };
 		0325715819C7DE1000634776 /* SGSettingsFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsFormViewController.m; sourceTree = "<group>"; };
+		032C1CF619D7D8F400FBDB49 /* SGBattleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleCell.h; sourceTree = "<group>"; };
+		032C1CF719D7D8F400FBDB49 /* SGBattleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleCell.m; sourceTree = "<group>"; };
+		032C1CF919D7D95500FBDB49 /* SGBattleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGBattleCell.xib; sourceTree = "<group>"; };
 		0349E2A519C17F510091FF21 /* SteamGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteamGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0349E2A919C17F510091FF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0349E2AA19C17F510091FF21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -317,6 +322,16 @@
 			name = "Raw Data";
 			sourceTree = "<group>";
 		};
+		032C1CF519D7D87900FBDB49 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				032C1CF619D7D8F400FBDB49 /* SGBattleCell.h */,
+				032C1CF719D7D8F400FBDB49 /* SGBattleCell.m */,
+				032C1CF919D7D95500FBDB49 /* SGBattleCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		0335019C19C33A0B004AA293 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +441,7 @@
 		0369594319D4D1710096CEBC /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
+				032C1CF519D7D87900FBDB49 /* Cells */,
 				0369597619D6234F0096CEBC /* Options */,
 				0369597519D623400096CEBC /* Options with Add */,
 			);
@@ -711,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				031D6AAE19CEA463000B7D26 /* Mercenaries.png in Resources */,
+				032C1CFA19D7D95500FBDB49 /* SGBattleCell.xib in Resources */,
 				0325714019C4987C00634776 /* Result.plist in Resources */,
 				038DAAC319CCE67D00A224F7 /* Caster.plist in Resources */,
 				0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */,
@@ -816,6 +833,7 @@
 				031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */,
 				0349E2DE19C1D9300091FF21 /* SGBattleListViewController.m in Sources */,
 				0369594C19D501040096CEBC /* Battle.m in Sources */,
+				032C1CF819D7D8F400FBDB49 /* SGBattleCell.m in Sources */,
 				0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

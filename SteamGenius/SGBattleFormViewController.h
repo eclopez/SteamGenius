@@ -7,7 +7,10 @@
 //
 
 #import "FXForms.h"
+#import "Battle.h"
 
 @interface SGBattleFormViewController : FXFormViewController <FXFormFieldViewController>
+
+@property (strong, nonatomic) Battle *battle;
 
 @end

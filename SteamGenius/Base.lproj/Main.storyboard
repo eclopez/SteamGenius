@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Detail-->
@@ -67,6 +68,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Mkm-dv-6db">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mA8-cm-lBj" id="H23-zN-aJY"/>
+                                    <outlet property="delegate" destination="mA8-cm-lBj" id="euR-gK-Fcd"/>
+                                </connections>
+                            </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMq-VD-2F5">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
@@ -84,10 +93,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Mkm-dv-6db" firstAttribute="leading" secondItem="91h-tJ-wzM" secondAttribute="leading" id="2kq-di-Ceq"/>
+                            <constraint firstItem="Mkm-dv-6db" firstAttribute="top" secondItem="91h-tJ-wzM" secondAttribute="topMargin" id="J0U-UC-db7"/>
                             <constraint firstAttribute="trailing" secondItem="MMq-VD-2F5" secondAttribute="trailing" id="Puq-Lq-1Lt"/>
+                            <constraint firstItem="MMq-VD-2F5" firstAttribute="top" secondItem="Mkm-dv-6db" secondAttribute="bottom" id="VP8-Do-cWD"/>
                             <constraint firstItem="MMq-VD-2F5" firstAttribute="leading" secondItem="91h-tJ-wzM" secondAttribute="leading" id="cW2-pY-tcz"/>
+                            <constraint firstAttribute="trailing" secondItem="Mkm-dv-6db" secondAttribute="trailing" id="cZn-nP-OJn"/>
                             <constraint firstItem="7rd-j8-bVV" firstAttribute="top" secondItem="MMq-VD-2F5" secondAttribute="bottom" id="n3V-1o-lRi"/>
+                            <constraint firstItem="7rd-j8-bVV" firstAttribute="top" secondItem="Mkm-dv-6db" secondAttribute="bottom" id="z5w-ga-MI3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="z5w-ga-MI3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Battles" id="TM2-mf-tzr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="G8p-dJ-fP8">
@@ -96,6 +115,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Mkm-dv-6db" id="I2P-7P-6Lz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRo-yx-L2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +218,11 @@
                                 <segue destination="MQg-UV-Mm8" kind="custom" customClass="SGDismissSegue" id="htY-Su-P9n"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zbq-3J-fPM"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zbq-3J-fPM">
+                            <connections>
+                                <action selector="saveBattle:" destination="XMl-3U-Ejy" id="Asr-Lp-wW7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHd-f5-8eQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
