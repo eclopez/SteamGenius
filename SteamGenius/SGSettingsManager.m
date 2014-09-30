@@ -34,6 +34,18 @@ static NSInteger const defaultTheme = 0;
     }
 }
 
++ (UIColor *)getTableColor {
+    NSString *themeFile = [[NSBundle mainBundle] pathForResource:@"SGTheme" ofType:@"plist"];
+    NSArray *themes = [NSArray arrayWithContentsOfFile:themeFile];
+    NSDictionary *currentTheme = [themes objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"theme"] intValue]];
+    
+    NSDictionary *table = [currentTheme valueForKey:@"barColor"];
+    return [UIColor colorWithRed:[[table valueForKey:@"red"] floatValue]/255.f
+                           green:[[table valueForKey:@"green"] floatValue]/255.f
+                            blue:[[table valueForKey:@"blue"] floatValue]/255.f
+                           alpha:[[table valueForKey:@"alpha"] floatValue]];
+}
+
 #pragma mark - Private Methods
 
 + (void)registerDefaultPreferences {
@@ -58,9 +70,6 @@ static NSInteger const defaultTheme = 0;
     NSDictionary *text = [currentTheme valueForKey:@"textColor"];
     UIColor *textColor = [UIColor colorWithRed:[[text valueForKey:@"red"] floatValue]/255.f green:[[text valueForKey:@"green"] floatValue]/255.f blue:[[text valueForKey:@"blue"] floatValue]/255.f alpha:[[text valueForKey:@"alpha"] floatValue]];
     
-    NSDictionary *table = [currentTheme valueForKey:@"tableColor"];
-    UIColor *tableColor = [UIColor colorWithRed:[[table valueForKey:@"red"] floatValue]/255.f green:[[table valueForKey:@"green"] floatValue]/255.f blue:[[table valueForKey:@"blue"] floatValue]/255.f alpha:[[table valueForKey:@"alpha"] floatValue]];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:[[currentTheme valueForKey:@"statusBarStyle"] intValue]];
     
     NSDictionary *navBarAttributes = @{ NSForegroundColorAttributeName : textColor,
@@ -71,8 +80,6 @@ static NSInteger const defaultTheme = 0;
     
     [[UIToolbar appearance] setBarTintColor:barColor];
     [[UIToolbar appearance] setTintColor:tintColor];
-    
-    [[UITableView appearanceWhenContainedIn:[SGBattleListViewController class], nil] setBackgroundColor:tableColor];
 }
 
 @end

@@ -14,8 +14,10 @@
 @property (strong, nonatomic) Battle *battle;
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgBackground;
-
 @property (strong, nonatomic) IBOutlet UILabel *lblDate;
+
+@property (strong, nonatomic) IBOutlet UIImageView *imgPlayerFaction;
+@property (strong, nonatomic) IBOutlet UILabel *lblPlayerCaster;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblOpponent;
 @property (strong, nonatomic) IBOutlet UIImageView *imgOpponentFaction;

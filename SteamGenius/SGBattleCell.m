@@ -29,6 +29,10 @@
     [textShadow setShadowColor:[UIColor blackColor]];
     [textShadow setShadowOffset:CGSizeMake(0, 1.0f)];
     
+    
+    self.imgBackground.image = [UIImage imageNamed:@"BattleBarWin"];
+    [self.contentView addSubview:self.imgBackground];
+    
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"M/d/yy"];
     NSMutableAttributedString *dateAttributed = [[NSMutableAttributedString alloc] initWithString:[dateFormat stringFromDate:self.battle.date]];
@@ -44,9 +48,60 @@
     self.lblDate.attributedText = dateAttributed;
     [self.contentView addSubview:self.lblDate];
     
+    //
+    // PLAYER
+    //
+    self.imgPlayerFaction.image = [UIImage imageNamed:self.battle.playerCaster.faction.imageName];
+    [self.contentView addSubview:self.imgPlayerFaction];
     
-    self.imgBackground.image = [UIImage imageNamed:@"BattleBarWin"];
-    [self.contentView addSubview:self.imgBackground];
+    NSRange playerNameBreak = [self.battle.playerCaster.model.name rangeOfString:@", "];
+    NSString *fullPlayerCasterName;
+    if (playerNameBreak.location != NSNotFound) {
+        NSString *name = [self.battle.playerCaster.model.name substringToIndex:playerNameBreak.location];
+        NSString *title = [[self.battle.playerCaster.model.name substringFromIndex:playerNameBreak.location + 1] uppercaseString];
+        fullPlayerCasterName = [NSString stringWithFormat:@"%@ %@", name, title];
+    } else {
+        fullPlayerCasterName = self.battle.playerCaster.model.name;
+    }
+    NSMutableParagraphStyle *playerStyle = [[NSMutableParagraphStyle alloc] init];
+    [playerStyle setMaximumLineHeight:13.f];
+    
+    NSMutableAttributedString *playerCasterName = [[NSMutableAttributedString alloc] initWithString:fullPlayerCasterName];
+    NSUInteger lastPlayerIndex = playerCasterName.length - 1;
+    if (playerNameBreak.location != NSNotFound) {
+        [playerCasterName addAttribute:NSFontAttributeName
+                                 value:[UIFont fontWithName:@"AvenirNext-Medium" size:12.0]
+                                 range:NSMakeRange(0, playerNameBreak.location)];
+        [playerCasterName addAttribute:NSParagraphStyleAttributeName
+                                 value:playerStyle
+                                 range:NSMakeRange(0, playerNameBreak.location)];
+        [playerCasterName addAttribute:NSFontAttributeName
+                                 value:[UIFont fontWithName:@"Futura" size:7.0]
+                                 range:NSMakeRange(playerNameBreak.location + 1, lastPlayerIndex - playerNameBreak.location)];
+        [playerCasterName replaceCharactersInRange:playerNameBreak withString:@"\n"];
+    } else {
+        [playerCasterName addAttribute:NSFontAttributeName
+                                 value:[UIFont fontWithName:@"AvenirNext-Medium" size:12.0]
+                                 range:NSMakeRange(0, playerCasterName.length)];
+        [playerCasterName addAttribute:NSParagraphStyleAttributeName
+                                 value:playerStyle
+                                 range:NSMakeRange(0, playerCasterName.length)];
+    }
+    [playerCasterName addAttribute:NSForegroundColorAttributeName
+                             value:[UIColor whiteColor]
+                             range:NSMakeRange(0, playerCasterName.length)];
+    [playerCasterName addAttribute:NSShadowAttributeName
+                             value:textShadow
+                             range:NSMakeRange(0, playerCasterName.length)];
+    
+    self.lblPlayerCaster.attributedText = playerCasterName;
+    self.lblPlayerCaster.textAlignment = NSTextAlignmentRight;
+    [self.contentView addSubview:self.lblPlayerCaster];
+    
+    //
+    // OPPONENT
+    //
+    self.lblOpponentCaster.userInteractionEnabled = NO;
     
     self.lblOpponent.layer.shadowRadius = 0;
     self.lblOpponent.layer.shadowOpacity = 1.f;

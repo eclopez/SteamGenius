@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SGSettingsManager : NSObject
 
 + (void)initUserPreferences;
 + (void)updateTheme:(NSInteger)newTheme;
+
++ (UIColor *)getTableColor;
 
 @end

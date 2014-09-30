@@ -141,11 +141,11 @@
 		<key>tableColor</key>
 		<dict>
 			<key>red</key>
-			<string>149</string>
+			<string>0</string>
 			<key>green</key>
-			<string>52</string>
+			<string>0</string>
 			<key>blue</key>
-			<string>53</string>
+			<string>0</string>
 			<key>alpha</key>
 			<string>1</string>
 		</dict>

@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
 //@property (strong, nonatomic) SG_BattleRecordView *recordView;
+@property (strong, nonatomic) UIColor *viewBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
