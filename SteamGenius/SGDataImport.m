@@ -50,7 +50,7 @@
                         }
                         break;
                     case SGEntityType_Result:
-                        [SGRepository initWithResultNamed:[d objectForKey:@"name"] winValue:[NSNumber numberWithInt:[[d objectForKey:@"winValue"] intValue]] displayOrder:[NSNumber numberWithInt:[[d objectForKey:@"sort"] intValue]] context:context];
+                        [SGRepository initWithResultNamed:[d objectForKey:@"name"] winValue:[NSNumber numberWithInt:[[d objectForKey:@"value"] intValue]] displayOrder:[NSNumber numberWithInt:[[d objectForKey:@"sort"] intValue]] context:context];
                         break;
                 }
             }

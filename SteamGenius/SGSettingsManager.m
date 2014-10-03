@@ -8,7 +8,7 @@
 
 #import "SGSettingsManager.h"
 #import "AppDelegate.h"
-#import "SGBattleListViewController.h"
+#import "SGBattleListTableViewController.h"
 
 static NSInteger const defaultTheme = 0;
 
@@ -34,16 +34,12 @@ static NSInteger const defaultTheme = 0;
     }
 }
 
-+ (UIColor *)getTableColor {
++ (UIColor *)getBarColor {
     NSString *themeFile = [[NSBundle mainBundle] pathForResource:@"SGTheme" ofType:@"plist"];
     NSArray *themes = [NSArray arrayWithContentsOfFile:themeFile];
     NSDictionary *currentTheme = [themes objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"theme"] intValue]];
     
-    NSDictionary *table = [currentTheme valueForKey:@"barColor"];
-    return [UIColor colorWithRed:[[table valueForKey:@"red"] floatValue]/255.f
-                           green:[[table valueForKey:@"green"] floatValue]/255.f
-                            blue:[[table valueForKey:@"blue"] floatValue]/255.f
-                           alpha:[[table valueForKey:@"alpha"] floatValue]];
+    return [self getColorWithDictionary:[currentTheme valueForKey:@"barColor"]];
 }
 
 #pragma mark - Private Methods
@@ -58,28 +54,25 @@ static NSInteger const defaultTheme = 0;
     NSArray *themes = [NSArray arrayWithContentsOfFile:themeFile];
     NSDictionary *currentTheme = [themes objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"theme"] intValue]];
     
-    NSDictionary *bar = [currentTheme valueForKey:@"barColor"];
-    UIColor *barColor = [UIColor colorWithRed:[[bar valueForKey:@"red"] floatValue]/255.f
-                                        green:[[bar valueForKey:@"green"] floatValue]/255.f
-                                         blue:[[bar valueForKey:@"blue"] floatValue]/255.f
-                                        alpha:[[bar valueForKey:@"alpha"] floatValue]];
-    
-    NSDictionary *tint = [currentTheme valueForKey:@"tintColor"];
-    UIColor *tintColor = [UIColor colorWithRed:[[tint valueForKey:@"red"] floatValue]/255.f green:[[tint valueForKey:@"green"] floatValue]/255.f blue:[[tint valueForKey:@"blue"] floatValue]/255.f alpha:[[tint valueForKey:@"alpha"] floatValue]];
-    
-    NSDictionary *text = [currentTheme valueForKey:@"textColor"];
-    UIColor *textColor = [UIColor colorWithRed:[[text valueForKey:@"red"] floatValue]/255.f green:[[text valueForKey:@"green"] floatValue]/255.f blue:[[text valueForKey:@"blue"] floatValue]/255.f alpha:[[text valueForKey:@"alpha"] floatValue]];
+    UIColor *barColor = [self getColorWithDictionary:[currentTheme valueForKey:@"barColor"]];
+    UIColor *tintColor = [self getColorWithDictionary:[currentTheme valueForKey:@"tintColor"]];
+    UIColor *textColor = [self getColorWithDictionary:[currentTheme valueForKey:@"textColor"]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:[[currentTheme valueForKey:@"statusBarStyle"] intValue]];
     
-    NSDictionary *navBarAttributes = @{ NSForegroundColorAttributeName : textColor,
-                                        NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Bold" size:18.f]};
-    [[UINavigationBar appearance] setTitleTextAttributes:navBarAttributes];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: textColor, NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Bold" size:18.f]}];
     [[UINavigationBar appearance] setBarTintColor:barColor];
     [[UINavigationBar appearance] setTintColor:tintColor];
     
     [[UIToolbar appearance] setBarTintColor:barColor];
     [[UIToolbar appearance] setTintColor:tintColor];
+}
+
++ (UIColor *)getColorWithDictionary:(NSDictionary *)colorDictionary {
+    return [UIColor colorWithRed:[[colorDictionary valueForKey:@"red"] floatValue]/255.f
+                           green:[[colorDictionary valueForKey:@"green"] floatValue]/255.f
+                            blue:[[colorDictionary valueForKey:@"blue"] floatValue]/255.f
+                           alpha:[[colorDictionary valueForKey:@"alpha"] floatValue]];
 }
 
 @end

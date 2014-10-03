@@ -14,6 +14,6 @@
 + (void)initUserPreferences;
 + (void)updateTheme:(NSInteger)newTheme;
 
-+ (UIColor *)getTableColor;
++ (UIColor *)getBarColor;
 
 @end

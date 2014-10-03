@@ -7,18 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wBO-M9-heH" customClass="SGBattleCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BattleCell" id="wBO-M9-heH" customClass="SGBattleCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wBO-M9-heH" id="Gfe-0c-ILf">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BattleBarWin" translatesAutoresizingMaskIntoConstraints="NO" id="59V-qg-F3F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
-                        <accessibility key="accessibilityConfiguration">
-                            <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
-                        </accessibility>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPPONENT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToP-ta-DTG">
                         <rect key="frame" x="6" y="42" width="45" height="11"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="8"/>
@@ -75,8 +69,12 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lk4-0F-OtU">
-                        <rect key="frame" x="6" y="5" width="81" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lk4-0F-OtU">
+                        <rect key="frame" x="5" y="6" width="81" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="6GS-ha-Zvb"/>
+                            <constraint firstAttribute="width" constant="81" id="aLT-JA-vgd"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -91,6 +89,7 @@
                     <constraint firstAttribute="bottom" secondItem="Ukm-8D-99g" secondAttribute="bottom" constant="6" id="Jw1-vp-92T"/>
                     <constraint firstItem="Ukm-8D-99g" firstAttribute="leading" secondItem="84E-z6-aS1" secondAttribute="trailing" constant="2" id="Ntg-KO-h4M"/>
                     <constraint firstItem="hE0-z7-Yfj" firstAttribute="top" secondItem="Gfe-0c-ILf" secondAttribute="top" constant="6" id="QTo-gu-c4e"/>
+                    <constraint firstItem="lk4-0F-OtU" firstAttribute="top" secondItem="Gfe-0c-ILf" secondAttribute="top" constant="6" id="RXU-Wh-Ydc"/>
                     <constraint firstItem="84E-z6-aS1" firstAttribute="leading" secondItem="Gfe-0c-ILf" secondAttribute="leading" constant="6" id="UGI-ce-Qru"/>
                     <constraint firstItem="m1m-ni-VHA" firstAttribute="top" secondItem="Gfe-0c-ILf" secondAttribute="top" constant="4" id="VYq-9N-4vN"/>
                     <constraint firstItem="84E-z6-aS1" firstAttribute="top" secondItem="ToP-ta-DTG" secondAttribute="bottom" constant="7" id="a0h-Fn-cxW"/>
@@ -102,6 +101,7 @@
                     <constraint firstItem="Ukm-8D-99g" firstAttribute="top" secondItem="ToP-ta-DTG" secondAttribute="bottom" id="sVf-bQ-F16"/>
                     <constraint firstAttribute="bottomMargin" secondItem="84E-z6-aS1" secondAttribute="bottom" constant="7" id="td3-1k-TBR"/>
                     <constraint firstItem="Ukm-8D-99g" firstAttribute="centerY" secondItem="84E-z6-aS1" secondAttribute="centerY" id="vm6-ie-swV"/>
+                    <constraint firstItem="lk4-0F-OtU" firstAttribute="leading" secondItem="Gfe-0c-ILf" secondAttribute="leading" constant="5" id="yFN-lP-7dH"/>
                     <constraint firstItem="84E-z6-aS1" firstAttribute="leading" secondItem="Gfe-0c-ILf" secondAttribute="leading" constant="6" id="zZa-mB-F4N"/>
                 </constraints>
                 <variation key="default">
@@ -119,9 +119,8 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="imgBackground" destination="59V-qg-F3F" id="zLk-dI-fsX"/>
                 <outlet property="imgOpponentFaction" destination="84E-z6-aS1" id="9ht-kQ-zvg"/>
                 <outlet property="imgPlayerFaction" destination="hE0-z7-Yfj" id="7YB-GF-zKw"/>
                 <outlet property="lblDate" destination="lk4-0F-OtU" id="kAc-QN-IKN"/>
@@ -129,7 +128,7 @@
                 <outlet property="lblOpponentCaster" destination="Ukm-8D-99g" id="l5U-40-vpC"/>
                 <outlet property="lblPlayerCaster" destination="m1m-ni-VHA" id="yUC-bN-8IU"/>
             </connections>
-            <point key="canvasLocation" x="387" y="690.5"/>
+            <point key="canvasLocation" x="402" y="667.5"/>
         </tableViewCell>
         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="s7h-E5-d32">
             <rect key="frame" x="0.0" y="0.0" width="34" height="21"/>
@@ -137,7 +136,4 @@
             <point key="canvasLocation" x="456" y="326.5"/>
         </imageView>
     </objects>
-    <resources>
-        <image name="BattleBarWin" width="320" height="105"/>
-    </resources>
 </document>

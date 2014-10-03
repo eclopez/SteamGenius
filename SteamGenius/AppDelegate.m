@@ -10,7 +10,7 @@
 #import "SGSettingsManager.h"
 #import "SGDataImport.h"
 #import "DetailViewController.h"
-#import "SGBattleListViewController.h"
+#import "SGBattleListTableViewController.h"
 
 #define kCurrentGameVersion 1
 #define kCurrentFactionVersion 1

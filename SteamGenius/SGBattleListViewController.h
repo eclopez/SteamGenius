@@ -2,20 +2,18 @@
 //  SGBattleListViewController.h
 //  SteamGenius
 //
-//  Created by Erik Lopez on 9/11/14.
+//  Created by Erik Lopez on 10/2/14.
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
-#import "AppDelegate.h"
 
-@interface SGBattleListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+@interface SGBattleListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) AppDelegate *appDelegate;
-//@property (strong, nonatomic) SG_BattleRecordView *recordView;
-@property (strong, nonatomic) UIColor *viewBackgroundColor UI_APPEARANCE_SELECTOR;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *recordView;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *opponentFactionImage;
+@property (weak, nonatomic) IBOutlet UILabel *opponentCasterName;
 
 @end
