@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 
-@interface SGBattleListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SGBattleListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
+@property (strong, nonatomic) AppDelegate *appDelegate;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *recordView;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *opponentFactionImage;
-@property (weak, nonatomic) IBOutlet UILabel *opponentCasterName;
 
 @end

@@ -8,6 +8,12 @@
 
 #import "SGBattleListViewController.h"
 #import "SGSettingsManager.h"
+#import "SGBattleInfoCell.h"
+#import "Faction.h"
+#import "Battle.h"
+#import "Caster.h"
+#import "Model.h"
+#import "Result.h"
 
 @interface SGBattleListViewController ()
 
@@ -17,7 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     self.tableView.contentInset = UIEdgeInsetsMake(35.f, 0, 0, 0);
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(35.f, 0, 0, 0);
@@ -33,29 +40,279 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"BattleCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"SGBattleInfoCell";
+    SGBattleInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureCell:(SGBattleInfoCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Battle *battle = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    NSDictionary *attr = @{NSShadowAttributeName:[self getTextShadow]};
+    
+    switch ([battle.result.winValue intValue]) {
+        case 1:
+            cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarWin"];
+            cell.pointsLine.backgroundColor = [UIColor blackColor];
+            cell.pointsHeader.textColor = [UIColor blackColor];
+            cell.pointsLabel.textColor = [UIColor blackColor];
+            cell.resultLine.backgroundColor = [UIColor blackColor];
+            cell.resultHeader.textColor = [UIColor blackColor];
+            cell.resultNameLabel.textColor = [UIColor blackColor];
+            
+            cell.pointsHeader.layer.shadowOpacity = 0;
+            cell.pointsHeader.layer.shadowRadius = 0;
+            cell.pointsHeader.layer.shadowOffset = CGSizeZero;
+            
+            cell.pointsLabel.layer.shadowOpacity = 0;
+            cell.pointsLabel.layer.shadowRadius = 0;
+            cell.pointsLabel.layer.shadowOffset = CGSizeZero;
+            
+            cell.resultHeader.layer.shadowOpacity = 0;
+            cell.resultHeader.layer.shadowRadius = 0;
+            cell.resultHeader.layer.shadowOffset = CGSizeZero;
+            
+            cell.resultNameLabel.layer.shadowOpacity = 0;
+            cell.resultNameLabel.layer.shadowRadius = 0;
+            cell.resultNameLabel.layer.shadowOffset = CGSizeZero;
+            break;
+        case 0:
+            cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarDraw"];
+            cell.pointsLine.backgroundColor = [UIColor whiteColor];
+            cell.pointsHeader.textColor = [UIColor whiteColor];
+            cell.pointsLabel.textColor = [UIColor whiteColor];
+            cell.resultLine.backgroundColor = [UIColor whiteColor];
+            cell.resultHeader.textColor = [UIColor whiteColor];
+            cell.resultNameLabel.textColor = [UIColor whiteColor];
+            
+            cell.pointsHeader.layer.shadowOpacity = 1.f;
+            cell.pointsHeader.layer.shadowRadius = 0;
+            cell.pointsHeader.layer.shadowColor = [UIColor blackColor].CGColor;
+            cell.pointsHeader.layer.shadowOffset = CGSizeMake(0, 1.f);
+            
+            cell.pointsLabel.layer.shadowOpacity = 1.f;
+            cell.pointsLabel.layer.shadowRadius = 0;
+            cell.pointsLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+            cell.pointsLabel.layer.shadowOffset = CGSizeMake(0, 1.f);
+            
+            cell.resultHeader.layer.shadowOpacity = 1.f;
+            cell.resultHeader.layer.shadowRadius = 0;
+            cell.resultHeader.layer.shadowColor = [UIColor blackColor].CGColor;
+            cell.resultHeader.layer.shadowOffset = CGSizeMake(0, 1.f);
+            
+            cell.resultNameLabel.layer.shadowOpacity = 1.f;
+            cell.resultNameLabel.layer.shadowRadius = 0;
+            cell.resultNameLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+            cell.resultNameLabel.layer.shadowOffset = CGSizeMake(0, 1.f);
+            break;
+        case -1:
+            cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarLoss"];
+            cell.pointsLine.backgroundColor = [UIColor whiteColor];
+            cell.pointsHeader.textColor = [UIColor whiteColor];
+            cell.pointsLabel.textColor = [UIColor whiteColor];
+            cell.resultLine.backgroundColor = [UIColor whiteColor];
+            cell.resultHeader.textColor = [UIColor whiteColor];
+            cell.resultNameLabel.textColor = [UIColor whiteColor];
+            
+            cell.pointsHeader.layer.shadowOpacity = 1.f;
+            cell.pointsHeader.layer.shadowRadius = 0;
+            cell.pointsHeader.layer.shadowColor = [UIColor blackColor].CGColor;
+            cell.pointsHeader.layer.shadowOffset = CGSizeMake(0, 1.f);
+            
+            cell.pointsLabel.layer.shadowOpacity = 1.f;
+            cell.pointsLabel.layer.shadowRadius = 0;
+            cell.pointsLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+            cell.pointsLabel.layer.shadowOffset = CGSizeMake(0, 1.f);
+            
+            cell.resultHeader.layer.shadowOpacity = 1.f;
+            cell.resultHeader.layer.shadowRadius = 0;
+            cell.resultHeader.layer.shadowColor = [UIColor blackColor].CGColor;
+            cell.resultHeader.layer.shadowOffset = CGSizeMake(0, 1.f);
+            
+            cell.resultNameLabel.layer.shadowOpacity = 1.f;
+            cell.resultNameLabel.layer.shadowRadius = 0;
+            cell.resultNameLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+            cell.resultNameLabel.layer.shadowOffset = CGSizeMake(0, 1.f);
+            break;
     }
     
-    cell.textLabel.text = @"Hello.";
-    return cell;
+    cell.dateLabel.text = [[self getDateFormatter] stringFromDate:battle.date];
+    
+    // Opponent caster name
+    NSMutableString *oCasterName = [NSMutableString stringWithString:battle.opponentCaster.model.name];
+    NSRange oCasterLineBreak = [oCasterName rangeOfString:@", "];
+    NSMutableAttributedString *fullOpponentCasterName;
+    NSMutableParagraphStyle *opponentStyle = [[NSMutableParagraphStyle alloc] init];
+    opponentStyle.maximumLineHeight = 15.f;
+    if (oCasterLineBreak.location != NSNotFound) {
+        NSString *name = [NSString stringWithString:[oCasterName substringToIndex:oCasterLineBreak.location]];
+        NSString *title = [NSString stringWithString:[[oCasterName substringFromIndex:oCasterLineBreak.location + 2] uppercaseString]];
+        fullOpponentCasterName = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ %@", name, title]
+                                                                        attributes:attr];
+        [fullOpponentCasterName addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Futura" size:8.f] range:NSMakeRange(name.length + 1, title.length)];
+        [fullOpponentCasterName addAttribute:NSParagraphStyleAttributeName value:opponentStyle range:NSMakeRange(0, name.length - 1)];
+        [fullOpponentCasterName replaceCharactersInRange:NSMakeRange(name.length, 1) withString:@"\n"];
+    } else {
+        fullOpponentCasterName = [[NSMutableAttributedString alloc] initWithString:oCasterName
+                                                                        attributes:attr];
+        [fullOpponentCasterName addAttribute:NSParagraphStyleAttributeName value:opponentStyle range:NSMakeRange(0, fullOpponentCasterName.length - 1)];
+    }
+    cell.opponentCasterName.attributedText = fullOpponentCasterName;
+    cell.opponentFactionImage.image = [UIImage imageNamed:battle.opponentCaster.faction.imageName];
+    
+    // Player caster name
+    NSMutableString *pCasterName = [NSMutableString stringWithString:battle.playerCaster.model.name];
+    NSRange pCasterLineBreak = [pCasterName rangeOfString:@", "];
+    NSMutableAttributedString *fullPlayerCasterName;
+    NSMutableParagraphStyle *playerStyle = [[NSMutableParagraphStyle alloc] init];
+    playerStyle.maximumLineHeight = 13.f;
+    if (pCasterLineBreak.location != NSNotFound) {
+        NSString *name = [NSString stringWithString:[pCasterName substringToIndex:pCasterLineBreak.location]];
+        NSString *title = [NSString stringWithString:[[pCasterName substringFromIndex:pCasterLineBreak.location + 2] uppercaseString]];
+        fullPlayerCasterName = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ %@", name, title]
+                                                                      attributes:attr];
+        [fullPlayerCasterName addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Futura" size:7.f] range:NSMakeRange(name.length + 1, title.length)];
+        [fullPlayerCasterName addAttribute:NSParagraphStyleAttributeName value:playerStyle range:NSMakeRange(0, name.length - 1)];
+        [fullPlayerCasterName replaceCharactersInRange:NSMakeRange(name.length, 1) withString:@"\n"];
+    } else {
+        fullPlayerCasterName = [[NSMutableAttributedString alloc] initWithString:pCasterName
+                                                                      attributes:attr];
+        [fullPlayerCasterName addAttribute:NSParagraphStyleAttributeName value:playerStyle range:NSMakeRange(0, fullPlayerCasterName.length - 1)];
+    }
+    cell.playerCasterName.attributedText = fullPlayerCasterName;
+    cell.playerFactionImage.image = [UIImage imageNamed:battle.playerCaster.faction.imageName];
+    
+    cell.resultNameLabel.text = battle.result.name;
+    cell.pointsLabel.text = [battle.points stringValue];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 105.f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[self.fetchedResultsController managedObjectContext] deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        [self.appDelegate saveContext];
+    }
+}
+
+#pragma mark - Fetched Results Controller
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"Battle" inManagedObjectContext:[self.appDelegate managedObjectContext]]];
+    
+    NSSortDescriptor *sortDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+    [fetchRequest setSortDescriptors:@[sortDate]];
+    
+    // Create the fetched results controller
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[self.appDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+    // Fetch the data
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+#warning Handle this error.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _fetchedResultsController;
+}
+
+#pragma mark - Fetched Results Controller Delegate Methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeMove:
+            break;
+        case NSFetchedResultsChangeUpdate:
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:(SGBattleInfoCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+        case NSFetchedResultsChangeMove:
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+#pragma mark - Private Methods
+
+- (NSShadow *)getTextShadow {
+    NSShadow *textShadow = [[NSShadow alloc] init];
+    textShadow.shadowColor = [UIColor blackColor];
+    textShadow.shadowBlurRadius = 2.f;
+    textShadow.shadowOffset = CGSizeMake(0, 1.f);
+    return textShadow;
+}
+
+- (NSDateFormatter *)getDateFormatter {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"M/d/yy";
+    return formatter;
 }
 
 @end

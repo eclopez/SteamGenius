@@ -10,9 +10,18 @@
 
 @interface SGBattleInfoCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *opponentFactionImage;
-@property (weak, nonatomic) IBOutlet UILabel *opponentCasterNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *opponentCasterName;
 @property (weak, nonatomic) IBOutlet UIImageView *playerFactionImage;
+@property (weak, nonatomic) IBOutlet UILabel *playerCasterName;
+@property (weak, nonatomic) IBOutlet UILabel *resultNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *pointsHeader;
+@property (weak, nonatomic) IBOutlet UIView *pointsLine;
+@property (weak, nonatomic) IBOutlet UILabel *resultHeader;
+@property (weak, nonatomic) IBOutlet UIView *resultLine;
 
 @end

@@ -62,24 +62,24 @@
     // Configure the cell...
     Battle *battle = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"M/d/yy"];
-    NSMutableAttributedString *dateAttributed = [[NSMutableAttributedString alloc] initWithString:[dateFormat stringFromDate:battle.date]];
-    [dateAttributed addAttribute:NSFontAttributeName
-                           value:[UIFont fontWithName:@"AvenirNext-DemiBold" size:12.0]
-                           range:NSMakeRange(0, dateAttributed.length)];
-    [dateAttributed addAttribute:NSForegroundColorAttributeName
-                           value:[UIColor whiteColor]
-                           range:NSMakeRange(0, dateAttributed.length)];
+    //NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    //[dateFormat setDateFormat:@"M/d/yy"];
+    //NSMutableAttributedString *dateAttributed = [[NSMutableAttributedString alloc] initWithString:[dateFormat stringFromDate:battle.date]];
+    //[dateAttributed addAttribute:NSFontAttributeName
+                           //value:[UIFont fontWithName:@"AvenirNext-DemiBold" size:12.0]
+                           //range:NSMakeRange(0, dateAttributed.length)];
+    //[dateAttributed addAttribute:NSForegroundColorAttributeName
+                           //value:[UIColor whiteColor]
+                           //range:NSMakeRange(0, dateAttributed.length)];
     /*[dateAttributed addAttribute:NSShadowAttributeName
                            value:shadow
                            range:NSMakeRange(0, dateAttributed.length)];
     cell.dateLabel.attributedText = dateAttributed;*/
     
-    cell.dateLabel.attributedText = dateAttributed;
-    cell.playerFactionImage.image = [UIImage imageNamed:battle.playerCaster.faction.imageName];
-    cell.opponentFactionImage.image = [UIImage imageNamed:battle.opponentCaster.faction.imageName];
-    cell.opponentCasterNameLabel.text = battle.opponentCaster.model.name;
+    //cell.dateLabel.attributedText = dateAttributed;
+    //cell.playerFactionImage.image = [UIImage imageNamed:battle.playerCaster.faction.imageName];
+    //cell.opponentFactionImage.image = [UIImage imageNamed:battle.opponentCaster.faction.imageName];
+    //cell.opponentCasterNameLabel.text = battle.opponentCaster.model.name;
     
     return cell;
 }
