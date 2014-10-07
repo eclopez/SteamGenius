@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) Scenario *scenario;
 
+- (id)init:(Scenario *)scenario;
+
 @end

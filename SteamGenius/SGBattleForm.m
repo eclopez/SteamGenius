@@ -9,6 +9,7 @@
 #import "SGBattleForm.h"
 #import "AppDelegate.h"
 #import "SGGenericRepository.h"
+#import "Battle.h"
 #import "Caster.h"
 #import "Model.h"
 #import "Result.h"
@@ -17,6 +18,23 @@
 #import "SGGenericOptionsTableViewController.h"
 
 @implementation SGBattleForm
+
+- (id)init:(Battle *)battle {
+    if (self = [super init]) {
+        _battle = battle ? battle : nil;
+        _playerCaster = battle ? battle.playerCaster : nil;
+        _opponentCaster = battle ? battle.opponentCaster : nil;
+        _opponent = battle ? battle.opponent : nil;
+        _date = battle ? battle.date : [NSDate date];
+        _pointSize = battle ? battle.points : nil;
+        _result = battle ? battle.result : nil;
+        _killPoints = battle ? battle.killPoints : nil;
+        _scenario = battle ? battle.scenario : nil;
+        _controlPoints = battle ? battle.controlPoints : nil;
+        _event = battle ? battle.event : nil;
+    }
+    return self;
+}
 
 - (NSDictionary *)playerCasterField {
     return @{ FXFormFieldHeader: @"Player Info",
@@ -50,8 +68,7 @@
 }
 
 - (NSDictionary *)dateField {
-    return @{ FXFormFieldHeader: @"Required",
-              FXFormFieldDefaultValue: [NSDate date]};
+    return @{ FXFormFieldHeader: @"Required" };
 }
 
 - (NSDictionary *)pointSizeField {

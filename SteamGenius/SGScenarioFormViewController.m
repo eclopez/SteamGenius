@@ -21,8 +21,7 @@
     [super viewDidLoad];
     
     self.title = self.object ? @"Edit Scenario" : @"Add Scenario";
-    SGScenarioForm *form = [[SGScenarioForm alloc] init];
-    [form setScenario:self.object];
+    SGScenarioForm *form = self.object ? [[SGScenarioForm alloc] init:self.object] : [[SGScenarioForm alloc] init];
     self.formController.form = form;
     
     UIBarButtonItem *saveScenario = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveScenario)];
@@ -31,7 +30,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Class Methods

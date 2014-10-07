@@ -1,8 +1,8 @@
 //
 //  DetailViewController.h
-//  SteamGenius
+//  FXForms1.2Test
 //
-//  Created by Erik Lopez on 9/10/14.
+//  Created by Erik Lopez on 9/24/14.
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 

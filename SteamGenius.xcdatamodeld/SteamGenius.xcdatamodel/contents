@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Battle" representedClassName="Battle" syncable="YES">
         <attribute name="armyPoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="controlPoints" optional="YES" attributeType="Integer 16" syncable="YES"/>
@@ -67,7 +67,8 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="battles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Battle" inverseName="scenario" inverseEntity="Battle" syncable="YES"/>
     </entity>
-    <fetchRequest name="GlobalBattleFetch" entity="Battle" predicateString="playerCaster.faction IN $FACTIONS AND (NOT playerCaster.faction IN $OMIT_FACTIONS)"/>
+    <fetchRequest name="MainBattleFetch" entity="Battle" predicateString="playerCaster.faction IN $FACTIONS AND (NOT playerCaster.faction IN $OMIT_FACTIONS)"/>
+    <fetchRequest name="RecordCount" entity="Battle" predicateString="result.winValue == $WIN_VALUE"/>
     <elements>
         <element name="Battle" positionX="378" positionY="213" width="128" height="223"/>
         <element name="Caster" positionX="169" positionY="288" width="128" height="103"/>

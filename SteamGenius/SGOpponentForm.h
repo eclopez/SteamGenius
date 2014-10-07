@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) Opponent *opponent;
 
+- (id)init:(Opponent *)opponent;
+
 @end

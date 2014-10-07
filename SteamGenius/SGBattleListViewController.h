@@ -16,5 +16,9 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *recordView;
+@property (weak, nonatomic) IBOutlet UIImageView *recordViewBackgroundImage;
+@property (weak, nonatomic) IBOutlet UILabel *winTotal;
+@property (weak, nonatomic) IBOutlet UILabel *drawTotal;
+@property (weak, nonatomic) IBOutlet UILabel *lossTotal;
 
 @end

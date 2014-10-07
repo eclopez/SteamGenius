@@ -10,8 +10,12 @@
 
 @implementation SGOpponentForm
 
-- (NSDictionary *)nameField {
-    return @{ FXFormFieldDefaultValue: self.opponent ? (self.opponent.name ? self.opponent.name : @"") : @"" };
+- (id)init:(Opponent *)opponent {
+    if (self = [super init]) {
+        _opponent = opponent ? opponent : nil;
+        _name = opponent ? (opponent.name ? opponent.name : @"") : @"";
+    }
+    return self;
 }
 
 - (NSArray *)excludedFields {

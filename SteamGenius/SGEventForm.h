@@ -18,4 +18,6 @@
 @property (assign, nonatomic) BOOL isTournament;
 @property (strong, nonatomic) Event *event;
 
+- (id)init:(Event *)event;
+
 @end

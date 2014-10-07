@@ -21,8 +21,7 @@
     [super viewDidLoad];
     
     self.title = self.object ? @"Edit Event" : @"Add Event";
-    SGEventForm *form = [[SGEventForm alloc] init];
-    [form setEvent:self.object];
+    SGEventForm *form = self.object ? [[SGEventForm alloc] init:self.object] : [[SGEventForm alloc] init];
     self.formController.form = form;
     
     UIBarButtonItem *saveEvent = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveEvent)];

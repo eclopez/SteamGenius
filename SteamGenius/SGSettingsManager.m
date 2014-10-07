@@ -8,7 +8,6 @@
 
 #import "SGSettingsManager.h"
 #import "AppDelegate.h"
-#import "SGBattleListTableViewController.h"
 
 static NSInteger const defaultTheme = 0;
 

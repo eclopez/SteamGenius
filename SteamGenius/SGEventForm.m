@@ -10,23 +10,20 @@
 
 @implementation SGEventForm
 
-- (NSDictionary *)nameField {
-    return @{ FXFormFieldDefaultValue: self.event ? (self.event.name ? self.event.name : @"") : @"" };
-}
-
-- (NSDictionary *)locationField {
-    return @{ FXFormFieldDefaultValue: self.event ? (self.event.location ? self.event.location : @"") : @"" };
-}
-
-- (NSDictionary *)dateField {
-    return @{ FXFormFieldDefaultValue: self.event ? (self.event.date ? (NSDate *)self.event.date : @"") : [NSDate date] };
+- (id)init:(Event *)event {
+    if (self = [super init]) {
+        _event = event ? event : nil;
+        _name = event ? (event.name ? event.name : @"") : @"";
+        _location = event ? (event.location ? event.location : @"") : @"";
+        _date = event ? (event.date ? event.date : nil) : [NSDate date];
+        _isTournament = event ? (event.isTournament ? YES : NO) : NO;
+    }
+    return self;
 }
 
 - (NSDictionary *)isTournamentField {
-    // TODO DEFAULT VAL WHEN EDITING
     return @{ FXFormFieldHeader: @"",
-              FXFormFieldTitle: @"Tournament?",
-              FXFormFieldDefaultValue: @1 };
+              FXFormFieldTitle: @"Tournament?" };
 }
 
 - (NSArray *)excludedFields {

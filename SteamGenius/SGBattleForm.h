@@ -26,7 +26,9 @@
 @property (nonatomic, strong) Scenario *scenario;
 @property (nonatomic, strong) NSNumber *controlPoints;
 @property (nonatomic, strong) Event *event;
+@property (strong, nonatomic) Battle *battle;
 
+- (id)init:(Battle *)battle;
 - (NSArray *)sortedObjectArray:(NSString *)entityName sortKeys:(NSDictionary *)sortKeys;
 
 @end

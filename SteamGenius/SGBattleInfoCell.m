@@ -23,6 +23,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    // Record
+    
     // Date label
     self.dateLabel.attributedText = [[NSAttributedString alloc] initWithString:self.dateLabel.text
                                                                     attributes:@{NSShadowAttributeName:[self commonTextShadow]}];

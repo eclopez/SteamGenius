@@ -21,8 +21,7 @@
     [super viewDidLoad];
     
     self.title = self.object ? @"Edit Opponent" : @"Add Opponent";
-    SGOpponentForm *form = [[SGOpponentForm alloc] init];
-    [form setOpponent:self.object];
+    SGOpponentForm *form = self.object ? [[SGOpponentForm alloc] init:self.object] : [[SGOpponentForm alloc] init];
     self.formController.form = form;
     
     UIBarButtonItem *saveOpponent = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveOpponent)];
@@ -31,7 +30,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Class Methods

@@ -10,8 +10,12 @@
 
 @implementation SGScenarioForm
 
-- (NSDictionary *)nameField {
-    return @{ FXFormFieldDefaultValue: self.scenario ? (self.scenario.name ? self.scenario.name : @"") : @"" };
+- (id)init:(Scenario *)scenario {
+    if (self = [super init]) {
+        _scenario = scenario ? scenario : nil;
+        _name = scenario ? (scenario.name ? scenario.name : @"") : @"";
+    }
+    return self;
 }
 
 - (NSArray *)excludedFields {

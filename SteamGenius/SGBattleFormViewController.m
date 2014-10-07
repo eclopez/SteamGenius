@@ -19,7 +19,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.formController.form = [[SGBattleForm alloc] init];
+    
+    self.title = self.battle ? @"Edit Battle" : @"Add Battle";
+    self.formController.form = self.battle ? [[SGBattleForm alloc] init:self.battle] : [[SGBattleForm alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -37,8 +39,6 @@
 #pragma mark Class Methods
 
 - (IBAction)saveBattle:(id)sender {
-    [self.tableView resignFirstResponder];
-    
     [self.tableView resignFirstResponder];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     SGBattleForm *form = self.formController.form;
