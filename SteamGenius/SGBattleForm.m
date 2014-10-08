@@ -19,6 +19,13 @@
 
 @implementation SGBattleForm
 
+- (id)init {
+    if (self = [super init]) {
+        _date = [NSDate date];
+    }
+    return self;
+}
+
 - (id)init:(Battle *)battle {
     if (self = [super init]) {
         _battle = battle ? battle : nil;
@@ -115,6 +122,10 @@
 
 - (NSString *)eventFieldDescription {
     return self.event ? self.event.name : nil;
+}
+
+- (NSArray *)excludedFields {
+    return @[ @"battle" ];
 }
 
 #pragma mark - Class Methods

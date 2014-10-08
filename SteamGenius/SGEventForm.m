@@ -10,13 +10,21 @@
 
 @implementation SGEventForm
 
+- (id)init {
+    if (self = [super init]) {
+        _date = [NSDate date];
+        _isTournament = NO;
+    }
+    return self;
+}
+
 - (id)init:(Event *)event {
     if (self = [super init]) {
-        _event = event ? event : nil;
-        _name = event ? (event.name ? event.name : @"") : @"";
-        _location = event ? (event.location ? event.location : @"") : @"";
-        _date = event ? (event.date ? event.date : nil) : [NSDate date];
-        _isTournament = event ? (event.isTournament ? YES : NO) : NO;
+        _event = event;
+        _name = _event.name;
+        _location = _event.location;
+        _date = _event.date;
+        _isTournament = [_event.isTournament boolValue];
     }
     return self;
 }

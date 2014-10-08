@@ -26,6 +26,9 @@
     
     UIBarButtonItem *saveEvent = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveEvent)];
     self.navigationItem.rightBarButtonItem = saveEvent;
+    
+    UIBarButtonItem *cancelEvent = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelEvent)];
+    self.navigationItem.leftBarButtonItem = cancelEvent;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,7 +41,20 @@
     [self.tableView resignFirstResponder];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     SGEventForm *form = self.formController.form;
-    if (form.name) {
+    
+    int validate = 0;
+    NSArray *validateFields = @[ @"name", @"date" ];
+    NSArray *validateFieldNames = @[ @"Name", @"Date" ];
+    NSMutableString *validationList = [[NSMutableString alloc] init];
+    
+    for (NSString *field in validateFields) {
+        if (![form valueForKey:field] || [[form valueForKey:field] isEqual:@""]) {
+            [validationList appendString:[NSString stringWithFormat:@"- %@ can't be empty.\n", [validateFieldNames objectAtIndex:[validateFields indexOfObject:field]]]];
+            validate++;
+        }
+    }
+    
+    if (validate == 0) {
         if (form.event) {
             self.object.name = form.name;
             self.object.location = form.location;
@@ -48,11 +64,15 @@
             [SGRepository initWithEventNamed:form.name location:form.location date:form.date isTournament:form.isTournament context:appDelegate.managedObjectContext];
         }
         [appDelegate saveContext];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {
-        UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:@"Name cannot be blank!" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+        UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:validationList delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
         [validationMessage show];
     }
+}
+
+- (void)cancelEvent {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

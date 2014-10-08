@@ -38,8 +38,8 @@
 
 - (void)addObject:(id)sender {
     NSString *viewController = [NSString stringWithFormat:@"SG%@FormViewController", NSStringFromClass(self.field.valueClass)];
-    id AddViewController = [[NSClassFromString(viewController) alloc] init];
-    [self.navigationController pushViewController:AddViewController animated:YES];
+    UINavigationController *addNav = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(viewController) alloc] init]];
+    [self.navigationController presentViewController:addNav animated:YES completion:nil];
 }
 
 - (void)handleLongPress:(SGLongPressTableViewCell *)cell
@@ -51,7 +51,8 @@
     if ([EditViewController respondsToSelector:@selector(object)]) {
         [EditViewController setObject:obj];
     }
-    [self.navigationController pushViewController:EditViewController animated:YES];
+    UINavigationController *editNav = [[UINavigationController alloc] initWithRootViewController:EditViewController];
+    [self.navigationController presentViewController:editNav animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -90,7 +91,8 @@
         NSString *dateString = [NSDateFormatter localizedStringFromDate:[obj valueForKey:@"date"]
                                                               dateStyle:NSDateFormatterMediumStyle
                                                               timeStyle:NSDateFormatterNoStyle];
-        if ([obj respondsToSelector:@selector(isTournament)]) {
+        SEL tournament = NSSelectorFromString(@"isTournament");
+        if ([obj respondsToSelector:tournament]) {
             NSString *tourneyString = [[obj valueForKey:@"isTournament"] boolValue] ? @"TOURNAMENT" : nil;
             if (tourneyString) {
                 dateString = [NSString stringWithFormat:@"%@ — %@", dateString, tourneyString];

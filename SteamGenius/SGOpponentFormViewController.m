@@ -26,6 +26,9 @@
     
     UIBarButtonItem *saveOpponent = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveOpponent)];
     self.navigationItem.rightBarButtonItem = saveOpponent;
+    
+    UIBarButtonItem *cancelOpponent = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelOpponent)];
+    self.navigationItem.leftBarButtonItem = cancelOpponent;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,18 +41,35 @@
     [self.tableView resignFirstResponder];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     SGOpponentForm *form = self.formController.form;
-    if (form.name) {
+    
+    int validate = 0;
+    NSArray *validateFields = @[ @"name" ];
+    NSArray *validateFieldNames = @[ @"Name" ];
+    NSMutableString *validationList = [[NSMutableString alloc] init];
+    
+    for (NSString *field in validateFields) {
+        if (![form valueForKey:field] || [[form valueForKey:field] isEqual:@""]) {
+            [validationList appendString:[NSString stringWithFormat:@"- %@ can't be empty.\n", [validateFieldNames objectAtIndex:[validateFields indexOfObject:field]]]];
+            validate++;
+        }
+    }
+    
+    if (validate == 0) {
         if (form.opponent) {
             self.object.name = form.name;
         } else {
             [SGRepository initWithOpponentNamed:form.name context:appDelegate.managedObjectContext];
         }
         [appDelegate saveContext];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {
-        UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:@"Name cannot be blank!" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+        UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:validationList delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
         [validationMessage show];
     }
+}
+
+- (void)cancelOpponent {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

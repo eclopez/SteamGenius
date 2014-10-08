@@ -17,19 +17,16 @@
 
 @implementation SGBattleFormViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    self.title = self.battle ? @"Edit Battle" : @"Add Battle";
-    self.formController.form = self.battle ? [[SGBattleForm alloc] init:self.battle] : [[SGBattleForm alloc] init];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = self.battle ? @"Edit Battle" : @"Add Battle";
+    SGBattleForm *form = self.battle ? [[SGBattleForm alloc] init:self.battle] : [[SGBattleForm alloc] init];
+    self.formController.form = form;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +54,7 @@
     NSMutableString *validationList = [[NSMutableString alloc] init];
     
     for (NSString *field in validateFields) {
-        if (![form valueForKey:field]) {
+        if (![form valueForKey:field] || [[form valueForKey:field] isEqual:@""]) {
             [validationList appendString:[NSString stringWithFormat:@"- %@ can't be empty.\n", [validateFieldNames objectAtIndex:[validateFields indexOfObject:field]]]];
             validate++;
         }
