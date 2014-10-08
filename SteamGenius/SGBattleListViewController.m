@@ -286,6 +286,23 @@
     NSUInteger lossCount = [[self.appDelegate managedObjectContext] countForFetchRequest:lossRecordFetch error:nil];
     self.lossTotal.text = [NSString stringWithFormat:@"%i", lossCount];
     [self.lossTotal sizeToFit];
+    
+    if ([self.fetchedResultsController.fetchedObjects count] < 1) {
+        UILabel *empty = [[UILabel alloc] init];
+        /*NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"No battles found."
+                                                                         attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:1 green:1 blue:1 alpha:1],
+                                                                                      NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
+                                                                                      NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];*/
+        NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"No battles found."
+                                                                         attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                                      NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
+                                                                                      NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
+        empty.attributedText = attrString;
+        empty.textAlignment = NSTextAlignmentCenter;
+        self.tableView.backgroundView = empty;
+    } else {
+        self.tableView.backgroundView = nil;
+    }
 }
 
 @end

@@ -28,6 +28,8 @@
     self.title = self.field.title;
     UIBarButtonItem *addOption = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addObject:)];
     self.navigationItem.rightBarButtonItem = addOption;
+    
+    [self updateTable];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -202,6 +204,26 @@
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
+    }
+    
+    [self updateTable];
+}
+
+#pragma mark - Private Methods
+
+- (void)updateTable {
+    if ([self.fetchedResultsController.fetchedObjects count] < 1) {
+        UILabel *empty = [[UILabel alloc] init];
+        NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"No %@s found.", self.field.valueClass]
+                                                                         attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0 green:0 blue:0 alpha:1],
+                                                                                      NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
+                                                                                      NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
+        empty.attributedText = attrString;
+        empty.textAlignment = NSTextAlignmentCenter;
+        self.tableView.backgroundView = empty;
+        
+    } else {
+        self.tableView.backgroundView = nil;
     }
 }
 
