@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Battle.h"
 
-@interface SGBattleDetailViewController : UIViewController
+@interface SGBattleDetailViewController : UIViewController <UIAlertViewDelegate>
 
 @property (strong, nonatomic) Battle *battle;
 

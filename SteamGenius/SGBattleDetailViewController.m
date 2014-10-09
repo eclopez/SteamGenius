@@ -7,6 +7,8 @@
 //
 
 #import "SGBattleDetailViewController.h"
+#import "SGBattleForm.h"
+#import "SGBattleFormViewController.h"
 #import "Caster.h"
 #import "Model.h"
 #import "Result.h"
@@ -19,13 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self configureView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)configureView {
@@ -38,14 +42,25 @@
     @"Battle Detail";
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"editBattle"]) {
+        SGBattleFormViewController *formViewController = (SGBattleFormViewController *)[(UINavigationController *)[segue destinationViewController] topViewController];
+        formViewController.battle = self.battle;
+    }
 }
-*/
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"editBattle"]) {
+        if (!self.battle) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No battle selected." message:nil delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+            return NO;
+        }
+        else {
+            return YES;
+        }
+    }
+    return YES;
+}
 
 @end

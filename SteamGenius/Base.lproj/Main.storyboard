@@ -492,7 +492,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Battle Detail" id="k24-U9-kD2"/>
+                    <navigationItem key="navigationItem" title="Battle Detail" id="k24-U9-kD2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="6uc-Tk-B9y">
+                            <connections>
+                                <segue destination="URm-ET-4C7" kind="presentation" identifier="editBattle" modalPresentationStyle="formSheet" id="6qr-TC-6Hq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiA-oQ-71f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -520,5 +526,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="pKp-ut-Wj5"/>
         <segue reference="hC4-bJ-CMG"/>
+        <segue reference="6qr-TC-6Hq"/>
     </inferredMetricsTieBreakers>
 </document>
