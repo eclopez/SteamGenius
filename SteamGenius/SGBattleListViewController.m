@@ -69,7 +69,8 @@
     
     switch ([battle.result.winValue intValue]) {
         case 1:
-            cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarWin"];
+            //cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarWin"];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BattleBarWin"]];
             [self removeLabelShadow:cell.pointsHeader];
             [self removeLabelShadow:cell.pointsLabel];
             [self removeLabelShadow:cell.resultHeader];
@@ -78,7 +79,8 @@
             cell.resultLine.backgroundColor = [UIColor blackColor];
             break;
         case 0:
-            cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarDraw"];
+            //cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarDraw"];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BattleBarDraw"]];
             [self addLabelShadow:cell.pointsHeader];
             [self addLabelShadow:cell.pointsLabel];
             [self addLabelShadow:cell.resultHeader];
@@ -87,7 +89,8 @@
             cell.resultLine.backgroundColor = [UIColor whiteColor];
             break;
         case -1:
-            cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarLoss"];
+            //cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarLoss"];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BattleBarLoss"]];
             [self addLabelShadow:cell.pointsHeader];
             [self addLabelShadow:cell.pointsLabel];
             [self addLabelShadow:cell.resultHeader];
@@ -274,17 +277,17 @@
 - (void)updateRecord {
     NSFetchRequest *winRecordFetch = [[self.appDelegate managedObjectModel] fetchRequestFromTemplateWithName:@"RecordCount" substitutionVariables:@{@"WIN_VALUE": [NSNumber numberWithInt:1]}];
     NSUInteger winCount = [[self.appDelegate managedObjectContext] countForFetchRequest:winRecordFetch error:nil];
-    self.winTotal.text = [NSString stringWithFormat:@"%i", winCount];
+    self.winTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)winCount];
     [self.winTotal sizeToFit];
     
     NSFetchRequest *drawRecordFetch = [[self.appDelegate managedObjectModel] fetchRequestFromTemplateWithName:@"RecordCount" substitutionVariables:@{@"WIN_VALUE": [NSNumber numberWithInt:0]}];
     NSUInteger drawCount = [[self.appDelegate managedObjectContext] countForFetchRequest:drawRecordFetch error:nil];
-    self.drawTotal.text = [NSString stringWithFormat:@"%i", drawCount];
+    self.drawTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)drawCount];
     [self.drawTotal sizeToFit];
     
     NSFetchRequest *lossRecordFetch = [[self.appDelegate managedObjectModel] fetchRequestFromTemplateWithName:@"RecordCount" substitutionVariables:@{@"WIN_VALUE": [NSNumber numberWithInt:-1]}];
     NSUInteger lossCount = [[self.appDelegate managedObjectContext] countForFetchRequest:lossRecordFetch error:nil];
-    self.lossTotal.text = [NSString stringWithFormat:@"%i", lossCount];
+    self.lossTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)lossCount];
     [self.lossTotal sizeToFit];
     
     if ([self.fetchedResultsController.fetchedObjects count] < 1) {
