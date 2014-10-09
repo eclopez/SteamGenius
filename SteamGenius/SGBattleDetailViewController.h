@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Battle.h"
 
 @interface SGBattleDetailViewController : UIViewController
+
+@property (strong, nonatomic) Battle *battle;
 
 @end

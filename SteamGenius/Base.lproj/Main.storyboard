@@ -4,51 +4,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Detail-->
-        <scene sceneID="yUG-lL-AsK">
-            <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
-                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="292" width="560" height="17"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
-                    <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="497" y="-709"/>
-        </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
                 <splitViewController id="H1p-Uh-vWS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
-                        <segue destination="vC3-pB-5Vb" kind="relationship" relationship="detailViewController" id="Tll-UG-LXB"/>
                         <segue destination="I1p-7u-QBS" kind="relationship" relationship="masterViewController" id="pKp-ut-Wj5"/>
+                        <segue destination="C2B-eJ-f45" kind="relationship" relationship="detailViewController" id="7dO-yB-1US"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
@@ -284,6 +247,7 @@
                                             <outlet property="resultHeader" destination="SUU-o6-YxH" id="WDC-Uk-XDl"/>
                                             <outlet property="resultLine" destination="t3F-0t-1Zw" id="w2N-Rg-PSS"/>
                                             <outlet property="resultNameLabel" destination="Qk1-IT-WIn" id="0er-q8-fI1"/>
+                                            <segue destination="C2B-eJ-f45" kind="showDetail" identifier="showDetail" id="hC4-bJ-CMG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -431,21 +395,6 @@
             </objects>
             <point key="canvasLocation" x="497" y="-1551"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="r7l-gg-dq7">
-            <objects>
-                <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-257" y="-709"/>
-        </scene>
         <!--Add Battle-->
         <scene sceneID="Jgk-Zy-pfn">
             <objects>
@@ -474,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHd-f5-8eQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="-1163"/>
+            <point key="canvasLocation" x="2968" y="-1163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8tz-70-KaG">
@@ -510,7 +459,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovK-PG-408" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1344" y="-1163"/>
+            <point key="canvasLocation" x="2156" y="-1163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lSn-00-nvQ">
@@ -530,8 +479,46 @@
             </objects>
             <point key="canvasLocation" x="-257" y="-1551"/>
         </scene>
+        <!--Battle Detail-->
+        <scene sceneID="Xcj-AZ-rXP">
+            <objects>
+                <viewController id="Cvz-bh-Y7X" customClass="SGBattleDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W7J-yi-wlk"/>
+                        <viewControllerLayoutGuide type="bottom" id="5cH-BH-JNU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t1I-Uh-2eV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Battle Detail" id="k24-U9-kD2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DiA-oQ-71f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="497" y="-674"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="siZ-uJ-tbv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C2B-eJ-f45" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4cB-7F-SzH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cvz-bh-Y7X" kind="relationship" relationship="rootViewController" id="NZT-kT-bZu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aN5-FY-du2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257" y="-674"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Yc-ar-cEc"/>
+        <segue reference="pKp-ut-Wj5"/>
+        <segue reference="hC4-bJ-CMG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -67,7 +67,6 @@
 		038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF319CDE70C00A224F7 /* SGBattleForm.m */; };
 		038DAAF819CDE8C500A224F7 /* SGBattleFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */; };
 		03B6244B19E3C6D300963793 /* SGBattleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B6244A19E3C6D300963793 /* SGBattleDetailViewController.m */; };
-		03B6245119E3CFC200963793 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B6245019E3CFC200963793 /* DetailViewController.m */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -184,8 +183,6 @@
 		038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleFormViewController.m; sourceTree = "<group>"; };
 		03B6244919E3C6D300963793 /* SGBattleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleDetailViewController.h; sourceTree = "<group>"; };
 		03B6244A19E3C6D300963793 /* SGBattleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleDetailViewController.m; sourceTree = "<group>"; };
-		03B6244F19E3CFC200963793 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		03B6245019E3CFC200963793 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -561,8 +558,6 @@
 				0351036519DE54C50032E215 /* SGBattleListViewController.m */,
 				03B6244919E3C6D300963793 /* SGBattleDetailViewController.h */,
 				03B6244A19E3C6D300963793 /* SGBattleDetailViewController.m */,
-				03B6244F19E3CFC200963793 /* DetailViewController.h */,
-				03B6245019E3CFC200963793 /* DetailViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -771,7 +766,6 @@
 				0351035D19DD8D3F0032E215 /* SGBattleInfoCell.m in Sources */,
 				038DAAC719CCFC3400A224F7 /* Game.m in Sources */,
 				038DAADC19CCFC3400A224F7 /* Event.m in Sources */,
-				03B6245119E3CFC200963793 /* DetailViewController.m in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
 				038DAADF19CCFC3400A224F7 /* Opponent.m in Sources */,
 				038DAACA19CCFC3400A224F7 /* Caster.m in Sources */,
@@ -901,8 +895,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Erik Lopez (C858QMJPF2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Erik Lopez (C858QMJPF2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Erik Lopez (63Z8F2HA98)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Erik Lopez (63Z8F2HA98)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

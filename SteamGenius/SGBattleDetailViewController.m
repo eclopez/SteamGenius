@@ -7,6 +7,9 @@
 //
 
 #import "SGBattleDetailViewController.h"
+#import "Caster.h"
+#import "Model.h"
+#import "Result.h"
 
 @interface SGBattleDetailViewController ()
 
@@ -17,11 +20,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self configureView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)configureView {
+    self.title = self.battle ?
+    [NSString stringWithFormat:@"%@%@ vs. %@%@",
+     self.battle.playerCaster.model.shortName,
+     [self.battle.playerCaster.model.incarnation intValue] != 1 ? self.battle.playerCaster.model.incarnation : @"",
+     self.battle.opponentCaster.model.shortName,
+     [self.battle.opponentCaster.model.incarnation intValue] != 1 ? self.battle.opponentCaster.model.incarnation : @""] :
+    @"Battle Detail";
 }
 
 /*

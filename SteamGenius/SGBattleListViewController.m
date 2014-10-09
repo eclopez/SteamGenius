@@ -8,6 +8,7 @@
 
 #import "SGBattleListViewController.h"
 #import "SGSettingsManager.h"
+#import "SGBattleDetailViewController.h"
 #import "SGBattleInfoCell.h"
 #import "Faction.h"
 #import "Battle.h"
@@ -241,6 +242,18 @@
     }
     
     [self updateRecord];
+}
+
+#pragma mark - Navigation Methods
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        SGBattleDetailViewController *controller = (SGBattleDetailViewController *)[(UINavigationController *)[segue destinationViewController] topViewController];
+        controller.battle = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        controller.navigationItem.leftBarButtonItem = [self.splitViewController displayModeButtonItem];
+        controller.navigationItem.leftItemsSupplementBackButton = YES;
+    }
 }
 
 #pragma mark - Private Methods
