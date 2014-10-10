@@ -129,8 +129,26 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [[self.fetchedResultsController managedObjectContext] deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        [self.appDelegate saveContext];
+        NSManagedObject *obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSString *message;
+        if ([obj respondsToSelector:@selector(battles)]) {
+            NSUInteger associatedBattles = [[obj valueForKey:@"battles"] count];
+            message = associatedBattles > 0 ? [NSString stringWithFormat:@"Are you sure you want to delete the %@, %@? %@ is associated with %lu battles.", NSStringFromClass(self.field.valueClass), [obj valueForKey:@"name"], [obj valueForKey:@"name"], (unsigned long)associatedBattles] : [NSString stringWithFormat:@"Are you sure you want to delete the %@, %@? %@ is not associated with any battles.", NSStringFromClass(self.field.valueClass), [obj valueForKey:@"name"], [obj valueForKey:@"name"]];
+        } else {
+            message = [NSString stringWithFormat:@"Are you sure you want to delete the %@, %@?", NSStringFromClass(self.field.valueClass), [obj valueForKey:@"name"]];
+        }
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Confirm delete" message:message preferredStyle:UIAlertControllerStyleActionSheet];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
+            [[self.fetchedResultsController managedObjectContext] deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+            [self.appDelegate saveContext];
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+            [alert dismissViewControllerAnimated:YES completion:nil];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                                  withRowAnimation:UITableViewRowAnimationNone];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
