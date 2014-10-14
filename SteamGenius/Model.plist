@@ -406,9 +406,9 @@
 		<key>name</key>
 		<string>Testament of Menoth</string>
 		<key>shortName</key>
-		<string>Testament</string>
+		<string>Reclaimer</string>
 		<key>incarnation</key>
-		<integer>1</integer>
+		<integer>2</integer>
 		<key>isEpic</key>
 		<true/>
 		<key>isCavalry</key>
@@ -644,7 +644,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>The Butcher of Khardov</string>
+		<string>Orsus Zoktavir, The Butcher of Khardov</string>
 		<key>shortName</key>
 		<string>Butcher</string>
 		<key>incarnation</key>
@@ -1028,7 +1028,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Issyria, Sybil of Dawn</string>
+		<string>Issyria, Sibyl of Dawn</string>
 		<key>shortName</key>
 		<string>Issyria</string>
 		<key>incarnation</key>
@@ -2292,7 +2292,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Jaga-Jaga the Death Charmer</string>
+		<string>Jaga-Jaga, the Death Charmer</string>
 		<key>shortName</key>
 		<string>Jaga</string>
 		<key>incarnation</key>

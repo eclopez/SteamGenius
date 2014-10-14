@@ -404,7 +404,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>The Butcher of Khardov</string>
+		<string>Orsus Zoktavir, The Butcher of Khardov</string>
 		<key>factions</key>
 		<array>
 			<string>Khador</string>
@@ -644,7 +644,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Issyria, Sybil of Dawn</string>
+		<string>Issyria, Sibyl of Dawn</string>
 		<key>factions</key>
 		<array>
 			<string>Retribution of Scyrah</string>
@@ -1461,7 +1461,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Jaga-Jaga the Death Charmer</string>
+		<string>Jaga-Jaga, the Death Charmer</string>
 		<key>factions</key>
 		<array>
 			<string>Minions</string>

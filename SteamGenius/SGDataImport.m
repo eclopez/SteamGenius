@@ -36,6 +36,7 @@
             if (dVersion > entityVersion && dVersion <= version) {
                 switch (entityType) {
                     case SGEntityType_Game:
+#warning Check if entity exists, if so, update, if not, create (this is to update spelling or other mistakes in initial data)
                         [SGRepository initWithGameNamed:[d objectForKey:@"name"] shortName:[d objectForKey:@"shortName"] context:context];
                         break;
                     case SGEntityType_Faction:

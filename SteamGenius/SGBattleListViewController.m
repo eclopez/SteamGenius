@@ -69,7 +69,7 @@
     NSDictionary *attr = @{NSShadowAttributeName:[self getTextShadow]};
     
     switch ([battle.result.winValue intValue]) {
-        case 1:
+        case 1: {
             //cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarWin"];
             cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BattleBarWin"]];
             [self removeLabelShadow:cell.pointsHeader];
@@ -78,6 +78,7 @@
             [self removeLabelShadow:cell.resultNameLabel];
             cell.pointsLine.backgroundColor = [UIColor blackColor];
             cell.resultLine.backgroundColor = [UIColor blackColor];
+        }
             break;
         case 0:
             //cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarDraw"];
@@ -305,10 +306,6 @@
     
     if ([self.fetchedResultsController.fetchedObjects count] < 1) {
         UILabel *empty = [[UILabel alloc] init];
-        /*NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"No battles found."
-                                                                         attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:1 green:1 blue:1 alpha:1],
-                                                                                      NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
-                                                                                      NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];*/
         NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"No battles found."
                                                                          attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                                       NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],

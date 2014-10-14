@@ -200,11 +200,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Skorne</string>
+		<string>Legion of Everblight</string>
 		<key>shortName</key>
-		<string>SKR</string>
+		<string>LOE</string>
 		<key>imageName</key>
-		<string>Skorne</string>
+		<string>LegionOfEverblight</string>
 		<key>game</key>
 		<string>Hordes</string>
 		<key>releaseOrder</key>
@@ -214,11 +214,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Legion of Everblight</string>
+		<string>Skorne</string>
 		<key>shortName</key>
-		<string>LOE</string>
+		<string>SKR</string>
 		<key>imageName</key>
-		<string>LegionOfEverblight</string>
+		<string>Skorne</string>
 		<key>game</key>
 		<string>Hordes</string>
 		<key>releaseOrder</key>

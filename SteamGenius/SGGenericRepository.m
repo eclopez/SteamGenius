@@ -20,13 +20,15 @@
     return entities != nil ? entities : nil;
 }
 
-+ (id)findOneEntityOfType:(NSString *)entityName entityKey:(NSString *)entityKey keyField:(NSString *)keyField context:(NSManagedObjectContext *)context
++ (id)findOneEntityOfType:(NSString *)entityName entityKey:(id)entityKey keyField:(NSString *)keyField context:(NSManagedObjectContext *)context
 {
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Escape quotation marks for predicate
-    entityKey = [entityKey stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ = \"%@\"", keyField, entityKey]];
+    if ([entityKey isKindOfClass:[NSString class]]) {
+        entityKey = [entityKey stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    }
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", keyField, entityKey];
     [fetchRequest setEntity:entity];
     [fetchRequest setPredicate:predicate];
     

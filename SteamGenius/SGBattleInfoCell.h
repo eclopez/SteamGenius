@@ -10,7 +10,6 @@
 
 @interface SGBattleInfoCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *opponentFactionImage;
 @property (weak, nonatomic) IBOutlet UILabel *opponentCasterName;

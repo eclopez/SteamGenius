@@ -15,6 +15,6 @@
 // Read Methods
 //
 + (NSArray *)findAllEntitiesOfType:(NSString *)entityName context:(NSManagedObjectContext *)context;
-+ (id)findOneEntityOfType:(NSString *)entityName entityKey:(NSString *)entityKey keyField:(NSString *)keyField context:(NSManagedObjectContext *)context;
++ (id)findOneEntityOfType:(NSString *)entityName entityKey:(id)entityKey keyField:(NSString *)keyField context:(NSManagedObjectContext *)context;
 
 @end

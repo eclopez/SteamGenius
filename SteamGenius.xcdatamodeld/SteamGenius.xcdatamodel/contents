@@ -67,7 +67,6 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="battles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Battle" inverseName="scenario" inverseEntity="Battle" syncable="YES"/>
     </entity>
-    <fetchRequest name="AssociatedBattleCount" entity="Battle" predicateString="$ASSOC_ENTITY == $ASSOC_INSTANCE"/>
     <fetchRequest name="MainBattleFetch" entity="Battle" predicateString="playerCaster.faction IN $FACTIONS AND (NOT playerCaster.faction IN $OMIT_FACTIONS)"/>
     <fetchRequest name="RecordCount" entity="Battle" predicateString="result.winValue == $WIN_VALUE"/>
     <elements>
