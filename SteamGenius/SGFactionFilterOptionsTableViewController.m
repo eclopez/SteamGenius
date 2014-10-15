@@ -67,7 +67,7 @@
     cell.accessoryType = UITableViewCellAccessoryNone;
     
     FXFormController *form = self.field.form;
-    Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
+    Faction *currentFaction = [form valueForKey:self.field.key] ? (Faction *)[form valueForKey:self.field.key] : nil;
     cell.accessoryType = currentFaction == faction ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     
     return cell;

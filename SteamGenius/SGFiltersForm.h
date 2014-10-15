@@ -12,11 +12,11 @@
 
 @interface SGFiltersForm : NSObject <FXForm>
 
-@property (strong, nonatomic) NSArray *attributes;
-@property (strong, nonatomic) NSArray *attributeNames;
+@property (strong, nonatomic) NSDictionary *attributes;
+@property (strong, nonatomic) NSDictionary *logicalOperators;
 
 @property (strong, nonatomic) NSString *attribute;
-@property (strong, nonatomic) NSString *logicalOperator;
+@property (strong, nonatomic) NSString *operation;
 @property (strong, nonatomic) id value;
 
 @end

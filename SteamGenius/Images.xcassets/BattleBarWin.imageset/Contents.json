@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "BattleBarWin.png"
+      "filename" : "winBG@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "BattleBarWin@2x.png"
+      "filename" : "winBG@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "BattleBarWin@3x.png"
+      "filename" : "winBG@3x.png"
     }
   ],
   "info" : {

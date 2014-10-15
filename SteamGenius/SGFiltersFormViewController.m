@@ -28,17 +28,19 @@
 
 - (void)attributeChangedAction {
     SGFiltersForm *form = self.formController.form;
-    form.logicalOperator = nil;
+    form.operation = nil;
     form.value = nil;
     
-    self.formController.form = self.formController.form;
-    [self.formController.tableView reloadData];
+    [self reloadForm];
 }
 
-- (void)operatorChangedAction {
-    SGFiltersForm *form = self.formController.form;
-    form.value = nil;
+- (void)operationChangedAction {
+    //SGFiltersForm *form = self.formController.form;
     
+    [self reloadForm];
+}
+
+- (void)reloadForm {
     self.formController.form = self.formController.form;
     [self.formController.tableView reloadData];
 }
