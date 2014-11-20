@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "FXForms.h"
-#import "AppDelegate.h"
 
 @interface SGFiltersForm : NSObject <FXForm>
 
@@ -17,6 +16,10 @@
 
 @property (strong, nonatomic) NSString *attribute;
 @property (strong, nonatomic) NSString *operation;
-@property (strong, nonatomic) id value;
+@property (strong, nonatomic) id attributeValue;
+
+- (NSString *)attributeFieldDescription;
+- (NSString *)operationFieldDescription;
+- (NSString *)attributeValueFieldDescription;
 
 @end

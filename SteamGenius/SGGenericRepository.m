@@ -24,10 +24,6 @@
 {
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Escape quotation marks for predicate
-    if ([entityKey isKindOfClass:[NSString class]]) {
-        entityKey = [entityKey stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
-    }
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", keyField, entityKey];
     [fetchRequest setEntity:entity];
     [fetchRequest setPredicate:predicate];

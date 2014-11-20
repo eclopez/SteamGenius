@@ -15,6 +15,8 @@
 #import "Caster.h"
 #import "Model.h"
 #import "Result.h"
+#import "SGGenericRepository.h"
+#import "BattleFilter.h"
 
 @interface SGBattleListViewController ()
 
@@ -31,13 +33,13 @@
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(35.f, 0, 0, 0);
     
     self.recordViewBackgroundImage.image = [UIImage imageNamed:@"RecordBar"];
-    [self updateRecord];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.tableView.backgroundColor = [SGSettingsManager getBarColor];
+    [self refetch];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +72,6 @@
     
     switch ([battle.result.winValue intValue]) {
         case 1: {
-            //cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarWin"];
             cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BattleBarWin"]];
             [self removeLabelShadow:cell.pointsHeader];
             [self removeLabelShadow:cell.pointsLabel];
@@ -81,7 +82,6 @@
         }
             break;
         case 0:
-            //cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarDraw"];
             cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BattleBarDraw"]];
             [self addLabelShadow:cell.pointsHeader];
             [self addLabelShadow:cell.pointsLabel];
@@ -91,7 +91,6 @@
             cell.resultLine.backgroundColor = [UIColor whiteColor];
             break;
         case -1:
-            //cell.backgroundImage.image = [UIImage imageNamed:@"BattleBarLoss"];
             cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BattleBarLoss"]];
             [self addLabelShadow:cell.pointsHeader];
             [self addLabelShadow:cell.pointsLabel];
@@ -184,19 +183,24 @@
     NSSortDescriptor *sortDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
     [fetchRequest setSortDescriptors:@[sortDate]];
     
-    // Create the fetched results controller
+    //STORED FILTERS
+    NSArray *storedFilters = [SGGenericRepository findAllEntitiesOfType:@"BattleFilter" context:[self.appDelegate managedObjectContext]];
+    if ([storedFilters count] > 0) {
+        NSMutableArray *predicates = [NSMutableArray array];
+        for (BattleFilter *filter in storedFilters) {
+            [predicates addObject:filter.predicate];
+        }
+        NSCompoundPredicate *compoundPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:predicates];
+        [fetchRequest setPredicate:compoundPredicate];
+    }
+    // END STORED FILTERS
+    
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[self.appDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
     // Fetch the data
-    NSError *error = nil;
-    if (![self.fetchedResultsController performFetch:&error]) {
-#warning Handle this error.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
+    [self fetchResults];
     return _fetchedResultsController;
 }
 
@@ -257,7 +261,7 @@
     }
 }
 
-#pragma mark - Private Methods
+#pragma mark - Display Methods
 
 - (NSShadow *)getTextShadow {
     NSShadow *textShadow = [[NSShadow alloc] init];
@@ -288,20 +292,35 @@
     return formatter;
 }
 
+
+#pragma mark - Data Methods
+
+- (void)refetch {
+    self.fetchedResultsController = nil;
+    [self fetchResults];
+    [self updateRecord];
+    [self.tableView reloadData];
+}
+
+- (void)fetchResults {
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"Error in refetch: %@", [error localizedDescription]);
+        abort();
+    }
+}
+
 - (void)updateRecord {
-    NSFetchRequest *winRecordFetch = [[self.appDelegate managedObjectModel] fetchRequestFromTemplateWithName:@"RecordCount" substitutionVariables:@{@"WIN_VALUE": [NSNumber numberWithInt:1]}];
-    NSUInteger winCount = [[self.appDelegate managedObjectContext] countForFetchRequest:winRecordFetch error:nil];
-    self.winTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)winCount];
+    NSArray *winFilter = [self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"result.winValue == %@", @1]];
+    self.winTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)[winFilter count]];
     [self.winTotal sizeToFit];
     
-    NSFetchRequest *drawRecordFetch = [[self.appDelegate managedObjectModel] fetchRequestFromTemplateWithName:@"RecordCount" substitutionVariables:@{@"WIN_VALUE": [NSNumber numberWithInt:0]}];
-    NSUInteger drawCount = [[self.appDelegate managedObjectContext] countForFetchRequest:drawRecordFetch error:nil];
-    self.drawTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)drawCount];
+    NSArray *drawFilter = [self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"result.winValue == %@", @0]];
+    self.drawTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)[drawFilter count]];
     [self.drawTotal sizeToFit];
     
-    NSFetchRequest *lossRecordFetch = [[self.appDelegate managedObjectModel] fetchRequestFromTemplateWithName:@"RecordCount" substitutionVariables:@{@"WIN_VALUE": [NSNumber numberWithInt:-1]}];
-    NSUInteger lossCount = [[self.appDelegate managedObjectContext] countForFetchRequest:lossRecordFetch error:nil];
-    self.lossTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)lossCount];
+    NSArray *lossFilter = [self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"result.winValue == %@", @-1]];
+    self.lossTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)[lossFilter count]];
     [self.lossTotal sizeToFit];
     
     if ([self.fetchedResultsController.fetchedObjects count] < 1) {

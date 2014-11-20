@@ -14,6 +14,10 @@
         <relationship name="result" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="battles" inverseEntity="Result" syncable="YES"/>
         <relationship name="scenario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scenario" inverseName="battles" inverseEntity="Scenario" syncable="YES"/>
     </entity>
+    <entity name="BattleFilter" representedClassName="BattleFilter" syncable="YES">
+        <attribute name="displayText" attributeType="String" syncable="YES"/>
+        <attribute name="predicate" attributeType="Transformable" valueTransformerName="" syncable="YES"/>
+    </entity>
     <entity name="Caster" representedClassName="Caster" syncable="YES">
         <relationship name="faction" maxCount="1" deletionRule="Deny" destinationEntity="Faction" inverseName="casters" inverseEntity="Faction" syncable="YES"/>
         <relationship name="model" maxCount="1" deletionRule="Deny" destinationEntity="Model" inverseName="casters" inverseEntity="Model" syncable="YES"/>
@@ -78,7 +82,8 @@
         <element name="Game" positionX="-45" positionY="2" width="128" height="88"/>
         <element name="Model" positionX="-38" positionY="315" width="128" height="148"/>
         <element name="Opponent" positionX="378" positionY="54" width="128" height="75"/>
-        <element name="Result" positionX="378" positionY="432" width="128" height="103"/>
+        <element name="Result" positionX="378" positionY="464" width="128" height="103"/>
         <element name="Scenario" positionX="574" positionY="324" width="128" height="73"/>
+        <element name="BattleFilter" positionX="153" positionY="45" width="128" height="73"/>
     </elements>
 </model>

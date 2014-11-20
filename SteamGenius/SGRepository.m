@@ -113,4 +113,11 @@
     return b;
 }
 
++ (BattleFilter *)initWithDisplayText:(NSString *)displayText predicate:(NSPredicate *)predicate context:(NSManagedObjectContext *)context {
+    BattleFilter *bf = [NSEntityDescription insertNewObjectForEntityForName:@"BattleFilter" inManagedObjectContext:context];
+    [bf setValue:displayText forKey:@"displayText"];
+    [bf setValue:predicate forKey:@"predicate"];
+    return bf;
+}
+
 @end

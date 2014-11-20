@@ -54,7 +54,8 @@
 		0369596A19D5FC0B0096CEBC /* SGEventForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369596919D5FC0B0096CEBC /* SGEventForm.m */; };
 		0369596E19D6041C0096CEBC /* SGEventFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369596D19D6041C0096CEBC /* SGEventFormViewController.m */; };
 		0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369597119D621830096CEBC /* SGLongPressTableViewCell.m */; };
-		038DAAC319CCE67D00A224F7 /* Caster.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038DAAC219CCE67D00A224F7 /* Caster.plist */; };
+		036BE9A719F62EB40096BDE4 /* BattleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE9A619F62EB40096BDE4 /* BattleFilter.m */; };
+		036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */; };
 		038DAAC719CCFC3400A224F7 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC619CCFC3400A224F7 /* Game.m */; };
 		038DAACA19CCFC3400A224F7 /* Caster.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC919CCFC3400A224F7 /* Caster.m */; };
 		038DAACD19CCFC3400A224F7 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAACC19CCFC3400A224F7 /* Model.m */; };
@@ -163,7 +164,10 @@
 		0369596D19D6041C0096CEBC /* SGEventFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEventFormViewController.m; sourceTree = "<group>"; };
 		0369597019D621830096CEBC /* SGLongPressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLongPressTableViewCell.h; sourceTree = "<group>"; };
 		0369597119D621830096CEBC /* SGLongPressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLongPressTableViewCell.m; sourceTree = "<group>"; };
-		038DAAC219CCE67D00A224F7 /* Caster.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Caster.plist; sourceTree = "<group>"; };
+		036BE9A519F62EB40096BDE4 /* BattleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleFilter.h; sourceTree = "<group>"; };
+		036BE9A619F62EB40096BDE4 /* BattleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleFilter.m; sourceTree = "<group>"; };
+		036BE9B419F766E30096BDE4 /* SGFilterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFilterOptionsTableViewController.h; sourceTree = "<group>"; };
+		036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFilterOptionsTableViewController.m; sourceTree = "<group>"; };
 		038DAAC519CCFC3300A224F7 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		038DAAC619CCFC3400A224F7 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		038DAAC819CCFC3400A224F7 /* Caster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caster.h; sourceTree = "<group>"; };
@@ -321,7 +325,6 @@
 				0325713D19C4932600634776 /* Faction.plist */,
 				0325713F19C4987C00634776 /* Result.plist */,
 				0325714119C49AD900634776 /* Model.plist */,
-				038DAAC219CCE67D00A224F7 /* Caster.plist */,
 			);
 			name = "Raw Data";
 			sourceTree = "<group>";
@@ -411,8 +414,8 @@
 		0349E2D419C180340091FF21 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				03032A9519ED96FE00A15C54 /* Filters */,
 				031D6AB419CEA5A6000B7D26 /* Common */,
+				03032A9519ED96FE00A15C54 /* Filters */,
 				0335019C19C33A0B004AA293 /* Settings */,
 				0349E2DA19C1D8E50091FF21 /* Battles */,
 			);
@@ -447,6 +450,7 @@
 		034D3F4D19EDE8E3008A0230 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				036BE9B719F766F30096BDE4 /* Options */,
 				034D3F5119EDE937008A0230 /* Faction Options */,
 			);
 			name = "View Controllers";
@@ -550,9 +554,20 @@
 			name = Options;
 			sourceTree = "<group>";
 		};
+		036BE9B719F766F30096BDE4 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				036BE9B419F766E30096BDE4 /* SGFilterOptionsTableViewController.h */,
+				036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
 		038DAAC419CCFBBD00A224F7 /* Entity Classes */ = {
 			isa = PBXGroup;
 			children = (
+				036BE9A519F62EB40096BDE4 /* BattleFilter.h */,
+				036BE9A619F62EB40096BDE4 /* BattleFilter.m */,
 				038DAAE019CCFC3400A224F7 /* Faction.h */,
 				038DAAE119CCFC3400A224F7 /* Faction.m */,
 				038DAADD19CCFC3400A224F7 /* Opponent.h */,
@@ -748,7 +763,6 @@
 			files = (
 				031D6AAE19CEA463000B7D26 /* Mercenaries.png in Resources */,
 				0325714019C4987C00634776 /* Result.plist in Resources */,
-				038DAAC319CCE67D00A224F7 /* Caster.plist in Resources */,
 				0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */,
 				0325713C19C492BA00634776 /* Game.plist in Resources */,
 				031D6AB319CEA463000B7D26 /* Trollbloods.png in Resources */,
@@ -826,6 +840,8 @@
 				0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */,
 				0351035D19DD8D3F0032E215 /* SGBattleInfoCell.m in Sources */,
 				038DAAC719CCFC3400A224F7 /* Game.m in Sources */,
+				036BE9A719F62EB40096BDE4 /* BattleFilter.m in Sources */,
+				036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */,
 				038DAADC19CCFC3400A224F7 /* Event.m in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
 				038DAADF19CCFC3400A224F7 /* Opponent.m in Sources */,

@@ -8,18 +8,23 @@
 
 #import <CoreData/CoreData.h>
 #import "SGFiltersForm.h"
+#import "AppDelegate.h"
 #import "SGGenericRepository.h"
 #import "SGFactionFilterOptionsTableViewController.h"
 #import "Faction.h"
 #import "Model.h"
+#import "Opponent.h"
+#import "Scenario.h"
+#import "Event.h"
+#import "Result.h"
 
 @implementation SGFiltersForm
 
 - (id)init {
     if (self = [super init]) {
-        _attributes = @{ @"playerCaster.faction": @"My faction",
+        _attributes = @{ @"playerCaster.faction.name": @"My faction",
                          @"playerCaster.model": @"My caster",
-                         @"opponentCaster.faction": @"My opponent's faction",
+                         @"opponentCaster.faction.name": @"My opponent's faction",
                          @"opponentCaster.model": @"My opponent's caster",
                          @"opponent": @"My opponent",
                          @"date": @"Date",
@@ -47,11 +52,15 @@
         return value ? [_attributes valueForKey:value]: nil;
     };
     
-    NSArray *options = @[ @"playerCaster.faction", @"playerCaster.model", @"opponentCaster.faction", @"opponentCaster.model", @"opponent", @"date",
-                          @"armyPoints", @"result", @"killPoints", @"scenario", @"controlPoints", @"event" ];
+    NSArray *options = @[ @"playerCaster.faction.name", @"playerCaster.model", @"opponentCaster.faction.name", @"opponentCaster.model", @"opponent", @"date", @"armyPoints", @"result", @"killPoints", @"scenario", @"controlPoints", @"event" ];
     return @{ FXFormFieldOptions: options,
               FXFormFieldValueTransformer: attributeValueTransformer,
-              FXFormFieldAction: @"attributeChangedAction" };
+              FXFormFieldAction: @"attributeChangedAction",
+              FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
+}
+
+- (NSString *)attributeFieldDescription {
+    return [_attributes valueForKey:self.attribute];
 }
 
 - (NSDictionary *)operationField {
@@ -59,15 +68,16 @@
         return value ? [_logicalOperators valueForKey:value] : nil;
     };
     
-    if ([_attribute isEqualToString:@"playerCaster.faction"] ||
+    if ([_attribute isEqualToString:@"playerCaster.faction.name"] ||
         [_attribute isEqualToString:@"playerCaster.model"] ||
-        [_attribute isEqualToString:@"opponentCaster.faction"] ||
+        [_attribute isEqualToString:@"opponentCaster.faction.name"] ||
         [_attribute isEqualToString:@"opponentCaster.model"] ||
         [_attribute isEqualToString:@"result"]) {
         return @{ FXFormFieldTitle: @"Operator",
                   FXFormFieldOptions: @[ @"==", @"!=" ],
                   FXFormFieldValueTransformer: operatorValueTransformer,
-                  FXFormFieldAction: @"operationChangedAction" };
+                  FXFormFieldAction: @"operationChangedAction",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
     }
     
     if ([_attribute isEqualToString:@"opponent"] ||
@@ -76,7 +86,8 @@
         return @{ FXFormFieldTitle: @"Operator",
                   FXFormFieldOptions: @[ @"==", @"!=", @"=nil", @"!=nil" ],
                   FXFormFieldValueTransformer: operatorValueTransformer,
-                  FXFormFieldAction: @"operationChangedAction" };
+                  FXFormFieldAction: @"operationChangedAction",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
     }
     
     if ([_attribute isEqualToString:@"armyPoints"] ||
@@ -86,40 +97,110 @@
         return @{ FXFormFieldTitle: @"Operator",
                   FXFormFieldOptions: @[ @"==", @">", @">=", @"<", @"<=" ],
                   FXFormFieldValueTransformer: operatorValueTransformer,
-                  FXFormFieldAction: @"operationChangedAction" };
+                  FXFormFieldAction: @"operationChangedAction",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
     }
     
     return @{ FXFormFieldType: @"label" };
 }
 
-- (NSDictionary *)valueField {
-    if (([_attribute isEqualToString:@"playerCaster.faction"] || [_attribute isEqualToString:@"opponentCaster.faction"]) && self.operation != nil) {
-        return @{ FXFormFieldViewController: @"SGFactionFilterOptionsTableViewController",
-                  FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKeys:@{ @"name": [NSNumber numberWithBool:NO] }]};
+- (NSString *)operationFieldDescription {
+    return [_logicalOperators valueForKey:self.operation];
+}
+
+- (NSDictionary *)attributeValueField {
+    NSString *(^nameValueTransformer)(id) = ^(id value) {
+        return value ? [value objectForKey:@"name"] : nil;
+    };
+    
+    if (([_attribute isEqualToString:@"playerCaster.faction.name"] || [_attribute isEqualToString:@"opponentCaster.faction.name"]) && self.operation != nil) {
+        return @{ FXFormFieldTitle: @"Faction",
+                  FXFormFieldViewController: @"SGFactionFilterOptionsTableViewController",
+                  FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKeys:@{ @"name": [NSNumber numberWithBool:NO] }],
+                  FXFormFieldValueTransformer: nameValueTransformer };
+    }
+    
+    if (([_attribute isEqualToString:@"playerCaster.model"] || [_attribute isEqualToString:@"opponentCaster.model"]) && self.operation != nil) {
+        return @{ FXFormFieldTitle: @"Model",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController",
+                  FXFormFieldOptions: [self sortedObjectArray:@"Model" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
+                  FXFormFieldValueTransformer: nameValueTransformer };
+    }
+    
+    if ([_attribute isEqualToString:@"result"] && self.operation != nil) {
+        return @{ FXFormFieldTitle: @"Result",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController",
+                  FXFormFieldOptions: [self sortedObjectArray:@"Result" sortKeys:@{ @"displayOrder": [NSNumber numberWithBool:YES] }],
+                  FXFormFieldValueTransformer: nameValueTransformer };
+    }
+    
+    if ([_attribute isEqualToString:@"opponent"] && self.operation != nil) {
+        return @{ FXFormFieldTitle: @"Opponent",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController",
+                  FXFormFieldOptions: [self sortedObjectArray:@"Opponent" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
+                  FXFormFieldValueTransformer: nameValueTransformer };
+    }
+    
+    if ([_attribute isEqualToString:@"scenario"] && self.operation != nil) {
+        return @{ FXFormFieldTitle: @"Scenario",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController",
+                  FXFormFieldOptions: [self sortedObjectArray:@"Scenario" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
+                  FXFormFieldValueTransformer: nameValueTransformer };
+    }
+    
+    if ([_attribute isEqualToString:@"event"] && self.operation != nil) {
+        return @{ FXFormFieldTitle: @"Event",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController",
+                  FXFormFieldOptions: [self sortedObjectArray:@"Event" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
+                  FXFormFieldValueTransformer: nameValueTransformer };
     }
     
     if (([_attribute isEqualToString:@"armyPoints"] ||
         [_attribute isEqualToString:@"killPoints"] ||
         [_attribute isEqualToString:@"controlPoints"]) && self.operation != nil) {
-        return @{ FXFormFieldType: @"unsigned" };
+        return @{ FXFormFieldTitle: @"Value",
+                  FXFormFieldType: @"unsigned" };
     }
     
-    if ([_attribute isEqualToString:@"date"] && self.operation != nil) {
-        return @{ FXFormFieldType: @"date",
+    if ([_attribute isEqualToString:@"date"]) {
+        return @{ FXFormFieldTitle: @"Date",
+                  FXFormFieldType: @"date",
                   FXFormFieldDefaultValue: [NSDate date] };
     }
     
-    return @{ FXFormFieldType: @"label" };
+    return @{ FXFormFieldTitle: @"Value",
+              FXFormFieldType: @"label" };
 }
 
-- (NSString *)valueFieldDescription {
-    if ([self.value isKindOfClass:[Faction class]]) {
-        return self.value ? ((Faction *)self.value).name : nil;
+- (NSString *)attributeValueFieldDescription {
+    if ([self.attributeValue isKindOfClass:[Faction class]]) {
+        return self.attributeValue ? ((Faction *)self.attributeValue).name : nil;
     }
-    if ([self.value isKindOfClass:[Model class]]) {
-        return self.value ? ((Model *)self.value).name : nil;
+    else if ([self.attributeValue isKindOfClass:[Model class]]) {
+        return self.attributeValue ? ((Model *)self.attributeValue).name : nil;
     }
-    return [self.value stringValue];
+    else if ([self.attributeValue isKindOfClass:[NSDate class]]) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateStyle = NSDateFormatterMediumStyle;
+        formatter.timeStyle = NSDateFormatterNoStyle;
+        return [formatter stringFromDate:self.attributeValue];
+    }
+    else if ([self.attributeValue isKindOfClass:[Result class]]) {
+        return self.attributeValue ? ((Result *)self.attributeValue).name : nil;
+    }
+    else if ([self.attributeValue isKindOfClass:[Opponent class]]) {
+        return self.attributeValue ? ((Opponent *)self.attributeValue).name : nil;
+    }
+    else if ([self.attributeValue isKindOfClass:[Scenario class]]) {
+        return self.attributeValue ? ((Scenario *)self.attributeValue).name : nil;
+    }
+    else if ([self.attributeValue isKindOfClass:[Event class]]) {
+        return self.attributeValue ? ((Event *)self.attributeValue).name : nil;
+    }
+    else if ([self.attributeValue isKindOfClass:[NSString class]]) {
+        return self.attributeValue;
+    }
+    return @"";
 }
 
 - (NSArray *)excludedFields

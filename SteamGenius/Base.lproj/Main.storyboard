@@ -488,7 +488,11 @@
                                 <segue destination="0gO-BP-xm3" kind="custom" customClass="SGDismissSegue" id="NL0-xG-7ES"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Gfc-1w-k5h"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Gfc-1w-k5h">
+                            <connections>
+                                <action selector="saveFilter:" destination="JtB-KE-AG5" id="8JU-e2-Wkq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhb-Oc-qFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -630,8 +634,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f4u-Fn-eS1"/>
         <segue reference="NL0-xG-7ES"/>
+        <segue reference="8Yc-ar-cEc"/>
         <segue reference="jQb-ad-gCQ"/>
         <segue reference="hC4-bJ-CMG"/>
     </inferredMetricsTieBreakers>

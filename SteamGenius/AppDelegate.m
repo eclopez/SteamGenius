@@ -73,7 +73,7 @@
     [SGDataImport importDataForEntityNamed:@"Game" version:kCurrentGameVersion entityType:SGEntityType_Game plistFileNamed:@"Game" context:self.managedObjectContext];
     [SGDataImport importDataForEntityNamed:@"Faction" version:kCurrentFactionVersion entityType:SGEntityType_Faction plistFileNamed:@"Faction" context:self.managedObjectContext];
     [SGDataImport importDataForEntityNamed:@"Model" version:kCurrentModelVersion entityType:SGEntityType_Model plistFileNamed:@"Model" context:self.managedObjectContext];
-    [SGDataImport importDataForEntityNamed:@"Caster" version:kCurrentCasterVersion entityType:SGEntityType_Caster plistFileNamed:@"Caster" context:self.managedObjectContext];
+    [SGDataImport importDataForEntityNamed:@"Caster" version:kCurrentCasterVersion entityType:SGEntityType_Caster plistFileNamed:@"Model" context:self.managedObjectContext];
     [SGDataImport importDataForEntityNamed:@"Result" version:kCurrentResultVersion entityType:SGEntityType_Result plistFileNamed:@"Result" context:self.managedObjectContext];
 }
 

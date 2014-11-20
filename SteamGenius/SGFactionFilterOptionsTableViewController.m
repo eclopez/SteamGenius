@@ -80,7 +80,7 @@
     Faction *faction = [factions objectAtIndex:indexPath.row];
     
     FXFormController *form = self.field.form;
-    [form setValue:faction forKey:self.field.key];
+    [form setValue:faction.name forKey:self.field.key];
     
     if (self.field.action) self.field.action(self);
     [self.navigationController popToRootViewControllerAnimated:YES];
