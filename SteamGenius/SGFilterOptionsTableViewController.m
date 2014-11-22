@@ -72,7 +72,11 @@
     NSManagedObject *obj = [self.field optionAtIndex:indexPath.row];
     
     FXFormController *form = self.field.form;
-    [form setValue:obj forKey:self.field.key];
+    if ([obj isKindOfClass:[NSManagedObject class]]) {
+        [form setValue:[obj valueForKey:@"name"] forKey:self.field.key];
+    } else {
+        [form setValue:obj forKey:self.field.key];
+    }
     
     if (self.field.action) self.field.action(self);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

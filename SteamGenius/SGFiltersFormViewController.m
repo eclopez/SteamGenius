@@ -36,8 +36,16 @@
     SGFiltersForm *form = self.formController.form;
     
     int validate = 0;
-    NSArray *validateFields = @[ @"attribute", @"operation", @"attributeValue" ];
-    NSArray *validateFieldNames = @[ @"Attribute", @"Operator", @"Value" ];
+    NSArray *validateFields;
+    NSArray *validateFieldNames;
+    
+    if ([[form valueForKey:@"operation"] isEqual:@"=nil"] || [[form valueForKey:@"operation"] isEqual:@"!=nil"]) {
+        validateFields = @[ @"attribute", @"operation" ];
+        validateFieldNames = @[ @"Attribute", @"Operator" ];
+    } else {
+        validateFields = @[ @"attribute", @"operation", @"attributeValue" ];
+        validateFieldNames = @[ @"Attribute", @"Operator", @"Value" ];
+    }
     
     NSMutableString *validationList = [[NSMutableString alloc] init];
     for (NSString *field in validateFields) {
@@ -49,8 +57,19 @@
     
     if (validate == 0) {
         NSString *predicateDescription = [NSString stringWithFormat:@"%@ %@ %@", form.attributeFieldDescription, form.operationFieldDescription, form.attributeValueFieldDescription];
-        NSString *predicateString = [NSString stringWithFormat:@"%@ %@ %@", @"%K", form.operation, @"%@"];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateString, form.attribute, form.attributeValue];
+        NSString *predicateString;
+        NSPredicate *predicate;
+        if ([form.attribute isEqual:@"armyPoints"] || [form.attribute isEqual:@"killPoints"] || [form.attribute isEqual:@"controlPoints"]) {
+            predicateString = [NSString stringWithFormat:@"%@ %@ %@", @"%K", form.operation, @"%i"];
+            predicate = [NSPredicate predicateWithFormat:predicateString, form.attribute, [form.attributeValue integerValue]];
+        }
+        else if ([form.operation isEqual:@"=nil"] || [form.operation isEqual:@"!=nil"]) {
+            predicateString = [NSString stringWithFormat:@"%@ %@", @"%K", form.operation];
+            predicate = [NSPredicate predicateWithFormat:predicateString, form.attribute];
+        } else {
+            predicateString = [NSString stringWithFormat:@"%@ %@ %@", @"%K", form.operation, @"%@"];
+            predicate = [NSPredicate predicateWithFormat:predicateString, form.attribute, form.attributeValue];
+        }
     
         [SGRepository initWithDisplayText:predicateDescription predicate:predicate context:[appDelegate managedObjectContext]];
         [appDelegate saveContext];

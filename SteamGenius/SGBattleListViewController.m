@@ -190,7 +190,7 @@
         for (BattleFilter *filter in storedFilters) {
             [predicates addObject:filter.predicate];
         }
-        NSCompoundPredicate *compoundPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:predicates];
+        NSCompoundPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
         [fetchRequest setPredicate:compoundPredicate];
     }
     // END STORED FILTERS

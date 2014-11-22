@@ -23,17 +23,17 @@
 - (id)init {
     if (self = [super init]) {
         _attributes = @{ @"playerCaster.faction.name": @"My faction",
-                         @"playerCaster.model": @"My caster",
+                         @"playerCaster.model.name": @"My caster",
                          @"opponentCaster.faction.name": @"My opponent's faction",
-                         @"opponentCaster.model": @"My opponent's caster",
-                         @"opponent": @"My opponent",
+                         @"opponentCaster.model.name": @"My opponent's caster",
+                         @"opponent.name": @"My opponent",
                          @"date": @"Date",
                          @"armyPoints": @"Points",
-                         @"result": @"Result",
+                         @"result.name": @"Result",
                          @"killPoints": @"Kill points",
-                         @"scenario": @"Scenario",
+                         @"scenario.name": @"Scenario",
                          @"controlPoints": @"Control points",
-                         @"event": @"Event" };
+                         @"event.name": @"Event" };
         
         _logicalOperators = @{ @"==": @"is",
                                @"!=": @"is not",
@@ -52,7 +52,7 @@
         return value ? [_attributes valueForKey:value]: nil;
     };
     
-    NSArray *options = @[ @"playerCaster.faction.name", @"playerCaster.model", @"opponentCaster.faction.name", @"opponentCaster.model", @"opponent", @"date", @"armyPoints", @"result", @"killPoints", @"scenario", @"controlPoints", @"event" ];
+    NSArray *options = @[ @"playerCaster.faction.name", @"playerCaster.model.name", @"opponentCaster.faction.name", @"opponentCaster.model.name", @"opponent.name", @"date", @"armyPoints", @"result.name", @"killPoints", @"scenario.name", @"controlPoints", @"event.name" ];
     return @{ FXFormFieldOptions: options,
               FXFormFieldValueTransformer: attributeValueTransformer,
               FXFormFieldAction: @"attributeChangedAction",
@@ -69,10 +69,10 @@
     };
     
     if ([_attribute isEqualToString:@"playerCaster.faction.name"] ||
-        [_attribute isEqualToString:@"playerCaster.model"] ||
+        [_attribute isEqualToString:@"playerCaster.model.name"] ||
         [_attribute isEqualToString:@"opponentCaster.faction.name"] ||
-        [_attribute isEqualToString:@"opponentCaster.model"] ||
-        [_attribute isEqualToString:@"result"]) {
+        [_attribute isEqualToString:@"opponentCaster.model.name"] ||
+        [_attribute isEqualToString:@"result.name"]) {
         return @{ FXFormFieldTitle: @"Operator",
                   FXFormFieldOptions: @[ @"==", @"!=" ],
                   FXFormFieldValueTransformer: operatorValueTransformer,
@@ -80,9 +80,9 @@
                   FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
     }
     
-    if ([_attribute isEqualToString:@"opponent"] ||
-        [_attribute isEqualToString:@"scenario"] ||
-        [_attribute isEqualToString:@"event"]) {
+    if ([_attribute isEqualToString:@"opponent.name"] ||
+        [_attribute isEqualToString:@"scenario.name"] ||
+        [_attribute isEqualToString:@"event.name"]) {
         return @{ FXFormFieldTitle: @"Operator",
                   FXFormFieldOptions: @[ @"==", @"!=", @"=nil", @"!=nil" ],
                   FXFormFieldValueTransformer: operatorValueTransformer,
@@ -120,39 +120,54 @@
                   FXFormFieldValueTransformer: nameValueTransformer };
     }
     
-    if (([_attribute isEqualToString:@"playerCaster.model"] || [_attribute isEqualToString:@"opponentCaster.model"]) && self.operation != nil) {
+    if (([_attribute isEqualToString:@"playerCaster.model.name"] || [_attribute isEqualToString:@"opponentCaster.model.name"]) && self.operation != nil) {
         return @{ FXFormFieldTitle: @"Model",
                   FXFormFieldViewController: @"SGFilterOptionsTableViewController",
                   FXFormFieldOptions: [self sortedObjectArray:@"Model" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
                   FXFormFieldValueTransformer: nameValueTransformer };
     }
     
-    if ([_attribute isEqualToString:@"result"] && self.operation != nil) {
+    if ([_attribute isEqualToString:@"result.name"] && self.operation != nil) {
         return @{ FXFormFieldTitle: @"Result",
                   FXFormFieldViewController: @"SGFilterOptionsTableViewController",
                   FXFormFieldOptions: [self sortedObjectArray:@"Result" sortKeys:@{ @"displayOrder": [NSNumber numberWithBool:YES] }],
                   FXFormFieldValueTransformer: nameValueTransformer };
     }
     
-    if ([_attribute isEqualToString:@"opponent"] && self.operation != nil) {
+    if ([_attribute isEqualToString:@"opponent.name"] && self.operation != nil) {
+        if ([self.operation isEqual:@"=nil"] || [self.operation isEqual:@"!=nil"]) {
+            return @{ FXFormFieldTitle: @"",
+                      FXFormFieldType: @"label" };
+        } else {
         return @{ FXFormFieldTitle: @"Opponent",
                   FXFormFieldViewController: @"SGFilterOptionsTableViewController",
                   FXFormFieldOptions: [self sortedObjectArray:@"Opponent" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
                   FXFormFieldValueTransformer: nameValueTransformer };
+        }
     }
     
-    if ([_attribute isEqualToString:@"scenario"] && self.operation != nil) {
-        return @{ FXFormFieldTitle: @"Scenario",
-                  FXFormFieldViewController: @"SGFilterOptionsTableViewController",
-                  FXFormFieldOptions: [self sortedObjectArray:@"Scenario" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
-                  FXFormFieldValueTransformer: nameValueTransformer };
+    if ([_attribute isEqualToString:@"scenario.name"] && self.operation != nil) {
+        if ([self.operation isEqual:@"=nil"] || [self.operation isEqual:@"!=nil"]) {
+            return @{ FXFormFieldTitle: @"",
+                      FXFormFieldType: @"label" };
+        } else {
+            return @{ FXFormFieldTitle: @"Scenario",
+                      FXFormFieldViewController: @"SGFilterOptionsTableViewController",
+                      FXFormFieldOptions: [self sortedObjectArray:@"Scenario" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
+                      FXFormFieldValueTransformer: nameValueTransformer };
+        }
     }
     
-    if ([_attribute isEqualToString:@"event"] && self.operation != nil) {
-        return @{ FXFormFieldTitle: @"Event",
-                  FXFormFieldViewController: @"SGFilterOptionsTableViewController",
-                  FXFormFieldOptions: [self sortedObjectArray:@"Event" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
-                  FXFormFieldValueTransformer: nameValueTransformer };
+    if ([_attribute isEqualToString:@"event.name"] && self.operation != nil) {
+        if ([self.operation isEqual:@"=nil"] || [self.operation isEqual:@"!=nil"]) {
+            return @{ FXFormFieldTitle: @"",
+                      FXFormFieldType: @"label" };
+        } else {
+            return @{ FXFormFieldTitle: @"Event",
+                      FXFormFieldViewController: @"SGFilterOptionsTableViewController",
+                      FXFormFieldOptions: [self sortedObjectArray:@"Event" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
+                      FXFormFieldValueTransformer: nameValueTransformer };
+        }
     }
     
     if (([_attribute isEqualToString:@"armyPoints"] ||
