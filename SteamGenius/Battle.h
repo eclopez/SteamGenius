@@ -13,7 +13,6 @@
 
 @interface Battle : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * armyPoints;
 @property (nonatomic, retain) NSNumber * controlPoints;
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSNumber * killPoints;

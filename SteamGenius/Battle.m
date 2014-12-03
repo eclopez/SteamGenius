@@ -16,7 +16,6 @@
 
 @implementation Battle
 
-@dynamic armyPoints;
 @dynamic controlPoints;
 @dynamic date;
 @dynamic killPoints;

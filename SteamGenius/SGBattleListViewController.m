@@ -188,7 +188,8 @@
     if ([storedFilters count] > 0) {
         NSMutableArray *predicates = [NSMutableArray array];
         for (BattleFilter *filter in storedFilters) {
-            [predicates addObject:filter.predicate];
+            [predicates addObject:(NSComparisonPredicate *)filter.predicate];
+            NSLog(@"%@: %@", filter.displayText, filter.predicate);
         }
         NSCompoundPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
         [fetchRequest setPredicate:compoundPredicate];
@@ -223,7 +224,6 @@
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
         case NSFetchedResultsChangeMove:
-            break;
         case NSFetchedResultsChangeUpdate:
             break;
     }
@@ -241,8 +241,6 @@
             [self configureCell:(SGBattleInfoCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
         case NSFetchedResultsChangeMove:
-            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
     

@@ -92,7 +92,7 @@
     Event *e = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:context];
     [e setValue:eventName forKey:@"name"];
     [e setValue:location forKey:@"location"];
-    [e setValue:date forKey:@"date"];
+    [e setValue:[self normalizedDate:date] forKey:@"date"];
     [e setValue:[NSNumber numberWithBool:isTournament] forKey:@"isTournament"];
     return e;
 }
@@ -103,7 +103,7 @@
     [b setValue:playerCaster forKey:@"playerCaster"];
     [b setValue:opponentCaster forKey:@"opponentCaster"];
     [b setValue:opponent forKey:@"opponent"];
-    [b setValue:date forKey:@"date"];
+    [b setValue:[self normalizedDate:date] forKey:@"date"];
     [b setValue:points forKey:@"points"];
     [b setValue:result forKey:@"result"];
     [b setValue:killPoints forKey:@"killPoints"];
@@ -118,6 +118,21 @@
     [bf setValue:displayText forKey:@"displayText"];
     [bf setValue:predicate forKey:@"predicate"];
     return bf;
+}
+
+#pragma mark - Utilities
+
++ (NSDate *)normalizedDate:(NSDate *)date {
+    NSLog(@"Date before normalization: %@", date);
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    NSDateComponents *dateComponents = [calendar components:(NSCalendarUnitYear | NSCalendarUnitWeekOfMonth | NSCalendarUnitDay) fromDate:date];
+    [dateComponents setHour:12];
+    [dateComponents setMinute:0];
+    [dateComponents setSecond:0];
+    [dateComponents setNanosecond:0];
+    NSLog(@"Date after normalization: %@", [calendar dateFromComponents:dateComponents]);
+    return [calendar dateFromComponents:dateComponents];
 }
 
 @end

@@ -28,14 +28,14 @@
                          @"opponentCaster.model.name": @"My opponent's caster",
                          @"opponent.name": @"My opponent",
                          @"date": @"Date",
-                         @"armyPoints": @"Points",
+                         @"points": @"Points",
                          @"result.name": @"Result",
                          @"killPoints": @"Kill points",
                          @"scenario.name": @"Scenario",
                          @"controlPoints": @"Control points",
                          @"event.name": @"Event" };
         
-        _logicalOperators = @{ @"==": @"is",
+        _logicalOperators = @{ @"=": @"is",
                                @"!=": @"is not",
                                @"!=nil": @"is set",
                                @"=nil": @"is not set",
@@ -52,7 +52,7 @@
         return value ? [_attributes valueForKey:value]: nil;
     };
     
-    NSArray *options = @[ @"playerCaster.faction.name", @"playerCaster.model.name", @"opponentCaster.faction.name", @"opponentCaster.model.name", @"opponent.name", @"date", @"armyPoints", @"result.name", @"killPoints", @"scenario.name", @"controlPoints", @"event.name" ];
+    NSArray *options = @[ @"playerCaster.faction.name", @"playerCaster.model.name", @"opponentCaster.faction.name", @"opponentCaster.model.name", @"opponent.name", @"date", @"points", @"result.name", @"killPoints", @"scenario.name", @"controlPoints", @"event.name" ];
     return @{ FXFormFieldOptions: options,
               FXFormFieldValueTransformer: attributeValueTransformer,
               FXFormFieldAction: @"attributeChangedAction",
@@ -74,32 +74,37 @@
         [_attribute isEqualToString:@"opponentCaster.model.name"] ||
         [_attribute isEqualToString:@"result.name"]) {
         return @{ FXFormFieldTitle: @"Operator",
-                  FXFormFieldOptions: @[ @"==", @"!=" ],
+                  FXFormFieldOptions: @[ @"=", @"!=" ],
+                  FXFormFieldValueTransformer: operatorValueTransformer,
+                  FXFormFieldAction: @"operationChangedAction",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
+    }
+    else if ([_attribute isEqualToString:@"opponent.name"] ||
+             [_attribute isEqualToString:@"scenario.name"] ||
+             [_attribute isEqualToString:@"event.name"]) {
+        return @{ FXFormFieldTitle: @"Operator",
+                  FXFormFieldOptions: @[ @"=", @"!=", @"=nil", @"!=nil" ],
+                  FXFormFieldValueTransformer: operatorValueTransformer,
+                  FXFormFieldAction: @"operationChangedAction",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
+    }
+    else if ([_attribute isEqualToString:@"points"] ||
+             [_attribute isEqualToString:@"date"]) {
+        return @{ FXFormFieldTitle: @"Operator",
+                  FXFormFieldOptions: @[ @"=", @">", @">=", @"<", @"<=" ],
+                  FXFormFieldValueTransformer: operatorValueTransformer,
+                  FXFormFieldAction: @"operationChangedAction",
+                  FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
+    }
+    else if ([_attribute isEqualToString:@"killPoints"] ||
+             [_attribute isEqualToString:@"controlPoints"]) {
+        return @{ FXFormFieldTitle: @"Operator",
+                  FXFormFieldOptions: @[ @"=", @">", @">=", @"<", @"<=", @"=nil", @"!=nil" ],
                   FXFormFieldValueTransformer: operatorValueTransformer,
                   FXFormFieldAction: @"operationChangedAction",
                   FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
     }
     
-    if ([_attribute isEqualToString:@"opponent.name"] ||
-        [_attribute isEqualToString:@"scenario.name"] ||
-        [_attribute isEqualToString:@"event.name"]) {
-        return @{ FXFormFieldTitle: @"Operator",
-                  FXFormFieldOptions: @[ @"==", @"!=", @"=nil", @"!=nil" ],
-                  FXFormFieldValueTransformer: operatorValueTransformer,
-                  FXFormFieldAction: @"operationChangedAction",
-                  FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
-    }
-    
-    if ([_attribute isEqualToString:@"armyPoints"] ||
-        [_attribute isEqualToString:@"killPoints"] ||
-        [_attribute isEqualToString:@"controlPoints"] ||
-        [_attribute isEqualToString:@"date"]) {
-        return @{ FXFormFieldTitle: @"Operator",
-                  FXFormFieldOptions: @[ @"==", @">", @">=", @"<", @"<=" ],
-                  FXFormFieldValueTransformer: operatorValueTransformer,
-                  FXFormFieldAction: @"operationChangedAction",
-                  FXFormFieldViewController: @"SGFilterOptionsTableViewController" };
-    }
     
     return @{ FXFormFieldType: @"label" };
 }
@@ -170,14 +175,23 @@
         }
     }
     
-    if (([_attribute isEqualToString:@"armyPoints"] ||
-        [_attribute isEqualToString:@"killPoints"] ||
-        [_attribute isEqualToString:@"controlPoints"]) && self.operation != nil) {
+    if ([_attribute isEqualToString:@"points"] && self.operation != nil) {
         return @{ FXFormFieldTitle: @"Value",
                   FXFormFieldType: @"unsigned" };
     }
     
-    if ([_attribute isEqualToString:@"date"]) {
+    if (([_attribute isEqualToString:@"killPoints"] ||
+         [_attribute isEqualToString:@"controlPoints"]) && self.operation != nil) {
+        if ([self.operation isEqual:@"=nil"] || [self.operation isEqual:@"!=nil"]) {
+            return @{ FXFormFieldTitle: @"",
+                      FXFormFieldType: @"label" };
+        } else {
+            return @{ FXFormFieldTitle: @"Value",
+                      FXFormFieldType: @"unsigned" };
+        }
+    }
+    
+    if ([_attribute isEqualToString:@"date"] && self.operation != nil) {
         return @{ FXFormFieldTitle: @"Date",
                   FXFormFieldType: @"date",
                   FXFormFieldDefaultValue: [NSDate date] };

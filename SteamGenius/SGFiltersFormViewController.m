@@ -57,18 +57,20 @@
     
     if (validate == 0) {
         NSString *predicateDescription = [NSString stringWithFormat:@"%@ %@ %@", form.attributeFieldDescription, form.operationFieldDescription, form.attributeValueFieldDescription];
-        NSString *predicateString;
         NSPredicate *predicate;
-        if ([form.attribute isEqual:@"armyPoints"] || [form.attribute isEqual:@"killPoints"] || [form.attribute isEqual:@"controlPoints"]) {
-            predicateString = [NSString stringWithFormat:@"%@ %@ %@", @"%K", form.operation, @"%i"];
-            predicate = [NSPredicate predicateWithFormat:predicateString, form.attribute, [form.attributeValue integerValue]];
+        if ([form.attribute isEqualToString:@"date"]) {
+            form.attributeValue = [self normalizedDate:form.attributeValue];
         }
-        else if ([form.operation isEqual:@"=nil"] || [form.operation isEqual:@"!=nil"]) {
-            predicateString = [NSString stringWithFormat:@"%@ %@", @"%K", form.operation];
-            predicate = [NSPredicate predicateWithFormat:predicateString, form.attribute];
+        if (([form.attribute isEqual:@"points"] || [form.attribute isEqual:@"killPoints"] || [form.attribute isEqual:@"controlPoints"])
+            && (![form.operation isEqualToString:@"=nil"] && ![form.operation isEqualToString:@"!=nil"])) {
+            NSPredicate *predicateTemplate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ %@ $VALUE", form.attribute, form.operation]];
+            predicate = [predicateTemplate predicateWithSubstitutionVariables:@{@"VALUE": [NSNumber numberWithInteger:[form.attributeValue integerValue]]}];
+        }
+        else if ([form.operation isEqualToString:@"=nil"] || [form.operation isEqualToString:@"!=nil"]) {
+            predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ %@", @"%K", form.operation], form.attribute];
         } else {
-            predicateString = [NSString stringWithFormat:@"%@ %@ %@", @"%K", form.operation, @"%@"];
-            predicate = [NSPredicate predicateWithFormat:predicateString, form.attribute, form.attributeValue];
+            NSPredicate *predicateTemplate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ %@ $VALUE", form.attribute, form.operation]];
+            predicate = [predicateTemplate predicateWithSubstitutionVariables:@{@"VALUE": form.attributeValue}];
         }
     
         [SGRepository initWithDisplayText:predicateDescription predicate:predicate context:[appDelegate managedObjectContext]];
@@ -101,6 +103,21 @@
 - (void)reloadForm {
     self.formController.form = self.formController.form;
     [self.formController.tableView reloadData];
+}
+
+#pragma mark - Utilities
+
+- (NSDate *)normalizedDate:(NSDate *)date {
+    NSLog(@"Date before normalization: %@", date);
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    NSDateComponents *dateComponents = [calendar components:(NSCalendarUnitYear | NSCalendarUnitWeekOfMonth | NSCalendarUnitDay) fromDate:date];
+    [dateComponents setHour:12];
+    [dateComponents setMinute:0];
+    [dateComponents setSecond:0];
+    [dateComponents setNanosecond:0];
+    NSLog(@"Date after normalization: %@", [calendar dateFromComponents:dateComponents]);
+    return [calendar dateFromComponents:dateComponents];
 }
 
 @end
