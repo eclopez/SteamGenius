@@ -56,6 +56,7 @@
 		0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369597119D621830096CEBC /* SGLongPressTableViewCell.m */; };
 		036BE9A719F62EB40096BDE4 /* BattleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE9A619F62EB40096BDE4 /* BattleFilter.m */; };
 		036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */; };
+		036F4D631A3214370056D28D /* SGFiltersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F4D621A3214370056D28D /* SGFiltersListViewController.m */; };
 		038DAAC719CCFC3400A224F7 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC619CCFC3400A224F7 /* Game.m */; };
 		038DAACA19CCFC3400A224F7 /* Caster.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC919CCFC3400A224F7 /* Caster.m */; };
 		038DAACD19CCFC3400A224F7 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAACC19CCFC3400A224F7 /* Model.m */; };
@@ -72,6 +73,8 @@
 		038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF319CDE70C00A224F7 /* SGBattleForm.m */; };
 		038DAAF819CDE8C500A224F7 /* SGBattleFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */; };
 		03B6244B19E3C6D300963793 /* SGBattleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B6244A19E3C6D300963793 /* SGBattleDetailViewController.m */; };
+		03C3010F1A36A79B0053882A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3010E1A36A79B0053882A /* iAd.framework */; };
+		03C301111A36A8AE0053882A /* libAdapterIAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C301101A36A8AE0053882A /* libAdapterIAd.a */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +171,8 @@
 		036BE9A619F62EB40096BDE4 /* BattleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleFilter.m; sourceTree = "<group>"; };
 		036BE9B419F766E30096BDE4 /* SGFilterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFilterOptionsTableViewController.h; sourceTree = "<group>"; };
 		036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFilterOptionsTableViewController.m; sourceTree = "<group>"; };
+		036F4D611A3214370056D28D /* SGFiltersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFiltersListViewController.h; sourceTree = "<group>"; };
+		036F4D621A3214370056D28D /* SGFiltersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersListViewController.m; sourceTree = "<group>"; };
 		038DAAC519CCFC3300A224F7 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		038DAAC619CCFC3400A224F7 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		038DAAC819CCFC3400A224F7 /* Caster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caster.h; sourceTree = "<group>"; };
@@ -199,6 +204,8 @@
 		038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleFormViewController.m; sourceTree = "<group>"; };
 		03B6244919E3C6D300963793 /* SGBattleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleDetailViewController.h; sourceTree = "<group>"; };
 		03B6244A19E3C6D300963793 /* SGBattleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleDetailViewController.m; sourceTree = "<group>"; };
+		03C3010E1A36A79B0053882A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		03C301101A36A8AE0053882A /* libAdapterIAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdapterIAd.a; path = "../../../Downloads/LibAdapterIAd-1.0.0/libAdapterIAd.a"; sourceTree = "<group>"; };
 		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -207,6 +214,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C301111A36A8AE0053882A /* libAdapterIAd.a in Frameworks */,
+				03C3010F1A36A79B0053882A /* iAd.framework in Frameworks */,
 				038DAAE919CD019000A224F7 /* CoreData.framework in Frameworks */,
 				2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */,
 			);
@@ -225,6 +234,8 @@
 		03032A9519ED96FE00A15C54 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				036F4D611A3214370056D28D /* SGFiltersListViewController.h */,
+				036F4D621A3214370056D28D /* SGFiltersListViewController.m */,
 				034D3F4C19EDE8DC008A0230 /* Common */,
 				03032A9619ED970D00A15C54 /* Form */,
 				03032A9E19EDAF4C00A15C54 /* SGFiltersListTableViewController.h */,
@@ -671,6 +682,8 @@
 		47148A91232B4766B1D74C11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03C301101A36A8AE0053882A /* libAdapterIAd.a */,
+				03C3010E1A36A79B0053882A /* iAd.framework */,
 				0351036219DE4EC70032E215 /* QuartzCore.framework */,
 				038DAAE719CCFEF400A224F7 /* CoreData.framework */,
 				A616B079BAEC402E93CA0CE3 /* libPods.a */,
@@ -845,6 +858,7 @@
 				038DAADC19CCFC3400A224F7 /* Event.m in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
 				038DAADF19CCFC3400A224F7 /* Opponent.m in Sources */,
+				036F4D631A3214370056D28D /* SGFiltersListViewController.m in Sources */,
 				038DAACA19CCFC3400A224F7 /* Caster.m in Sources */,
 				0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */,
 				0325713819C491B300634776 /* SteamGenius.xcdatamodeld in Sources */,
@@ -1004,6 +1018,10 @@
 				INFOPLIST_FILE = SteamGenius/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Erik/Downloads/LibAdapterIAd-1.0.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1017,6 +1035,10 @@
 				INFOPLIST_FILE = SteamGenius/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Erik/Downloads/LibAdapterIAd-1.0.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

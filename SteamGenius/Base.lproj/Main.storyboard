@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Split View Controller-->
@@ -60,7 +60,7 @@
                                 <items>
                                     <barButtonItem title="Filters" id="yQ7-XY-JMY">
                                         <connections>
-                                            <segue destination="0gO-BP-xm3" kind="popoverPresentation" popoverAnchorBarButtonItem="yQ7-XY-JMY" id="dCP-5k-hwb">
+                                            <segue destination="W3z-mZ-N6O" kind="popoverPresentation" popoverAnchorBarButtonItem="yQ7-XY-JMY" id="4DZ-mc-yxt">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -68,7 +68,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ElI-UV-6ZF"/>
                                     <barButtonItem title="Settings" id="Rru-YG-H5B">
                                         <connections>
-                                            <segue destination="e6k-f0-bzM" kind="presentation" id="fHv-5T-4kl"/>
+                                            <segue destination="e6k-f0-bzM" kind="popoverPresentation" popoverAnchorBarButtonItem="Rru-YG-H5B" id="fHv-5T-4kl">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -431,44 +433,6 @@
             </objects>
             <point key="canvasLocation" x="2156" y="-1189"/>
         </scene>
-        <!--Filters-->
-        <scene sceneID="ggL-6i-nfJ">
-            <objects>
-                <tableViewController id="Qy7-59-Yya" customClass="SGFiltersListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cEp-NJ-kUe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xoh-AI-XlP">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xoh-AI-XlP" id="fVG-mZ-rOS">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Qy7-59-Yya" id="P0e-Cr-JOG"/>
-                            <outlet property="delegate" destination="Qy7-59-Yya" id="KWr-oC-sPw"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Filters" id="F1U-x5-YtG">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="CsY-Ev-tI9">
-                            <connections>
-                                <segue destination="I1p-7u-QBS" kind="custom" customClass="SGDismissSegue" id="f4u-Fn-eS1"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JqX-od-4ck">
-                            <connections>
-                                <segue destination="2zn-8R-3m1" kind="presentation" id="NZ1-rl-U91"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9nl-hd-P3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2156" y="-2697"/>
-        </scene>
         <!--Add Filter-->
         <scene sceneID="IWJ-1e-T19">
             <objects>
@@ -483,11 +447,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Filter" id="mpC-tk-2dX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="myz-LX-QQH">
-                            <connections>
-                                <segue destination="0gO-BP-xm3" kind="custom" customClass="SGDismissSegue" id="NL0-xG-7ES"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="myz-LX-QQH"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Gfc-1w-k5h">
                             <connections>
                                 <action selector="saveFilter:" destination="JtB-KE-AG5" id="8JU-e2-Wkq"/>
@@ -497,7 +457,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhb-Oc-qFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3838" y="-2697"/>
+            <point key="canvasLocation" x="3814" y="-2697"/>
+        </scene>
+        <!--Filters-->
+        <scene sceneID="Xov-vC-b7a">
+            <objects>
+                <viewController id="0aB-Hd-Tcx" customClass="SGFiltersListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2rr-5k-6KF"/>
+                        <viewControllerLayoutGuide type="bottom" id="mBk-cG-eMb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zxg-OA-E1I">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqB-qg-Z86" customClass="GADBannerView">
+                                <rect key="frame" x="140" y="550" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7LK-h9-8t6"/>
+                                    <constraint firstAttribute="width" constant="320" id="XbF-Sm-1iP"/>
+                                    <constraint firstAttribute="width" constant="320" id="l3u-WQ-kvc"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="l3u-WQ-kvc"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ZqB-qg-Z86" secondAttribute="centerX" id="AJy-CB-NRt"/>
+                            <constraint firstItem="mBk-cG-eMb" firstAttribute="top" secondItem="ZqB-qg-Z86" secondAttribute="bottom" id="moh-o2-sQ7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filters" id="HOk-QZ-a8p">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="XG0-nl-Vsz">
+                            <connections>
+                                <segue destination="I1p-7u-QBS" kind="custom" customClass="SGDismissSegue" id="aIl-KL-tN5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zrv-0G-WCe">
+                            <connections>
+                                <segue destination="2zn-8R-3m1" kind="presentation" id="JZO-Y4-QN8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bannerView" destination="ZqB-qg-Z86" id="9pS-NT-ybQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6m-5M-8al" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2156" y="-2697"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8tz-70-KaG">
@@ -597,24 +610,6 @@
             <point key="canvasLocation" x="-257" y="-674"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="B5b-XX-IDP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0gO-BP-xm3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BJs-gF-YMx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Qy7-59-Yya" kind="relationship" relationship="rootViewController" id="lxc-fM-JQP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ERJ-8o-Be6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1344" y="-2697"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="eBp-3G-Crp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2zn-8R-3m1" sceneMemberID="viewController">
@@ -630,13 +625,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wk2-jK-lDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3026" y="-2697"/>
+            <point key="canvasLocation" x="3002" y="-2697"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Go-jy-UzD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W3z-mZ-N6O" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b3I-AK-tJA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0aB-Hd-Tcx" kind="relationship" relationship="rootViewController" id="lnA-9Y-1cl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TcH-Xs-lk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344" y="-2697"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hC4-bJ-CMG"/>
-        <segue reference="f4u-Fn-eS1"/>
-        <segue reference="dCP-5k-hwb"/>
         <segue reference="jQb-ad-gCQ"/>
+        <segue reference="aIl-KL-tN5"/>
+        <segue reference="hC4-bJ-CMG"/>
     </inferredMetricsTieBreakers>
 </document>
