@@ -65,7 +65,7 @@
             self.battle.playerCaster = form.playerCaster;
             self.battle.opponentCaster = form.opponentCaster;
             self.battle.opponent = form.opponent;
-            self.battle.date = form.date;
+            self.battle.date = [self normalizedDate:form.date];
             self.battle.points = form.pointSize;
             self.battle.result = form.result;
             self.battle.killPoints = form.killPoints;
@@ -81,6 +81,19 @@
         UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:validationList delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
         [validationMessage show];
     }
+}
+
+#pragma mark - Utilities
+
+- (NSDate *)normalizedDate:(NSDate *)date {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    NSDateComponents *dateComponents = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
+    [dateComponents setHour:12];
+    [dateComponents setMinute:0];
+    [dateComponents setSecond:0];
+    [dateComponents setNanosecond:0];
+    return [calendar dateFromComponents:dateComponents];
 }
 
 @end

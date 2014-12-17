@@ -123,15 +123,13 @@
 #pragma mark - Utilities
 
 + (NSDate *)normalizedDate:(NSDate *)date {
-    NSLog(@"Date before normalization: %@", date);
     NSCalendar *calendar = [NSCalendar currentCalendar];
     calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    NSDateComponents *dateComponents = [calendar components:(NSCalendarUnitYear | NSCalendarUnitWeekOfMonth | NSCalendarUnitDay) fromDate:date];
+    NSDateComponents *dateComponents = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
     [dateComponents setHour:12];
     [dateComponents setMinute:0];
     [dateComponents setSecond:0];
     [dateComponents setNanosecond:0];
-    NSLog(@"Date after normalization: %@", [calendar dateFromComponents:dateComponents]);
     return [calendar dateFromComponents:dateComponents];
 }
 

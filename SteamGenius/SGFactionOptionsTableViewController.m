@@ -11,6 +11,7 @@
 #import "Faction.h"
 #import "Caster.h"
 #import "SGResizableImageViewCell.h"
+#import "SGColorCircleView.h"
 #import "SGCasterOptionsTableViewController.h"
 
 @interface SGFactionOptionsTableViewController ()
@@ -28,7 +29,7 @@
     [super viewDidLoad];
     
     self.title = @"Factions";
-    self.tableView.separatorInset = UIEdgeInsetsMake(0, 52.f, 0, 0);
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 36.f, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,24 +52,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"FactionCell";
-    SGResizableImageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[SGResizableImageViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.imageViewFrame = CGRectMake(10.f, 6.f, 32.f, 32.f);
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     NSArray *factions = [self sortedFactionsArray:indexPath.section];
     Faction *faction = [factions objectAtIndex:indexPath.row];
     
+    
     cell.textLabel.font = [UIFont boldSystemFontOfSize:17];
     cell.textLabel.text = faction.name;
-    cell.imageView.image = [UIImage imageNamed:faction.imageName];
     cell.accessoryType = UITableViewCellAccessoryNone;
+    SGColorCircleView *circle = [[SGColorCircleView alloc] initWithFrame:CGRectMake(10.f, 14.f, 16.f, 16.f)];
+    circle.color = [UIColor blueColor];
+    [cell addSubview:circle];
     
     FXFormController *form = self.field.form;
     Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
     cell.accessoryType = currentFaction == faction ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    
+    
     
     return cell;
 }
