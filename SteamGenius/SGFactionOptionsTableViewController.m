@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
     self.title = @"Factions";
-    self.tableView.separatorInset = UIEdgeInsetsMake(0, 36.f, 0, 0);
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 36.f, 0, 0); //52
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,14 +66,12 @@
     cell.textLabel.text = faction.name;
     cell.accessoryType = UITableViewCellAccessoryNone;
     SGColorCircleView *circle = [[SGColorCircleView alloc] initWithFrame:CGRectMake(10.f, 14.f, 16.f, 16.f)];
-    circle.color = [UIColor blueColor];
+    circle.color = (UIColor *)faction.color;
     [cell addSubview:circle];
     
     FXFormController *form = self.field.form;
     Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
     cell.accessoryType = currentFaction == faction ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-    
-    
     
     return cell;
 }

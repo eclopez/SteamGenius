@@ -143,13 +143,13 @@
     Result *result = [SGGenericRepository findOneEntityOfType:@"Result" entityKey:@3 keyField:@"displayOrder" context:_moc];
     Opponent *opponent = [SGGenericRepository findOneEntityOfType:@"Opponent" entityKey:@"Jeff" keyField:@"name" context:_moc];
     
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:nil notes:nil context:_moc];
     
     // Act
     [_moc deleteObject:opponent];
@@ -232,13 +232,13 @@
     Result *result = [SGGenericRepository findOneEntityOfType:@"Result" entityKey:@3 keyField:@"displayOrder" context:_moc];
     Event *event = [SGGenericRepository findOneEntityOfType:@"Event" entityKey:@"Steamroller 2014" keyField:@"name" context:_moc];
     
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil event:event notes:nil context:_moc];
     
     // Act
     [_moc deleteObject:event];
@@ -325,13 +325,13 @@
     Result *result = [SGGenericRepository findOneEntityOfType:@"Result" entityKey:@3 keyField:@"displayOrder" context:_moc];
     Scenario *scenario = [SGGenericRepository findOneEntityOfType:@"Scenario" entityKey:@"Mangled Metal" keyField:@"name" context:_moc];
     
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil context:_moc];
-    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil notes:nil context:_moc];
+    [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil event:nil notes:nil context:_moc];
     
     // Act
     [_moc deleteObject:scenario];

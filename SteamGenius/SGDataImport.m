@@ -39,7 +39,7 @@
                         [SGRepository initWithGameNamed:[d objectForKey:@"name"] shortName:[d objectForKey:@"shortName"] context:context];
                         break;
                     case SGEntityType_Faction:
-                        [SGRepository initWithFactioNamed:[d objectForKey:@"name"] shortName:[d objectForKey:@"shortName"] imageNamed:[d objectForKey:@"imageName"] releaseOrder:[d objectForKey:@"releaseOrder"] gameNamed:[d objectForKey:@"game"] context:context];
+                        [SGRepository initWithFactioNamed:[d objectForKey:@"name"] shortName:[d objectForKey:@"shortName"] color:[d objectForKey:@"color"] imageNamed:[d objectForKey:@"imageName"] releaseOrder:[d objectForKey:@"releaseOrder"] gameNamed:[d objectForKey:@"game"] context:context];
                         break;
                     case SGEntityType_Model:
                         [SGRepository initWithModelNamed:[d objectForKey:@"name"] shortName:[d objectForKey:@"shortName"] incarnation:[NSNumber numberWithInt:[[d objectForKey:@"incarnation"] intValue]] isEpic:[NSNumber numberWithBool:[[d objectForKey:@"isEpic"] boolValue]] isCavalry:[NSNumber numberWithBool:[[d objectForKey:@"isCavalry"] boolValue]] isBattleEngine:[NSNumber numberWithBool:[[d objectForKey:@"isBattleEngine"] boolValue]] context:context];

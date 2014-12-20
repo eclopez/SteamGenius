@@ -62,6 +62,7 @@
     SGBattleInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     [self configureCell:cell atIndexPath:indexPath];
+    [cell setNeedsDisplay];
     return cell;
 }
 
@@ -122,7 +123,10 @@
         [fullOpponentCasterName addAttribute:NSParagraphStyleAttributeName value:opponentStyle range:NSMakeRange(0, fullOpponentCasterName.length - 1)];
     }
     cell.opponentCasterName.attributedText = fullOpponentCasterName;
-    cell.opponentFactionImage.image = [UIImage imageNamed:battle.opponentCaster.faction.imageName];
+    cell.opponentFactionColor.backgroundColor = (UIColor *)battle.opponentCaster.faction.color;
+    cell.opponentFactionColor.layer.cornerRadius = cell.opponentFactionColor.bounds.size.width / 2.f;
+    cell.opponentFactionColor.layer.borderWidth = 1.f;
+    cell.opponentFactionColor.layer.borderColor = [UIColor blackColor].CGColor;
     
     // Player caster name
     NSMutableString *pCasterName = [NSMutableString stringWithString:battle.playerCaster.model.name];
@@ -144,7 +148,10 @@
         [fullPlayerCasterName addAttribute:NSParagraphStyleAttributeName value:playerStyle range:NSMakeRange(0, fullPlayerCasterName.length - 1)];
     }
     cell.playerCasterName.attributedText = fullPlayerCasterName;
-    cell.playerFactionImage.image = [UIImage imageNamed:battle.playerCaster.faction.imageName];
+    cell.playerFactionColor.backgroundColor = (UIColor *)battle.playerCaster.faction.color;
+    cell.playerFactionColor.layer.cornerRadius = cell.playerFactionColor.bounds.size.width / 2.f;
+    cell.playerFactionColor.layer.borderWidth = 1.f;
+    cell.playerFactionColor.layer.borderColor = [UIColor blackColor].CGColor;
     
     cell.dateLabel.text = [[self getDateFormatter] stringFromDate:battle.date];
     cell.resultNameLabel.text = battle.result.name;
@@ -162,6 +169,7 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -181,7 +189,8 @@
     [fetchRequest setEntity:[NSEntityDescription entityForName:@"Battle" inManagedObjectContext:[self.appDelegate managedObjectContext]]];
     
     NSSortDescriptor *sortDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
-    [fetchRequest setSortDescriptors:@[sortDate]];
+    NSSortDescriptor *sortPoints = [[NSSortDescriptor alloc] initWithKey:@"points" ascending:YES];
+    [fetchRequest setSortDescriptors:@[sortDate, sortPoints]];
     
     //STORED FILTERS
     NSArray *storedFilters = [SGGenericRepository findAllEntitiesOfType:@"BattleFilter" context:[self.appDelegate managedObjectContext]];

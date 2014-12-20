@@ -7,6 +7,17 @@
 		<string>Cygnar</string>
 		<key>shortName</key>
 		<string>CYG</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>16.f</string>
+			<key>green</key>
+			<string>56.f</string>
+			<key>blue</key>
+			<string>137.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Cygnar</string>
 		<key>game</key>
@@ -21,6 +32,17 @@
 		<string>Protectorate of Menoth</string>
 		<key>shortName</key>
 		<string>POM</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>236.f</string>
+			<key>green</key>
+			<string>235.f</string>
+			<key>blue</key>
+			<string>173.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>ProtectorateOfMenoth</string>
 		<key>game</key>
@@ -35,6 +57,17 @@
 		<string>Khador</string>
 		<key>shortName</key>
 		<string>KHD</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>231.f</string>
+			<key>green</key>
+			<string>18.f</string>
+			<key>blue</key>
+			<string>28.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Khador</string>
 		<key>game</key>
@@ -49,6 +82,17 @@
 		<string>Cryx</string>
 		<key>shortName</key>
 		<string>CRX</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>110.f</string>
+			<key>green</key>
+			<string>187.f</string>
+			<key>blue</key>
+			<string>55.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Cryx</string>
 		<key>game</key>
@@ -63,6 +107,17 @@
 		<string>Retribution of Scyrah</string>
 		<key>shortName</key>
 		<string>RET</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>107.f</string>
+			<key>green</key>
+			<string>199.f</string>
+			<key>blue</key>
+			<string>209.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>RetributionOfScyrah</string>
 		<key>game</key>
@@ -77,6 +132,17 @@
 		<string>Convergence of Cyriss</string>
 		<key>shortName</key>
 		<string>CON</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>110.f</string>
+			<key>green</key>
+			<string>110.f</string>
+			<key>blue</key>
+			<string>109.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Convergence</string>
 		<key>game</key>
@@ -91,6 +157,17 @@
 		<string>Highborn Covenant</string>
 		<key>shortName</key>
 		<string>HBC</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>98.f</string>
+			<key>green</key>
+			<string>96.f</string>
+			<key>blue</key>
+			<string>37.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
@@ -105,6 +182,17 @@
 		<string>Searforge Commission</string>
 		<key>shortName</key>
 		<string>SFC</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>98.f</string>
+			<key>green</key>
+			<string>96.f</string>
+			<key>blue</key>
+			<string>37.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
@@ -119,6 +207,17 @@
 		<string>Talion Charter</string>
 		<key>shortName</key>
 		<string>TLC</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>98.f</string>
+			<key>green</key>
+			<string>96.f</string>
+			<key>blue</key>
+			<string>37.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
@@ -133,6 +232,17 @@
 		<string>Four Star Syndicate</string>
 		<key>shortName</key>
 		<string>FSS</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>98.f</string>
+			<key>green</key>
+			<string>96.f</string>
+			<key>blue</key>
+			<string>37.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
@@ -147,6 +257,17 @@
 		<string>Puppet Masters</string>
 		<key>shortName</key>
 		<string>PMA</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>98.f</string>
+			<key>green</key>
+			<string>96.f</string>
+			<key>blue</key>
+			<string>37.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
@@ -161,6 +282,17 @@
 		<string>Mercenaries</string>
 		<key>shortName</key>
 		<string>MRC</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>98.f</string>
+			<key>green</key>
+			<string>96.f</string>
+			<key>blue</key>
+			<string>37.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Mercenaries</string>
 		<key>game</key>
@@ -175,6 +307,17 @@
 		<string>Trollblood</string>
 		<key>shortName</key>
 		<string>TRL</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>24.f</string>
+			<key>green</key>
+			<string>116.f</string>
+			<key>blue</key>
+			<string>136.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Trollbloods</string>
 		<key>game</key>
@@ -189,6 +332,17 @@
 		<string>Circle Orboros</string>
 		<key>shortName</key>
 		<string>COR</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>16.f</string>
+			<key>green</key>
+			<string>81.f</string>
+			<key>blue</key>
+			<string>38.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>CircleOrboros</string>
 		<key>game</key>
@@ -203,6 +357,17 @@
 		<string>Legion of Everblight</string>
 		<key>shortName</key>
 		<string>LOE</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>140.f</string>
+			<key>green</key>
+			<string>139.f</string>
+			<key>blue</key>
+			<string>163.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>LegionOfEverblight</string>
 		<key>game</key>
@@ -217,6 +382,17 @@
 		<string>Skorne</string>
 		<key>shortName</key>
 		<string>SKR</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>160.f</string>
+			<key>green</key>
+			<string>14.f</string>
+			<key>blue</key>
+			<string>28.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Skorne</string>
 		<key>game</key>
@@ -231,6 +407,17 @@
 		<string>Blindwater Congregation</string>
 		<key>shortName</key>
 		<string>BWC</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>53.f</string>
+			<key>green</key>
+			<string>146.f</string>
+			<key>blue</key>
+			<string>118.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Minions</string>
 		<key>game</key>
@@ -245,6 +432,17 @@
 		<string>Thornfall Alliance</string>
 		<key>shortName</key>
 		<string>TFA</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>53.f</string>
+			<key>green</key>
+			<string>146.f</string>
+			<key>blue</key>
+			<string>118.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Minions</string>
 		<key>game</key>
@@ -259,6 +457,17 @@
 		<string>Minions</string>
 		<key>shortName</key>
 		<string>MIN</string>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<string>53.f</string>
+			<key>green</key>
+			<string>146.f</string>
+			<key>blue</key>
+			<string>118.f</string>
+			<key>alpha</key>
+			<string>1.f</string>
+		</dict>
 		<key>imageName</key>
 		<string>Minions</string>
 		<key>game</key>

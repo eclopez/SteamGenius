@@ -72,8 +72,9 @@
             self.battle.scenario = form.scenario;
             self.battle.controlPoints = form.controlPoints;
             self.battle.event = form.event;
+            self.battle.notes = form.notes;
         } else {
-            [SGRepository initWithPlayerCaster:form.playerCaster opponentCaster:form.opponentCaster opponent:form.opponent date:form.date points:form.pointSize result:form.result killPoints:form.killPoints scenario:form.scenario controlPoints:form.controlPoints event:form.event context:appDelegate.managedObjectContext];
+            [SGRepository initWithPlayerCaster:form.playerCaster opponentCaster:form.opponentCaster opponent:form.opponent date:form.date points:form.pointSize result:form.result killPoints:form.killPoints scenario:form.scenario controlPoints:form.controlPoints event:form.event notes:form.notes context:appDelegate.managedObjectContext];
         }
         [appDelegate saveContext];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];

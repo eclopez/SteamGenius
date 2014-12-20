@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SGColorCircleView.h"
 
 @interface SGBattleInfoCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *opponentFactionImage;
+@property (weak, nonatomic) IBOutlet SGColorCircleView *opponentFactionColor;
 @property (weak, nonatomic) IBOutlet UILabel *opponentCasterName;
-@property (weak, nonatomic) IBOutlet UIImageView *playerFactionImage;
+@property (weak, nonatomic) IBOutlet UIView *playerFactionColor;
 @property (weak, nonatomic) IBOutlet UILabel *playerCasterName;
 @property (weak, nonatomic) IBOutlet UILabel *resultNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;

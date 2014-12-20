@@ -30,12 +30,16 @@
     return g;
 }
 
-+ (Faction *)initWithFactioNamed:(NSString *)factionName shortName:(NSString *)shortName imageNamed:(NSString *)imageName releaseOrder:(NSNumber *)releaseOrder gameNamed:(NSString *)gameName context:(NSManagedObjectContext *)context
++ (Faction *)initWithFactioNamed:(NSString *)factionName shortName:(NSString *)shortName color:(NSDictionary *)color imageNamed:(NSString *)imageName releaseOrder:(NSNumber *)releaseOrder gameNamed:(NSString *)gameName context:(NSManagedObjectContext *)context
 {
     Game *fGame = [SGGenericRepository findOneEntityOfType:@"Game" entityKey:gameName keyField:@"name" context:context];
     Faction *f = [NSEntityDescription insertNewObjectForEntityForName:@"Faction" inManagedObjectContext:context];
     [f setValue:factionName forKey:@"name"];
     [f setValue:shortName forKey:@"shortName"];
+    [f setValue:[UIColor colorWithRed:[[color valueForKey:@"red"] floatValue]/255.f
+                                green:[[color valueForKey:@"green"] floatValue]/255.f
+                                 blue:[[color valueForKey:@"blue"] floatValue]/255.f
+                                alpha:[[color valueForKey:@"alpha"] floatValue]] forKey:@"color"];
     [f setValue:imageName forKey:@"imageName"];
     [f setValue:releaseOrder forKey:@"releaseOrder"];
     [f setValue:fGame forKey:@"game"];
@@ -97,7 +101,7 @@
     return e;
 }
 
-+ (Battle *)initWithPlayerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints event:(Event *)event context:(NSManagedObjectContext *)context
++ (Battle *)initWithPlayerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints event:(Event *)event notes:(NSString *)notes context:(NSManagedObjectContext *)context
 {
     Battle *b = [NSEntityDescription insertNewObjectForEntityForName:@"Battle" inManagedObjectContext:context];
     [b setValue:playerCaster forKey:@"playerCaster"];
@@ -110,6 +114,7 @@
     [b setValue:scenario forKey:@"scenario"];
     [b setValue:controlPoints forKey:@"controlPoints"];
     [b setValue:event forKey:@"event"];
+    [b setValue:notes forKey:@"notes"];
     return b;
 }
 

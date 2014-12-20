@@ -39,6 +39,7 @@
         _scenario = battle ? battle.scenario : nil;
         _controlPoints = battle ? battle.controlPoints : nil;
         _event = battle ? battle.event : nil;
+        _notes = battle ? battle.notes : nil;
     }
     return self;
 }
@@ -122,6 +123,11 @@
 
 - (NSString *)eventFieldDescription {
     return self.event ? self.event.name : nil;
+}
+
+- (NSDictionary *)notesField {
+    return @{ FXFormFieldHeader: @"Notes",
+              FXFormFieldType: @"longtext" };
 }
 
 - (NSArray *)excludedFields {

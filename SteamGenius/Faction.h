@@ -2,7 +2,7 @@
 //  Faction.h
 //  SteamGenius
 //
-//  Created by Erik Lopez on 9/19/14.
+//  Created by Erik Lopez on 12/17/14.
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * releaseOrder;
 @property (nonatomic, retain) NSString * shortName;
+@property (nonatomic, retain) id color;
 @property (nonatomic, retain) NSSet *casters;
 @property (nonatomic, retain) Game *game;
 @end
