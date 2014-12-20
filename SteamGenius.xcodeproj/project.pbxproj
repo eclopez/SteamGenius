@@ -9,19 +9,6 @@
 /* Begin PBXBuildFile section */
 		03032A9A19ED974900A15C54 /* SGFiltersForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9919ED974900A15C54 /* SGFiltersForm.m */; };
 		03032A9D19ED9D2D00A15C54 /* SGFiltersFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */; };
-		03032AA019EDAF4D00A15C54 /* SGFiltersListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9F19EDAF4D00A15C54 /* SGFiltersListTableViewController.m */; };
-		031D6AA819CEA463000B7D26 /* CircleOrboros.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6A9C19CEA463000B7D26 /* CircleOrboros.png */; };
-		031D6AA919CEA463000B7D26 /* Convergence.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6A9D19CEA463000B7D26 /* Convergence.png */; };
-		031D6AAA19CEA463000B7D26 /* Cryx.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6A9E19CEA463000B7D26 /* Cryx.png */; };
-		031D6AAB19CEA463000B7D26 /* Cygnar.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6A9F19CEA463000B7D26 /* Cygnar.png */; };
-		031D6AAC19CEA463000B7D26 /* Khador.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA019CEA463000B7D26 /* Khador.png */; };
-		031D6AAD19CEA463000B7D26 /* LegionOfEverblight.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA119CEA463000B7D26 /* LegionOfEverblight.png */; };
-		031D6AAE19CEA463000B7D26 /* Mercenaries.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA219CEA463000B7D26 /* Mercenaries.png */; };
-		031D6AAF19CEA463000B7D26 /* Minions.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA319CEA463000B7D26 /* Minions.png */; };
-		031D6AB019CEA463000B7D26 /* ProtectorateOfMenoth.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA419CEA463000B7D26 /* ProtectorateOfMenoth.png */; };
-		031D6AB119CEA463000B7D26 /* RetributionOfScyrah.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA519CEA463000B7D26 /* RetributionOfScyrah.png */; };
-		031D6AB219CEA463000B7D26 /* Skorne.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA619CEA463000B7D26 /* Skorne.png */; };
-		031D6AB319CEA463000B7D26 /* Trollbloods.png in Resources */ = {isa = PBXBuildFile; fileRef = 031D6AA719CEA463000B7D26 /* Trollbloods.png */; };
 		031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */; };
 		031D6AC919CF5F49000B7D26 /* SGFactionOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AC819CF5F49000B7D26 /* SGFactionOptionsTableViewController.m */; };
 		031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */; };
@@ -92,20 +79,6 @@
 		03032A9919ED974900A15C54 /* SGFiltersForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersForm.m; sourceTree = "<group>"; };
 		03032A9B19ED9D2D00A15C54 /* SGFiltersFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFiltersFormViewController.h; sourceTree = "<group>"; };
 		03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersFormViewController.m; sourceTree = "<group>"; };
-		03032A9E19EDAF4C00A15C54 /* SGFiltersListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFiltersListTableViewController.h; sourceTree = "<group>"; };
-		03032A9F19EDAF4D00A15C54 /* SGFiltersListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersListTableViewController.m; sourceTree = "<group>"; };
-		031D6A9C19CEA463000B7D26 /* CircleOrboros.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleOrboros.png; sourceTree = "<group>"; };
-		031D6A9D19CEA463000B7D26 /* Convergence.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Convergence.png; sourceTree = "<group>"; };
-		031D6A9E19CEA463000B7D26 /* Cryx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cryx.png; sourceTree = "<group>"; };
-		031D6A9F19CEA463000B7D26 /* Cygnar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cygnar.png; sourceTree = "<group>"; };
-		031D6AA019CEA463000B7D26 /* Khador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Khador.png; sourceTree = "<group>"; };
-		031D6AA119CEA463000B7D26 /* LegionOfEverblight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LegionOfEverblight.png; sourceTree = "<group>"; };
-		031D6AA219CEA463000B7D26 /* Mercenaries.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mercenaries.png; sourceTree = "<group>"; };
-		031D6AA319CEA463000B7D26 /* Minions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Minions.png; sourceTree = "<group>"; };
-		031D6AA419CEA463000B7D26 /* ProtectorateOfMenoth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProtectorateOfMenoth.png; sourceTree = "<group>"; };
-		031D6AA519CEA463000B7D26 /* RetributionOfScyrah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RetributionOfScyrah.png; sourceTree = "<group>"; };
-		031D6AA619CEA463000B7D26 /* Skorne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skorne.png; sourceTree = "<group>"; };
-		031D6AA719CEA463000B7D26 /* Trollbloods.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trollbloods.png; sourceTree = "<group>"; };
 		031D6AB519CEA5D0000B7D26 /* SGResizableImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGResizableImageViewCell.h; sourceTree = "<group>"; };
 		031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGResizableImageViewCell.m; sourceTree = "<group>"; };
 		031D6AC719CF5F49000B7D26 /* SGFactionOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionOptionsTableViewController.h; sourceTree = "<group>"; };
@@ -236,8 +209,6 @@
 			children = (
 				034D3F4C19EDE8DC008A0230 /* Common */,
 				03032A9619ED970D00A15C54 /* Form */,
-				03032A9E19EDAF4C00A15C54 /* SGFiltersListTableViewController.h */,
-				03032A9F19EDAF4D00A15C54 /* SGFiltersListTableViewController.m */,
 				03C5D29F1A45BAB400788E0C /* SGFiltersListViewController.h */,
 				03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */,
 			);
@@ -253,25 +224,6 @@
 				03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */,
 			);
 			name = Form;
-			sourceTree = "<group>";
-		};
-		031D6A9B19CEA412000B7D26 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				031D6A9C19CEA463000B7D26 /* CircleOrboros.png */,
-				031D6A9D19CEA463000B7D26 /* Convergence.png */,
-				031D6A9E19CEA463000B7D26 /* Cryx.png */,
-				031D6A9F19CEA463000B7D26 /* Cygnar.png */,
-				031D6AA019CEA463000B7D26 /* Khador.png */,
-				031D6AA119CEA463000B7D26 /* LegionOfEverblight.png */,
-				031D6AA219CEA463000B7D26 /* Mercenaries.png */,
-				031D6AA319CEA463000B7D26 /* Minions.png */,
-				031D6AA419CEA463000B7D26 /* ProtectorateOfMenoth.png */,
-				031D6AA519CEA463000B7D26 /* RetributionOfScyrah.png */,
-				031D6AA619CEA463000B7D26 /* Skorne.png */,
-				031D6AA719CEA463000B7D26 /* Trollbloods.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 		031D6AB419CEA5A6000B7D26 /* Common */ = {
@@ -387,7 +339,6 @@
 				0349E2AD19C17F510091FF21 /* AppDelegate.m */,
 				0349E2D419C180340091FF21 /* Views */,
 				0325713919C491C300634776 /* Models */,
-				031D6A9B19CEA412000B7D26 /* Images */,
 				0349E2B819C17F510091FF21 /* Main.storyboard */,
 				0349E2BB19C17F510091FF21 /* Images.xcassets */,
 				0349E2BD19C17F510091FF21 /* LaunchScreen.xib */,
@@ -793,26 +744,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				031D6AAE19CEA463000B7D26 /* Mercenaries.png in Resources */,
 				0325714019C4987C00634776 /* Result.plist in Resources */,
 				0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */,
 				0325713C19C492BA00634776 /* Game.plist in Resources */,
-				031D6AB319CEA463000B7D26 /* Trollbloods.png in Resources */,
-				031D6AAD19CEA463000B7D26 /* LegionOfEverblight.png in Resources */,
-				031D6AA919CEA463000B7D26 /* Convergence.png in Resources */,
-				031D6AAF19CEA463000B7D26 /* Minions.png in Resources */,
-				031D6AAB19CEA463000B7D26 /* Cygnar.png in Resources */,
-				031D6AB019CEA463000B7D26 /* ProtectorateOfMenoth.png in Resources */,
 				0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */,
 				0349E2BF19C17F510091FF21 /* LaunchScreen.xib in Resources */,
-				031D6AB119CEA463000B7D26 /* RetributionOfScyrah.png in Resources */,
-				031D6AAC19CEA463000B7D26 /* Khador.png in Resources */,
-				031D6AA819CEA463000B7D26 /* CircleOrboros.png in Resources */,
 				0349E2BC19C17F510091FF21 /* Images.xcassets in Resources */,
-				031D6AAA19CEA463000B7D26 /* Cryx.png in Resources */,
 				0325714219C49AD900634776 /* Model.plist in Resources */,
 				0325713E19C4932600634776 /* Faction.plist in Resources */,
-				031D6AB219CEA463000B7D26 /* Skorne.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,7 +838,6 @@
 				0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */,
 				0369595E19D5F4680096CEBC /* SGGenericOptionsTableViewController.m in Sources */,
 				038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */,
-				03032AA019EDAF4D00A15C54 /* SGFiltersListTableViewController.m in Sources */,
 				034D3F5019EDE934008A0230 /* SGFactionFilterOptionsTableViewController.m in Sources */,
 				0369594919D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.m in Sources */,
 				038DAAE619CCFDBB00A224F7 /* SGGenericRepository.m in Sources */,
