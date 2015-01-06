@@ -52,6 +52,7 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     BattleFilter *battleFilter = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = battleFilter.displayText;
+    cell.textLabel.numberOfLines = 0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -159,6 +160,7 @@
     } else {
         self.tableView.backgroundView = nil;
     }
+    [self.tableView reloadData];
 }
 
 @end

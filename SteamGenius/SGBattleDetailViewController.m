@@ -2,16 +2,13 @@
 //  SGBattleDetailViewController.m
 //  SteamGenius
 //
-//  Created by Erik Lopez on 10/6/14.
+//  Created by Erik Lopez on 12/21/14.
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
 #import "SGBattleDetailViewController.h"
-#import "SGBattleForm.h"
-#import "SGBattleFormViewController.h"
-#import "Caster.h"
 #import "Model.h"
-#import "Result.h"
+#import "SGBattleFormViewController.h"
 
 @interface SGBattleDetailViewController ()
 
@@ -21,11 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.form = self.battle ? [[SGBattleDetailForm alloc] init:self.battle] : [[SGBattleDetailForm alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.formController.form = self.form;
+    [self.formController.tableView reloadData];
     [self configureView];
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,14 +37,15 @@
 }
 
 - (void)configureView {
-    self.title = self.battle ?
-    [NSString stringWithFormat:@"%@%@ vs. %@%@",
+    self.title = self.battle ? [NSString stringWithFormat:@"%@%@ vs. %@%@",
      self.battle.playerCaster.model.shortName,
      [self.battle.playerCaster.model.incarnation intValue] != 1 ? self.battle.playerCaster.model.incarnation : @"",
      self.battle.opponentCaster.model.shortName,
      [self.battle.opponentCaster.model.incarnation intValue] != 1 ? self.battle.opponentCaster.model.incarnation : @""] :
     @"Battle Detail";
 }
+
+#pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"editBattle"]) {

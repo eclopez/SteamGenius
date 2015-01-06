@@ -198,7 +198,6 @@
         NSMutableArray *predicates = [NSMutableArray array];
         for (BattleFilter *filter in storedFilters) {
             [predicates addObject:(NSComparisonPredicate *)filter.predicate];
-            NSLog(@"%@: %@", filter.displayText, filter.predicate);
         }
         NSCompoundPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
         [fetchRequest setPredicate:compoundPredicate];

@@ -19,8 +19,6 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.backgroundColor = [UIColor clearColor];
-    //self.layer.borderWidth = 2.f;
-    //self.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (void)drawRect:(CGRect)rect {
