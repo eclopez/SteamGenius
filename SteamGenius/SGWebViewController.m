@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+#warning - Change height to reflect actual height
     WKWebView *web = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 320.f, 480.f)];
     NSLog(@"%f", self.view.bounds.size.width);
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.gofundme.com/evep0k"]];
@@ -37,5 +38,7 @@
 - (void)openInSafari {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.gofundme.com/evep0k"]];
 }
+
+
 
 @end

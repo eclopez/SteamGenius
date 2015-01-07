@@ -7,12 +7,11 @@
 //
 
 #import "FXForms.h"
-#import "SGBattleDetailForm.h"
 #import "Battle.h"
 
-@interface SGBattleDetailViewController : FXFormViewController <FXFormFieldViewController>
+@interface SGBattleDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) SGBattleDetailForm *form;
+@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) Battle *battle;
 
 @end

@@ -414,6 +414,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="drawTotal" destination="M5k-8O-g1v" id="Xfj-mZ-sSC"/>
                         <outlet property="lossTotal" destination="dkR-xk-knF" id="ko6-fK-bVL"/>
