@@ -37,7 +37,8 @@
     {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
+        //splitViewController.delegate = (id)navigationController.topViewController;
+        splitViewController.delegate = self;
         //UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
         
         BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];

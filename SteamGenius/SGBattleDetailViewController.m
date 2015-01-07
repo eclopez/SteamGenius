@@ -32,6 +32,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -40,6 +41,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    _tableView.contentInset = UIEdgeInsetsMake(_tableView.contentInset.top, _tableView.contentInset.left, 66.f, _tableView.contentInset.top);
     if (self.battle == nil) {
         self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.view.bounds emptyMessage:@"No battle selected." color:[UIColor blackColor]];
     } else {

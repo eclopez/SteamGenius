@@ -10,6 +10,9 @@
 #import "SGGenericAddOptionsTableViewController.h"
 #import "SGOpponentFormViewController.h"
 
+#define IDIOM   UI_USER_INTERFACE_IDIOM()
+#define IPHONE  UIUserInterfaceIdiomPhone
+
 @interface SGGenericAddOptionsTableViewController ()
 
 @end
@@ -136,7 +139,12 @@
             message = [NSString stringWithFormat:@"Are you sure you want to delete the %@, %@?", NSStringFromClass(self.field.valueClass), [obj valueForKey:@"name"]];
         }
         
-        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Confirm delete" message:message preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *alert;
+        if (IDIOM == IPHONE) {
+            alert = [UIAlertController alertControllerWithTitle:@"Confirm delete" message:message preferredStyle:UIAlertControllerStyleActionSheet];
+        } else {
+            alert = [UIAlertController alertControllerWithTitle:@"Confirm delete" message:message preferredStyle:UIAlertControllerStyleAlert];
+        }
         [alert addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
             [[self.fetchedResultsController managedObjectContext] deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
             [self.appDelegate saveContext];
