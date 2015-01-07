@@ -178,10 +178,10 @@
     
     if (isEmptyData) {
         cell.textLabel.textColor = [UIColor lightGrayColor];
-        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-MediumItalic" size:16.f];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-MediumItalic" size:16.f];
     } else {
         cell.textLabel.textColor = [UIColor blackColor];
-        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:16.f];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16.f];
     }
     
     cell.textLabel.numberOfLines = 0;

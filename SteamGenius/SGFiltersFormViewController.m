@@ -56,6 +56,7 @@
     }
     
     if (validate == 0) {
+        NSLog(@"%@ %@ %@", form.attributeFieldDescription, form.operationFieldDescription, form.attributeValueFieldDescription);
         NSString *predicateDescription = [NSString stringWithFormat:@"%@ %@ %@", form.attributeFieldDescription, form.operationFieldDescription, form.attributeValueFieldDescription];
         NSPredicate *predicate;
         if ([form.attribute isEqualToString:@"date"]) {

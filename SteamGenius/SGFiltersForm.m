@@ -229,6 +229,9 @@
     else if ([self.attributeValue isKindOfClass:[NSString class]]) {
         return self.attributeValue;
     }
+    else if ([(NSString *)self.attributeValue intValue]) {
+        return [self.attributeValue stringValue];
+    }
     return @"";
 }
 
