@@ -9,9 +9,6 @@
 #import "SGFiltersListViewController.h"
 #import "BattleFilter.h"
 
-#define IDIOM UI_USER_INTERFACE_IDIOM()
-#define IPAD  UIUserInterfaceIdiomPad
-
 @interface SGFiltersListViewController ()
 
 @end
@@ -26,11 +23,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self updateTable];
-    
-    if (IDIOM != IPAD) {
-        _adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 50)];
-        _adView.delegate = self;
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -154,28 +146,6 @@
     }
     
     [self updateTable];
-}
-
-#pragma mark - AdBannerViewDelegate Methods
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    if (!_isBannerVisible) {
-        if (_adView.superview == nil) {
-            [self.view addSubview:_adView];
-        }
-    
-        [UIView beginAnimations:@"animateAdViewOn" context:nil];
-    
-        // Assumes the banner view is just off the bottom of the screen
-        _adView.frame = CGRectOffset(banner.frame, 0, -_adView.frame.size.height);
-        _tableView.contentInset = UIEdgeInsetsMake(_tableView.contentInset.top, _tableView.contentInset.left, _adView.frame.size.height, _tableView.contentInset.right);
-        [UIView commitAnimations];
-        _isBannerVisible = YES;
-    }
-}
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"Failed to retrieve ad");
 }
 
 #pragma mark - Private Methods

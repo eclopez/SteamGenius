@@ -7,17 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <iAd/iAd.h>
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 
-@interface SGFiltersListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, ADBannerViewDelegate>
+@interface SGFiltersListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
-@property (nonatomic) BOOL isBannerVisible;
-@property (strong, nonatomic) ADBannerView *adView;
 
 @end

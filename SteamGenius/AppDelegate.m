@@ -32,24 +32,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self loadDefaultData];
     [SGSettingsManager initUserPreferences];
+
+    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    splitViewController.delegate = self;
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-    {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        //splitViewController.delegate = (id)navigationController.topViewController;
-        splitViewController.delegate = self;
-        //UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-        
-        BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
-        self.window.rootViewController = bannerViewController;
-    }
-    else {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
-        splitViewController.delegate = self;
-    }
+    BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
+    self.window.rootViewController = bannerViewController;
     return YES;
 }
 
