@@ -85,7 +85,8 @@
     [form setValue:faction.name forKey:self.field.key];
     
     if (self.field.action) self.field.action(self);
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    //[self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Class Methods

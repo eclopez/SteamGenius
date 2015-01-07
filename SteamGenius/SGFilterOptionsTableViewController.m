@@ -80,7 +80,8 @@
     
     if (self.field.action) self.field.action(self);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    //[self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -75,7 +75,7 @@
     
         [SGRepository initWithDisplayText:predicateDescription predicate:predicate context:[appDelegate managedObjectContext]];
         [appDelegate saveContext];
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     } else {
         UIAlertController *validationMessage = [UIAlertController alertControllerWithTitle:@"Form invalid" message:validationList preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

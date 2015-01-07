@@ -58,11 +58,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Filter" id="t0p-0m-seN">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wFI-FF-wUl">
-                            <connections>
-                                <segue destination="MYo-y2-gaq" kind="custom" customClass="SGDismissSegue" id="vm0-Qq-0nh"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wFI-FF-wUl"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Sda-Dp-hbJ">
                             <connections>
                                 <action selector="saveFilter:" destination="zcQ-Nu-nPT" id="peK-gt-L3r"/>
@@ -72,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2v-SR-Cb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786" y="-2715"/>
+            <point key="canvasLocation" x="3150" y="-2715"/>
         </scene>
         <!--Battles-->
         <scene sceneID="hTX-YM-0P3">
@@ -83,7 +79,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2a6-mq-F4d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xfY-0f-J7z">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VU6-DG-ILt">
@@ -106,8 +102,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bsa-eC-tBQ">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bsa-eC-tBQ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -288,8 +284,8 @@
                                     <outlet property="delegate" destination="RqK-56-edQ" id="tGW-yT-29j"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B5s-H2-7Rh">
-                                <rect key="frame" x="0.0" y="64" width="600" height="37"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5s-H2-7Rh">
+                                <rect key="frame" x="0.0" y="20" width="600" height="37"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qGu-Bp-mb4">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
@@ -414,7 +410,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="drawTotal" destination="M5k-8O-g1v" id="Xfj-mZ-sSC"/>
                         <outlet property="lossTotal" destination="dkR-xk-knF" id="ko6-fK-bVL"/>
@@ -509,7 +504,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="feN-iI-XaU">
                             <connections>
-                                <segue destination="MYo-y2-gaq" kind="show" id="8JA-eo-hjY"/>
+                                <segue destination="zcQ-Nu-nPT" kind="show" id="Rql-ab-Sri"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -619,24 +614,6 @@
             <point key="canvasLocation" x="-257" y="-674"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="QV0-Uh-RTf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MYo-y2-gaq" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AvN-kY-Xr1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zcQ-Nu-nPT" kind="relationship" relationship="rootViewController" id="g53-st-ITY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gco-tb-Ed9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2974" y="-2715"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="jM5-gR-8CH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NtZ-OX-J31" sceneMemberID="viewController">
@@ -656,9 +633,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jQb-ad-gCQ"/>
-        <segue reference="8Yc-ar-cEc"/>
+        <segue reference="ys6-BD-Ln5"/>
         <segue reference="hC4-bJ-CMG"/>
-        <segue reference="8JA-eo-hjY"/>
+        <segue reference="jQb-ad-gCQ"/>
     </inferredMetricsTieBreakers>
 </document>
