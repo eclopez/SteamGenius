@@ -16,6 +16,9 @@
 #import "SGBattleFormViewController.h"
 #import "SGEmptyView.h"
 
+#define IDIOM   UI_USER_INTERFACE_IDIOM()
+#define IPHONE  UIUserInterfaceIdiomPhone
+
 @interface SGBattleDetailViewController ()
 
 @end
@@ -24,10 +27,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _tableView = [[UITableView alloc] initWithFrame:[[self view] bounds] style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -64,7 +64,7 @@
             [SGRepository initWithEventNamed:form.name location:form.location date:form.date isTournament:form.isTournament context:appDelegate.managedObjectContext];
         }
         [appDelegate saveContext];
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     } else {
         UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:validationList delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
         [validationMessage show];
@@ -72,7 +72,7 @@
 }
 
 - (void)cancelEvent {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Utilities

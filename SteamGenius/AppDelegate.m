@@ -14,6 +14,7 @@
 // TEST
 #import "SGRepository.h"
 #import "SGGenericRepository.h"
+#import "BannerViewController.h"
 
 #define kCurrentGameVersion 1
 #define kCurrentFactionVersion 1
@@ -32,10 +33,22 @@
     [self loadDefaultData];
     [SGSettingsManager initUserPreferences];
     
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
-    splitViewController.delegate = self;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    {
+        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+        splitViewController.delegate = (id)navigationController.topViewController;
+        //UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
+        
+        BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
+        self.window.rootViewController = bannerViewController;
+    }
+    else {
+        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+        navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+        splitViewController.delegate = self;
+    }
     return YES;
 }
 

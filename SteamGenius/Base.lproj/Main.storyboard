@@ -58,7 +58,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Filter" id="t0p-0m-seN">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wFI-FF-wUl"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wFI-FF-wUl">
+                            <connections>
+                                <action selector="cancel:" destination="zcQ-Nu-nPT" id="cWP-u1-4Sl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Sda-Dp-hbJ">
                             <connections>
                                 <action selector="saveFilter:" destination="zcQ-Nu-nPT" id="peK-gt-L3r"/>
@@ -68,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2v-SR-Cb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3150" y="-2715"/>
+            <point key="canvasLocation" x="3054" y="-2715"/>
         </scene>
         <!--Battles-->
         <scene sceneID="hTX-YM-0P3">
@@ -87,17 +91,13 @@
                                 <items>
                                     <barButtonItem title="Filters" id="yQ7-XY-JMY">
                                         <connections>
-                                            <segue destination="NtZ-OX-J31" kind="popoverPresentation" popoverAnchorBarButtonItem="yQ7-XY-JMY" id="dRG-Qq-y7Z">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <segue destination="NtZ-OX-J31" kind="presentation" modalPresentationStyle="formSheet" id="dRG-Qq-y7Z"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ElI-UV-6ZF"/>
                                     <barButtonItem title="Settings" id="Rru-YG-H5B">
                                         <connections>
-                                            <segue destination="e6k-f0-bzM" kind="popoverPresentation" popoverAnchorBarButtonItem="Rru-YG-H5B" id="fHv-5T-4kl">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <segue destination="e6k-f0-bzM" kind="presentation" modalPresentationStyle="formSheet" id="fHv-5T-4kl"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -635,6 +635,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="ys6-BD-Ln5"/>
         <segue reference="hC4-bJ-CMG"/>
-        <segue reference="jQb-ad-gCQ"/>
+        <segue reference="6qr-TC-6Hq"/>
     </inferredMetricsTieBreakers>
 </document>

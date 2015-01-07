@@ -51,6 +51,7 @@
                                      @"Date",
                                      @"Point size",
                                      @"Result" ];
+    
     NSMutableString *validationList = [[NSMutableString alloc] init];
     
     for (NSString *field in validateFields) {

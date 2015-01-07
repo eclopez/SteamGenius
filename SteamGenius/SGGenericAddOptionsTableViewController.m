@@ -40,8 +40,7 @@
 
 - (void)addObject:(id)sender {
     NSString *viewController = [NSString stringWithFormat:@"SG%@FormViewController", NSStringFromClass(self.field.valueClass)];
-    UINavigationController *addNav = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(viewController) alloc] init]];
-    [self.navigationController presentViewController:addNav animated:YES completion:nil];
+    [self.navigationController pushViewController:[[NSClassFromString(viewController) alloc] init] animated:YES];
 }
 
 - (void)handleLongPress:(SGLongPressTableViewCell *)cell
@@ -53,8 +52,7 @@
     if ([EditViewController respondsToSelector:@selector(object)]) {
         [EditViewController setObject:obj];
     }
-    UINavigationController *editNav = [[UINavigationController alloc] initWithRootViewController:EditViewController];
-    [self.navigationController presentViewController:editNav animated:YES completion:nil];
+    [self.navigationController pushViewController:EditViewController animated:YES];
 }
 
 #pragma mark - Table view data source

@@ -65,6 +65,8 @@
 		03C5D29E1A41BC4B00788E0C /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D29D1A41BC4B00788E0C /* Faction.m */; };
 		03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */; };
 		03D30CE61A5C87FA00C62504 /* SGEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE51A5C87FA00C62504 /* SGEmptyView.m */; };
+		03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3010E1A36A79B0053882A /* iAd.framework */; };
+		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +192,8 @@
 		03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersListViewController.m; sourceTree = "<group>"; };
 		03D30CE41A5C87FA00C62504 /* SGEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmptyView.h; sourceTree = "<group>"; };
 		03D30CE51A5C87FA00C62504 /* SGEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmptyView.m; sourceTree = "<group>"; };
+		03D30CE81A5D22D000C62504 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		03D30CE91A5D22D000C62504 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */,
 				037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */,
 				038DAAE919CD019000A224F7 /* CoreData.framework in Frameworks */,
 				2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */,
@@ -545,6 +550,8 @@
 			children = (
 				037708D41A5B185300295E1A /* SGWebViewController.h */,
 				037708D51A5B185300295E1A /* SGWebViewController.m */,
+				03D30CE81A5D22D000C62504 /* BannerViewController.h */,
+				03D30CE91A5D22D000C62504 /* BannerViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -863,6 +870,7 @@
 			files = (
 				0369596A19D5FC0B0096CEBC /* SGEventForm.m in Sources */,
 				038DAAD619CCFC3400A224F7 /* DataVersion.m in Sources */,
+				03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */,
 				031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */,
 				03032A9A19ED974900A15C54 /* SGFiltersForm.m in Sources */,
 				038DAAF019CD4A0300A224F7 /* SGRepository.m in Sources */,
