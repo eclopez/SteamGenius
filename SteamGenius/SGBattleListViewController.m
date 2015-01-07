@@ -33,13 +33,18 @@
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(35.f, 0, 0, 0);
     
     self.recordViewBackgroundImage.image = [UIImage imageNamed:@"RecordBar"];
+    [self updateRecord];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleFilterUpdate:)
+                                                 name:NSManagedObjectContextObjectsDidChangeNotification
+                                               object:[self.appDelegate managedObjectContext]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.tableView.backgroundColor = [SGSettingsManager getBarColor];
-    [self refetch];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -300,6 +305,21 @@
 
 
 #pragma mark - Data Methods
+
+- (void)handleFilterUpdate:(NSNotification *)notification {
+    NSSet *deletedObjects = [[notification userInfo] objectForKey:NSDeletedObjectsKey];
+    NSSet *insertedObjects = [[notification userInfo] objectForKey:NSInsertedObjectsKey];
+    
+    NSPredicate *pred = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return [evaluatedObject isKindOfClass:[BattleFilter class]];
+    }];
+    NSSet *filteredDeleted = [deletedObjects filteredSetUsingPredicate:pred];
+    NSSet *filteredInserted = [insertedObjects filteredSetUsingPredicate:pred];
+    
+    if ([filteredDeleted count] > 0 || [filteredInserted count] > 0) {
+        [self refetch];
+    }
+}
 
 - (void)refetch {
     self.fetchedResultsController = nil;

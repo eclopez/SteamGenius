@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
-#import <WebKit/WebKit.h>
 #import "SGWebViewController.h"
 
 @interface SGWebViewController ()
@@ -15,15 +14,20 @@
 
 @implementation SGWebViewController
 
+- (instancetype)initWithWebFrame:(CGRect)webFrame {
+    self = [super init];
+    if (self) {
+        _web = [[WKWebView alloc] initWithFrame:webFrame];\
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-#warning - Change height to reflect actual height
-    WKWebView *web = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 320.f, 480.f)];
-    NSLog(@"%f", self.view.bounds.size.width);
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.gofundme.com/evep0k"]];
-    [web loadRequest:request];
-    [self.view addSubview:web];
+    [_web loadRequest:request];
+    [self.view addSubview:_web];
     
     UIBarButtonItem *open = [[UIBarButtonItem alloc] initWithTitle:@"Open in Safari" style:UIBarButtonItemStylePlain target:self action:@selector(openInSafari)];
     self.navigationItem.rightBarButtonItem = open;

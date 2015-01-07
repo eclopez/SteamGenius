@@ -8,8 +8,6 @@
 
 #import "SGSettingsForm.h"
 #import "SGSettingsManager.h"
-#import "SGWebViewController.h"
-#import "SGWebViewController.h"
 
 @implementation SGSettingsForm
 
@@ -26,9 +24,10 @@
 
 - (NSDictionary *)donateField {
     return @{ FXFormFieldHeader: @"Support SteamGenius' development",
+              FXFormFieldType: @"default",
               FXFormFieldDefaultValue: @"gofund.me/evep0k",
               FXFormFieldTitle: @"Donate",
-              FXFormFieldViewController: @"SGWebViewController" };
+              FXFormFieldAction: @"showWebView" };
 }
 
 #pragma mark - Class Methods

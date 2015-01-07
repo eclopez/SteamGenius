@@ -8,6 +8,7 @@
 
 #import "SGSettingsFormViewController.h"
 #import "SGSettingsForm.h"
+#import "SGWebViewController.h"
 
 @interface SGSettingsFormViewController ()
 
@@ -27,5 +28,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark - Class Methods
+
+- (void)showWebView {
+    SGWebViewController *web = [[SGWebViewController alloc] initWithWebFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    web.title = @"Donate";
+    [self.navigationController pushViewController:web animated:YES];
+}
+
 
 @end

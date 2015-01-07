@@ -89,9 +89,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.userInteractionEnabled = NO;
-    cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:16.f];
-    cell.textLabel.textColor = [UIColor blackColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    BOOL isEmptyData = NO;
     
     switch(indexPath.section) {
         case 0:
@@ -113,8 +112,7 @@
                 case 1:
                     cell.textLabel.text = self.battle.opponent ? self.battle.opponent.name : @"No opponent";
                     if (!self.battle.opponent) {
-                        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBoldItalic" size:16.f];
-                        cell.textLabel.textColor = [UIColor lightGrayColor];
+                        isEmptyData = YES;
                     }
                     break;
             }
@@ -143,29 +141,25 @@
                 case 0:
                     cell.textLabel.text = self.battle.killPoints ? [NSString stringWithFormat:@"%@ kill points", [self.battle.killPoints stringValue]] : @"No kill points entered";
                     if (!self.battle.killPoints) {
-                        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBoldItalic" size:16.f];
-                        cell.textLabel.textColor = [UIColor lightGrayColor];
+                        isEmptyData = YES;
                     }
                     break;
                 case 1:
                     cell.textLabel.text = self.battle.scenario ? self.battle.scenario.name : @"No scenario selected";
                     if (!self.battle.scenario) {
-                        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBoldItalic" size:16.f];
-                        cell.textLabel.textColor = [UIColor lightGrayColor];
+                        isEmptyData = YES;
                     }
                     break;
                 case 2:
                     cell.textLabel.text = self.battle.controlPoints ? [NSString stringWithFormat:@"%@ control points", [self.battle.killPoints stringValue]] : @"No control points entered";
                     if (!self.battle.controlPoints) {
-                        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBoldItalic" size:16.f];
-                        cell.textLabel.textColor = [UIColor lightGrayColor];
+                        isEmptyData = YES;
                     }
                     break;
                 case 3:
                     cell.textLabel.text = self.battle.event ? self.battle.event.name : @"No event selected";
                     if (!self.battle.event) {
-                        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBoldItalic" size:16.f];
-                        cell.textLabel.textColor = [UIColor lightGrayColor];
+                        isEmptyData = YES;
                     }
                     break;
             }
@@ -180,6 +174,14 @@
             }
             
             break;
+    }
+    
+    if (isEmptyData) {
+        cell.textLabel.textColor = [UIColor lightGrayColor];
+        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-MediumItalic" size:16.f];
+    } else {
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:16.f];
     }
     
     cell.textLabel.numberOfLines = 0;

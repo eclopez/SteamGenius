@@ -103,13 +103,17 @@
 }
 
 - (NSDictionary *)scenarioField {
-    NSString *(^scenarioValueTransformer)(id) = ^(id value) {
-        return value ? ((Scenario *)value).name : nil;
-    };
+    //NSString *(^scenarioValueTransformer)(id) = ^(id value) {
+    //    return value ? ((Scenario *)value).name : nil;
+    //};
     
     return @{ FXFormFieldViewController: @"SGGenericAddOptionsTableViewController",
-              FXFormFieldOptions: [self sortedObjectArray:@"Scenario" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }],
-              FXFormFieldValueTransformer: scenarioValueTransformer};
+              FXFormFieldOptions: [self sortedObjectArray:@"Scenario" sortKeys:@{ @"name": [NSNumber numberWithBool:YES] }]
+              };//FXFormFieldValueTransformer: scenarioValueTransformer};
+}
+
+- (NSString *)scenarioFieldDescription {
+    return self.scenario ? self.scenario.name : nil;
 }
 
 - (NSDictionary *)controlPointsField {
