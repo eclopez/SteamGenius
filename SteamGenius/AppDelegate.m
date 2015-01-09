@@ -9,18 +9,16 @@
 #import "AppDelegate.h"
 #import "SGSettingsManager.h"
 #import "SGDataImport.h"
-#import "SGBattleDetailViewController.h"
-
-// TEST
-#import "SGRepository.h"
-#import "SGGenericRepository.h"
 #import "BannerViewController.h"
+#import "SGBattleDetailViewController.h"
 
 #define kCurrentGameVersion 1
 #define kCurrentFactionVersion 1
 #define kCurrentModelVersion 1
 #define kCurrentCasterVersion 1
 #define kCurrentResultVersion 1
+
+#define kIncludeAds YES
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -36,8 +34,11 @@
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     splitViewController.delegate = self;
     
-    //BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
-    //self.window.rootViewController = bannerViewController;
+    if (kIncludeAds) {
+        BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
+        self.window.rootViewController = bannerViewController;
+    }
+    
     return YES;
 }
 
