@@ -36,8 +36,8 @@
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     splitViewController.delegate = self;
     
-    BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
-    self.window.rootViewController = bannerViewController;
+    //BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
+    //self.window.rootViewController = bannerViewController;
     return YES;
 }
 

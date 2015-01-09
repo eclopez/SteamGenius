@@ -36,7 +36,7 @@
     [self updateRecord];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleFilterUpdate:)
+                                             selector:@selector(handleBattleListUpdate:)
                                                  name:NSManagedObjectContextObjectsDidChangeNotification
                                                object:[self.appDelegate managedObjectContext]];
 }
@@ -251,7 +251,7 @@
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:(SGBattleInfoCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            //[self configureCell:(SGBattleInfoCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
         case NSFetchedResultsChangeMove:
             break;
@@ -306,18 +306,28 @@
 
 #pragma mark - Data Methods
 
-- (void)handleFilterUpdate:(NSNotification *)notification {
-    NSSet *deletedObjects = [[notification userInfo] objectForKey:NSDeletedObjectsKey];
+- (void)handleBattleListUpdate:(NSNotification *)notification {
     NSSet *insertedObjects = [[notification userInfo] objectForKey:NSInsertedObjectsKey];
+    NSSet *updatedObjects = [[notification userInfo] objectForKey:NSUpdatedObjectsKey];
+    NSSet *deletedObjects = [[notification userInfo] objectForKey:NSDeletedObjectsKey];
     
-    NSPredicate *pred = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+    NSPredicate *newOrDeletedfilterSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject isKindOfClass:[BattleFilter class]];
     }];
-    NSSet *filteredDeleted = [deletedObjects filteredSetUsingPredicate:pred];
-    NSSet *filteredInserted = [insertedObjects filteredSetUsingPredicate:pred];
+    NSSet *filterInserted = [insertedObjects filteredSetUsingPredicate:newOrDeletedfilterSearch];
+    NSSet *filterDeleted = [deletedObjects filteredSetUsingPredicate:newOrDeletedfilterSearch];
     
-    if ([filteredDeleted count] > 0 || [filteredInserted count] > 0) {
+    NSPredicate *battleUpdateSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return [evaluatedObject isKindOfClass:[Battle class]];
+    }];
+    NSSet *battleUpdated = [updatedObjects filteredSetUsingPredicate:battleUpdateSearch];
+    
+    if ([filterDeleted count] > 0 || [filterInserted count] > 0) {
         [self refetch];
+    }
+    
+    if ([battleUpdated count] > 0) {
+        [_tableView reloadData];
     }
 }
 
