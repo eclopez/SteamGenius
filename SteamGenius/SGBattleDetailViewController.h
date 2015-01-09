@@ -8,10 +8,12 @@
 
 #import "FXForms.h"
 #import "Battle.h"
+#import "AppDelegate.h"
 
 @interface SGBattleDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) AppDelegate *appDelegate;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) Battle *battle;
 
 @end

@@ -669,6 +669,7 @@
 		03B6244719E3ACA100963793 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				03D30CEB1A5F873100C62504 /* TextView Cell */,
 				03AF5B661A4921AA005C4A1B /* Display Cell */,
 				0369597419D623260096CEBC /* Long Press Gesture Cell */,
 				0369597319D6231C0096CEBC /* Resizable Image Cell */,
@@ -703,6 +704,13 @@
 				03D30CE51A5C87FA00C62504 /* SGEmptyView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		03D30CEB1A5F873100C62504 /* TextView Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "TextView Cell";
 			sourceTree = "<group>";
 		};
 		47148A91232B4766B1D74C11 /* Frameworks */ = {

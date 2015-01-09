@@ -581,7 +581,35 @@
                     <view key="view" contentMode="scaleToFill" id="t1I-Uh-2eV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="KqU-Jz-YZQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Cvz-bh-Y7X" id="XV0-gb-p8N"/>
+                                    <outlet property="delegate" destination="Cvz-bh-Y7X" id="osL-TD-SNJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KqU-Jz-YZQ" firstAttribute="top" secondItem="W7J-yi-wlk" secondAttribute="bottom" id="5A3-A6-VPY"/>
+                            <constraint firstItem="5cH-BH-JNU" firstAttribute="top" secondItem="KqU-Jz-YZQ" secondAttribute="bottom" id="9qB-e4-NfR"/>
+                            <constraint firstItem="KqU-Jz-YZQ" firstAttribute="top" secondItem="t1I-Uh-2eV" secondAttribute="top" id="EPW-L9-SuT"/>
+                            <constraint firstItem="KqU-Jz-YZQ" firstAttribute="leading" secondItem="t1I-Uh-2eV" secondAttribute="leading" id="LtL-pG-RZ9"/>
+                            <constraint firstAttribute="bottom" secondItem="KqU-Jz-YZQ" secondAttribute="bottom" id="SaB-la-qSR"/>
+                            <constraint firstAttribute="trailing" secondItem="KqU-Jz-YZQ" secondAttribute="trailing" id="Su8-tC-5qj"/>
+                            <constraint firstItem="KqU-Jz-YZQ" firstAttribute="leading" secondItem="t1I-Uh-2eV" secondAttribute="leading" id="bu4-Om-YXZ"/>
+                            <constraint firstAttribute="trailing" secondItem="KqU-Jz-YZQ" secondAttribute="trailing" id="iek-DC-IsD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5A3-A6-VPY"/>
+                                <exclude reference="LtL-pG-RZ9"/>
+                                <exclude reference="SaB-la-qSR"/>
+                                <exclude reference="iek-DC-IsD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Battle Detail" id="k24-U9-kD2">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="6uc-Tk-B9y">
@@ -590,6 +618,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="KqU-Jz-YZQ" id="Qwy-gA-dq5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiA-oQ-71f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

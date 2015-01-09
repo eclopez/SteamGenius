@@ -130,7 +130,7 @@
 }
 
 - (NSDictionary *)notesField {
-    return @{ FXFormFieldHeader: @"Notes",
+    return @{ FXFormFieldHeader: @"",
               FXFormFieldType: @"longtext" };
 }
 

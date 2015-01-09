@@ -15,6 +15,7 @@
 #import "Event.h"
 #import "SGBattleFormViewController.h"
 #import "SGEmptyView.h"
+#import "AppDelegate.h"
 
 #define IDIOM   UI_USER_INTERFACE_IDIOM()
 #define IPHONE  UIUserInterfaceIdiomPhone
@@ -28,26 +29,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _tableView = [[UITableView alloc] initWithFrame:[[self view] bounds] style:UITableViewStyleGrouped];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
+    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+    _tableView.contentInset = UIEdgeInsetsMake(_tableView.contentInset.top, _tableView.contentInset.left, 66.f, _tableView.contentInset.top);
+    [self configureView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleBattleUpdate:)
+                                                 name:NSManagedObjectContextObjectsDidChangeNotification
+                                               object:[_appDelegate managedObjectContext]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    _tableView.contentInset = UIEdgeInsetsMake(_tableView.contentInset.top, _tableView.contentInset.left, 66.f, _tableView.contentInset.top);
     if (self.battle == nil) {
-        self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.view.bounds emptyMessage:@"No battle selected." color:[UIColor blackColor]];
+        self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.view.frame emptyMessage:@"No battle selected." color:[UIColor blackColor]];
     } else {
         self.tableView.backgroundView = nil;
     }
-    [self configureView];
 }
 
 - (void)awakeFromNib {
@@ -65,7 +64,6 @@
                                 self.battle.opponentCaster.model.shortName,
                                 [self.battle.opponentCaster.model.incarnation intValue] != 1 ? self.battle.opponentCaster.model.incarnation : @""] :
     @"Battle Detail";
-    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -215,7 +213,21 @@
     }
 }
 
-#pragma mark - UITableViewDelegate Methods
+#pragma mark - Data Methods
+
+- (void)handleBattleUpdate:(NSNotification *)notification {
+    NSSet *updatedObjects = [[notification userInfo] objectForKey:NSUpdatedObjectsKey];
+    
+    NSPredicate *pred = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return evaluatedObject == self.battle;
+    }];
+    NSSet *battleUpdated = [updatedObjects filteredSetUsingPredicate:pred];
+    
+    if ([battleUpdated count] > 0) {
+        [self configureView];
+        [_tableView reloadData];
+    }
+}
 
 #pragma mark - Navigation
 
