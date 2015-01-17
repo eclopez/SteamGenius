@@ -47,6 +47,8 @@
     return self;
 }
 
+#pragma mark - Attribute
+
 - (NSDictionary *)attributeField {
     NSString *(^attributeValueTransformer)(id) = ^(id value) {
         return value ? [_attributes valueForKey:value]: nil;
@@ -62,6 +64,8 @@
 - (NSString *)attributeFieldDescription {
     return [_attributes valueForKey:self.attribute];
 }
+
+#pragma mark - Operation
 
 - (NSDictionary *)operationField {
     NSString *(^operatorValueTransformer)(id) = ^(id value) {
@@ -112,6 +116,8 @@
 - (NSString *)operationFieldDescription {
     return [_logicalOperators valueForKey:self.operation];
 }
+
+#pragma mark - Value
 
 - (NSDictionary *)attributeValueField {
     NSString *(^nameValueTransformer)(id) = ^(id value) {
@@ -234,6 +240,8 @@
     }
     return @"";
 }
+
+#pragma mark - FXForms Methods
 
 - (NSArray *)excludedFields
 {

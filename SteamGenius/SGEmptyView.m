@@ -17,7 +17,8 @@
         lblEmpty.attributedText = [[NSAttributedString alloc] initWithString:emptyMessage
                                                                   attributes:@{NSForegroundColorAttributeName:color,
                                                                                NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
-                                                                               NSTextEffectAttributeName:NSTextEffectLetterpressStyle}];;
+                                                                               NSTextEffectAttributeName:NSTextEffectLetterpressStyle}];
+        lblEmpty.backgroundColor = [UIColor clearColor];
         lblEmpty.textAlignment = NSTextAlignmentCenter;
         [self addSubview:lblEmpty];
     }
