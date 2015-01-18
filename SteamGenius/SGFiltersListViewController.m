@@ -8,7 +8,9 @@
 
 #import "SGFiltersListViewController.h"
 #import "BattleFilter.h"
-#import "SGEmptyView.h"
+#import "SGEmptyLabel.h"
+
+#define kEmptyTableMessage @"No filters found."
 
 @interface SGFiltersListViewController ()
 
@@ -19,16 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self defineTableViewBackgroundView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleFilterUpdate:)
                                                  name:NSManagedObjectContextObjectsDidChangeNotification
                                                object:[self.appDelegate managedObjectContext]];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self configureTableViewBackgroundView];
 }
 
 #pragma mark - Table view data source
@@ -149,27 +147,27 @@
 
 #pragma mark - Private Methods
 
-- (void)configureTableViewBackgroundView {
-    if ([self.fetchedResultsController.fetchedObjects count] < 1) {
-        self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.view.frame emptyMessage:@"No filters found." color:[UIColor blackColor]];
-    }
-    else {
-        self.tableView.backgroundView = nil;
-    }
-}
-
 - (void)handleFilterUpdate:(NSNotification *)notification {
     NSSet *insertedObjects = [[notification userInfo] objectForKey:NSInsertedObjectsKey];
     NSSet *deletedObjects = [[notification userInfo] objectForKey:NSDeletedObjectsKey];
     
-    NSPredicate *newOrDeletedfilterSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+    NSPredicate *filterSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject isKindOfClass:[BattleFilter class]];
     }];
-    NSSet *filterInserted = [insertedObjects filteredSetUsingPredicate:newOrDeletedfilterSearch];
-    NSSet *filterDeleted = [deletedObjects filteredSetUsingPredicate:newOrDeletedfilterSearch];
+    NSSet *filterInserted = [insertedObjects filteredSetUsingPredicate:filterSearch];
+    NSSet *filterDeleted = [deletedObjects filteredSetUsingPredicate:filterSearch];
     
     if ([filterDeleted count] > 0 || [filterInserted count] > 0) {
-        [self configureTableViewBackgroundView];
+        [self defineTableViewBackgroundView];
+    }
+}
+
+- (void)defineTableViewBackgroundView {
+    if ([self.fetchedResultsController.fetchedObjects count] < 1) {
+        self.tableView.backgroundView = [[SGEmptyLabel alloc] initWithFrame:self.tableView.frame message:kEmptyTableMessage textColor:[UIColor blackColor]];
+    }
+    else {
+        self.tableView.backgroundView = nil;
     }
 }
 

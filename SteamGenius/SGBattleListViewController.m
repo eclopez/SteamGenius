@@ -17,6 +17,9 @@
 #import "Result.h"
 #import "SGGenericRepository.h"
 #import "BattleFilter.h"
+#import "SGEmptyLabel.h"
+
+#define kEmptyTableMessage @"No battles found."
 
 @interface SGBattleListViewController ()
 
@@ -26,13 +29,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(35.f, 0, 0, 0);
-    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(35.f, 0, 0, 0);
+    UIEdgeInsets battleTableInsets = UIEdgeInsetsMake(35.f, 0, 0, 0);
+    self.tableView.contentInset = battleTableInsets;
+    self.tableView.scrollIndicatorInsets = battleTableInsets;
     
     self.recordViewBackgroundImage.image = [UIImage imageNamed:@"RecordBar"];
+    
     [self updateRecord];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -43,7 +47,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
     self.tableView.backgroundColor = [SGSettingsManager getBarColor];
 }
 
@@ -226,6 +229,7 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
+    [self updateRecord];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
@@ -256,8 +260,6 @@
         case NSFetchedResultsChangeMove:
             break;
     }
-    
-    [self updateRecord];
 }
 
 #pragma mark - Navigation Methods
@@ -311,19 +313,20 @@
     NSSet *updatedObjects = [[notification userInfo] objectForKey:NSUpdatedObjectsKey];
     NSSet *deletedObjects = [[notification userInfo] objectForKey:NSDeletedObjectsKey];
     
-    NSPredicate *newOrDeletedfilterSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+    NSPredicate *filterSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject isKindOfClass:[BattleFilter class]];
     }];
-    NSSet *filterInserted = [insertedObjects filteredSetUsingPredicate:newOrDeletedfilterSearch];
-    NSSet *filterDeleted = [deletedObjects filteredSetUsingPredicate:newOrDeletedfilterSearch];
+    NSSet *filterInserted = [insertedObjects filteredSetUsingPredicate:filterSearch];
+    NSSet *filterDeleted = [deletedObjects filteredSetUsingPredicate:filterSearch];
     
-    NSPredicate *battleUpdateSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+    NSPredicate *battleSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject isKindOfClass:[Battle class]];
     }];
-    NSSet *battleUpdated = [updatedObjects filteredSetUsingPredicate:battleUpdateSearch];
+    NSSet *battleUpdated = [updatedObjects filteredSetUsingPredicate:battleSearch];
     
     if ([filterDeleted count] > 0 || [filterInserted count] > 0) {
         [self refetch];
+        [self updateRecord];
     }
     
     if ([battleUpdated count] > 0) {
@@ -334,7 +337,6 @@
 - (void)refetch {
     self.fetchedResultsController = nil;
     [self fetchResults];
-    [self updateRecord];
     [self.tableView reloadData];
 }
 
@@ -347,28 +349,30 @@
 }
 
 - (void)updateRecord {
-    NSArray *winFilter = [self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"result.winValue == %@", @1]];
-    self.winTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)[winFilter count]];
+    NSPredicate *wins = [NSPredicate predicateWithFormat:@"result.winValue > %@", @0];
+    NSPredicate *draws = [NSPredicate predicateWithFormat:@"result.winValue == %@", @0];
+    NSPredicate *losses = [NSPredicate predicateWithFormat:@"result.winValue < %@", @0];
+    
+    NSUInteger numberOfWins = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:wins] count];
+    NSUInteger numberOfDraws = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:draws] count];
+    NSUInteger numberOfLosses = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:losses] count];
+    
+    self.winTotal.text = [@(numberOfWins) stringValue];
+    self.drawTotal.text = [@(numberOfDraws) stringValue];
+    self.lossTotal.text = [@(numberOfLosses) stringValue];
+    
     [self.winTotal sizeToFit];
-    
-    NSArray *drawFilter = [self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"result.winValue == %@", @0]];
-    self.drawTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)[drawFilter count]];
     [self.drawTotal sizeToFit];
-    
-    NSArray *lossFilter = [self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"result.winValue == %@", @-1]];
-    self.lossTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)[lossFilter count]];
     [self.lossTotal sizeToFit];
     
+    [self defineTableViewBackgroundView];
+}
+
+- (void)defineTableViewBackgroundView {
     if ([self.fetchedResultsController.fetchedObjects count] < 1) {
-        UILabel *empty = [[UILabel alloc] init];
-        NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"No battles found."
-                                                                         attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                                                      NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
-                                                                                      NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
-        empty.attributedText = attrString;
-        empty.textAlignment = NSTextAlignmentCenter;
-        self.tableView.backgroundView = empty;
-    } else {
+        self.tableView.backgroundView = [[SGEmptyLabel alloc] initWithFrame:self.tableView.frame message:kEmptyTableMessage textColor:[UIColor whiteColor]];
+    }
+    else {
         self.tableView.backgroundView = nil;
     }
 }

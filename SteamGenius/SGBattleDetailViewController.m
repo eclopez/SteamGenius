@@ -14,11 +14,12 @@
 #import "Scenario.h"
 #import "Event.h"
 #import "SGBattleFormViewController.h"
-#import "SGEmptyView.h"
+#import "SGEmptyLabel.h"
 #import "AppDelegate.h"
 
 #define IDIOM   UI_USER_INTERFACE_IDIOM()
 #define IPHONE  UIUserInterfaceIdiomPhone
+#define kEmptyTableMessage @"No battle selected."
 
 @interface SGBattleDetailViewController ()
 
@@ -41,10 +42,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     if (self.battle == nil) {
-        self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.view.frame emptyMessage:@"No battle selected." color:[UIColor blackColor]];
-    } else {
+        self.tableView.backgroundView = [[SGEmptyLabel alloc] initWithFrame:self.tableView.frame message:kEmptyTableMessage textColor:[UIColor blackColor]];
+    }
+    else {
         self.tableView.backgroundView = nil;
     }
 }
