@@ -75,7 +75,7 @@
             self.battle.event = form.event;
             self.battle.notes = form.notes;
         } else {
-            [SGRepository initWithPlayerCaster:form.playerCaster opponentCaster:form.opponentCaster opponent:form.opponent date:form.date points:form.pointSize result:form.result killPoints:form.killPoints scenario:form.scenario controlPoints:form.controlPoints event:form.event notes:form.notes context:appDelegate.managedObjectContext];
+            [SGRepository initWithPlayerCaster:form.playerCaster opponentCaster:form.opponentCaster opponent:form.opponent date:[self normalizedDate:form.date] points:form.pointSize result:form.result killPoints:form.killPoints scenario:form.scenario controlPoints:form.controlPoints event:form.event notes:form.notes context:appDelegate.managedObjectContext];
         }
         [appDelegate saveContext];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
@@ -88,14 +88,11 @@
 #pragma mark - Utilities
 
 - (NSDate *)normalizedDate:(NSDate *)date {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    date = [calendar startOfDayForDate:date];
     calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    NSDateComponents *dateComponents = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
-    [dateComponents setHour:12];
-    [dateComponents setMinute:0];
-    [dateComponents setSecond:0];
-    [dateComponents setNanosecond:0];
-    return [calendar dateFromComponents:dateComponents];
+    NSTimeInterval twelveHours = 12 * 3600;
+    return [[calendar startOfDayForDate:date] dateByAddingTimeInterval:twelveHours];
 }
 
 @end
