@@ -112,14 +112,11 @@
 #pragma mark - Utilities
 
 - (NSDate *)normalizedDate:(NSDate *)date {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    date = [calendar startOfDayForDate:date];
     calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    NSDateComponents *dateComponents = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
-    [dateComponents setHour:12];
-    [dateComponents setMinute:0];
-    [dateComponents setSecond:0];
-    [dateComponents setNanosecond:0];
-    return [calendar dateFromComponents:dateComponents];
+    NSTimeInterval twelveHours = 12 * 3600;
+    return [[calendar startOfDayForDate:date] dateByAddingTimeInterval:twelveHours];
 }
 
 @end

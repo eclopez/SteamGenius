@@ -159,7 +159,7 @@
                     }
                     break;
                 case 2:
-                    cell.textLabel.text = self.battle.controlPoints ? [NSString stringWithFormat:@"%@ control points", [self.battle.killPoints stringValue]] : @"No control points entered";
+                    cell.textLabel.text = self.battle.controlPoints ? [NSString stringWithFormat:@"%@ control points", [self.battle.controlPoints stringValue]] : @"No control points entered";
                     if (!self.battle.controlPoints) {
                         isEmptyData = YES;
                     }

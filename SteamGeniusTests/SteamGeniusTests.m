@@ -73,7 +73,7 @@
     // Assert
     NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:@"Result"];
     NSArray *arr = [_moc executeFetchRequest:req error:nil];
-    XCTAssertEqual(15, [arr count]);
+    XCTAssertEqual(19, [arr count]);
 }
 
 - (void)testAddOpponent {
