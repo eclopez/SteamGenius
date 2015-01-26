@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SGGenericAddOptionsTableViewController.h"
 #import "SGOpponentFormViewController.h"
+#import "SGEmptyView.h"
 
 #define IDIOM   UI_USER_INTERFACE_IDIOM()
 #define IPHONE  UIUserInterfaceIdiomPhone

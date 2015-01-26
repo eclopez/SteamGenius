@@ -8,7 +8,7 @@
 
 #import "SGFiltersListViewController.h"
 #import "BattleFilter.h"
-#import "SGEmptyLabel.h"
+#import "SGEmptyView.h"
 
 #define kEmptyTableMessage @"No filters found."
 
@@ -164,7 +164,7 @@
 
 - (void)defineTableViewBackgroundView {
     if ([self.fetchedResultsController.fetchedObjects count] < 1) {
-        self.tableView.backgroundView = [[SGEmptyLabel alloc] initWithFrame:self.tableView.frame message:kEmptyTableMessage textColor:[UIColor blackColor]];
+        self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.tableView.bounds message:kEmptyTableMessage textColor:[UIColor blackColor]];
     }
     else {
         self.tableView.backgroundView = nil;

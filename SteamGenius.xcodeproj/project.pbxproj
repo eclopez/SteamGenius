@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		03032A9A19ED974900A15C54 /* SGFiltersForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9919ED974900A15C54 /* SGFiltersForm.m */; };
 		03032A9D19ED9D2D00A15C54 /* SGFiltersFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */; };
-		030EA1AC1A6C0D9800361689 /* SGEmptyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 030EA1AB1A6C0D9800361689 /* SGEmptyLabel.m */; };
 		031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */; };
 		031D6AC919CF5F49000B7D26 /* SGFactionOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AC819CF5F49000B7D26 /* SGFactionOptionsTableViewController.m */; };
 		031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */; };
@@ -62,6 +61,7 @@
 		038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF319CDE70C00A224F7 /* SGBattleForm.m */; };
 		038DAAF819CDE8C500A224F7 /* SGBattleFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */; };
 		03AF5B691A49225D005C4A1B /* SGDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF5B681A49225D005C4A1B /* SGDisplayTableViewCell.m */; };
+		03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C0B2251A75542A00D20829 /* SGEmptyView.m */; };
 		03C301191A36B3580053882A /* SGColorCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C301181A36B3580053882A /* SGColorCircleView.m */; };
 		03C5D29E1A41BC4B00788E0C /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D29D1A41BC4B00788E0C /* Faction.m */; };
 		03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */; };
@@ -85,8 +85,6 @@
 		03032A9919ED974900A15C54 /* SGFiltersForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersForm.m; sourceTree = "<group>"; };
 		03032A9B19ED9D2D00A15C54 /* SGFiltersFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFiltersFormViewController.h; sourceTree = "<group>"; };
 		03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersFormViewController.m; sourceTree = "<group>"; };
-		030EA1AA1A6C0D9800361689 /* SGEmptyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmptyLabel.h; sourceTree = "<group>"; };
-		030EA1AB1A6C0D9800361689 /* SGEmptyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmptyLabel.m; sourceTree = "<group>"; };
 		031D6AB519CEA5D0000B7D26 /* SGResizableImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGResizableImageViewCell.h; sourceTree = "<group>"; };
 		031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGResizableImageViewCell.m; sourceTree = "<group>"; };
 		031D6AC719CF5F49000B7D26 /* SGFactionOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionOptionsTableViewController.h; sourceTree = "<group>"; };
@@ -184,6 +182,8 @@
 		038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleFormViewController.m; sourceTree = "<group>"; };
 		03AF5B671A49225D005C4A1B /* SGDisplayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDisplayTableViewCell.h; sourceTree = "<group>"; };
 		03AF5B681A49225D005C4A1B /* SGDisplayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDisplayTableViewCell.m; sourceTree = "<group>"; };
+		03C0B2241A75542A00D20829 /* SGEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmptyView.h; sourceTree = "<group>"; };
+		03C0B2251A75542A00D20829 /* SGEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmptyView.m; sourceTree = "<group>"; };
 		03C3010E1A36A79B0053882A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		03C301101A36A8AE0053882A /* libAdapterIAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdapterIAd.a; path = "../../../Downloads/LibAdapterIAd-1.0.0/libAdapterIAd.a"; sourceTree = "<group>"; };
 		03C301171A36B3580053882A /* SGColorCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGColorCircleView.h; sourceTree = "<group>"; };
@@ -699,8 +699,8 @@
 		03D30CE31A5C87E100C62504 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				030EA1AA1A6C0D9800361689 /* SGEmptyLabel.h */,
-				030EA1AB1A6C0D9800361689 /* SGEmptyLabel.m */,
+				03C0B2241A75542A00D20829 /* SGEmptyView.h */,
+				03C0B2251A75542A00D20829 /* SGEmptyView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -892,6 +892,7 @@
 				0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */,
 				03032A9D19ED9D2D00A15C54 /* SGFiltersFormViewController.m in Sources */,
 				0369596E19D6041C0096CEBC /* SGEventFormViewController.m in Sources */,
+				03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */,
 				0349E2AB19C17F510091FF21 /* main.m in Sources */,
 				038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */,
 				0351036619DE54C50032E215 /* SGBattleListViewController.m in Sources */,
@@ -913,7 +914,6 @@
 				0369595419D5418B0096CEBC /* SGOpponentForm.m in Sources */,
 				031D6AC919CF5F49000B7D26 /* SGFactionOptionsTableViewController.m in Sources */,
 				031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */,
-				030EA1AC1A6C0D9800361689 /* SGEmptyLabel.m in Sources */,
 				0369594C19D501040096CEBC /* Battle.m in Sources */,
 				0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */,
 			);

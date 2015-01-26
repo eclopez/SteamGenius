@@ -17,7 +17,7 @@
 #import "Result.h"
 #import "SGGenericRepository.h"
 #import "BattleFilter.h"
-#import "SGEmptyLabel.h"
+#import "SGEmptyView.h"
 
 #define kEmptyTableMessage @"No battles found."
 
@@ -370,7 +370,7 @@
 
 - (void)defineTableViewBackgroundView {
     if ([self.fetchedResultsController.fetchedObjects count] < 1) {
-        self.tableView.backgroundView = [[SGEmptyLabel alloc] initWithFrame:self.tableView.frame message:kEmptyTableMessage textColor:[UIColor whiteColor]];
+        self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.tableView.bounds message:kEmptyTableMessage textColor:[UIColor whiteColor]];
     }
     else {
         self.tableView.backgroundView = nil;

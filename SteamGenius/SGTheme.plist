@@ -54,6 +54,56 @@
 	</dict>
 	<dict>
 		<key>name</key>
+		<string>Protectorate of Menoth</string>
+		<key>barColor</key>
+		<dict>
+			<key>red</key>
+			<integer>121</integer>
+			<key>green</key>
+			<integer>37</integer>
+			<key>blue</key>
+			<integer>44</integer>
+			<key>alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>textColor</key>
+		<dict>
+			<key>red</key>
+			<integer>240</integer>
+			<key>green</key>
+			<integer>236</integer>
+			<key>blue</key>
+			<integer>207</integer>
+			<key>alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>tintColor</key>
+		<dict>
+			<key>red</key>
+			<integer>240</integer>
+			<key>green</key>
+			<integer>236</integer>
+			<key>blue</key>
+			<integer>207</integer>
+			<key>alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>tableColor</key>
+		<dict>
+			<key>red</key>
+			<string>0</string>
+			<key>green</key>
+			<string>0</string>
+			<key>blue</key>
+			<string>0</string>
+			<key>alpha</key>
+			<string>1</string>
+		</dict>
+		<key>statusBarStyle</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>Khador</string>
 		<key>barColor</key>
 		<dict>
@@ -148,6 +198,106 @@
 			<string>0</string>
 			<key>alpha</key>
 			<string>1</string>
+		</dict>
+		<key>statusBarStyle</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Retribution of Scyrah</string>
+		<key>barColor</key>
+		<dict>
+			<key>red</key>
+			<integer>85</integer>
+			<key>green</key>
+			<integer>175</integer>
+			<key>blue</key>
+			<integer>172</integer>
+			<key>alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>textColor</key>
+		<dict>
+			<key>red</key>
+			<integer>237</integer>
+			<key>green</key>
+			<integer>246</integer>
+			<key>blue</key>
+			<integer>246</integer>
+			<key>alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>tintColor</key>
+		<dict>
+			<key>red</key>
+			<integer>237</integer>
+			<key>green</key>
+			<integer>246</integer>
+			<key>blue</key>
+			<integer>246</integer>
+			<key>alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>tableColor</key>
+		<dict>
+			<key>red</key>
+			<string>85</string>
+			<key>green</key>
+			<string>175</string>
+			<key>blue</key>
+			<string>172</string>
+			<key>alpha</key>
+			<string>1</string>
+		</dict>
+		<key>statusBarStyle</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Mercenaries</string>
+		<key>barColor</key>
+		<dict>
+			<key>red</key>
+			<integer>85</integer>
+			<key>green</key>
+			<integer>105</integer>
+			<key>blue</key>
+			<integer>70</integer>
+			<key>alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>textColor</key>
+		<dict>
+			<key>red</key>
+			<integer>214</integer>
+			<key>green</key>
+			<integer>166</integer>
+			<key>blue</key>
+			<integer>134</integer>
+			<key>alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>tintColor</key>
+		<dict>
+			<key>red</key>
+			<integer>214</integer>
+			<key>green</key>
+			<integer>166</integer>
+			<key>blue</key>
+			<integer>134</integer>
+			<key>alpha</key>
+			<integer>1</integer>
+		</dict>
+		<key>tableColor</key>
+		<dict>
+			<key>red</key>
+			<string>0</string>
+			<key>green</key>
+			<string>0</string>
+			<key>blue</key>
+			<string>0</string>
+			<key>alpha</key>
+			<string>0</string>
 		</dict>
 		<key>statusBarStyle</key>
 		<integer>1</integer>
