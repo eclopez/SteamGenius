@@ -1,5 +1,5 @@
 //
-//  SGGenericOptionsTableViewController.h
+//  SGGenericAddOptionsTableViewController.h
 //  SteamGenius
 //
 //  Created by Erik Lopez on 9/25/14.

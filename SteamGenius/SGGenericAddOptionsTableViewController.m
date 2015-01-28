@@ -1,5 +1,5 @@
 //
-//  SGGenericOptionsTableViewController.m
+//  SGGenericAddOptionsTableViewController.m
 //  SteamGenius
 //
 //  Created by Erik Lopez on 9/25/14.
@@ -195,6 +195,7 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
+    [self updateTable];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
@@ -230,24 +231,15 @@
             [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
-    
-    [self updateTable];
 }
 
 #pragma mark - Private Methods
 
 - (void)updateTable {
     if ([self.fetchedResultsController.fetchedObjects count] < 1) {
-        UILabel *empty = [[UILabel alloc] init];
-        NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"No %@s found.", self.field.valueClass]
-                                                                         attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0 green:0 blue:0 alpha:1],
-                                                                                      NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
-                                                                                      NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
-        empty.attributedText = attrString;
-        empty.textAlignment = NSTextAlignmentCenter;
-        self.tableView.backgroundView = empty;
-        
-    } else {
+        self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.tableView.bounds message:[NSString stringWithFormat:@"No %@s found.", self.field.valueClass] textColor:[UIColor blackColor]];
+    }
+    else {
         self.tableView.backgroundView = nil;
     }
 }
