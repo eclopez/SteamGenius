@@ -8,6 +8,9 @@
 
 #import "SGFiltersListViewController.h"
 #import "BattleFilter.h"
+#import "SGEmptyView.h"
+
+#define kEmptyTableMessage @"No filters found."
 
 @interface SGFiltersListViewController ()
 
@@ -18,16 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self updateTable];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self defineTableViewBackgroundView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleFilterUpdate:)
+                                                 name:NSManagedObjectContextObjectsDidChangeNotification
+                                               object:[self.appDelegate managedObjectContext]];
 }
 
 #pragma mark - Table view data source
@@ -144,27 +143,32 @@
             [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
-    
-    [self updateTable];
 }
 
 #pragma mark - Private Methods
 
-- (void)updateTable {
+- (void)handleFilterUpdate:(NSNotification *)notification {
+    NSSet *insertedObjects = [[notification userInfo] objectForKey:NSInsertedObjectsKey];
+    NSSet *deletedObjects = [[notification userInfo] objectForKey:NSDeletedObjectsKey];
+    
+    NSPredicate *filterSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return [evaluatedObject isKindOfClass:[BattleFilter class]];
+    }];
+    NSSet *filterInserted = [insertedObjects filteredSetUsingPredicate:filterSearch];
+    NSSet *filterDeleted = [deletedObjects filteredSetUsingPredicate:filterSearch];
+    
+    if ([filterDeleted count] > 0 || [filterInserted count] > 0) {
+        [self defineTableViewBackgroundView];
+    }
+}
+
+- (void)defineTableViewBackgroundView {
     if ([self.fetchedResultsController.fetchedObjects count] < 1) {
-        UILabel *empty = [[UILabel alloc] init];
-        NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"No filters found."
-                                                                         attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0 green:0 blue:0 alpha:1],
-                                                                                      NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
-                                                                                      NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
-        empty.attributedText = attrString;
-        empty.textAlignment = NSTextAlignmentCenter;
-        self.tableView.backgroundView = empty;
-        
-    } else {
+        self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.tableView.bounds message:kEmptyTableMessage textColor:[UIColor blackColor]];
+    }
+    else {
         self.tableView.backgroundView = nil;
     }
-    [self.tableView reloadData];
 }
 
 @end

@@ -37,8 +37,9 @@
     self.playerCasterName.textAlignment = NSTextAlignmentRight;
     
     // Result name label
-    self.resultNameLabel.adjustsFontSizeToFitWidth = NO;
+    self.resultNameLabel.adjustsFontSizeToFitWidth = YES;
     self.resultNameLabel.numberOfLines = 0;
+    self.resultNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
     NSMutableParagraphStyle *resultStyle = [[NSMutableParagraphStyle alloc] init];
     CGFloat fontSize = self.resultNameLabel.font.pointSize;
