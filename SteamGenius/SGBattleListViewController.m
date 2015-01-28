@@ -356,14 +356,27 @@
     NSUInteger numberOfWins = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:wins] count];
     NSUInteger numberOfDraws = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:draws] count];
     NSUInteger numberOfLosses = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:losses] count];
+    NSUInteger numberOfTotal = [self.fetchedResultsController.fetchedObjects count];
+    NSUInteger totalBattles = [[SGGenericRepository findAllEntitiesOfType:@"Battle" context:[self.appDelegate managedObjectContext]] count];
     
     self.winTotal.text = [@(numberOfWins) stringValue];
     self.drawTotal.text = [@(numberOfDraws) stringValue];
     self.lossTotal.text = [@(numberOfLosses) stringValue];
     
+    
+    NSString *filteredTotalText;
+    if (numberOfTotal == totalBattles) {
+        filteredTotalText = totalBattles != 1 ? [NSString stringWithFormat:@"%@ battles", [@(totalBattles) stringValue]] : [NSString stringWithFormat:@"%@ battle", [@(totalBattles) stringValue]];
+    } else {
+        filteredTotalText = totalBattles != 1 ? [NSString stringWithFormat:@"%@ (of %@ battles)", [@(numberOfTotal) stringValue], [@(totalBattles) stringValue]] : [NSString stringWithFormat:@"%@ (of %@ battle)", [@(numberOfTotal) stringValue], [@(totalBattles) stringValue]];
+    }
+    self.filteredTotal.attributedText = [[NSAttributedString alloc] initWithString:filteredTotalText
+                                                                        attributes:@{NSShadowAttributeName:[self getTextShadow]}];
+    
     [self.winTotal sizeToFit];
     [self.drawTotal sizeToFit];
     [self.lossTotal sizeToFit];
+    //[self.filteredTotal sizeToFit];
     
     [self defineTableViewBackgroundView];
 }

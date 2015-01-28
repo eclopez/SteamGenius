@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -338,8 +338,15 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtered" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ood-jF-B8e">
+                                        <rect key="frame" x="545" y="5" width="43" height="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Ood-jF-B8e" firstAttribute="top" secondItem="B5s-H2-7Rh" secondAttribute="top" constant="5" id="0V2-7M-79U"/>
                                     <constraint firstItem="g0C-I0-nHa" firstAttribute="top" secondItem="B5s-H2-7Rh" secondAttribute="top" constant="5" id="1Ag-us-6g9"/>
                                     <constraint firstItem="Iuw-eA-Gi7" firstAttribute="top" secondItem="B5s-H2-7Rh" secondAttribute="top" constant="6" id="1IF-T8-VsG"/>
                                     <constraint firstItem="g0C-I0-nHa" firstAttribute="leading" secondItem="Iuw-eA-Gi7" secondAttribute="trailing" constant="4" id="1Xc-8H-zGx"/>
@@ -347,6 +354,7 @@
                                     <constraint firstItem="4W5-Ui-KNS" firstAttribute="leading" secondItem="B5s-H2-7Rh" secondAttribute="leading" constant="81" id="30w-rF-5DV"/>
                                     <constraint firstItem="dkR-xk-knF" firstAttribute="top" secondItem="B5s-H2-7Rh" secondAttribute="top" constant="5" id="6Mx-qv-4Ne"/>
                                     <constraint firstAttribute="bottom" secondItem="Iuw-eA-Gi7" secondAttribute="bottom" constant="17" id="6sz-jR-Fjx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ood-jF-B8e" secondAttribute="trailing" constant="12" id="8c5-de-dJ5"/>
                                     <constraint firstItem="DHG-TW-32U" firstAttribute="top" secondItem="B5s-H2-7Rh" secondAttribute="top" constant="5" id="9Ru-do-nu8"/>
                                     <constraint firstItem="Iuw-eA-Gi7" firstAttribute="leading" secondItem="M5k-8O-g1v" secondAttribute="trailing" constant="4" id="BJH-vn-64T"/>
                                     <constraint firstItem="M5k-8O-g1v" firstAttribute="leading" secondItem="DHG-TW-32U" secondAttribute="trailing" constant="2" id="BOb-fz-MMM"/>
@@ -370,6 +378,7 @@
                                     <constraint firstAttribute="bottom" secondItem="f7g-ej-TdM" secondAttribute="bottom" constant="17" id="u1O-dV-tdA"/>
                                     <constraint firstItem="f7g-ej-TdM" firstAttribute="top" secondItem="B5s-H2-7Rh" secondAttribute="top" constant="6" id="vBo-sn-ZLn"/>
                                     <constraint firstItem="4W5-Ui-KNS" firstAttribute="top" secondItem="B5s-H2-7Rh" secondAttribute="top" constant="5" id="wJv-cd-gIv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ood-jF-B8e" secondAttribute="bottom" constant="15" id="wXa-Bh-7UJ"/>
                                     <constraint firstItem="dkR-xk-knF" firstAttribute="leading" secondItem="g0C-I0-nHa" secondAttribute="trailing" constant="2" id="yQo-K5-dZh"/>
                                     <constraint firstItem="f7g-ej-TdM" firstAttribute="leading" secondItem="4si-4W-VDd" secondAttribute="trailing" constant="4" id="ySo-jX-lRF"/>
                                 </constraints>
@@ -404,6 +413,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="drawTotal" destination="M5k-8O-g1v" id="Xfj-mZ-sSC"/>
+                        <outlet property="filteredTotal" destination="Ood-jF-B8e" id="hIq-tQ-WOr"/>
                         <outlet property="lossTotal" destination="dkR-xk-knF" id="ko6-fK-bVL"/>
                         <outlet property="recordView" destination="B5s-H2-7Rh" id="oim-jP-lLi"/>
                         <outlet property="recordViewBackgroundImage" destination="qGu-Bp-mb4" id="Obs-lu-wgs"/>
