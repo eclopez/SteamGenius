@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *winTotal;
 @property (weak, nonatomic) IBOutlet UILabel *drawTotal;
 @property (weak, nonatomic) IBOutlet UILabel *lossTotal;
+@property (weak, nonatomic) IBOutlet UILabel *filteredTotal;
 
 @end

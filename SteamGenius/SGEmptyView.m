@@ -2,7 +2,7 @@
 //  SGEmptyView.m
 //  SteamGenius
 //
-//  Created by Erik Lopez on 1/6/15.
+//  Created by Erik Lopez on 1/25/15.
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
@@ -10,18 +10,22 @@
 
 @implementation SGEmptyView
 
-- (instancetype)initWithFrame:(CGRect)frame emptyMessage:(NSString *)emptyMessage color:(UIColor *)color {
+- (instancetype)initWithFrame:(CGRect)frame message:(NSString *)message textColor:(UIColor *)textColor {
     self = [super initWithFrame:frame];
     if (self) {
-        UILabel *lblEmpty = [[UILabel alloc] initWithFrame:frame];
-        lblEmpty.attributedText = [[NSAttributedString alloc] initWithString:emptyMessage
-                                                                  attributes:@{NSForegroundColorAttributeName:color,
-                                                                               NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
-                                                                               NSTextEffectAttributeName:NSTextEffectLetterpressStyle}];;
-        lblEmpty.textAlignment = NSTextAlignmentCenter;
-        [self addSubview:lblEmpty];
+        _lblEmpty = [[UILabel alloc] initWithFrame:self.bounds];
+        _lblEmpty.textAlignment = NSTextAlignmentCenter;
+        _lblEmpty.attributedText = [[NSAttributedString alloc] initWithString:message
+                                                                   attributes:@{NSForegroundColorAttributeName:textColor,
+                                                                                NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-DemiBold" size:25.f],
+                                                                                NSTextEffectAttributeName:NSTextEffectLetterpressStyle}];
+        [self addSubview:_lblEmpty];
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    _lblEmpty.frame = self.bounds;
 }
 
 @end
