@@ -17,7 +17,7 @@
 - (instancetype)initWithWebFrame:(CGRect)webFrame {
     self = [super init];
     if (self) {
-        _web = [[WKWebView alloc] initWithFrame:webFrame];\
+        _web = [[WKWebView alloc] initWithFrame:webFrame];
     }
     return self;
 }

@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "FXForms.h"
+#import "SGProductsTableViewController.h"
 
 @interface SGSettingsForm : NSObject <FXForm>
 
 @property (nonatomic, copy) NSNumber *theme;
+@property (strong, nonatomic) SGProductsTableViewController *products;
 @property (nonatomic, strong) NSString *donate;
 
 @end

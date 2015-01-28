@@ -22,12 +22,16 @@
               FXFormFieldAction: updateTheme };
 }
 
+- (NSDictionary *)productsField {
+    return @{ FXFormFieldHeader: @"SteamGenius Store" };
+}
+
 - (NSDictionary *)donateField {
     return @{ FXFormFieldHeader: @"Support SteamGenius' development",
               FXFormFieldType: @"default",
               FXFormFieldDefaultValue: @"gofund.me/evep0k",
               FXFormFieldTitle: @"Donate",
-              FXFormFieldAction: @"showWebView" };
+              FXFormFieldAction: @"showWebView"};
 }
 
 #pragma mark - Class Methods

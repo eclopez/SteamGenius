@@ -39,7 +39,7 @@
 #pragma mark - Class Methods
 
 - (void)showWebView {
-    SGWebViewController *web = [[SGWebViewController alloc] initWithWebFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    SGWebViewController *web = [[SGWebViewController alloc] initWithWebFrame:self.view.frame];
     web.title = @"Donate";
     [self.navigationController pushViewController:web animated:YES];
 }

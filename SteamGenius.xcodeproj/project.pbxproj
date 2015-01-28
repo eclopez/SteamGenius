@@ -67,6 +67,8 @@
 		03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */; };
 		03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3010E1A36A79B0053882A /* iAd.framework */; };
 		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
+		03E3C6E81A78B26F009CCCD5 /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03E3C6E71A78B26F009CCCD5 /* Products.plist */; };
+		03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +196,9 @@
 		03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersListViewController.m; sourceTree = "<group>"; };
 		03D30CE81A5D22D000C62504 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		03D30CE91A5D22D000C62504 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		03E3C6E71A78B26F009CCCD5 /* Products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
+		03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGProductsTableViewController.h; sourceTree = "<group>"; };
+		03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGProductsTableViewController.m; sourceTree = "<group>"; };
 		6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,6 +329,7 @@
 		0335019C19C33A0B004AA293 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				03E3C6ED1A78B8CF009CCCD5 /* View Controllers */,
 				038DAAF919CDF06000A224F7 /* Form */,
 				0349E2DB19C1D8EC0091FF21 /* Manager */,
 			);
@@ -372,6 +378,7 @@
 				0349E2A919C17F510091FF21 /* Info.plist */,
 				0349E2E619C2C3520091FF21 /* SGTheme.plist */,
 				0349E2AA19C17F510091FF21 /* main.m */,
+				03E3C6E71A78B26F009CCCD5 /* Products.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -705,6 +712,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		03E3C6ED1A78B8CF009CCCD5 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */,
+				03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		47148A91232B4766B1D74C11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -815,6 +831,7 @@
 				0325713C19C492BA00634776 /* Game.plist in Resources */,
 				0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */,
 				0349E2BF19C17F510091FF21 /* LaunchScreen.xib in Resources */,
+				03E3C6E81A78B26F009CCCD5 /* Products.plist in Resources */,
 				0349E2BC19C17F510091FF21 /* Images.xcassets in Resources */,
 				0325714219C49AD900634776 /* Model.plist in Resources */,
 				0325713E19C4932600634776 /* Faction.plist in Resources */,
@@ -890,6 +907,7 @@
 				0369596319D5F9640096CEBC /* SGScenarioForm.m in Sources */,
 				038DAAD319CCFC3400A224F7 /* Scenario.m in Sources */,
 				0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */,
+				03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */,
 				03032A9D19ED9D2D00A15C54 /* SGFiltersFormViewController.m in Sources */,
 				0369596E19D6041C0096CEBC /* SGEventFormViewController.m in Sources */,
 				03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */,
