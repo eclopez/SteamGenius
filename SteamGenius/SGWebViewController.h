@@ -15,6 +15,4 @@
 @property (nonatomic, strong) FXFormField *field;
 @property (nonatomic) WKWebView *web;
 
-- (instancetype)initWithWebFrame:(CGRect)webFrame;
-
 @end

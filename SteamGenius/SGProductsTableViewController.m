@@ -8,67 +8,87 @@
 
 #import "SGProductsTableViewController.h"
 #import "SGEmptyView.h"
+#import "RMStore.h"
+#import "RMStoreKeychainPersistence.h"
 
-@interface SGProductsTableViewController ()
+@interface SGProductsTableViewController () <RMStoreObserver>
 
 @end
 
-@implementation SGProductsTableViewController
+@implementation SGProductsTableViewController {
+    RMStoreKeychainPersistence *_persistence;
+    NSArray *_productIdentifiers;
+    NSArray *_products;
+    BOOL _productsRequestFinished;
+}
 
 - (instancetype)init {
-    self = [super initWithStyle:UITableViewStyleGrouped];
-    if (self) {
-    }
-    return self;
+    return [super initWithStyle:UITableViewStyleGrouped];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    RMStore *store = [RMStore defaultStore];
+    [store addStoreObserver:self];
+    _persistence = store.transactionPersistor;
+    _productIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
+    
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"Products" withExtension:@"plist"];
-    [self validateProductIdentifiers:[NSArray arrayWithContentsOfURL:url]];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark - Purchase Methods
-
-- (void)validateProductIdentifiers:(NSArray *)productIdentifiers
-{
-    SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithArray:productIdentifiers]];
-    productsRequest.delegate = self;
-    [productsRequest start];
-}
-
-#pragma mark - SKProductsRequestDelegate protocol methods
-
-- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
-{
-    _products = response.products;
+    _products = [NSArray arrayWithContentsOfURL:url];
     
-    for (NSString *invalidIdentifier in response.invalidProductIdentifiers) {
-        // Handle any invalid product identifiers
-        NSLog(@"%@", invalidIdentifier);
-    }
-    
-    [self.tableView reloadData];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [store requestProducts:[NSSet setWithArray:_products] success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        _productsRequestFinished = YES;
+        [self.tableView reloadData];
+    }failure:^(NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Products request failed." message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
-- (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
-    // Handle error
+- (void)dealloc
+{
+    [[RMStore defaultStore] removeStoreObserver:self];
+}
+
+#pragma mark - Store Actions
+
+- (void)restoreAction
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Restore Transactions Failed", @"")
+                                                            message:error.localizedDescription
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return [_products count];
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    if (section == 0) {
+        return _productsRequestFinished ? _products.count : 0;
+    } else {
+        return _productsRequestFinished ? 1 : 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,16 +99,21 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     // Configure the cell...
-    SKProduct *product = [_products objectAtIndex:[indexPath row]];
-    cell.textLabel.text = product.localizedTitle;
-    
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    [numberFormatter setLocale:product.priceLocale];
-    NSString *formattedPrice = [numberFormatter stringFromNumber:product.price];
-    cell.detailTextLabel.text = formattedPrice;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.textLabel.textAlignment = NSTextAlignmentLeft;
+    if (indexPath.section == 0) {
+        NSString *productId = [_products objectAtIndex:indexPath.row];
+        SKProduct *product = [[RMStore defaultStore] productForIdentifier:productId];
+        cell.textLabel.text = product.localizedTitle;
+        cell.detailTextLabel.text = [RMStore localizedPriceOfProduct:product];
+        
+        if ([_productIdentifiers containsObject:product.productIdentifier]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    } else {
+        cell.textLabel.text = @"Restore Purchases";
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    }
     
     return cell;
 }
@@ -96,52 +121,48 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    SKPayment *payment = [SKPayment paymentWithProduct:[_products objectAtIndex:indexPath.row]];
-    [[SKPaymentQueue defaultQueue] addPayment:payment];
+    if (![RMStore canMakePayments]) return;
+    
+    if (indexPath.section == 0) {
+        NSString *productId = [_products objectAtIndex:indexPath.row];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        [[RMStore defaultStore] addPayment:productId success:^(SKPaymentTransaction *transaction) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        }failure:^(SKPaymentTransaction *transaction, NSError *error) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Payment Transaction Failed" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }];
+    } else {
+        [self restoreAction];
+    }
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+#pragma mark RMStoreObserver
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)storeProductsRequestFinished:(NSNotification*)notification
+{
+    [self.tableView reloadData];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)storePaymentTransactionFinished:(NSNotification*)notification
+{
+    _productIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
+    [self.tableView reloadData];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (void)storeRestoreTransactionsFinished:(NSNotification *)notification
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Finished restoring purchases" message:@"Thank you!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

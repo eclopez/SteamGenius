@@ -6,11 +6,16 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
+#import <StoreKit/StoreKit.h>
 #import "AppDelegate.h"
 #import "SGSettingsManager.h"
 #import "SGDataImport.h"
 #import "BannerViewController.h"
 #import "SGBattleDetailViewController.h"
+#import "SGReceiptValidator.h"
+#import "RMStore.h"
+#import "RMStoreAppReceiptVerificator.h"
+#import "RMStoreKeychainPersistence.h"
 
 #define kCurrentGameVersion 1
 #define kCurrentFactionVersion 1
@@ -18,23 +23,29 @@
 #define kCurrentCasterVersion 1
 #define kCurrentResultVersion 1
 
-#define kIncludeAds YES
+#define kRemoveAdsProductIdentifier @"com.eriklopez.steamgenius.removeads"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    id<RMStoreReceiptVerificator> _receiptVerificator;
+    RMStoreKeychainPersistence *_persistence;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self loadDefaultData];
     [SGSettingsManager initUserPreferences];
+    [self configureStore];
 
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     splitViewController.delegate = self;
-    
-    if (kIncludeAds) {
+    [_persistence removeTransactions];
+    NSArray *products = [[_persistence purchasedProductIdentifiers] allObjects];
+
+    if (![products containsObject:kRemoveAdsProductIdentifier]) {
         BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
         self.window.rootViewController = bannerViewController;
     }
@@ -64,7 +75,17 @@
     [self saveContext];
 }
 
-#pragma mark -
+#pragma mark - RMStore Setup
+
+- (void)configureStore
+{
+    _receiptVerificator = [[RMStoreAppReceiptVerificator alloc] init];
+    [RMStore defaultStore].receiptVerificator = _receiptVerificator;
+    
+    _persistence = [[RMStoreKeychainPersistence alloc] init];
+    [RMStore defaultStore].transactionPersistor = _persistence;
+}
+
 #pragma mark - Load Default Data
 
 - (void)loadDefaultData

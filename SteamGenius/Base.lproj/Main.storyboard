@@ -125,7 +125,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88/88/8888" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXx-1U-XUS">
                                                     <rect key="frame" x="6" y="4" width="68" height="17"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="68" id="Q0y-WW-ki7"/>
                                                         <constraint firstAttribute="height" constant="17" id="vKX-QL-lyR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>

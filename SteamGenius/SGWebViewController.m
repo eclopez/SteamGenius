@@ -14,27 +14,16 @@
 
 @implementation SGWebViewController
 
-- (instancetype)initWithWebFrame:(CGRect)webFrame {
-    self = [super init];
-    if (self) {
-        _web = [[WKWebView alloc] initWithFrame:webFrame];
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _web = [[WKWebView alloc] initWithFrame:self.view.bounds];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.gofundme.com/evep0k"]];
     [_web loadRequest:request];
     [self.view addSubview:_web];
     
     UIBarButtonItem *open = [[UIBarButtonItem alloc] initWithTitle:@"Open in Safari" style:UIBarButtonItemStylePlain target:self action:@selector(openInSafari)];
     self.navigationItem.rightBarButtonItem = open;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Methods

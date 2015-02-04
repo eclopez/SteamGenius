@@ -66,7 +66,7 @@
             self.battle.playerCaster = form.playerCaster;
             self.battle.opponentCaster = form.opponentCaster;
             self.battle.opponent = form.opponent;
-            self.battle.date = [self normalizedDate:form.date];
+            self.battle.date = form.date;
             self.battle.points = form.pointSize;
             self.battle.result = form.result;
             self.battle.killPoints = form.killPoints;
@@ -75,7 +75,18 @@
             self.battle.event = form.event;
             self.battle.notes = form.notes;
         } else {
-            [SGRepository initWithPlayerCaster:form.playerCaster opponentCaster:form.opponentCaster opponent:form.opponent date:[self normalizedDate:form.date] points:form.pointSize result:form.result killPoints:form.killPoints scenario:form.scenario controlPoints:form.controlPoints event:form.event notes:form.notes context:appDelegate.managedObjectContext];
+            [SGRepository initWithPlayerCaster:form.playerCaster
+                                opponentCaster:form.opponentCaster
+                                      opponent:form.opponent
+                                          date:form.date
+                                        points:form.pointSize
+                                        result:form.result
+                                    killPoints:form.killPoints
+                                      scenario:form.scenario
+                                 controlPoints:form.controlPoints
+                                         event:form.event
+                                         notes:form.notes
+                                       context:appDelegate.managedObjectContext];
         }
         [appDelegate saveContext];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
@@ -83,16 +94,6 @@
         UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:validationList delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
         [validationMessage show];
     }
-}
-
-#pragma mark - Utilities
-
-- (NSDate *)normalizedDate:(NSDate *)date {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    date = [calendar startOfDayForDate:date];
-    calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    NSTimeInterval twelveHours = 12 * 3600;
-    return [[calendar startOfDayForDate:date] dateByAddingTimeInterval:twelveHours];
 }
 
 @end

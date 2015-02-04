@@ -8,6 +8,8 @@
 
 #import "SGSettingsForm.h"
 #import "SGSettingsManager.h"
+#import "SGProductsTableViewController.h"
+#import "SGWebViewController.h"
 
 @implementation SGSettingsForm
 
@@ -23,7 +25,10 @@
 }
 
 - (NSDictionary *)productsField {
-    return @{ FXFormFieldHeader: @"SteamGenius Store" };
+    return @{ FXFormFieldHeader: @"In-App Purchases",
+              FXFormFieldType: @"default",
+              FXFormFieldTitle: @"SteamGenius Store",
+              FXFormFieldViewController: @"SGProductsTableViewController" };
 }
 
 - (NSDictionary *)donateField {
@@ -31,7 +36,7 @@
               FXFormFieldType: @"default",
               FXFormFieldDefaultValue: @"gofund.me/evep0k",
               FXFormFieldTitle: @"Donate",
-              FXFormFieldAction: @"showWebView"};
+              FXFormFieldViewController: @"SGWebViewController" };
 }
 
 #pragma mark - Class Methods

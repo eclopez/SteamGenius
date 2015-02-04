@@ -44,6 +44,8 @@
 		0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369597119D621830096CEBC /* SGLongPressTableViewCell.m */; };
 		036BE9A719F62EB40096BDE4 /* BattleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE9A619F62EB40096BDE4 /* BattleFilter.m */; };
 		036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */; };
+		03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */; };
+		03746D511A7FE8F6006F5935 /* SGReceiptValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 03746D501A7FE8F6006F5935 /* SGReceiptValidator.m */; };
 		037708D61A5B185300295E1A /* SGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037708D51A5B185300295E1A /* SGWebViewController.m */; };
 		037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037708D71A5B6F8800295E1A /* WebKit.framework */; };
 		038DAAC719CCFC3400A224F7 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC619CCFC3400A224F7 /* Game.m */; };
@@ -69,6 +71,7 @@
 		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
 		03E3C6E81A78B26F009CCCD5 /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03E3C6E71A78B26F009CCCD5 /* Products.plist */; };
 		03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */; };
+		03E3C6F21A79EB0B009CCCD5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +155,9 @@
 		036BE9A619F62EB40096BDE4 /* BattleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleFilter.m; sourceTree = "<group>"; };
 		036BE9B419F766E30096BDE4 /* SGFilterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFilterOptionsTableViewController.h; sourceTree = "<group>"; };
 		036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFilterOptionsTableViewController.m; sourceTree = "<group>"; };
+		03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleIncRootCertificate.cer; sourceTree = "<group>"; };
+		03746D4F1A7FE8F6006F5935 /* SGReceiptValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGReceiptValidator.h; sourceTree = "<group>"; };
+		03746D501A7FE8F6006F5935 /* SGReceiptValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGReceiptValidator.m; sourceTree = "<group>"; };
 		037708D41A5B185300295E1A /* SGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGWebViewController.h; sourceTree = "<group>"; };
 		037708D51A5B185300295E1A /* SGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGWebViewController.m; sourceTree = "<group>"; };
 		037708D71A5B6F8800295E1A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -199,6 +205,7 @@
 		03E3C6E71A78B26F009CCCD5 /* Products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
 		03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGProductsTableViewController.h; sourceTree = "<group>"; };
 		03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGProductsTableViewController.m; sourceTree = "<group>"; };
+		03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E3C6F21A79EB0B009CCCD5 /* StoreKit.framework in Frameworks */,
 				03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */,
 				037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */,
 				038DAAE919CD019000A224F7 /* CoreData.framework in Frameworks */,
@@ -329,6 +337,7 @@
 		0335019C19C33A0B004AA293 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				03746D4B1A7FD048006F5935 /* Purchases */,
 				03E3C6ED1A78B8CF009CCCD5 /* View Controllers */,
 				038DAAF919CDF06000A224F7 /* Form */,
 				0349E2DB19C1D8EC0091FF21 /* Manager */,
@@ -375,6 +384,7 @@
 		0349E2A819C17F510091FF21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */,
 				0349E2A919C17F510091FF21 /* Info.plist */,
 				0349E2E619C2C3520091FF21 /* SGTheme.plist */,
 				0349E2AA19C17F510091FF21 /* main.m */,
@@ -552,11 +562,18 @@
 			name = Options;
 			sourceTree = "<group>";
 		};
+		03746D4B1A7FD048006F5935 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				03746D4F1A7FE8F6006F5935 /* SGReceiptValidator.h */,
+				03746D501A7FE8F6006F5935 /* SGReceiptValidator.m */,
+			);
+			name = Purchases;
+			sourceTree = "<group>";
+		};
 		037708D31A5B183600295E1A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				037708D41A5B185300295E1A /* SGWebViewController.h */,
-				037708D51A5B185300295E1A /* SGWebViewController.m */,
 				03D30CE81A5D22D000C62504 /* BannerViewController.h */,
 				03D30CE91A5D22D000C62504 /* BannerViewController.m */,
 			);
@@ -715,6 +732,8 @@
 		03E3C6ED1A78B8CF009CCCD5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				037708D41A5B185300295E1A /* SGWebViewController.h */,
+				037708D51A5B185300295E1A /* SGWebViewController.m */,
 				03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */,
 				03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */,
 			);
@@ -724,6 +743,7 @@
 		47148A91232B4766B1D74C11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */,
 				037708D71A5B6F8800295E1A /* WebKit.framework */,
 				03C301101A36A8AE0053882A /* libAdapterIAd.a */,
 				03C3010E1A36A79B0053882A /* iAd.framework */,
@@ -834,6 +854,7 @@
 				03E3C6E81A78B26F009CCCD5 /* Products.plist in Resources */,
 				0349E2BC19C17F510091FF21 /* Images.xcassets in Resources */,
 				0325714219C49AD900634776 /* Model.plist in Resources */,
+				03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */,
 				0325713E19C4932600634776 /* Faction.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -918,6 +939,7 @@
 				03C5D29E1A41BC4B00788E0C /* Faction.m in Sources */,
 				0369595819D542860096CEBC /* SGOpponentFormViewController.m in Sources */,
 				03AF5B691A49225D005C4A1B /* SGDisplayTableViewCell.m in Sources */,
+				03746D511A7FE8F6006F5935 /* SGReceiptValidator.m in Sources */,
 				0369596619D5F9AE0096CEBC /* SGScenarioFormViewController.m in Sources */,
 				03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */,
 				03C301191A36B3580053882A /* SGColorCircleView.m in Sources */,

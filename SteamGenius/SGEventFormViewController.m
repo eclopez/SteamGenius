@@ -58,7 +58,7 @@
         if (form.event) {
             self.object.name = form.name;
             self.object.location = form.location;
-            self.object.date = [self normalizedDate:form.date];
+            self.object.date = form.date;
             self.object.isTournament = [NSNumber numberWithBool:form.isTournament];
         } else {
             [SGRepository initWithEventNamed:form.name location:form.location date:form.date isTournament:form.isTournament context:appDelegate.managedObjectContext];
@@ -73,16 +73,6 @@
 
 - (void)cancelEvent {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-#pragma mark - Utilities
-
-- (NSDate *)normalizedDate:(NSDate *)date {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    date = [calendar startOfDayForDate:date];
-    calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    NSTimeInterval twelveHours = 12 * 3600;
-    return [[calendar startOfDayForDate:date] dateByAddingTimeInterval:twelveHours];
 }
 
 @end

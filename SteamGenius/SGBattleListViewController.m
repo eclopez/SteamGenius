@@ -301,7 +301,7 @@
 
 - (NSDateFormatter *)getDateFormatter {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"M/d/yy";
+    formatter.dateFormat = @"M/d/yy hh:mm:ss";
     return formatter;
 }
 
@@ -376,7 +376,6 @@
     [self.winTotal sizeToFit];
     [self.drawTotal sizeToFit];
     [self.lossTotal sizeToFit];
-    //[self.filteredTotal sizeToFit];
     
     [self defineTableViewBackgroundView];
 }

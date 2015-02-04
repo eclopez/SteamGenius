@@ -8,9 +8,11 @@
 
 #import <StoreKit/StoreKit.h>
 #import <UIKit/UIKit.h>
+#import "FXForms.h"
 
-@interface SGProductsTableViewController : UITableViewController <SKProductsRequestDelegate>
+@interface SGProductsTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *products;
+@property (strong, nonatomic) FXFormField *field;
 
 @end

@@ -118,6 +118,21 @@
     return b;
 }
 
++ (void)updateBattle:(Battle *)battle playerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints event:(Event *)event notes:(NSString *)notes context:(NSManagedObjectContext *)context
+{
+    battle.playerCaster = playerCaster;
+    battle.opponentCaster = opponentCaster;
+    battle.opponent = opponent;
+    battle.date = [self normalizedDate:date];
+    battle.points = points;
+    battle.result = result;
+    battle.killPoints = killPoints;
+    battle.scenario = scenario;
+    battle.controlPoints = controlPoints;
+    battle.event = event;
+    battle.notes = notes;
+}
+
 + (BattleFilter *)initWithDisplayText:(NSString *)displayText predicate:(NSPredicate *)predicate context:(NSManagedObjectContext *)context {
     BattleFilter *bf = [NSEntityDescription insertNewObjectForEntityForName:@"BattleFilter" inManagedObjectContext:context];
     [bf setValue:displayText forKey:@"displayText"];
