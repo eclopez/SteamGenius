@@ -229,7 +229,6 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
-    [self updateRecord];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
@@ -316,21 +315,20 @@
     NSPredicate *filterSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject isKindOfClass:[BattleFilter class]];
     }];
+    // Can't edit filters, so I'm not searching for filters in updatedObjects
     NSSet *filterInserted = [insertedObjects filteredSetUsingPredicate:filterSearch];
     NSSet *filterDeleted = [deletedObjects filteredSetUsingPredicate:filterSearch];
     
     NSPredicate *battleSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject isKindOfClass:[Battle class]];
     }];
+    NSSet *battleAdded = [insertedObjects filteredSetUsingPredicate:battleSearch];
     NSSet *battleUpdated = [updatedObjects filteredSetUsingPredicate:battleSearch];
+    NSSet *battleDeleted = [deletedObjects filteredSetUsingPredicate:battleSearch];
     
-    if ([filterDeleted count] > 0 || [filterInserted count] > 0) {
+    if ([filterDeleted count] > 0 || [filterInserted count] > 0 || [battleAdded count] > 0 || [battleUpdated count] > 0 || [battleDeleted count] > 0) {
         [self refetch];
         [self updateRecord];
-    }
-    
-    if ([battleUpdated count] > 0) {
-        [_tableView reloadData];
     }
 }
 

@@ -550,8 +550,8 @@
 		037708D31A5B183600295E1A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				03C5F6CC1A828C7200462CC2 /* Factions */,
 				03C5F6CB1A828C4F00462CC2 /* Banner Ad */,
+				03C5F6CC1A828C7200462CC2 /* Factions */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
