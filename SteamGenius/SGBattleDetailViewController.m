@@ -30,22 +30,12 @@
     
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    _tableView.contentInset = UIEdgeInsetsMake(_tableView.contentInset.top, _tableView.contentInset.left, 66.f, _tableView.contentInset.top);
     [self configureView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleBattleUpdate:)
                                                  name:NSManagedObjectContextObjectsDidChangeNotification
                                                object:[_appDelegate managedObjectContext]];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    if (self.battle == nil) {
-        self.tableView.backgroundView = [[SGEmptyView alloc] initWithFrame:self.tableView.bounds message:kEmptyTableMessage textColor:[UIColor blackColor]];
-    }
-    else {
-        self.tableView.backgroundView = nil;
-    }
 }
 
 - (void)awakeFromNib {
@@ -63,6 +53,8 @@
                                 self.battle.opponentCaster.model.shortName,
                                 [self.battle.opponentCaster.model.incarnation intValue] != 1 ? self.battle.opponentCaster.model.incarnation : @""] :
     @"Battle Detail";
+    
+    self.tableView.backgroundView = self.battle == nil ? [[SGEmptyView alloc] initWithFrame:self.tableView.bounds message:kEmptyTableMessage textColor:[UIColor blackColor]] : nil;
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -216,13 +208,21 @@
 
 - (void)handleBattleUpdate:(NSNotification *)notification {
     NSSet *updatedObjects = [[notification userInfo] objectForKey:NSUpdatedObjectsKey];
+    NSSet *deletedObjects = [[notification userInfo] objectForKey:NSDeletedObjectsKey];
     
     NSPredicate *pred = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return evaluatedObject == self.battle;
     }];
     NSSet *battleUpdated = [updatedObjects filteredSetUsingPredicate:pred];
+    NSSet *battleDeleted = [deletedObjects filteredSetUsingPredicate:pred];
     
     if ([battleUpdated count] > 0) {
+        [self configureView];
+        [_tableView reloadData];
+    }
+    
+    if ([battleDeleted count] > 0) {
+        self.battle = nil;
         [self configureView];
         [_tableView reloadData];
     }
