@@ -13,7 +13,8 @@
 #import "Caster.h"
 #import "Model.h"
 #import "Result.h"
-#import "SGFactionOptionsTableViewController.h"
+#import "SGFactionsOptionTableViewController.h"
+#import "SGCasterOptionsTableViewController.h"
 #import "SGGenericAddOptionsTableViewController.h"
 #import "SGGenericOptionsTableViewController.h"
 
@@ -47,7 +48,12 @@
 - (NSDictionary *)playerCasterField {
     return @{ FXFormFieldHeader: @"Player Info",
               FXFormFieldTitle: @"Caster",
-              FXFormFieldViewController: @"SGFactionOptionsTableViewController",
+              FXFormFieldViewController: [[SGFactionsOptionTableViewController alloc] init:^(UINavigationController *navController, FXFormField *field, Faction *faction){
+                  SGCasterOptionsTableViewController *casterOptionsViewController = [[SGCasterOptionsTableViewController alloc] init];
+                  casterOptionsViewController.field = field;
+                  casterOptionsViewController.faction = faction;
+                  [navController pushViewController:casterOptionsViewController animated:YES];
+              }],
               FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKeys:@{ @"name": [NSNumber numberWithBool:NO] }] };
 }
 
@@ -58,7 +64,12 @@
 - (NSDictionary *)opponentCasterField {
     return @{ FXFormFieldHeader: @"Opponent Info",
               FXFormFieldTitle: @"Caster",
-              FXFormFieldViewController: @"SGFactionOptionsTableViewController",
+              FXFormFieldViewController: [[SGFactionsOptionTableViewController alloc] init:^(UINavigationController *navController, FXFormField *field, Faction *faction){
+                  SGCasterOptionsTableViewController *casterOptionsViewController = [[SGCasterOptionsTableViewController alloc] init];
+                  casterOptionsViewController.field = field;
+                  casterOptionsViewController.faction = faction;
+                  [navController pushViewController:casterOptionsViewController animated:YES];
+              }],
               FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKeys:@{ @"name": [NSNumber numberWithBool:NO] }] };
 }
 

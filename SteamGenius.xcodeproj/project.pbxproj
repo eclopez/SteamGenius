@@ -10,7 +10,6 @@
 		03032A9A19ED974900A15C54 /* SGFiltersForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9919ED974900A15C54 /* SGFiltersForm.m */; };
 		03032A9D19ED9D2D00A15C54 /* SGFiltersFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */; };
 		031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */; };
-		031D6AC919CF5F49000B7D26 /* SGFactionOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AC819CF5F49000B7D26 /* SGFactionOptionsTableViewController.m */; };
 		031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */; };
 		0325712F19C376E900634776 /* SGDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325712E19C376E900634776 /* SGDismissSegue.m */; };
 		0325713819C491B300634776 /* SteamGenius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0325713619C491B300634776 /* SteamGenius.xcdatamodeld */; };
@@ -28,7 +27,6 @@
 		0349E2CB19C17F510091FF21 /* SteamGeniusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2CA19C17F510091FF21 /* SteamGeniusTests.m */; };
 		0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2D619C1805E0091FF21 /* SGSettingsManager.m */; };
 		0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0349E2E619C2C3520091FF21 /* SGTheme.plist */; };
-		034D3F5019EDE934008A0230 /* SGFactionFilterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034D3F4F19EDE934008A0230 /* SGFactionFilterOptionsTableViewController.m */; };
 		0351035D19DD8D3F0032E215 /* SGBattleInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0351035C19DD8D3F0032E215 /* SGBattleInfoCell.m */; };
 		0351036619DE54C50032E215 /* SGBattleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0351036519DE54C50032E215 /* SGBattleListViewController.m */; };
 		0352E8D21A5C52D600007098 /* SGBattleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0352E8D11A5C52D600007098 /* SGBattleDetailViewController.m */; };
@@ -67,6 +65,7 @@
 		03C301191A36B3580053882A /* SGColorCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C301181A36B3580053882A /* SGColorCircleView.m */; };
 		03C5D29E1A41BC4B00788E0C /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D29D1A41BC4B00788E0C /* Faction.m */; };
 		03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */; };
+		03C5F6CF1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */; };
 		03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3010E1A36A79B0053882A /* iAd.framework */; };
 		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
 		03E3C6E81A78B26F009CCCD5 /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03E3C6E71A78B26F009CCCD5 /* Products.plist */; };
@@ -92,8 +91,6 @@
 		03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersFormViewController.m; sourceTree = "<group>"; };
 		031D6AB519CEA5D0000B7D26 /* SGResizableImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGResizableImageViewCell.h; sourceTree = "<group>"; };
 		031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGResizableImageViewCell.m; sourceTree = "<group>"; };
-		031D6AC719CF5F49000B7D26 /* SGFactionOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionOptionsTableViewController.h; sourceTree = "<group>"; };
-		031D6AC819CF5F49000B7D26 /* SGFactionOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionOptionsTableViewController.m; sourceTree = "<group>"; };
 		031D6ACC19CF6A39000B7D26 /* SGCasterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCasterOptionsTableViewController.h; sourceTree = "<group>"; };
 		031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCasterOptionsTableViewController.m; sourceTree = "<group>"; };
 		0325712D19C376E900634776 /* SGDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDismissSegue.h; sourceTree = "<group>"; };
@@ -122,8 +119,6 @@
 		0349E2D619C1805E0091FF21 /* SGSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsManager.m; sourceTree = "<group>"; };
 		0349E2D819C182610091FF21 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0349E2E619C2C3520091FF21 /* SGTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGTheme.plist; sourceTree = "<group>"; };
-		034D3F4E19EDE934008A0230 /* SGFactionFilterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionFilterOptionsTableViewController.h; sourceTree = "<group>"; };
-		034D3F4F19EDE934008A0230 /* SGFactionFilterOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionFilterOptionsTableViewController.m; sourceTree = "<group>"; };
 		0351035B19DD8D3F0032E215 /* SGBattleInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleInfoCell.h; sourceTree = "<group>"; };
 		0351035C19DD8D3F0032E215 /* SGBattleInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleInfoCell.m; sourceTree = "<group>"; };
 		0351036219DE4EC70032E215 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -200,6 +195,8 @@
 		03C5D29D1A41BC4B00788E0C /* Faction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faction.m; sourceTree = "<group>"; };
 		03C5D29F1A45BAB400788E0C /* SGFiltersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFiltersListViewController.h; sourceTree = "<group>"; };
 		03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersListViewController.m; sourceTree = "<group>"; };
+		03C5F6CD1A828C9E00462CC2 /* SGFactionsOptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionsOptionTableViewController.h; sourceTree = "<group>"; };
+		03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionsOptionTableViewController.m; sourceTree = "<group>"; };
 		03D30CE81A5D22D000C62504 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		03D30CE91A5D22D000C62504 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		03E3C6E71A78B26F009CCCD5 /* Products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
@@ -261,20 +258,9 @@
 			children = (
 				03D30CE31A5C87E100C62504 /* Views */,
 				037708D31A5B183600295E1A /* View Controllers */,
-				03C301161A36B3380053882A /* Drawn Views */,
-				03B6244719E3ACA100963793 /* Cells */,
 				0325712B19C376C100634776 /* Segues */,
 			);
 			name = Common;
-			sourceTree = "<group>";
-		};
-		031D6ACA19CF6A07000B7D26 /* Faction Options */ = {
-			isa = PBXGroup;
-			children = (
-				031D6AC719CF5F49000B7D26 /* SGFactionOptionsTableViewController.h */,
-				031D6AC819CF5F49000B7D26 /* SGFactionOptionsTableViewController.m */,
-			);
-			name = "Faction Options";
 			sourceTree = "<group>";
 		};
 		031D6ACB19CF6A11000B7D26 /* Caster Options */ = {
@@ -450,18 +436,8 @@
 			isa = PBXGroup;
 			children = (
 				036BE9B719F766F30096BDE4 /* Options */,
-				034D3F5119EDE937008A0230 /* Faction Options */,
 			);
 			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		034D3F5119EDE937008A0230 /* Faction Options */ = {
-			isa = PBXGroup;
-			children = (
-				034D3F4E19EDE934008A0230 /* SGFactionFilterOptionsTableViewController.h */,
-				034D3F4F19EDE934008A0230 /* SGFactionFilterOptionsTableViewController.m */,
-			);
-			name = "Faction Options";
 			sourceTree = "<group>";
 		};
 		0369594319D4D1710096CEBC /* Common */ = {
@@ -574,8 +550,8 @@
 		037708D31A5B183600295E1A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				03D30CE81A5D22D000C62504 /* BannerViewController.h */,
-				03D30CE91A5D22D000C62504 /* BannerViewController.m */,
+				03C5F6CC1A828C7200462CC2 /* Factions */,
+				03C5F6CB1A828C4F00462CC2 /* Banner Ad */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -690,7 +666,35 @@
 			name = "Display Cell";
 			sourceTree = "<group>";
 		};
-		03B6244719E3ACA100963793 /* Cells */ = {
+		03B6244819E3ADA200963793 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				031D6ACB19CF6A11000B7D26 /* Caster Options */,
+				0369597619D6234F0096CEBC /* Options */,
+				0369597519D623400096CEBC /* Options with Add */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		03C5F6C81A828BE600462CC2 /* Empty View */ = {
+			isa = PBXGroup;
+			children = (
+				03C0B2241A75542A00D20829 /* SGEmptyView.h */,
+				03C0B2251A75542A00D20829 /* SGEmptyView.m */,
+			);
+			name = "Empty View";
+			sourceTree = "<group>";
+		};
+		03C5F6C91A828BF100462CC2 /* Color Circle */ = {
+			isa = PBXGroup;
+			children = (
+				03C301171A36B3580053882A /* SGColorCircleView.h */,
+				03C301181A36B3580053882A /* SGColorCircleView.m */,
+			);
+			name = "Color Circle";
+			sourceTree = "<group>";
+		};
+		03C5F6CA1A828C2100462CC2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				03AF5B661A4921AA005C4A1B /* Display Cell */,
@@ -700,31 +704,30 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		03B6244819E3ADA200963793 /* View Controllers */ = {
+		03C5F6CB1A828C4F00462CC2 /* Banner Ad */ = {
 			isa = PBXGroup;
 			children = (
-				031D6ACA19CF6A07000B7D26 /* Faction Options */,
-				031D6ACB19CF6A11000B7D26 /* Caster Options */,
-				0369597619D6234F0096CEBC /* Options */,
-				0369597519D623400096CEBC /* Options with Add */,
+				03D30CE81A5D22D000C62504 /* BannerViewController.h */,
+				03D30CE91A5D22D000C62504 /* BannerViewController.m */,
 			);
-			name = "View Controllers";
+			name = "Banner Ad";
 			sourceTree = "<group>";
 		};
-		03C301161A36B3380053882A /* Drawn Views */ = {
+		03C5F6CC1A828C7200462CC2 /* Factions */ = {
 			isa = PBXGroup;
 			children = (
-				03C301171A36B3580053882A /* SGColorCircleView.h */,
-				03C301181A36B3580053882A /* SGColorCircleView.m */,
+				03C5F6CD1A828C9E00462CC2 /* SGFactionsOptionTableViewController.h */,
+				03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */,
 			);
-			name = "Drawn Views";
+			name = Factions;
 			sourceTree = "<group>";
 		};
 		03D30CE31A5C87E100C62504 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				03C0B2241A75542A00D20829 /* SGEmptyView.h */,
-				03C0B2251A75542A00D20829 /* SGEmptyView.m */,
+				03C5F6CA1A828C2100462CC2 /* Cells */,
+				03C5F6C91A828BF100462CC2 /* Color Circle */,
+				03C5F6C81A828BE600462CC2 /* Empty View */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 				036BE9A719F62EB40096BDE4 /* BattleFilter.m in Sources */,
 				036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */,
 				038DAADC19CCFC3400A224F7 /* Event.m in Sources */,
+				03C5F6CF1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
 				038DAADF19CCFC3400A224F7 /* Opponent.m in Sources */,
 				038DAACA19CCFC3400A224F7 /* Caster.m in Sources */,
@@ -948,11 +952,9 @@
 				0369595E19D5F4680096CEBC /* SGGenericOptionsTableViewController.m in Sources */,
 				037708D61A5B185300295E1A /* SGWebViewController.m in Sources */,
 				038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */,
-				034D3F5019EDE934008A0230 /* SGFactionFilterOptionsTableViewController.m in Sources */,
 				0369594919D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.m in Sources */,
 				038DAAE619CCFDBB00A224F7 /* SGGenericRepository.m in Sources */,
 				0369595419D5418B0096CEBC /* SGOpponentForm.m in Sources */,
-				031D6AC919CF5F49000B7D26 /* SGFactionOptionsTableViewController.m in Sources */,
 				031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */,
 				0369594C19D501040096CEBC /* Battle.m in Sources */,
 				0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */,

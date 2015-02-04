@@ -10,7 +10,7 @@
 #import "SGFiltersForm.h"
 #import "AppDelegate.h"
 #import "SGGenericRepository.h"
-#import "SGFactionFilterOptionsTableViewController.h"
+#import "SGFactionsOptionTableViewController.h"
 #import "Faction.h"
 #import "Model.h"
 #import "Opponent.h"
@@ -126,7 +126,7 @@
     
     if (([_attribute isEqualToString:@"playerCaster.faction.name"] || [_attribute isEqualToString:@"opponentCaster.faction.name"]) && self.operation != nil) {
         return @{ FXFormFieldTitle: @"Faction",
-                  FXFormFieldViewController: @"SGFactionFilterOptionsTableViewController",
+                  FXFormFieldViewController: @"SGFactionsOptionTableViewController",
                   FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKeys:@{ @"name": [NSNumber numberWithBool:NO] }],
                   FXFormFieldValueTransformer: nameValueTransformer };
     }
