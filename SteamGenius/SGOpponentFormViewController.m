@@ -56,15 +56,19 @@
     
     if (validate == 0) {
         if (form.opponent) {
-            self.object.name = form.name;
+            [SGRepository updateOpponent:self.object name:form.name];
         } else {
             [SGRepository initWithOpponentNamed:form.name context:appDelegate.managedObjectContext];
         }
         [appDelegate saveContext];
         [self.navigationController popViewControllerAnimated:YES];
     } else {
-        UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:validationList delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-        [validationMessage show];
+        UIAlertController *validationAlert = [UIAlertController alertControllerWithTitle:@"Form Invalid" message:validationList preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [validationAlert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [validationAlert addAction:okAction];
+        [self presentViewController:validationAlert animated:YES completion:nil];
     }
 }
 

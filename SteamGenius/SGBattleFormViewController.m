@@ -63,17 +63,18 @@
     
     if (validate == 0) {
         if (self.battle) {
-            self.battle.playerCaster = form.playerCaster;
-            self.battle.opponentCaster = form.opponentCaster;
-            self.battle.opponent = form.opponent;
-            self.battle.date = form.date;
-            self.battle.points = form.pointSize;
-            self.battle.result = form.result;
-            self.battle.killPoints = form.killPoints;
-            self.battle.scenario = form.scenario;
-            self.battle.controlPoints = form.controlPoints;
-            self.battle.event = form.event;
-            self.battle.notes = form.notes;
+            [SGRepository updateBattle:self.battle
+                          playerCaster:form.playerCaster
+                        opponentCaster:form.opponentCaster
+                              opponent:form.opponent
+                                  date:form.date
+                                points:form.pointSize
+                                result:form.result
+                            killPoints:form.killPoints
+                              scenario:form.scenario
+                         controlPoints:form.controlPoints
+                                 event:form.event
+                                 notes:form.notes];
         } else {
             [SGRepository initWithPlayerCaster:form.playerCaster
                                 opponentCaster:form.opponentCaster
@@ -91,8 +92,12 @@
         [appDelegate saveContext];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {
-        UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:validationList delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-        [validationMessage show];
+        UIAlertController *validationAlert = [UIAlertController alertControllerWithTitle:@"Form Invalid" message:validationList preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [validationAlert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [validationAlert addAction:okAction];
+        [self presentViewController:validationAlert animated:YES completion:nil];
     }
 }
 

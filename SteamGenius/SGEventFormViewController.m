@@ -56,18 +56,27 @@
     
     if (validate == 0) {
         if (form.event) {
-            self.object.name = form.name;
-            self.object.location = form.location;
-            self.object.date = form.date;
-            self.object.isTournament = [NSNumber numberWithBool:form.isTournament];
+            [SGRepository updateEvent:self.object
+                                 name:form.name
+                             location:form.location
+                                 date:form.date
+                         isTournament:form.isTournament];
         } else {
-            [SGRepository initWithEventNamed:form.name location:form.location date:form.date isTournament:form.isTournament context:appDelegate.managedObjectContext];
+            [SGRepository initWithEventNamed:form.name
+                                    location:form.location
+                                        date:form.date
+                                isTournament:form.isTournament
+                                     context:appDelegate.managedObjectContext];
         }
         [appDelegate saveContext];
         [self.navigationController popViewControllerAnimated:YES];
     } else {
-        UIAlertView *validationMessage = [[UIAlertView alloc] initWithTitle:@"Form invalid" message:validationList delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-        [validationMessage show];
+        UIAlertController *validationAlert = [UIAlertController alertControllerWithTitle:@"Form Invalid" message:validationList preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [validationAlert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [validationAlert addAction:okAction];
+        [self presentViewController:validationAlert animated:YES completion:nil];
     }
 }
 

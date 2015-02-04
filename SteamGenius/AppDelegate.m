@@ -42,7 +42,7 @@
 
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     splitViewController.delegate = self;
-    [_persistence removeTransactions];
+    
     NSArray *products = [[_persistence purchasedProductIdentifiers] allObjects];
 
     if (![products containsObject:kRemoveAdsProductIdentifier]) {
