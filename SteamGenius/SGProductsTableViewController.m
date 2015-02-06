@@ -7,7 +7,6 @@
 //
 
 #import "SGProductsTableViewController.h"
-#import "SGEmptyView.h"
 #import "RMStore.h"
 #import "RMStoreKeychainPersistence.h"
 
