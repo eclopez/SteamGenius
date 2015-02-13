@@ -160,8 +160,9 @@
     cell.playerFactionColor.layer.cornerRadius = cell.playerFactionColor.bounds.size.width / 2.f;
     cell.playerFactionColor.layer.borderWidth = 1.f;
     cell.playerFactionColor.layer.borderColor = [UIColor blackColor].CGColor;
-    
-    cell.dateLabel.text = [[self getDateFormatter] stringFromDate:battle.date];
+    cell.dateLabel.text = [NSDateFormatter localizedStringFromDate:battle.date
+                                                         dateStyle:NSDateFormatterMediumStyle
+                                                         timeStyle:NSDateFormatterNoStyle];
     cell.resultNameLabel.text = battle.result.name;
     cell.pointsLabel.text = [battle.points stringValue];
 }
@@ -298,13 +299,6 @@
     label.textColor = [UIColor whiteColor];
 }
 
-- (NSDateFormatter *)getDateFormatter {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"M/d/yy hh:mm:ss";
-    return formatter;
-}
-
-
 #pragma mark - Data Methods
 
 - (void)handleBattleListUpdate:(NSNotification *)notification {
@@ -326,7 +320,11 @@
     NSSet *battleUpdated = [updatedObjects filteredSetUsingPredicate:battleSearch];
     NSSet *battleDeleted = [deletedObjects filteredSetUsingPredicate:battleSearch];
     
-    if ([filterDeleted count] > 0 || [filterInserted count] > 0 || [battleAdded count] > 0 || [battleUpdated count] > 0 || [battleDeleted count] > 0) {
+    if ([battleAdded count] > 0 || [battleUpdated count] > 0 || [battleDeleted count] > 0) {
+        [self updateRecord];
+    }
+    
+    if ([filterDeleted count] > 0 || [filterInserted count] > 0) {
         [self refetch];
         [self updateRecord];
     }

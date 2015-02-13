@@ -63,9 +63,36 @@
         NSString *predicateDescription = [NSString stringWithFormat:@"%@ %@ %@", form.attributeFieldDescription, form.operationFieldDescription, form.attributeValueFieldDescription];
         NSPredicate *predicate;
         if ([form.attribute isEqualToString:@"date"]) {
-            form.attributeValue = [self normalizedDate:form.attributeValue];
+            NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:form.attributeValue];
+            NSDateComponents *start = [[NSDateComponents alloc] init];
+            [start setCalendar:[NSCalendar currentCalendar]];
+            [start setDay:[components day]];
+            [start setMonth:[components month]];
+            [start setYear:[components year]];
+            [start setHour:0];
+            [start setMinute:0];
+            [start setSecond:0];
+            NSDateComponents *end = [[NSDateComponents alloc] init];
+            [end setCalendar:[NSCalendar currentCalendar]];
+            [end setDay:[components day]];
+            [end setMonth:[components month]];
+            [end setYear:[components year]];
+            [end setHour:23];
+            [end setMinute:59];
+            [end setSecond:59];
+            if ([form.operation isEqualToString:@"="]) {
+                predicate = [NSPredicate predicateWithFormat:@"date >= %@ AND date <= %@", [start date], [end date]];
+            } else if ([form.operation isEqualToString:@">"]) {
+                predicate = [NSPredicate predicateWithFormat:@"date > %@", [end date]];
+            } else if ([form.operation isEqualToString:@">="]) {
+                predicate = [NSPredicate predicateWithFormat:@"date >= %@", [start date]];
+            } else if ([form.operation isEqualToString:@"<"]) {
+                predicate = [NSPredicate predicateWithFormat:@"date < %@", [start date]];
+            } else if ([form.operation isEqualToString:@"<="]) {
+                predicate = [NSPredicate predicateWithFormat:@"date <= %@", [end date]];
+            }
         }
-        if (([form.attribute isEqual:@"points"] || [form.attribute isEqual:@"killPoints"] || [form.attribute isEqual:@"controlPoints"])
+        else if (([form.attribute isEqual:@"points"] || [form.attribute isEqual:@"killPoints"] || [form.attribute isEqual:@"controlPoints"])
             && (![form.operation isEqualToString:@"=nil"] && ![form.operation isEqualToString:@"!=nil"])) {
             NSPredicate *predicateTemplate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ %@ $VALUE", form.attribute, form.operation]];
             predicate = [predicateTemplate predicateWithSubstitutionVariables:@{@"VALUE": [NSNumber numberWithInteger:[form.attributeValue integerValue]]}];
@@ -107,16 +134,6 @@
 - (void)reloadForm {
     self.formController.form = self.formController.form;
     [self.formController.tableView reloadData];
-}
-
-#pragma mark - Utilities
-
-- (NSDate *)normalizedDate:(NSDate *)date {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    date = [calendar startOfDayForDate:date];
-    calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    NSTimeInterval twelveHours = 12 * 3600;
-    return [[calendar startOfDayForDate:date] dateByAddingTimeInterval:twelveHours];
 }
 
 @end

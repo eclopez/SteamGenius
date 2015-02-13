@@ -96,7 +96,7 @@
     Event *e = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:context];
     [e setValue:eventName forKey:@"name"];
     [e setValue:location forKey:@"location"];
-    [e setValue:[self normalizedDate:date] forKey:@"date"];
+    [e setValue:date forKey:@"date"];
     [e setValue:[NSNumber numberWithBool:isTournament] forKey:@"isTournament"];
     return e;
 }
@@ -158,16 +158,6 @@
     event.location = location;
     event.date = date;
     event.isTournament = [NSNumber numberWithBool:isTournament];
-}
-
-#pragma mark - Utilities
-
-+ (NSDate *)normalizedDate:(NSDate *)date {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    date = [calendar startOfDayForDate:date];
-    calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    NSTimeInterval twelveHours = 12 * 3600;
-    return [[calendar startOfDayForDate:date] dateByAddingTimeInterval:twelveHours];
 }
 
 @end

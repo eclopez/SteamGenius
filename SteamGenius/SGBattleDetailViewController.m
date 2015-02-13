@@ -122,7 +122,9 @@
             
             switch(indexPath.row) {
                 case 0:
-                    cell.textLabel.text = [[self getDateFormatter] stringFromDate:self.battle.date];
+                    cell.textLabel.text = [NSDateFormatter localizedStringFromDate:self.battle.date
+                                                                         dateStyle:NSDateFormatterMediumStyle
+                                                                         timeStyle:NSDateFormatterNoStyle];
                     break;
                 case 1:
                     cell.textLabel.text = [NSString stringWithFormat:@"%@ points", [self.battle.points stringValue]];
@@ -249,14 +251,6 @@
         }
     }
     return YES;
-}
-
-#pragma mark - Class Methods
-
-- (NSDateFormatter *)getDateFormatter {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"MMMM d, yyyy";
-    return formatter;
 }
 
 @end

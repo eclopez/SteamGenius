@@ -17,39 +17,76 @@
 @implementation SGProductsTableViewController {
     RMStoreKeychainPersistence *_persistence;
     NSArray *_productIdentifiers;
-    NSArray *_products;
+    NSArray *_premium;
+    NSArray *_premiumFeatures;
     BOOL _productsRequestFinished;
 }
 
 - (instancetype)init {
-    return [super initWithStyle:UITableViewStyleGrouped];
+    self = [super initWithStyle:UITableViewStyleGrouped];
+    if (self) {
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 44.0;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    __block BOOL premiumProductLoaded = NO;
+    __block BOOL premiumFeaturesLoaded = NO;
     
     RMStore *store = [RMStore defaultStore];
     [store addStoreObserver:self];
     _persistence = store.transactionPersistor;
     _productIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Products" withExtension:@"plist"];
-    _products = [NSArray arrayWithContentsOfURL:url];
+    NSURL *premiumUrl = [[NSBundle mainBundle] URLForResource:@"SGPremium" withExtension:@"plist"];
+    _premium = [NSArray arrayWithContentsOfURL:premiumUrl];
+    
+    NSURL *featuresUrl = [[NSBundle mainBundle] URLForResource:@"SGPremiumFeatures" withExtension:@"plist"];
+    _premiumFeatures = [NSArray arrayWithContentsOfURL:featuresUrl];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [store requestProducts:[NSSet setWithArray:_products] success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        _productsRequestFinished = YES;
-        [self.tableView reloadData];
+    
+    // Premium request
+    [store requestProducts:[NSSet setWithArray:_premium] success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
+        premiumProductLoaded = YES;
+        if (premiumFeaturesLoaded) {
+            [self productsReceived];
+        }
     }failure:^(NSError *error) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Products request failed." message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [alert dismissViewControllerAnimated:YES completion:nil];
-        }];
-        [alert addAction:okAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        [self productsNotReceived:error.localizedDescription];
     }];
+    
+    // Premium features request
+    [store requestProducts:[NSSet setWithArray:_premiumFeatures] success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
+        premiumFeaturesLoaded = YES;
+        if (premiumProductLoaded) {
+            [self productsReceived];
+        }
+    }failure:^(NSError *error) {
+        [self productsNotReceived:error.localizedDescription];
+    }];
+}
+
+- (void)productsReceived
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    _productsRequestFinished = YES;
+    [self.tableView reloadData];
+}
+
+- (void)productsNotReceived:(NSString *)errorMessage
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Products request failed." message:errorMessage preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)dealloc
@@ -77,15 +114,20 @@
 }
 
 #pragma mark - Table view data source
-
+// -------------------------------------------------------------------------------------------------------------------
+// NOTE TO SELF: This ONLY WORKS because there are only two sections of purchases. TEST IF ADDING MORE.
+// -------------------------------------------------------------------------------------------------------------------
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return _productsRequestFinished ? _products.count : 0;
-    } else {
+        return _productsRequestFinished ? _premium.count : 0;
+    } else if (section == 1) {
+        return _productsRequestFinished ? _premiumFeatures.count : 0;
+    }
+    else {
         return _productsRequestFinished ? 1 : 0;
     }
 }
@@ -95,16 +137,27 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     // Configure the cell...
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
     if (indexPath.section == 0) {
-        NSString *productId = [_products objectAtIndex:indexPath.row];
+        NSString *productId = [_premium objectAtIndex:indexPath.row];
         SKProduct *product = [[RMStore defaultStore] productForIdentifier:productId];
-        cell.textLabel.text = product.localizedTitle;
-        cell.detailTextLabel.text = [RMStore localizedPriceOfProduct:product];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ – %@", product.localizedTitle, [RMStore localizedPriceOfProduct:product]];
+        cell.detailTextLabel.text = product.localizedDescription;
+        cell.detailTextLabel.numberOfLines = 0;
+        
+        if ([_productIdentifiers containsObject:product.productIdentifier]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    } else if (indexPath.section == 1) {
+        NSString *productId = [_premiumFeatures objectAtIndex:indexPath.row];
+        SKProduct *product = [[RMStore defaultStore] productForIdentifier:productId];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ – %@", product.localizedTitle, [RMStore localizedPriceOfProduct:product]];
+        cell.detailTextLabel.text = product.localizedDescription;
+        cell.detailTextLabel.numberOfLines = 0;
         
         if ([_productIdentifiers containsObject:product.productIdentifier]) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -123,7 +176,21 @@
     if (![RMStore canMakePayments]) return;
     
     if (indexPath.section == 0) {
-        NSString *productId = [_products objectAtIndex:indexPath.row];
+        NSString *productId = [_premium objectAtIndex:indexPath.row];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        [[RMStore defaultStore] addPayment:productId success:^(SKPaymentTransaction *transaction) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        }failure:^(SKPaymentTransaction *transaction, NSError *error) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Payment Transaction Failed" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }];
+    } else if (indexPath.section == 1) {
+        NSString *productId = [_premiumFeatures objectAtIndex:indexPath.row];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         [[RMStore defaultStore] addPayment:productId success:^(SKPaymentTransaction *transaction) {
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -139,6 +206,20 @@
     } else {
         [self restoreAction];
     }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (_productsRequestFinished) {
+        if (section == 0) {
+            return @"All Premium Features";
+        } else if (section == 1) {
+            return @"Individual Premium Features";
+        } else {
+            return @"";
+        }
+    }
+    return @"";
 }
 
 #pragma mark RMStoreObserver
