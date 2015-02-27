@@ -99,8 +99,10 @@
 - (void)restoreAction
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [_persistence removeTransactions];
     [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        _productIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -114,9 +116,7 @@
 }
 
 #pragma mark - Table view data source
-// -------------------------------------------------------------------------------------------------------------------
-// NOTE TO SELF: This ONLY WORKS because there are only two sections of purchases. TEST IF ADDING MORE.
-// -------------------------------------------------------------------------------------------------------------------
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;
 }

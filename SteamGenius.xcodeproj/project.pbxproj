@@ -372,8 +372,8 @@
 				0349E2A919C17F510091FF21 /* Info.plist */,
 				0349E2E619C2C3520091FF21 /* SGTheme.plist */,
 				0349E2AA19C17F510091FF21 /* main.m */,
-				03E3C6E71A78B26F009CCCD5 /* SGPremiumFeatures.plist */,
 				0344A7A61A8EA41A00F92946 /* SGPremium.plist */,
+				03E3C6E71A78B26F009CCCD5 /* SGPremiumFeatures.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

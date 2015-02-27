@@ -45,10 +45,10 @@
     
     NSArray *products = [[_persistence purchasedProductIdentifiers] allObjects];
 
-    if (![products containsObject:kRemoveAdsProductIdentifier] && ![products containsObject:kSteamGeniusPremiumProductIdentifier]) {
+    //if (![products containsObject:kRemoveAdsProductIdentifier] && ![products containsObject:kSteamGeniusPremiumProductIdentifier]) {
         BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
         self.window.rootViewController = bannerViewController;
-    }
+    //}
     
     return YES;
 }
