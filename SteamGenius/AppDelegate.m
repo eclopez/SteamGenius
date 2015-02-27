@@ -12,7 +12,6 @@
 #import "SGDataImport.h"
 #import "BannerViewController.h"
 #import "SGBattleDetailViewController.h"
-#import "SGReceiptValidator.h"
 #import "RMStore.h"
 #import "RMStoreAppReceiptVerificator.h"
 #import "RMStoreKeychainPersistence.h"
@@ -23,6 +22,7 @@
 #define kCurrentCasterVersion 1
 #define kCurrentResultVersion 1
 
+#define kSteamGeniusPremiumProductIdentifier @"com.eriklopez.steamgenius.premium"
 #define kRemoveAdsProductIdentifier @"com.eriklopez.steamgenius.removeads"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
@@ -45,10 +45,10 @@
     
     NSArray *products = [[_persistence purchasedProductIdentifiers] allObjects];
 
-    if (![products containsObject:kRemoveAdsProductIdentifier]) {
+    //if (![products containsObject:kRemoveAdsProductIdentifier] && ![products containsObject:kSteamGeniusPremiumProductIdentifier]) {
         BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
         self.window.rootViewController = bannerViewController;
-    }
+    //}
     
     return YES;
 }

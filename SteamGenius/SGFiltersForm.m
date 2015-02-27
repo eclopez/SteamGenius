@@ -215,10 +215,9 @@
         return self.attributeValue ? ((Model *)self.attributeValue).name : nil;
     }
     else if ([self.attributeValue isKindOfClass:[NSDate class]]) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateStyle = NSDateFormatterMediumStyle;
-        formatter.timeStyle = NSDateFormatterNoStyle;
-        return [formatter stringFromDate:self.attributeValue];
+        return [NSDateFormatter localizedStringFromDate:self.attributeValue
+                                              dateStyle:NSDateFormatterMediumStyle
+                                              timeStyle:NSDateFormatterNoStyle];
     }
     else if ([self.attributeValue isKindOfClass:[Result class]]) {
         return self.attributeValue ? ((Result *)self.attributeValue).name : nil;

@@ -19,6 +19,7 @@
 		0325714219C49AD900634776 /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325714119C49AD900634776 /* Model.plist */; };
 		0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715519C7DB1F00634776 /* SGSettingsForm.m */; };
 		0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715819C7DE1000634776 /* SGSettingsFormViewController.m */; };
+		0344A7A71A8EA41A00F92946 /* SGPremium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0344A7A61A8EA41A00F92946 /* SGPremium.plist */; };
 		0349E2AB19C17F510091FF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AA19C17F510091FF21 /* main.m */; };
 		0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AD19C17F510091FF21 /* AppDelegate.m */; };
 		0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0349E2B819C17F510091FF21 /* Main.storyboard */; };
@@ -43,7 +44,6 @@
 		036BE9A719F62EB40096BDE4 /* BattleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE9A619F62EB40096BDE4 /* BattleFilter.m */; };
 		036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */; };
 		03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */; };
-		03746D511A7FE8F6006F5935 /* SGReceiptValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 03746D501A7FE8F6006F5935 /* SGReceiptValidator.m */; };
 		037708D61A5B185300295E1A /* SGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037708D51A5B185300295E1A /* SGWebViewController.m */; };
 		037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037708D71A5B6F8800295E1A /* WebKit.framework */; };
 		038DAAC719CCFC3400A224F7 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAC619CCFC3400A224F7 /* Game.m */; };
@@ -68,7 +68,7 @@
 		03C5F6CF1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */; };
 		03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3010E1A36A79B0053882A /* iAd.framework */; };
 		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
-		03E3C6E81A78B26F009CCCD5 /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03E3C6E71A78B26F009CCCD5 /* Products.plist */; };
+		03E3C6E81A78B26F009CCCD5 /* SGPremiumFeatures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03E3C6E71A78B26F009CCCD5 /* SGPremiumFeatures.plist */; };
 		03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */; };
 		03E3C6F21A79EB0B009CCCD5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
@@ -104,6 +104,7 @@
 		0325715519C7DB1F00634776 /* SGSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsForm.m; sourceTree = "<group>"; };
 		0325715719C7DE1000634776 /* SGSettingsFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSettingsFormViewController.h; sourceTree = "<group>"; };
 		0325715819C7DE1000634776 /* SGSettingsFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsFormViewController.m; sourceTree = "<group>"; };
+		0344A7A61A8EA41A00F92946 /* SGPremium.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGPremium.plist; sourceTree = "<group>"; };
 		0349E2A519C17F510091FF21 /* SteamGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteamGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0349E2A919C17F510091FF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0349E2AA19C17F510091FF21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -151,8 +152,6 @@
 		036BE9B419F766E30096BDE4 /* SGFilterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFilterOptionsTableViewController.h; sourceTree = "<group>"; };
 		036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFilterOptionsTableViewController.m; sourceTree = "<group>"; };
 		03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleIncRootCertificate.cer; sourceTree = "<group>"; };
-		03746D4F1A7FE8F6006F5935 /* SGReceiptValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGReceiptValidator.h; sourceTree = "<group>"; };
-		03746D501A7FE8F6006F5935 /* SGReceiptValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGReceiptValidator.m; sourceTree = "<group>"; };
 		037708D41A5B185300295E1A /* SGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGWebViewController.h; sourceTree = "<group>"; };
 		037708D51A5B185300295E1A /* SGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGWebViewController.m; sourceTree = "<group>"; };
 		037708D71A5B6F8800295E1A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -199,7 +198,7 @@
 		03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionsOptionTableViewController.m; sourceTree = "<group>"; };
 		03D30CE81A5D22D000C62504 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		03D30CE91A5D22D000C62504 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
-		03E3C6E71A78B26F009CCCD5 /* Products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
+		03E3C6E71A78B26F009CCCD5 /* SGPremiumFeatures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGPremiumFeatures.plist; sourceTree = "<group>"; };
 		03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGProductsTableViewController.h; sourceTree = "<group>"; };
 		03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGProductsTableViewController.m; sourceTree = "<group>"; };
 		03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -323,7 +322,6 @@
 		0335019C19C33A0B004AA293 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				03746D4B1A7FD048006F5935 /* Purchases */,
 				03E3C6ED1A78B8CF009CCCD5 /* View Controllers */,
 				038DAAF919CDF06000A224F7 /* Form */,
 				0349E2DB19C1D8EC0091FF21 /* Manager */,
@@ -374,7 +372,8 @@
 				0349E2A919C17F510091FF21 /* Info.plist */,
 				0349E2E619C2C3520091FF21 /* SGTheme.plist */,
 				0349E2AA19C17F510091FF21 /* main.m */,
-				03E3C6E71A78B26F009CCCD5 /* Products.plist */,
+				0344A7A61A8EA41A00F92946 /* SGPremium.plist */,
+				03E3C6E71A78B26F009CCCD5 /* SGPremiumFeatures.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -536,15 +535,6 @@
 				036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */,
 			);
 			name = Options;
-			sourceTree = "<group>";
-		};
-		03746D4B1A7FD048006F5935 /* Purchases */ = {
-			isa = PBXGroup;
-			children = (
-				03746D4F1A7FE8F6006F5935 /* SGReceiptValidator.h */,
-				03746D501A7FE8F6006F5935 /* SGReceiptValidator.m */,
-			);
-			name = Purchases;
 			sourceTree = "<group>";
 		};
 		037708D31A5B183600295E1A /* View Controllers */ = {
@@ -854,7 +844,8 @@
 				0325713C19C492BA00634776 /* Game.plist in Resources */,
 				0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */,
 				0349E2BF19C17F510091FF21 /* LaunchScreen.xib in Resources */,
-				03E3C6E81A78B26F009CCCD5 /* Products.plist in Resources */,
+				0344A7A71A8EA41A00F92946 /* SGPremium.plist in Resources */,
+				03E3C6E81A78B26F009CCCD5 /* SGPremiumFeatures.plist in Resources */,
 				0349E2BC19C17F510091FF21 /* Images.xcassets in Resources */,
 				0325714219C49AD900634776 /* Model.plist in Resources */,
 				03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */,
@@ -943,7 +934,6 @@
 				03C5D29E1A41BC4B00788E0C /* Faction.m in Sources */,
 				0369595819D542860096CEBC /* SGOpponentFormViewController.m in Sources */,
 				03AF5B691A49225D005C4A1B /* SGDisplayTableViewCell.m in Sources */,
-				03746D511A7FE8F6006F5935 /* SGReceiptValidator.m in Sources */,
 				0369596619D5F9AE0096CEBC /* SGScenarioFormViewController.m in Sources */,
 				03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */,
 				03C301191A36B3580053882A /* SGColorCircleView.m in Sources */,
