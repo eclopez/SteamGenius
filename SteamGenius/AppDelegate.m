@@ -42,9 +42,10 @@
 
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     splitViewController.delegate = self;
-    
-    NSArray *products = [[_persistence purchasedProductIdentifiers] allObjects];
 
+    // Leaving in case I need it in the future. Currenly I'm preventing ads from showing, but this code
+    // will prevent the ad BannerViewController from loading at all.
+    //NSArray *products = [[_persistence purchasedProductIdentifiers] allObjects];
     //if (![products containsObject:kRemoveAdsProductIdentifier] && ![products containsObject:kSteamGeniusPremiumProductIdentifier]) {
         BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
         self.window.rootViewController = bannerViewController;
