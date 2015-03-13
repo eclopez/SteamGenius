@@ -46,16 +46,11 @@
  */
 
 #import "BannerViewController.h"
-#import "RMStore.h"
-#import "RMStoreKeychainPersistence.h"
-
-#define kSteamGeniusPremiumProductIdentifier @"com.eriklopez.steamgenius.premium"
-#define kRemoveAdsProductIdentifier @"com.eriklopez.steamgenius.removeads"
 
 NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
 NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 
-@interface BannerViewController () <ADBannerViewDelegate, RMStoreObserver>
+@interface BannerViewController () <ADBannerViewDelegate>
 
 @end
 
@@ -81,8 +76,6 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
         }
         _contentController = contentController;
         _bannerView.delegate = self;
-        
-        [[RMStore defaultStore] addStoreObserver:self];
     }
     return self;
 }
@@ -141,20 +134,14 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     bannerFrame.size = [_bannerView sizeThatFits:contentFrame.size];
 #endif
     
-    RMStoreKeychainPersistence *persistent = [RMStore defaultStore].transactionPersistor;
-    NSArray *products = [[persistent purchasedProductIdentifiers] allObjects];
-    BOOL sgpremiumIsPurchased = [products containsObject:kSteamGeniusPremiumProductIdentifier];
-    BOOL removeAdsIsPurchased = [products containsObject:kRemoveAdsProductIdentifier];
-    
     // Check if the banner has an ad loaded and ready for display.  Move the banner off
     // screen if it does not have an ad.
-    if (_bannerView.bannerLoaded && (!removeAdsIsPurchased && !sgpremiumIsPurchased)) {
+    if (_bannerView.bannerLoaded) {
         contentFrame.size.height -= bannerFrame.size.height;
         bannerFrame.origin.y = contentFrame.size.height;
     } else {
         bannerFrame.origin.y = contentFrame.size.height;
     }
-    
     _contentController.view.frame = contentFrame;
     _bannerView.frame = bannerFrame;
 }
@@ -200,25 +187,6 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionDidFinish object:self];
-}
-
-- (void)dealloc
-{
-    [[RMStore defaultStore] removeStoreObserver:self];
-}
-
-#pragma mark - RMStore Observer
-
-- (void)storePaymentTransactionFinished:(NSNotification*)notification
-{
-    [self.view setNeedsLayout];
-    [self.view layoutIfNeeded];
-}
-
-- (void)storeRestoreTransactionsFinished:(NSNotification *)notification
-{
-    [self.view setNeedsLayout];
-    [self.view layoutIfNeeded];
 }
 
 @end

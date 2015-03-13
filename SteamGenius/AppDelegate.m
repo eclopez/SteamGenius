@@ -13,8 +13,8 @@
 #import "BannerViewController.h"
 #import "SGBattleDetailViewController.h"
 #import "RMStore.h"
-#import "RMStoreAppReceiptVerificator.h"
-#import "RMStoreKeychainPersistence.h"
+//#import "SGBaseVerify.h"
+//#import "RMStoreKeychainPersistence.h"
 
 #define kCurrentGameVersion 1
 #define kCurrentFactionVersion 1
@@ -30,8 +30,8 @@
 @end
 
 @implementation AppDelegate {
-    id<RMStoreReceiptVerificator> _receiptVerificator;
-    RMStoreKeychainPersistence *_persistence;
+    //id<RMStoreReceiptVerificator> _receiptVerificator;
+    //RMStoreKeychainPersistence *_persistence;
 }
 
 
@@ -43,26 +43,21 @@
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     splitViewController.delegate = self;
 
-    // Leaving in case I need it in the future. Currenly I'm preventing ads from showing, but this code
-    // will prevent the ad BannerViewController from loading at all.
-    //NSArray *products = [[_persistence purchasedProductIdentifiers] allObjects];
-    //if (![products containsObject:kRemoveAdsProductIdentifier] && ![products containsObject:kSteamGeniusPremiumProductIdentifier]) {
-        BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
-        self.window.rootViewController = bannerViewController;
-    //}
+    BannerViewController *bannerViewController = [[BannerViewController alloc] initWithContentViewController:splitViewController];
+    self.window.rootViewController = bannerViewController;
     
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Fixes problem when date picker is showing and the app resigns active; when you return, the date
-    // field is unresponsive.
+    // Fixes problem when date picker is showing and the app resigns active;
+    // when you return, the date field is unresponsive.
     [self.window endEditing:YES];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Fixes problem when date picker is showing and the app enters the background; when you return, the date
-    // field is unresponsive.
+    // Fixes problem when date picker is showing and the app enters the background;
+    // when you return, the date field is unresponsive.
     [self.window endEditing:YES];
 }
 
@@ -80,11 +75,11 @@
 
 - (void)configureStore
 {
-    _receiptVerificator = [[RMStoreAppReceiptVerificator alloc] init];
+    /*_receiptVerificator = [[SGBaseVerify alloc] init];
     [RMStore defaultStore].receiptVerificator = _receiptVerificator;
     
     _persistence = [[RMStoreKeychainPersistence alloc] init];
-    [RMStore defaultStore].transactionPersistor = _persistence;
+    [RMStore defaultStore].transactionPersistor = _persistence;*/
 }
 
 #pragma mark - Load Default Data
@@ -137,7 +132,6 @@
     }
     
     // Create the coordinator and store
-    
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"SteamGenius.sqlite"];
     NSError *error = nil;
@@ -150,7 +144,9 @@
         dict[NSUnderlyingErrorKey] = error;
         error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
         // Replace this with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        // abort() causes the application to generate a crash log and terminate.
+        // You should not use this function in a shipping application, although it may be useful during development.
+        #warning Handle this error.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
@@ -182,7 +178,9 @@
         NSError *error = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            // abort() causes the application to generate a crash log and terminate.
+            // You should not use this function in a shipping application, although it may be useful during development.
+            #warning Handle this error.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
