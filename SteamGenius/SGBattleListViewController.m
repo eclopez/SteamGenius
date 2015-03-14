@@ -202,7 +202,9 @@
     [fetchRequest setSortDescriptors:@[sortDate, sortPoints]];
     
     //STORED FILTERS
-    NSArray *storedFilters = [SGGenericRepository findAllEntitiesOfType:@"BattleFilter" context:[self.appDelegate managedObjectContext]];
+    //NSArray *storedFilters = [SGGenericRepository findAllEntitiesOfType:@"BattleFilter" context:[self.appDelegate managedObjectContext]];
+    NSPredicate *activeFilterPredicate = [NSPredicate predicateWithFormat:@"isActive = %@", [NSNumber numberWithBool:YES]];
+    NSArray *storedFilters = [SGGenericRepository findAllEntitiesOfType:@"BattleFilter" predicate:activeFilterPredicate context:[self.appDelegate managedObjectContext]];
     if ([storedFilters count] > 0) {
         NSMutableArray *predicates = [NSMutableArray array];
         for (BattleFilter *filter in storedFilters) {
@@ -311,6 +313,7 @@
     }];
     // Can't edit filters, so I'm not searching for filters in updatedObjects
     NSSet *filterInserted = [insertedObjects filteredSetUsingPredicate:filterSearch];
+    NSSet *filterUpdated = [updatedObjects filteredSetUsingPredicate:filterSearch];
     NSSet *filterDeleted = [deletedObjects filteredSetUsingPredicate:filterSearch];
     
     NSPredicate *battleSearch = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
@@ -324,7 +327,7 @@
         [self updateRecord];
     }
     
-    if ([filterDeleted count] > 0 || [filterInserted count] > 0) {
+    if ([filterDeleted count] > 0 || [filterInserted count] > 0 || [filterUpdated count] > 0) {
         [self refetch];
         [self updateRecord];
     }

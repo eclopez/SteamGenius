@@ -39,6 +39,7 @@
         _killPoints = battle ? battle.killPoints : nil;
         _scenario = battle ? battle.scenario : nil;
         _controlPoints = battle ? battle.controlPoints : nil;
+        _opponentControlPoints = battle ? battle.opponentControlPoints : nil;
         _event = battle ? battle.event : nil;
         _notes = battle ? battle.notes : nil;
     }
@@ -128,6 +129,10 @@
 }
 
 - (NSDictionary *)controlPointsField {
+    return @{ FXFormFieldType: @"unsigned" };
+}
+
+- (NSDictionary *)opponentControlPointsField {
     return @{ FXFormFieldType: @"unsigned" };
 }
 

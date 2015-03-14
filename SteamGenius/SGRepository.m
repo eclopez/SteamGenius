@@ -101,7 +101,7 @@
     return e;
 }
 
-+ (Battle *)initWithPlayerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints event:(Event *)event notes:(NSString *)notes context:(NSManagedObjectContext *)context
++ (Battle *)initWithPlayerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes context:(NSManagedObjectContext *)context
 {
     Battle *b = [NSEntityDescription insertNewObjectForEntityForName:@"Battle" inManagedObjectContext:context];
     [b setValue:playerCaster forKey:@"playerCaster"];
@@ -113,6 +113,7 @@
     [b setValue:killPoints forKey:@"killPoints"];
     [b setValue:scenario forKey:@"scenario"];
     [b setValue:controlPoints forKey:@"controlPoints"];
+    [b setValue:opponentControlPoints forKey:@"opponentControlPoints"];
     [b setValue:event forKey:@"event"];
     [b setValue:notes forKey:@"notes"];
     return b;
@@ -122,12 +123,14 @@
     BattleFilter *bf = [NSEntityDescription insertNewObjectForEntityForName:@"BattleFilter" inManagedObjectContext:context];
     [bf setValue:displayText forKey:@"displayText"];
     [bf setValue:predicate forKey:@"predicate"];
+    // Activate the new filter by default
+    [bf setValue:[NSNumber numberWithBool:YES] forKey:@"isActive"];
     return bf;
 }
 
 #pragma mark - Update Methods
 
-+ (void)updateBattle:(Battle *)battle playerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints event:(Event *)event notes:(NSString *)notes
++ (void)updateBattle:(Battle *)battle playerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes
 {
     battle.playerCaster = playerCaster;
     battle.opponentCaster = opponentCaster;
@@ -138,6 +141,7 @@
     battle.killPoints = killPoints;
     battle.scenario = scenario;
     battle.controlPoints = controlPoints;
+    battle.opponentControlPoints = opponentControlPoints;
     battle.event = event;
     battle.notes = notes;
 }
@@ -158,6 +162,11 @@
     event.location = location;
     event.date = date;
     event.isTournament = [NSNumber numberWithBool:isTournament];
+}
+
++ (void)updateBattleFilter:(BattleFilter *)battleFilter isActive:(BOOL)isActive
+{
+    battleFilter.isActive = [NSNumber numberWithBool:isActive];
 }
 
 @end

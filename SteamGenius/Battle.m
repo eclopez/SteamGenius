@@ -2,8 +2,8 @@
 //  Battle.m
 //  SteamGenius
 //
-//  Created by Erik Lopez on 9/25/14.
-//  Copyright (c) 2014 Erik Lopez. All rights reserved.
+//  Created by Erik Lopez on 3/14/15.
+//  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
 #import "Battle.h"
@@ -19,8 +19,9 @@
 @dynamic controlPoints;
 @dynamic date;
 @dynamic killPoints;
-@dynamic points;
 @dynamic notes;
+@dynamic points;
+@dynamic opponentControlPoints;
 @dynamic event;
 @dynamic opponent;
 @dynamic opponentCaster;
