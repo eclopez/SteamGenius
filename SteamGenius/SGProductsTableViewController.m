@@ -8,7 +8,7 @@
 
 #import "SGProductsTableViewController.h"
 #import "RMStore.h"
-//#import "RMStoreKeychainPersistence.h"
+#import "RMStoreKeychainPersistence.h"
 
 #define kProductsFile @"SGProducts"
 
@@ -17,7 +17,7 @@
 @end
 
 @implementation SGProductsTableViewController {
-    //RMStoreKeychainPersistence *_persistence;
+    RMStoreKeychainPersistence *_persistence;
     NSArray *_productIdentifiers;
     NSArray *_purchasedProductIdentifiers;
     BOOL _productsLoaded;
@@ -38,8 +38,8 @@
     
     RMStore *store = [RMStore defaultStore];
     [store addStoreObserver:self];
-    //_persistence = store.transactionPersistor;
-    //_purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
+    _persistence = store.transactionPersistor;
+    _purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
     
     _productIdentifiers = [NSArray arrayWithContentsOfURL:[self getFileUrl:kProductsFile fileType:@"plist"]];
     
@@ -66,10 +66,10 @@
 - (void)restorePurchases
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    //[_persistence removeTransactions];
+    [_persistence removeTransactions];
     [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        //_purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
+        _purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -107,9 +107,9 @@
             cell.detailTextLabel.numberOfLines = 0;
             cell.accessoryType = UITableViewCellAccessoryNone;
             
-            /*if ([_purchasedProductIdentifiers containsObject:product.productIdentifier]) {
+            if ([_purchasedProductIdentifiers containsObject:product.productIdentifier]) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            }*/
+            }
         }
             break;
         case 1:
@@ -156,7 +156,7 @@
 
 - (void)storePaymentTransactionFinished:(NSNotification*)notification
 {
-    //_purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
+    _purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
     [self.tableView reloadData];
 }
 

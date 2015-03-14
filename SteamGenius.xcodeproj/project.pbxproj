@@ -11,7 +11,6 @@
 		03032A9D19ED9D2D00A15C54 /* SGFiltersFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */; };
 		031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */; };
 		031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */; };
-		03206FA91AA3569000F1AD44 /* SGBaseVerify.m in Sources */ = {isa = PBXBuildFile; fileRef = 03206FA81AA3569000F1AD44 /* SGBaseVerify.m */; };
 		0325712F19C376E900634776 /* SGDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325712E19C376E900634776 /* SGDismissSegue.m */; };
 		0325713819C491B300634776 /* SteamGenius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0325713619C491B300634776 /* SteamGenius.xcdatamodeld */; };
 		0325713C19C492BA00634776 /* Game.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325713B19C492BA00634776 /* Game.plist */; };
@@ -20,6 +19,7 @@
 		0325714219C49AD900634776 /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325714119C49AD900634776 /* Model.plist */; };
 		0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715519C7DB1F00634776 /* SGSettingsForm.m */; };
 		0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715819C7DE1000634776 /* SGSettingsFormViewController.m */; };
+		032812921AB38B0C00F23BF9 /* SGReceiptVerificator.m in Sources */ = {isa = PBXBuildFile; fileRef = 032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */; };
 		0344A7A71A8EA41A00F92946 /* SGProducts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0344A7A61A8EA41A00F92946 /* SGProducts.plist */; };
 		0349E2AB19C17F510091FF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AA19C17F510091FF21 /* main.m */; };
 		0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AD19C17F510091FF21 /* AppDelegate.m */; };
@@ -93,8 +93,6 @@
 		031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGResizableImageViewCell.m; sourceTree = "<group>"; };
 		031D6ACC19CF6A39000B7D26 /* SGCasterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCasterOptionsTableViewController.h; sourceTree = "<group>"; };
 		031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCasterOptionsTableViewController.m; sourceTree = "<group>"; };
-		03206FA71AA3569000F1AD44 /* SGBaseVerify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBaseVerify.h; sourceTree = "<group>"; };
-		03206FA81AA3569000F1AD44 /* SGBaseVerify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBaseVerify.m; sourceTree = "<group>"; };
 		0325712D19C376E900634776 /* SGDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDismissSegue.h; sourceTree = "<group>"; };
 		0325712E19C376E900634776 /* SGDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDismissSegue.m; sourceTree = "<group>"; };
 		0325713719C491B300634776 /* SteamGenius.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SteamGenius.xcdatamodel; sourceTree = "<group>"; };
@@ -106,6 +104,8 @@
 		0325715519C7DB1F00634776 /* SGSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsForm.m; sourceTree = "<group>"; };
 		0325715719C7DE1000634776 /* SGSettingsFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSettingsFormViewController.h; sourceTree = "<group>"; };
 		0325715819C7DE1000634776 /* SGSettingsFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsFormViewController.m; sourceTree = "<group>"; };
+		032812901AB38B0C00F23BF9 /* SGReceiptVerificator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGReceiptVerificator.h; sourceTree = "<group>"; };
+		032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGReceiptVerificator.m; sourceTree = "<group>"; };
 		0344A7A61A8EA41A00F92946 /* SGProducts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGProducts.plist; sourceTree = "<group>"; };
 		0349E2A519C17F510091FF21 /* SteamGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteamGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0349E2A919C17F510091FF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -443,8 +443,8 @@
 		0355CAEF1AA18D950068EF83 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				03206FA71AA3569000F1AD44 /* SGBaseVerify.h */,
-				03206FA81AA3569000F1AD44 /* SGBaseVerify.m */,
+				032812901AB38B0C00F23BF9 /* SGReceiptVerificator.h */,
+				032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -970,6 +970,7 @@
 				03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */,
 				0349E2AB19C17F510091FF21 /* main.m in Sources */,
 				038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */,
+				032812921AB38B0C00F23BF9 /* SGReceiptVerificator.m in Sources */,
 				0351036619DE54C50032E215 /* SGBattleListViewController.m in Sources */,
 				038DAACD19CCFC3400A224F7 /* Model.m in Sources */,
 				03C5D29E1A41BC4B00788E0C /* Faction.m in Sources */,
@@ -989,7 +990,6 @@
 				031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */,
 				0369594C19D501040096CEBC /* Battle.m in Sources */,
 				0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */,
-				03206FA91AA3569000F1AD44 /* SGBaseVerify.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

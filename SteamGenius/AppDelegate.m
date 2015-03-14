@@ -13,8 +13,8 @@
 #import "BannerViewController.h"
 #import "SGBattleDetailViewController.h"
 #import "RMStore.h"
-//#import "SGBaseVerify.h"
-//#import "RMStoreKeychainPersistence.h"
+#import "RMStoreKeychainPersistence.h"
+#import "SGReceiptVerificator.h"
 
 #define kCurrentGameVersion 1
 #define kCurrentFactionVersion 1
@@ -30,8 +30,8 @@
 @end
 
 @implementation AppDelegate {
-    //id<RMStoreReceiptVerificator> _receiptVerificator;
-    //RMStoreKeychainPersistence *_persistence;
+    id<RMStoreReceiptVerificator> _receiptVerificator;
+    RMStoreKeychainPersistence *_persistence;
 }
 
 
@@ -75,11 +75,11 @@
 
 - (void)configureStore
 {
-    /*_receiptVerificator = [[SGBaseVerify alloc] init];
+    _receiptVerificator = [[SGReceiptVerificator alloc] init];
     [RMStore defaultStore].receiptVerificator = _receiptVerificator;
     
     _persistence = [[RMStoreKeychainPersistence alloc] init];
-    [RMStore defaultStore].transactionPersistor = _persistence;*/
+    [RMStore defaultStore].transactionPersistor = _persistence;
 }
 
 #pragma mark - Load Default Data
