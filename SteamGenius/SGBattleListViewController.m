@@ -339,6 +339,7 @@
 - (void)fetchResults {
     NSError *error = nil;
     if (![self.fetchedResultsController performFetch:&error]) {
+        #warning Handle this error.
         NSLog(@"Error in refetch: %@", [error localizedDescription]);
         abort();
     }

@@ -103,6 +103,7 @@
     
     NSError *error = nil;
     if (![self.fetchedResultsController performFetch:&error]) {
+        #warning Handle this error.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }

@@ -23,7 +23,6 @@
         isValid = YES;
         if (isPresent) {
             [purchases setValue:[NSNumber numberWithInt:[[purchaseInfo objectForKey:SGBase_INAPP_ATTRIBUTETYPE_QUANTITY] intValue]] forKey:identifier];
-            NSLog(@">>> %@ x %d", identifier, [[purchaseInfo objectForKey:SGBase_INAPP_ATTRIBUTETYPE_QUANTITY] intValue]);
         } else {
             NSLog(@">>> %@ missing", identifier);
         }
@@ -31,14 +30,12 @@
     
     if (!isValid) {
         if (failureBlock != nil) {
-            NSLog(@"Reached fail block");
             NSError *error = [NSError errorWithDomain:RMStoreErrorDomain code:0 userInfo:nil];
             failureBlock(error);
         }
         return;
     }
     if (successBlock != nil) {
-        NSLog(@"Reached success block!");
         successBlock();
     }
     
