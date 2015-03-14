@@ -11,8 +11,6 @@
 #import "SGFiltersForm.h"
 #import "SGRepository.h"
 
-#define kFilterDefaultsName @"filterDefaults"
-
 @interface SGFiltersFormViewController ()
 
 @end

@@ -774,7 +774,6 @@
 			buildConfigurationList = 0349E2CE19C17F510091FF21 /* Build configuration list for PBXNativeTarget "SteamGenius" */;
 			buildPhases = (
 				0A64E7D50FAE4B958F306ABD /* Check Pods Manifest.lock */,
-				037516FC1AA263E200AE430C /* Generate Receipt Validation Code for Standard Check */,
 				0355CAF01AA18E9D0068EF83 /* Generate Receipt Validation Code for In-App Purchases */,
 				0349E2A119C17F510091FF21 /* Sources */,
 				0349E2A219C17F510091FF21 /* Frameworks */,
@@ -887,22 +886,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Receigen binary\nRECEIGEN=\"/Applications/Receigen.app/Contents/MacOS/Receigen\"\n\n# Configure receipt.h settings\nCODE_PREFIX=`eval \"echo SGBase\"`\nSUCCESS_BEHAVIOR=`eval \"echo checkinappandreceipt\"`\nFAILURE_BEHAVIOR=`eval \"echo refreshreceipt\"`\n\n# Extract Info.plist information\nINPUT=\"$INFOPLIST_FILE\"\n# BUNDLE_ID=`/usr/libexec/PlistBuddy -c \"Print CFBundleIdentifier\" \"$INPUT\"`\n# Had to hard code the Bundle Id as the variable in the Info.plist was being ignored\nBUNDLE_ID=`eval \"echo com.eriklopez.SteamGenius\"`\n# On iOS, use CFBundleVersion\nBUNDLE_VERSION=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INPUT\"`\n\n# Expand information if needed\nEXPANDED_BUNDLE_ID=`eval \"echo $BUNDLE_ID\"`\nEXPANDED_BUNDLE_VERSION=`eval \"echo $BUNDLE_VERSION\"`\n\n# Make sure the destination directory exists\nmkdir -p \"$DERIVED_FILES_DIR\"\nHEADER=\"$DERIVED_FILES_DIR/iapreceipt.h\"\n\n# Check if the generation is needed\nif [ -e \"$HEADER\" ]; then\n# On iOS, check CFBundleIdentifier and CFBundleVersion\nSKIP=`egrep -q \"CFBundleIdentifier.+:.+$EXPANDED_BUNDLE_ID\" \"$HEADER\" && egrep -q \"CFBundleVersion.+:.+$EXPANDED_BUNDLE_VERSION\" \"$HEADER\" && echo \"YES\"`\nfi\n\n# Generate the header file if needed\nif [ \"x$SKIP\" = \"x\" ]; then\n# On iOS, call Receigen with options\n\"$RECEIGEN\" --identifier \"$EXPANDED_BUNDLE_ID\" --version \"$EXPANDED_BUNDLE_VERSION\" --prefix \"$CODE_PREFIX\" --success \"$SUCCESS_BEHAVIOR\" --failure \"$FAILURE_BEHAVIOR\" --os ios > \"$HEADER\"\nfi";
-		};
-		037516FC1AA263E200AE430C /* Generate Receipt Validation Code for Standard Check */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Generate Receipt Validation Code for Standard Check";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/checkreceipt.h",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Receigen binary\nRECEIGEN=\"/Applications/Receigen.app/Contents/MacOS/Receigen\"\n\n# Configure receipt.h settings\nCODE_PREFIX=`eval \"echo SGCheck\"`\nSUCCESS_BEHAVIOR=`eval \"echo donothing\"`\nFAILURE_BEHAVIOR=`eval \"echo refreshreceipt\"`\n\n# Extract Info.plist information\nINPUT=\"$INFOPLIST_FILE\"\n# BUNDLE_ID=`/usr/libexec/PlistBuddy -c \"Print CFBundleIdentifier\" \"$INPUT\"`\n# Had to hard code the Bundle Id as the variable in the Info.plist was being ignored\nBUNDLE_ID=`eval \"echo com.eriklopez.SteamGenius\"`\n# On iOS, use CFBundleVersion\nBUNDLE_VERSION=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INPUT\"`\n\n# Expand information if needed\nEXPANDED_BUNDLE_ID=`eval \"echo $BUNDLE_ID\"`\nEXPANDED_BUNDLE_VERSION=`eval \"echo $BUNDLE_VERSION\"`\n\n# Make sure the destination directory exists\nmkdir -p \"$DERIVED_FILES_DIR\"\nHEADER=\"$DERIVED_FILES_DIR/checkreceipt.h\"\n\n# Check if the generation is needed\nif [ -e \"$HEADER\" ]; then\n# On iOS, check CFBundleIdentifier and CFBundleVersion\nSKIP=`egrep -q \"CFBundleIdentifier.+:.+$EXPANDED_BUNDLE_ID\" \"$HEADER\" && egrep -q \"CFBundleVersion.+:.+$EXPANDED_BUNDLE_VERSION\" \"$HEADER\" && echo \"YES\"`\nfi\n\n# Generate the header file if needed\nif [ \"x$SKIP\" = \"x\" ]; then\n# On iOS, call Receigen with options\n\"$RECEIGEN\" --identifier \"$EXPANDED_BUNDLE_ID\" --version \"$EXPANDED_BUNDLE_VERSION\" --prefix \"$CODE_PREFIX\" --success \"$SUCCESS_BEHAVIOR\" --failure \"$FAILURE_BEHAVIOR\" --os ios > \"$HEADER\"\nfi";
+			shellScript = "# Receigen binary\nRECEIGEN=\"/Applications/Receigen.app/Contents/MacOS/Receigen\"\n\n# Configure receipt.h settings\nCODE_PREFIX=`eval \"echo SGBase\"`\nSUCCESS_BEHAVIOR=`eval \"echo checkinapp\"`\nFAILURE_BEHAVIOR=`eval \"echo refreshreceipt\"`\n\n# Extract Info.plist information\nINPUT=\"$INFOPLIST_FILE\"\n# BUNDLE_ID=`/usr/libexec/PlistBuddy -c \"Print CFBundleIdentifier\" \"$INPUT\"`\n# Had to hard code the Bundle Id as the variable in the Info.plist was being ignored\nBUNDLE_ID=`eval \"echo com.eriklopez.SteamGenius\"`\n# On iOS, use CFBundleVersion\nBUNDLE_VERSION=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INPUT\"`\n\n# Expand information if needed\nEXPANDED_BUNDLE_ID=`eval \"echo $BUNDLE_ID\"`\nEXPANDED_BUNDLE_VERSION=`eval \"echo $BUNDLE_VERSION\"`\n\n# Make sure the destination directory exists\nmkdir -p \"$DERIVED_FILES_DIR\"\nHEADER=\"$DERIVED_FILES_DIR/receipt.h\"\n\n# Check if the generation is needed\nif [ -e \"$HEADER\" ]; then\n# On iOS, check CFBundleIdentifier and CFBundleVersion\nSKIP=`egrep -q \"CFBundleIdentifier.+:.+$EXPANDED_BUNDLE_ID\" \"$HEADER\" && egrep -q \"CFBundleVersion.+:.+$EXPANDED_BUNDLE_VERSION\" \"$HEADER\" && echo \"YES\"`\nfi\n\n# Generate the header file if needed\nif [ \"x$SKIP\" = \"x\" ]; then\n# On iOS, call Receigen with options\n\"$RECEIGEN\" --identifier \"$EXPANDED_BUNDLE_ID\" --version \"$EXPANDED_BUNDLE_VERSION\" --prefix \"$CODE_PREFIX\" --success \"$SUCCESS_BEHAVIOR\" --failure \"$FAILURE_BEHAVIOR\" --os ios > \"$HEADER\"\nfi";
 		};
 		0A64E7D50FAE4B958F306ABD /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

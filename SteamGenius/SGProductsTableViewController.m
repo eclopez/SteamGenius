@@ -146,6 +146,16 @@
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return @"Current premium features include:\n– Removing all ads.\n\nMany more features are planned!";
+        default:
+            return @"";
+    }
+}
+
 #pragma mark RMStoreObserver
 
 - (void)storeProductsRequestFinished:(NSNotification*)notification

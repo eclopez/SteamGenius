@@ -7,24 +7,48 @@
 //
 
 #import "SGReceiptVerificator.h"
+#import "receipt.h"
+
+#define kProductsFile @"SGProducts"
 
 @implementation SGReceiptVerificator
 
 - (void)verifyTransaction:(SKPaymentTransaction *)transaction success:(void (^)())successBlock failure:(void (^)(NSError *))failureBlock
 {
-    NSLog(@"VERIFY...");
-    // Replace 'true' with bool expression indicating "if receipt is not valid".
-    if (false) {
+    NSMutableDictionary *purchases;
+    NSArray *identifiers = [NSArray arrayWithContentsOfURL:[self getFileUrl:kProductsFile fileType:@"plist"]];
+    __block BOOL isValid = NO;
+    
+    SGBase_CheckInAppPurchases(identifiers, ^(NSString *identifier, BOOL isPresent, NSDictionary *purchaseInfo) {
+        isValid = YES;
+        if (isPresent) {
+            [purchases setValue:[NSNumber numberWithInt:[[purchaseInfo objectForKey:SGBase_INAPP_ATTRIBUTETYPE_QUANTITY] intValue]] forKey:identifier];
+            NSLog(@">>> %@ x %d", identifier, [[purchaseInfo objectForKey:SGBase_INAPP_ATTRIBUTETYPE_QUANTITY] intValue]);
+        } else {
+            NSLog(@">>> %@ missing", identifier);
+        }
+    }, self);
+    
+    if (!isValid) {
         if (failureBlock != nil) {
+            NSLog(@"Reached fail block");
             NSError *error = [NSError errorWithDomain:RMStoreErrorDomain code:0 userInfo:nil];
             failureBlock(error);
         }
         return;
     }
     if (successBlock != nil) {
+        NSLog(@"Reached success block!");
         successBlock();
     }
     
+}
+
+#pragma mark Private Methods
+
+- (NSURL *)getFileUrl:(NSString *)fileName fileType:(NSString *)fileType
+{
+    return [[NSBundle mainBundle] URLForResource:fileName withExtension:fileType];
 }
 
 @end

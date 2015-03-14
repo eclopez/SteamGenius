@@ -22,9 +22,6 @@
 #define kCurrentCasterVersion 1
 #define kCurrentResultVersion 1
 
-#define kSteamGeniusPremiumProductIdentifier @"com.eriklopez.steamgenius.premium"
-#define kRemoveAdsProductIdentifier @"com.eriklopez.steamgenius.removeads"
-
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
