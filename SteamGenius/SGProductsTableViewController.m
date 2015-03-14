@@ -66,7 +66,6 @@
 - (void)restorePurchases
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [_persistence removeTransactions];
     [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         _purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];

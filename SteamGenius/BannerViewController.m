@@ -46,17 +46,22 @@
  */
 
 #import "BannerViewController.h"
+#import "RMStore.h"
+#import "RMStoreKeychainPersistence.h"
+
+#define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
 
 NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
 NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 
-@interface BannerViewController () <ADBannerViewDelegate>
+@interface BannerViewController () <ADBannerViewDelegate, RMStoreObserver>
 
 @end
 
 @implementation BannerViewController {
     ADBannerView *_bannerView;
     UIViewController *_contentController;
+    BOOL _isPremiumPurchased;
 }
 
 - (instancetype)initWithContentViewController:(UIViewController *)contentController
@@ -68,6 +73,9 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     
     self = [super init];
     if (self != nil) {
+        _isPremiumPurchased = NO;
+        [self checkPurchases];
+        
         // On iOS 6 ADBannerView introduces a new initializer, use it when available.
         if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)]) {
             _bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
@@ -136,7 +144,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     
     // Check if the banner has an ad loaded and ready for display.  Move the banner off
     // screen if it does not have an ad.
-    if (_bannerView.bannerLoaded) {
+    if (_bannerView.bannerLoaded && !_isPremiumPurchased) {
         contentFrame.size.height -= bannerFrame.size.height;
         bannerFrame.origin.y = contentFrame.size.height;
     } else {
@@ -187,6 +195,34 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionDidFinish object:self];
+}
+
+#pragma mark - RMStoreObserver Methods
+
+- (void)storePaymentTransactionFinished:(NSNotification *)notification
+{
+    [self applyPurchases];
+}
+
+- (void)storeRestoreTransactionsFinished:(NSNotification *)notification
+{
+    [self applyPurchases];
+}
+
+#pragma Private Methods
+
+- (void)checkPurchases
+{
+    RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
+    NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
+    _isPremiumPurchased = [purchases containsObject:kSteamGeniusPremiumIdentifier];
+}
+
+- (void)applyPurchases
+{
+    [self checkPurchases];
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
 }
 
 @end
