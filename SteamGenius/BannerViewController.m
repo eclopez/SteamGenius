@@ -49,8 +49,7 @@
 #import "RMStore.h"
 #import "RMStoreKeychainPersistence.h"
 
-#define kSteamGeniusPremiumProductIdentifier @"com.eriklopez.steamgenius.premium"
-#define kRemoveAdsProductIdentifier @"com.eriklopez.steamgenius.removeads"
+#define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
 
 NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
 NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
@@ -62,6 +61,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 @implementation BannerViewController {
     ADBannerView *_bannerView;
     UIViewController *_contentController;
+    BOOL _isPremiumPurchased;
 }
 
 - (instancetype)initWithContentViewController:(UIViewController *)contentController
@@ -73,6 +73,9 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     
     self = [super init];
     if (self != nil) {
+        _isPremiumPurchased = NO;
+        [self checkPurchases];
+        
         // On iOS 6 ADBannerView introduces a new initializer, use it when available.
         if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)]) {
             _bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
@@ -81,8 +84,6 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
         }
         _contentController = contentController;
         _bannerView.delegate = self;
-        
-        [[RMStore defaultStore] addStoreObserver:self];
     }
     return self;
 }
@@ -141,20 +142,14 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     bannerFrame.size = [_bannerView sizeThatFits:contentFrame.size];
 #endif
     
-    RMStoreKeychainPersistence *persistent = [RMStore defaultStore].transactionPersistor;
-    NSArray *products = [[persistent purchasedProductIdentifiers] allObjects];
-    BOOL sgpremiumIsPurchased = [products containsObject:kSteamGeniusPremiumProductIdentifier];
-    BOOL removeAdsIsPurchased = [products containsObject:kRemoveAdsProductIdentifier];
-    
     // Check if the banner has an ad loaded and ready for display.  Move the banner off
     // screen if it does not have an ad.
-    if (_bannerView.bannerLoaded && (!removeAdsIsPurchased && !sgpremiumIsPurchased)) {
+    if (_bannerView.bannerLoaded && !_isPremiumPurchased) {
         contentFrame.size.height -= bannerFrame.size.height;
         bannerFrame.origin.y = contentFrame.size.height;
     } else {
         bannerFrame.origin.y = contentFrame.size.height;
     }
-    
     _contentController.view.frame = contentFrame;
     _bannerView.frame = bannerFrame;
 }
@@ -202,21 +197,30 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionDidFinish object:self];
 }
 
-- (void)dealloc
-{
-    [[RMStore defaultStore] removeStoreObserver:self];
-}
+#pragma mark - RMStoreObserver Methods
 
-#pragma mark - RMStore Observer
-
-- (void)storePaymentTransactionFinished:(NSNotification*)notification
+- (void)storePaymentTransactionFinished:(NSNotification *)notification
 {
-    [self.view setNeedsLayout];
-    [self.view layoutIfNeeded];
+    [self applyPurchases];
 }
 
 - (void)storeRestoreTransactionsFinished:(NSNotification *)notification
 {
+    [self applyPurchases];
+}
+
+#pragma Private Methods
+
+- (void)checkPurchases
+{
+    RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
+    NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
+    _isPremiumPurchased = [purchases containsObject:kSteamGeniusPremiumIdentifier];
+}
+
+- (void)applyPurchases
+{
+    [self checkPurchases];
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
 }

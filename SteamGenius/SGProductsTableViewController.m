@@ -10,6 +10,8 @@
 #import "RMStore.h"
 #import "RMStoreKeychainPersistence.h"
 
+#define kProductsFile @"SGProducts"
+
 @interface SGProductsTableViewController () <RMStoreObserver>
 
 @end
@@ -17,9 +19,8 @@
 @implementation SGProductsTableViewController {
     RMStoreKeychainPersistence *_persistence;
     NSArray *_productIdentifiers;
-    NSArray *_premium;
-    NSArray *_premiumFeatures;
-    BOOL _productsRequestFinished;
+    NSArray *_purchasedProductIdentifiers;
+    BOOL _productsLoaded;
 }
 
 - (instancetype)init {
@@ -33,60 +34,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    __block BOOL premiumProductLoaded = NO;
-    __block BOOL premiumFeaturesLoaded = NO;
+    _productsLoaded = NO;
     
     RMStore *store = [RMStore defaultStore];
     [store addStoreObserver:self];
     _persistence = store.transactionPersistor;
-    _productIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
+    _purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
     
-    NSURL *premiumUrl = [[NSBundle mainBundle] URLForResource:@"SGPremium" withExtension:@"plist"];
-    _premium = [NSArray arrayWithContentsOfURL:premiumUrl];
-    
-    NSURL *featuresUrl = [[NSBundle mainBundle] URLForResource:@"SGPremiumFeatures" withExtension:@"plist"];
-    _premiumFeatures = [NSArray arrayWithContentsOfURL:featuresUrl];
+    _productIdentifiers = [NSArray arrayWithContentsOfURL:[self getFileUrl:kProductsFile fileType:@"plist"]];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    // Premium request
-    [store requestProducts:[NSSet setWithArray:_premium] success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
-        premiumProductLoaded = YES;
-        if (premiumFeaturesLoaded) {
-            [self productsReceived];
-        }
+    [store requestProducts:[NSSet setWithArray:_productIdentifiers] success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     }failure:^(NSError *error) {
-        [self productsNotReceived:error.localizedDescription];
-    }];
-    
-    // Premium features request
-    [store requestProducts:[NSSet setWithArray:_premiumFeatures] success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
-        premiumFeaturesLoaded = YES;
-        if (premiumProductLoaded) {
-            [self productsReceived];
-        }
-    }failure:^(NSError *error) {
-        [self productsNotReceived:error.localizedDescription];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [self showNotificationAlert:@"Products Request Failed" message:error.localizedDescription style:UIAlertControllerStyleAlert viewController:self];
     }];
 }
-
-- (void)productsReceived
-{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    _productsRequestFinished = YES;
-    [self.tableView reloadData];
-}
-
 - (void)productsNotReceived:(NSString *)errorMessage
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Products request failed." message:errorMessage preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [alert dismissViewControllerAnimated:YES completion:nil];
-    }];
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    [self showNotificationAlert:@"Products request failed." message:errorMessage style:UIAlertControllerStyleAlert viewController:self];
 }
 
 - (void)dealloc
@@ -96,77 +63,60 @@
 
 #pragma mark - Store Actions
 
-- (void)restoreAction
+- (void)restorePurchases
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [_persistence removeTransactions];
     [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        _productIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
+        _purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Restore Transactions Failed", @"")
-                                                            message:error.localizedDescription
-                                                           delegate:nil
-                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"")
-                                                  otherButtonTitles:nil];
-        [alertView show];
+        [self showNotificationAlert:NSLocalizedString(@"Restore Transactions Failed", @"") message:error.localizedDescription style:UIAlertControllerStyleAlert viewController:self];
     }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    if (!_productsLoaded) return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return _productsRequestFinished ? _premium.count : 0;
-    } else if (section == 1) {
-        return _productsRequestFinished ? _premiumFeatures.count : 0;
-    }
-    else {
-        return _productsRequestFinished ? 1 : 0;
+    switch (section) {
+        case 0: return _productIdentifiers.count;
+        case 1: return 1;
+        default: return 0;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"ProductCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    // Configure the cell...
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.textLabel.textAlignment = NSTextAlignmentLeft;
-    if (indexPath.section == 0) {
-        NSString *productId = [_premium objectAtIndex:indexPath.row];
-        SKProduct *product = [[RMStore defaultStore] productForIdentifier:productId];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ – %@", product.localizedTitle, [RMStore localizedPriceOfProduct:product]];
-        cell.detailTextLabel.text = product.localizedDescription;
-        cell.detailTextLabel.numberOfLines = 0;
-        
-        if ([_productIdentifiers containsObject:product.productIdentifier]) {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        }
-    } else if (indexPath.section == 1) {
-        NSString *productId = [_premiumFeatures objectAtIndex:indexPath.row];
-        SKProduct *product = [[RMStore defaultStore] productForIdentifier:productId];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ – %@", product.localizedTitle, [RMStore localizedPriceOfProduct:product]];
-        cell.detailTextLabel.text = product.localizedDescription;
-        cell.detailTextLabel.numberOfLines = 0;
-        
-        if ([_productIdentifiers containsObject:product.productIdentifier]) {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        }
-    } else {
-        cell.textLabel.text = @"Restore Purchases";
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    }
     
+    switch (indexPath.section) {
+        case 0:
+        {   SKProduct *product = [[RMStore defaultStore] productForIdentifier:[_productIdentifiers objectAtIndex:indexPath.row]];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ – %@", product.localizedTitle, [RMStore localizedPriceOfProduct:product]];
+            cell.detailTextLabel.text = product.localizedDescription;
+            cell.detailTextLabel.numberOfLines = 0;
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            
+            if ([_purchasedProductIdentifiers containsObject:product.productIdentifier]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        }
+            break;
+        case 1:
+            cell.textLabel.text = @"Restore Purchases";
+            break;
+        default:
+            break;
+    }
     return cell;
 }
 
@@ -174,75 +124,71 @@
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (![RMStore canMakePayments]) return;
-    
-    if (indexPath.section == 0) {
-        NSString *productId = [_premium objectAtIndex:indexPath.row];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        [[RMStore defaultStore] addPayment:productId success:^(SKPaymentTransaction *transaction) {
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        }failure:^(SKPaymentTransaction *transaction, NSError *error) {
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Payment Transaction Failed" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                [alert dismissViewControllerAnimated:YES completion:nil];
+    switch (indexPath.section) {
+        case 0:
+        {
+            NSString *productId = [_productIdentifiers objectAtIndex:indexPath.row];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            [[RMStore defaultStore] addPayment:productId success:^(SKPaymentTransaction *transaction) {
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            }failure:^(SKPaymentTransaction *transaction, NSError *error) {
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                [self showNotificationAlert:@"Payment Transaction Failed" message:error.localizedDescription style:UIAlertControllerStyleAlert viewController:self];
             }];
-            [alert addAction:okAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        }];
-    } else if (indexPath.section == 1) {
-        NSString *productId = [_premiumFeatures objectAtIndex:indexPath.row];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        [[RMStore defaultStore] addPayment:productId success:^(SKPaymentTransaction *transaction) {
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        }failure:^(SKPaymentTransaction *transaction, NSError *error) {
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Payment Transaction Failed" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                [alert dismissViewControllerAnimated:YES completion:nil];
-            }];
-            [alert addAction:okAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        }];
-    } else {
-        [self restoreAction];
+        }
+            break;
+        case 1:
+            [self restorePurchases];
+            break;
+        default:
+            break;
     }
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    if (_productsRequestFinished) {
-        if (section == 0) {
-            return @"All Premium Features";
-        } else if (section == 1) {
-            return @"Individual Premium Features";
-        } else {
+    switch (section) {
+        case 0:
+            return @"Current premium features include:\n– Removing all ads.\n\nMany more features are planned!";
+        default:
             return @"";
-        }
     }
-    return @"";
 }
 
 #pragma mark RMStoreObserver
 
 - (void)storeProductsRequestFinished:(NSNotification*)notification
 {
+    _productsLoaded = YES;
     [self.tableView reloadData];
 }
 
 - (void)storePaymentTransactionFinished:(NSNotification*)notification
 {
-    _productIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
+    _purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
     [self.tableView reloadData];
 }
 
 - (void)storeRestoreTransactionsFinished:(NSNotification *)notification
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Finished restoring purchases" message:@"Thank you!" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self showNotificationAlert:@"Purchases Restored!" message:@"Thank you!" style:UIAlertControllerStyleAlert viewController:self];
+}
+
+#pragma mark Private Methods
+
+- (NSURL *)getFileUrl:(NSString *)fileName fileType:(NSString *)fileType
+{
+    return [[NSBundle mainBundle] URLForResource:fileName withExtension:fileType];
+}
+
+- (void)showNotificationAlert:(NSString *)title message:(NSString *)message style:(UIAlertControllerStyle)style viewController:(UIViewController *)view
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:style];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
     }];
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    [alert addAction:ok];
+    [view presentViewController:alert animated:YES completion:nil];
 }
 
 @end

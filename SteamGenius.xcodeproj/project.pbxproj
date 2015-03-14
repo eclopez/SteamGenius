@@ -19,7 +19,8 @@
 		0325714219C49AD900634776 /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325714119C49AD900634776 /* Model.plist */; };
 		0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715519C7DB1F00634776 /* SGSettingsForm.m */; };
 		0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715819C7DE1000634776 /* SGSettingsFormViewController.m */; };
-		0344A7A71A8EA41A00F92946 /* SGPremium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0344A7A61A8EA41A00F92946 /* SGPremium.plist */; };
+		032812921AB38B0C00F23BF9 /* SGReceiptVerificator.m in Sources */ = {isa = PBXBuildFile; fileRef = 032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */; };
+		0344A7A71A8EA41A00F92946 /* SGProducts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0344A7A61A8EA41A00F92946 /* SGProducts.plist */; };
 		0349E2AB19C17F510091FF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AA19C17F510091FF21 /* main.m */; };
 		0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AD19C17F510091FF21 /* AppDelegate.m */; };
 		0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0349E2B819C17F510091FF21 /* Main.storyboard */; };
@@ -68,7 +69,6 @@
 		03C5F6CF1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */; };
 		03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3010E1A36A79B0053882A /* iAd.framework */; };
 		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
-		03E3C6E81A78B26F009CCCD5 /* SGPremiumFeatures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03E3C6E71A78B26F009CCCD5 /* SGPremiumFeatures.plist */; };
 		03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */; };
 		03E3C6F21A79EB0B009CCCD5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
@@ -104,7 +104,9 @@
 		0325715519C7DB1F00634776 /* SGSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsForm.m; sourceTree = "<group>"; };
 		0325715719C7DE1000634776 /* SGSettingsFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSettingsFormViewController.h; sourceTree = "<group>"; };
 		0325715819C7DE1000634776 /* SGSettingsFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsFormViewController.m; sourceTree = "<group>"; };
-		0344A7A61A8EA41A00F92946 /* SGPremium.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGPremium.plist; sourceTree = "<group>"; };
+		032812901AB38B0C00F23BF9 /* SGReceiptVerificator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGReceiptVerificator.h; sourceTree = "<group>"; };
+		032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGReceiptVerificator.m; sourceTree = "<group>"; };
+		0344A7A61A8EA41A00F92946 /* SGProducts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGProducts.plist; sourceTree = "<group>"; };
 		0349E2A519C17F510091FF21 /* SteamGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteamGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0349E2A919C17F510091FF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0349E2AA19C17F510091FF21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -198,7 +200,6 @@
 		03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionsOptionTableViewController.m; sourceTree = "<group>"; };
 		03D30CE81A5D22D000C62504 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		03D30CE91A5D22D000C62504 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
-		03E3C6E71A78B26F009CCCD5 /* SGPremiumFeatures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGPremiumFeatures.plist; sourceTree = "<group>"; };
 		03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGProductsTableViewController.h; sourceTree = "<group>"; };
 		03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGProductsTableViewController.m; sourceTree = "<group>"; };
 		03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -355,6 +356,7 @@
 			children = (
 				0349E2AC19C17F510091FF21 /* AppDelegate.h */,
 				0349E2AD19C17F510091FF21 /* AppDelegate.m */,
+				0355CAEF1AA18D950068EF83 /* Classes */,
 				0349E2D419C180340091FF21 /* Views */,
 				0325713919C491C300634776 /* Models */,
 				0349E2B819C17F510091FF21 /* Main.storyboard */,
@@ -372,8 +374,7 @@
 				0349E2A919C17F510091FF21 /* Info.plist */,
 				0349E2E619C2C3520091FF21 /* SGTheme.plist */,
 				0349E2AA19C17F510091FF21 /* main.m */,
-				0344A7A61A8EA41A00F92946 /* SGPremium.plist */,
-				03E3C6E71A78B26F009CCCD5 /* SGPremiumFeatures.plist */,
+				0344A7A61A8EA41A00F92946 /* SGProducts.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -437,6 +438,15 @@
 				036BE9B719F766F30096BDE4 /* Options */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0355CAEF1AA18D950068EF83 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				032812901AB38B0C00F23BF9 /* SGReceiptVerificator.h */,
+				032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		0369594319D4D1710096CEBC /* Common */ = {
@@ -764,6 +774,7 @@
 			buildConfigurationList = 0349E2CE19C17F510091FF21 /* Build configuration list for PBXNativeTarget "SteamGenius" */;
 			buildPhases = (
 				0A64E7D50FAE4B958F306ABD /* Check Pods Manifest.lock */,
+				0355CAF01AA18E9D0068EF83 /* Generate Receipt Validation Code for In-App Purchases */,
 				0349E2A119C17F510091FF21 /* Sources */,
 				0349E2A219C17F510091FF21 /* Frameworks */,
 				0349E2A319C17F510091FF21 /* Resources */,
@@ -844,8 +855,7 @@
 				0325713C19C492BA00634776 /* Game.plist in Resources */,
 				0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */,
 				0349E2BF19C17F510091FF21 /* LaunchScreen.xib in Resources */,
-				0344A7A71A8EA41A00F92946 /* SGPremium.plist in Resources */,
-				03E3C6E81A78B26F009CCCD5 /* SGPremiumFeatures.plist in Resources */,
+				0344A7A71A8EA41A00F92946 /* SGProducts.plist in Resources */,
 				0349E2BC19C17F510091FF21 /* Images.xcassets in Resources */,
 				0325714219C49AD900634776 /* Model.plist in Resources */,
 				03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */,
@@ -863,6 +873,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0355CAF01AA18E9D0068EF83 /* Generate Receipt Validation Code for In-App Purchases */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Receipt Validation Code for In-App Purchases";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/iapreceipt.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Receigen binary\nRECEIGEN=\"/Applications/Receigen.app/Contents/MacOS/Receigen\"\n\n# Configure receipt.h settings\nCODE_PREFIX=`eval \"echo SGBase\"`\nSUCCESS_BEHAVIOR=`eval \"echo checkinapp\"`\nFAILURE_BEHAVIOR=`eval \"echo refreshreceipt\"`\n\n# Extract Info.plist information\nINPUT=\"$INFOPLIST_FILE\"\n# BUNDLE_ID=`/usr/libexec/PlistBuddy -c \"Print CFBundleIdentifier\" \"$INPUT\"`\n# Had to hard code the Bundle Id as the variable in the Info.plist was being ignored\nBUNDLE_ID=`eval \"echo com.eriklopez.SteamGenius\"`\n# On iOS, use CFBundleVersion\nBUNDLE_VERSION=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INPUT\"`\n\n# Expand information if needed\nEXPANDED_BUNDLE_ID=`eval \"echo $BUNDLE_ID\"`\nEXPANDED_BUNDLE_VERSION=`eval \"echo $BUNDLE_VERSION\"`\n\n# Make sure the destination directory exists\nmkdir -p \"$DERIVED_FILES_DIR\"\nHEADER=\"$DERIVED_FILES_DIR/receipt.h\"\n\n# Check if the generation is needed\nif [ -e \"$HEADER\" ]; then\n# On iOS, check CFBundleIdentifier and CFBundleVersion\nSKIP=`egrep -q \"CFBundleIdentifier.+:.+$EXPANDED_BUNDLE_ID\" \"$HEADER\" && egrep -q \"CFBundleVersion.+:.+$EXPANDED_BUNDLE_VERSION\" \"$HEADER\" && echo \"YES\"`\nfi\n\n# Generate the header file if needed\nif [ \"x$SKIP\" = \"x\" ]; then\n# On iOS, call Receigen with options\n\"$RECEIGEN\" --identifier \"$EXPANDED_BUNDLE_ID\" --version \"$EXPANDED_BUNDLE_VERSION\" --prefix \"$CODE_PREFIX\" --success \"$SUCCESS_BEHAVIOR\" --failure \"$FAILURE_BEHAVIOR\" --os ios > \"$HEADER\"\nfi";
+		};
 		0A64E7D50FAE4B958F306ABD /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -929,6 +954,7 @@
 				03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */,
 				0349E2AB19C17F510091FF21 /* main.m in Sources */,
 				038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */,
+				032812921AB38B0C00F23BF9 /* SGReceiptVerificator.m in Sources */,
 				0351036619DE54C50032E215 /* SGBattleListViewController.m in Sources */,
 				038DAACD19CCFC3400A224F7 /* Model.m in Sources */,
 				03C5D29E1A41BC4B00788E0C /* Faction.m in Sources */,
@@ -1074,11 +1100,13 @@
 			baseConfigurationReference = 6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Erik Lopez (C858QMJPF2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SteamGenius/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1087,11 +1115,13 @@
 			baseConfigurationReference = 819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Erik Lopez (63Z8F2HA98)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SteamGenius/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
