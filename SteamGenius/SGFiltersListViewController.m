@@ -9,6 +9,7 @@
 #import "SGFiltersListViewController.h"
 #import "BattleFilter.h"
 #import "SGEmptyView.h"
+#import "SGRepository.h"
 
 #define kEmptyTableMessage @"No filters found."
 
@@ -54,13 +55,25 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     BattleFilter *battleFilter = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = battleFilter.displayText;
     cell.textLabel.numberOfLines = 0;
+    
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    if ([battleFilter.isActive boolValue]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BattleFilter *battleFilter = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([battleFilter.isActive boolValue]) {
+        [SGRepository updateBattleFilter:battleFilter isActive:NO];
+    } else {
+        [SGRepository updateBattleFilter:battleFilter isActive:YES];
+    }
+    [self.tableView reloadRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationFade];
+    [self.appDelegate saveContext];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

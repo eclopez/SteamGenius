@@ -1,9 +1,9 @@
 //
 //  BattleFilter.h
-//  Pods
+//  SteamGenius
 //
-//  Created by Erik Lopez on 10/20/14.
-//
+//  Created by Erik Lopez on 3/14/15.
+//  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,7 +12,8 @@
 
 @interface BattleFilter : NSManagedObject
 
-@property (nonatomic, retain) NSString * displayText;
 @property (nonatomic, retain) id predicate;
+@property (nonatomic, retain) NSString * displayText;
+@property (nonatomic, retain) NSNumber * isActive;
 
 @end

@@ -158,6 +158,12 @@
                     }
                     break;
                 case 3:
+                    cell.textLabel.text = self.battle.opponentControlPoints ? [NSString stringWithFormat:@"%@ opponent control points", [self.battle.opponentControlPoints stringValue]] : @"No opponent control points entered";
+                    if (!self.battle.opponentControlPoints) {
+                        isEmptyData = YES;
+                    }
+                    break;
+                case 4:
                     cell.textLabel.text = self.battle.event ? self.battle.event.name : @"No event selected";
                     if (!self.battle.event) {
                         isEmptyData = YES;

@@ -73,6 +73,7 @@
                             killPoints:form.killPoints
                               scenario:form.scenario
                          controlPoints:form.controlPoints
+                 opponentControlPoints:form.opponentControlPoints
                                  event:form.event
                                  notes:form.notes];
         } else {
@@ -85,6 +86,7 @@
                                     killPoints:form.killPoints
                                       scenario:form.scenario
                                  controlPoints:form.controlPoints
+                         opponentControlPoints:form.opponentControlPoints
                                          event:form.event
                                          notes:form.notes
                                        context:appDelegate.managedObjectContext];
