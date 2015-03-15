@@ -75,6 +75,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     if (self != nil) {
         _isPremiumPurchased = NO;
         [self checkPurchases];
+        [[RMStore defaultStore] addStoreObserver:self];
         
         // On iOS 6 ADBannerView introduces a new initializer, use it when available.
         if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)]) {
@@ -195,6 +196,11 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionDidFinish object:self];
+}
+
+- (void)dealloc
+{
+    [[RMStore defaultStore] removeStoreObserver:self];
 }
 
 #pragma mark - RMStoreObserver Methods
