@@ -162,7 +162,7 @@
     for (id sortKey in sortKeys) {
         [sortDescriptors addObject:[[NSSortDescriptor alloc] initWithKey:sortKey ascending:[[sortKeys objectForKey:sortKey] boolValue]]];
     }
-    return [[SGGenericRepository findAllEntitiesOfType:entityName context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
+    return [[SGGenericRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 @end

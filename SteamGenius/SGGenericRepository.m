@@ -10,16 +10,6 @@
 
 @implementation SGGenericRepository
 
-+ (NSArray *)findAllEntitiesOfType:(NSString *)entityName context:(NSManagedObjectContext *)context
-{
-    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:entity];
-    
-    NSArray *entities = [context executeFetchRequest:fetchRequest error:nil];
-    return entities != nil ? entities : nil;
-}
-
 + (NSArray *)findAllEntitiesOfType:(NSString *)entityName predicate:(NSPredicate *)predicate context:(NSManagedObjectContext *)context
 {
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];

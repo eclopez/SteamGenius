@@ -876,7 +876,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		0355CAF01AA18E9D0068EF83 /* Generate Receipt Validation Code for In-App Purchases */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (

@@ -219,22 +219,22 @@
 		<key>textColor</key>
 		<dict>
 			<key>red</key>
-			<integer>255</integer>
+			<integer>213</integer>
 			<key>green</key>
-			<integer>255</integer>
+			<integer>226</integer>
 			<key>blue</key>
-			<integer>255</integer>
+			<integer>226</integer>
 			<key>alpha</key>
 			<integer>1</integer>
 		</dict>
 		<key>tintColor</key>
 		<dict>
 			<key>red</key>
-			<integer>237</integer>
+			<integer>213</integer>
 			<key>green</key>
-			<integer>246</integer>
+			<integer>226</integer>
 			<key>blue</key>
-			<integer>246</integer>
+			<integer>226</integer>
 			<key>alpha</key>
 			<integer>1</integer>
 		</dict>
@@ -269,22 +269,22 @@
 		<key>textColor</key>
 		<dict>
 			<key>red</key>
-			<integer>255</integer>
+			<integer>201</integer>
 			<key>green</key>
-			<integer>255</integer>
+			<integer>206</integer>
 			<key>blue</key>
-			<integer>255</integer>
+			<integer>200</integer>
 			<key>alpha</key>
 			<integer>1</integer>
 		</dict>
 		<key>tintColor</key>
 		<dict>
 			<key>red</key>
-			<integer>255</integer>
+			<integer>201</integer>
 			<key>green</key>
-			<integer>255</integer>
+			<integer>206</integer>
 			<key>blue</key>
-			<integer>255</integer>
+			<integer>200</integer>
 			<key>alpha</key>
 			<integer>1</integer>
 		</dict>
