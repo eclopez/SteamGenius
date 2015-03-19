@@ -357,7 +357,7 @@
     NSUInteger numberOfDraws = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:draws] count];
     NSUInteger numberOfLosses = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:losses] count];
     NSUInteger numberOfTotal = [self.fetchedResultsController.fetchedObjects count];
-    NSUInteger totalBattles = [[SGGenericRepository findAllEntitiesOfType:@"Battle" context:[self.appDelegate managedObjectContext]] count];
+    NSUInteger totalBattles = [[SGGenericRepository findAllEntitiesOfType:@"Battle" predicate:nil context:[self.appDelegate managedObjectContext]] count];
     
     self.winTotal.text = [@(numberOfWins) stringValue];
     self.drawTotal.text = [@(numberOfDraws) stringValue];
