@@ -362,7 +362,7 @@
 - (NSManagedObjectContext *)managedObjectContextForTests {
     static NSManagedObjectModel *model = nil;
     if (!model) {
-        model = [NSManagedObjectModel mergedModelFromBundles:[NSBundle allBundles]];
+        model = [NSManagedObjectModel mergedModelFromBundles:nil];
     }
     
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
