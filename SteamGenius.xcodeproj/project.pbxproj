@@ -30,7 +30,6 @@
 		0318D37F1ABFD4D700E9C8A5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D37D1ABFD4D700E9C8A5 /* Event.m */; };
 		0318D3821ABFD4D700E9C8A5 /* Scenario.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3801ABFD4D700E9C8A5 /* Scenario.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0318D3831ABFD4D700E9C8A5 /* Scenario.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3811ABFD4D700E9C8A5 /* Scenario.m */; };
-		0318D3861ABFD4D700E9C8A5 /* Faction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3841ABFD4D700E9C8A5 /* Faction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0318D3871ABFD4D700E9C8A5 /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3851ABFD4D700E9C8A5 /* Faction.m */; };
 		0318D38A1ABFD4D700E9C8A5 /* Battle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3881ABFD4D700E9C8A5 /* Battle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0318D38B1ABFD4D700E9C8A5 /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3891ABFD4D700E9C8A5 /* Battle.m */; };
@@ -42,6 +41,12 @@
 		0318D3971ABFD4D800E9C8A5 /* DataVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3951ABFD4D800E9C8A5 /* DataVersion.m */; };
 		0318D39A1ABFD4D800E9C8A5 /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3981ABFD4D800E9C8A5 /* Game.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0318D39B1ABFD4D800E9C8A5 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3991ABFD4D800E9C8A5 /* Game.m */; };
+		0318D39D1AC0444500E9C8A5 /* Faction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3841ABFD4D700E9C8A5 /* Faction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0318D3A41AC04CFC00E9C8A5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0318D3A31AC04CFC00E9C8A5 /* NotificationCenter.framework */; };
+		0318D3AA1AC04CFC00E9C8A5 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3A91AC04CFC00E9C8A5 /* TodayViewController.m */; };
+		0318D3AC1AC04CFC00E9C8A5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0318D3AB1AC04CFC00E9C8A5 /* MainInterface.storyboard */; };
+		0318D3AF1AC04CFC00E9C8A5 /* SteamGeniusRecord.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0318D3A21AC04CFC00E9C8A5 /* SteamGeniusRecord.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0318D3B51AC04F9000E9C8A5 /* SteamGeniusKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0318D2D51ABF0D3C00E9C8A5 /* SteamGeniusKit.framework */; };
 		031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */; };
 		031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */; };
 		0325712F19C376E900634776 /* SGDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325712E19C376E900634776 /* SGDismissSegue.m */; };
@@ -115,6 +120,13 @@
 			remoteGlobalIDString = 0318D2D41ABF0D3C00E9C8A5;
 			remoteInfo = SteamGeniusKit;
 		};
+		0318D3AD1AC04CFC00E9C8A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0349E29D19C17F510091FF21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0318D3A11AC04CFC00E9C8A5;
+			remoteInfo = SteamGeniusRecord;
+		};
 		0349E2C519C17F510091FF21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0349E29D19C17F510091FF21 /* Project object */;
@@ -134,6 +146,17 @@
 				0318D2ED1ABF0D3C00E9C8A5 /* SteamGeniusKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0318D3B31AC04CFC00E9C8A5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0318D3AF1AC04CFC00E9C8A5 /* SteamGeniusRecord.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -176,6 +199,14 @@
 		0318D3951ABFD4D800E9C8A5 /* DataVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVersion.m; sourceTree = "<group>"; };
 		0318D3981ABFD4D800E9C8A5 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0318D3991ABFD4D800E9C8A5 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		0318D39C1ABFDEC500E9C8A5 /* SteamGenius.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SteamGenius.entitlements; sourceTree = "<group>"; };
+		0318D3A21AC04CFC00E9C8A5 /* SteamGeniusRecord.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SteamGeniusRecord.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0318D3A31AC04CFC00E9C8A5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		0318D3A71AC04CFC00E9C8A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0318D3A81AC04CFC00E9C8A5 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		0318D3A91AC04CFC00E9C8A5 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		0318D3AB1AC04CFC00E9C8A5 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		0318D3B41AC04D0C00E9C8A5 /* SteamGeniusRecord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SteamGeniusRecord.entitlements; sourceTree = "<group>"; };
 		031D6AB519CEA5D0000B7D26 /* SGResizableImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGResizableImageViewCell.h; sourceTree = "<group>"; };
 		031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGResizableImageViewCell.m; sourceTree = "<group>"; };
 		031D6ACC19CF6A39000B7D26 /* SGCasterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCasterOptionsTableViewController.h; sourceTree = "<group>"; };
@@ -286,6 +317,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0318D39F1AC04CFC00E9C8A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0318D3B51AC04F9000E9C8A5 /* SteamGeniusKit.framework in Frameworks */,
+				0318D3A41AC04CFC00E9C8A5 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0349E2A219C17F510091FF21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,10 +409,10 @@
 		0318D2FA1ABF253500E9C8A5 /* Data Store */ = {
 			isa = PBXGroup;
 			children = (
-				0318D36A1ABF2B6900E9C8A5 /* Repository */,
+				0325713619C491B300634776 /* SteamGenius.xcdatamodeld */,
 				0318D2F51ABF0D8700E9C8A5 /* SGCoreDataObjects.h */,
 				0318D2F61ABF0D8700E9C8A5 /* SGCoreDataObjects.m */,
-				0325713619C491B300634776 /* SteamGenius.xcdatamodeld */,
+				0318D36A1ABF2B6900E9C8A5 /* Repository */,
 				038DAAC419CCFBBD00A224F7 /* Entity Classes */,
 			);
 			name = "Data Store";
@@ -393,6 +433,26 @@
 				0318D2FA1ABF253500E9C8A5 /* Data Store */,
 			);
 			name = "Service API";
+			sourceTree = "<group>";
+		};
+		0318D3A51AC04CFC00E9C8A5 /* SteamGeniusRecord */ = {
+			isa = PBXGroup;
+			children = (
+				0318D3B41AC04D0C00E9C8A5 /* SteamGeniusRecord.entitlements */,
+				0318D3A81AC04CFC00E9C8A5 /* TodayViewController.h */,
+				0318D3A91AC04CFC00E9C8A5 /* TodayViewController.m */,
+				0318D3AB1AC04CFC00E9C8A5 /* MainInterface.storyboard */,
+				0318D3A61AC04CFC00E9C8A5 /* Supporting Files */,
+			);
+			path = SteamGeniusRecord;
+			sourceTree = "<group>";
+		};
+		0318D3A61AC04CFC00E9C8A5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0318D3A71AC04CFC00E9C8A5 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		031D6AB419CEA5A6000B7D26 /* Common */ = {
@@ -478,6 +538,7 @@
 				0349E2C719C17F510091FF21 /* SteamGeniusTests */,
 				0318D2D61ABF0D3C00E9C8A5 /* SteamGeniusKit */,
 				0318D2E51ABF0D3C00E9C8A5 /* SteamGeniusKitTests */,
+				0318D3A51AC04CFC00E9C8A5 /* SteamGeniusRecord */,
 				0349E2A619C17F510091FF21 /* Products */,
 				47148A91232B4766B1D74C11 /* Frameworks */,
 				DEE0111638292806E8FB355C /* Pods */,
@@ -491,6 +552,7 @@
 				0349E2C419C17F510091FF21 /* SteamGeniusTests.xctest */,
 				0318D2D51ABF0D3C00E9C8A5 /* SteamGeniusKit.framework */,
 				0318D2DF1ABF0D3C00E9C8A5 /* SteamGeniusKitTests.xctest */,
+				0318D3A21AC04CFC00E9C8A5 /* SteamGeniusRecord.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -498,6 +560,7 @@
 		0349E2A719C17F510091FF21 /* SteamGenius */ = {
 			isa = PBXGroup;
 			children = (
+				0318D39C1ABFDEC500E9C8A5 /* SteamGenius.entitlements */,
 				0349E2AC19C17F510091FF21 /* AppDelegate.h */,
 				0349E2AD19C17F510091FF21 /* AppDelegate.m */,
 				0355CAEF1AA18D950068EF83 /* Classes */,
@@ -887,6 +950,7 @@
 				0351036219DE4EC70032E215 /* QuartzCore.framework */,
 				038DAAE719CCFEF400A224F7 /* CoreData.framework */,
 				A616B079BAEC402E93CA0CE3 /* libPods.a */,
+				0318D3A31AC04CFC00E9C8A5 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -911,12 +975,12 @@
 				0318D3961ABFD4D800E9C8A5 /* DataVersion.h in Headers */,
 				0318D39A1ABFD4D800E9C8A5 /* Game.h in Headers */,
 				0318D2DA1ABF0D3C00E9C8A5 /* SteamGeniusKit.h in Headers */,
-				0318D3861ABFD4D700E9C8A5 /* Faction.h in Headers */,
 				0318D2F71ABF0D8700E9C8A5 /* SGCoreDataObjects.h in Headers */,
 				0318D37A1ABFD4D700E9C8A5 /* BattleFilter.h in Headers */,
 				0318D38A1ABFD4D700E9C8A5 /* Battle.h in Headers */,
 				0318D3761ABFD4D700E9C8A5 /* Result.h in Headers */,
 				0318D3821ABFD4D700E9C8A5 /* Scenario.h in Headers */,
+				0318D39D1AC0444500E9C8A5 /* Faction.h in Headers */,
 				0318D38E1ABFD4D700E9C8A5 /* Opponent.h in Headers */,
 				0318D3721ABFD4D600E9C8A5 /* Model.h in Headers */,
 				0318D37E1ABFD4D700E9C8A5 /* Event.h in Headers */,
@@ -964,6 +1028,23 @@
 			productReference = 0318D2DF1ABF0D3C00E9C8A5 /* SteamGeniusKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		0318D3A11AC04CFC00E9C8A5 /* SteamGeniusRecord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0318D3B01AC04CFC00E9C8A5 /* Build configuration list for PBXNativeTarget "SteamGeniusRecord" */;
+			buildPhases = (
+				0318D39E1AC04CFC00E9C8A5 /* Sources */,
+				0318D39F1AC04CFC00E9C8A5 /* Frameworks */,
+				0318D3A01AC04CFC00E9C8A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SteamGeniusRecord;
+			productName = SteamGeniusRecord;
+			productReference = 0318D3A21AC04CFC00E9C8A5 /* SteamGeniusRecord.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0349E2A419C17F510091FF21 /* SteamGenius */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0349E2CE19C17F510091FF21 /* Build configuration list for PBXNativeTarget "SteamGenius" */;
@@ -975,11 +1056,13 @@
 				0349E2A319C17F510091FF21 /* Resources */,
 				ACD79D0B47414A8AB021F94D /* Copy Pods Resources */,
 				0318D2F31ABF0D3C00E9C8A5 /* Embed Frameworks */,
+				0318D3B31AC04CFC00E9C8A5 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				0318D2EB1ABF0D3C00E9C8A5 /* PBXTargetDependency */,
+				0318D3AE1AC04CFC00E9C8A5 /* PBXTargetDependency */,
 			);
 			name = SteamGenius;
 			productName = SteamGenius;
@@ -1021,9 +1104,23 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 0349E2A419C17F510091FF21;
 					};
+					0318D3A11AC04CFC00E9C8A5 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 63Z8F2HA98;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					0349E2A419C17F510091FF21 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 63Z8F2HA98;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0349E2C319C17F510091FF21 = {
 						CreatedOnToolsVersion = 6.0;
@@ -1048,6 +1145,7 @@
 				0349E2C319C17F510091FF21 /* SteamGeniusTests */,
 				0318D2D41ABF0D3C00E9C8A5 /* SteamGeniusKit */,
 				0318D2DE1ABF0D3C00E9C8A5 /* SteamGeniusKitTests */,
+				0318D3A11AC04CFC00E9C8A5 /* SteamGeniusRecord */,
 			);
 		};
 /* End PBXProject section */
@@ -1064,6 +1162,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0318D3A01AC04CFC00E9C8A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0318D3AC1AC04CFC00E9C8A5 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1172,6 +1278,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0318D39E1AC04CFC00E9C8A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0318D3AA1AC04CFC00E9C8A5 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0349E2A119C17F510091FF21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1239,6 +1353,11 @@
 			isa = PBXTargetDependency;
 			target = 0318D2D41ABF0D3C00E9C8A5 /* SteamGeniusKit */;
 			targetProxy = 0318D2EA1ABF0D3C00E9C8A5 /* PBXContainerItemProxy */;
+		};
+		0318D3AE1AC04CFC00E9C8A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0318D3A11AC04CFC00E9C8A5 /* SteamGeniusRecord */;
+			targetProxy = 0318D3AD1AC04CFC00E9C8A5 /* PBXContainerItemProxy */;
 		};
 		0349E2C619C17F510091FF21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1349,6 +1468,41 @@
 			};
 			name = Release;
 		};
+		0318D3B11AC04CFC00E9C8A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SteamGeniusRecord/SteamGeniusRecord.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SteamGeniusRecord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0318D3B21AC04CFC00E9C8A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SteamGeniusRecord/SteamGeniusRecord.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = SteamGeniusRecord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		0349E2CC19C17F510091FF21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1434,6 +1588,7 @@
 			baseConfigurationReference = 6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SteamGenius/SteamGenius.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SteamGenius/Info.plist;
@@ -1449,6 +1604,7 @@
 			baseConfigurationReference = 819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SteamGenius/SteamGenius.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SteamGenius/Info.plist;
@@ -1509,6 +1665,14 @@
 			buildConfigurations = (
 				0318D2F01ABF0D3C00E9C8A5 /* Debug */,
 				0318D2F11ABF0D3C00E9C8A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0318D3B01AC04CFC00E9C8A5 /* Build configuration list for PBXNativeTarget "SteamGeniusRecord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0318D3B11AC04CFC00E9C8A5 /* Debug */,
+				0318D3B21AC04CFC00E9C8A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

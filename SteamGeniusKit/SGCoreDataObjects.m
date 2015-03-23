@@ -10,6 +10,7 @@
 
 #define kModelFileName @"SteamGenius"
 #define kSQLStoreFileName @"SteamGenius.sqlite"
+#define kAppGroupIdentifier @"group.com.eriklopez.SteamGenius"
 
 @implementation SGCoreDataObjects
 
@@ -37,6 +38,50 @@
         #warning Handle this error.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
+    }
+    return coordinator;
+}
+
++ (NSPersistentStoreCoordinator *)getMigratedPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model applicationDocumentsDirectoryURL:(NSURL *)applicationDocumentsDirectory {
+    NSFileManager *manager = [NSFileManager defaultManager];
+    
+    NSURL *oldStoreURL = [applicationDocumentsDirectory URLByAppendingPathComponent:kSQLStoreFileName];
+    NSURL *currentStoreURL = [[manager containerURLForSecurityApplicationGroupIdentifier:kAppGroupIdentifier] URLByAppendingPathComponent:kSQLStoreFileName];
+    
+    BOOL oldStoreExists = [manager fileExistsAtPath:oldStoreURL.path];
+    BOOL currentStoreExists = [manager fileExistsAtPath:currentStoreURL.path];
+    
+    NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
+    NSDictionary *options = @{ NSMigratePersistentStoresAutomaticallyOption : @YES, NSInferMappingModelAutomaticallyOption: @YES };
+    NSError *error = nil;
+    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
+    
+    if (currentStoreExists || (!oldStoreExists && !currentStoreExists)) {
+        if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:currentStoreURL options:options error:&error]) {
+            NSDictionary *d = @{ NSLocalizedDescriptionKey : @"Failed to intialize the application's saved data.",
+                                 NSLocalizedFailureReasonErrorKey : failureReason,
+                                 NSUnderlyingErrorKey : error };
+            error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:d];
+            // Replace this with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate.
+            // You should not use this function in a shipping application, although it may be useful during development.
+            #warning Handle this error.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    } else {
+        // MIGRATE!!
+        [coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:oldStoreURL options:options error:&error];
+        NSPersistentStore *sourceStore = [coordinator persistentStoreForURL:oldStoreURL];
+        if (sourceStore != nil) {
+            // Perform the migration
+            NSPersistentStore *destinationStore = [coordinator migratePersistentStore:sourceStore toURL:currentStoreURL options:options withType:NSSQLiteStoreType error:&error];
+            if (destinationStore != nil) {
+                // Remove old data
+            } else {
+                // Handle error
+            }
+        }
     }
     return coordinator;
 }
