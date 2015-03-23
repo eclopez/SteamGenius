@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+@import Foundation;
+@import UIKit;
 
 @interface SGSettingsManager : NSObject
 

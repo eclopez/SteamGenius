@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import SteamGeniusKit;
 #import "FXForms.h"
 
 @interface SGFiltersForm : NSObject <FXForm>

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
+@import SteamGeniusKit;
 #import "FXForms.h"
-#import "Opponent.h"
 
 @interface SGOpponentFormViewController : FXFormViewController <FXFormFieldViewController>
 

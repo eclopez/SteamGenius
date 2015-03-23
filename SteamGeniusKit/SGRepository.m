@@ -2,16 +2,41 @@
 //  SGRepository.m
 //  SteamGenius
 //
-//  Created by Erik Lopez on 9/19/14.
-//  Copyright (c) 2014 Erik Lopez. All rights reserved.
+//  Created by Erik Lopez on 3/22/15.
+//  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
 #import "SGRepository.h"
-#import "SGGenericRepository.h"
 
 @implementation SGRepository
 
-#pragma mark -
+#pragma mark - Generic Methods
+
++ (NSArray *)findAllEntitiesOfType:(NSString *)entityName predicate:(NSPredicate *)predicate context:(NSManagedObjectContext *)context
+{
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    if (predicate) {
+        [fetchRequest setPredicate:predicate];
+    }
+    
+    NSArray *entities = [context executeFetchRequest:fetchRequest error:nil];
+    return entities != nil ? entities : nil;
+}
+
++ (id)findOneEntityOfType:(NSString *)entityName entityKey:(id)entityKey keyField:(NSString *)keyField context:(NSManagedObjectContext *)context
+{
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", keyField, entityKey];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:predicate];
+    
+    NSArray *entities = [context executeFetchRequest:fetchRequest error:nil];
+    return entities != nil ? [entities firstObject] : nil;
+}
+
 #pragma mark - Create Methods
 
 + (DataVersion *)initWithEntityNamed:(NSString *)entityName version:(NSNumber *)version context:(NSManagedObjectContext *)context
@@ -32,7 +57,7 @@
 
 + (Faction *)initWithFactioNamed:(NSString *)factionName shortName:(NSString *)shortName color:(NSDictionary *)color imageNamed:(NSString *)imageName releaseOrder:(NSNumber *)releaseOrder gameNamed:(NSString *)gameName context:(NSManagedObjectContext *)context
 {
-    Game *fGame = [SGGenericRepository findOneEntityOfType:@"Game" entityKey:gameName keyField:@"name" context:context];
+    Game *fGame = [self findOneEntityOfType:@"Game" entityKey:gameName keyField:@"name" context:context];
     Faction *f = [NSEntityDescription insertNewObjectForEntityForName:@"Faction" inManagedObjectContext:context];
     [f setValue:factionName forKey:@"name"];
     [f setValue:shortName forKey:@"shortName"];
@@ -60,8 +85,8 @@
 
 + (Caster *)initWithModelNamed:(NSString *)modelName factionName:(NSString *)factionName context:(NSManagedObjectContext *)context
 {
-    Model *m = [SGGenericRepository findOneEntityOfType:@"Model" entityKey:modelName keyField:@"name" context:context];
-    Faction *f = [SGGenericRepository findOneEntityOfType:@"Faction" entityKey:factionName keyField:@"name" context:context];
+    Model *m = [self findOneEntityOfType:@"Model" entityKey:modelName keyField:@"name" context:context];
+    Faction *f = [self findOneEntityOfType:@"Faction" entityKey:factionName keyField:@"name" context:context];
     Caster *c = [NSEntityDescription insertNewObjectForEntityForName:@"Caster" inManagedObjectContext:context];
     [c setValue:m forKey:@"model"];
     [c setValue:f forKey:@"faction"];

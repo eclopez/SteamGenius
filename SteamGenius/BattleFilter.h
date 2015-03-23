@@ -2,7 +2,7 @@
 //  BattleFilter.h
 //  SteamGenius
 //
-//  Created by Erik Lopez on 3/14/15.
+//  Created by Erik Lopez on 3/22/15.
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
@@ -12,8 +12,8 @@
 
 @interface BattleFilter : NSManagedObject
 
-@property (nonatomic, retain) id predicate;
 @property (nonatomic, retain) NSString * displayText;
 @property (nonatomic, retain) NSNumber * isActive;
+@property (nonatomic, retain) id predicate;
 
 @end

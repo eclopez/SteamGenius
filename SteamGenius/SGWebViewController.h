@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
-#import <WebKit/WebKit.h>
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import WebKit;
 #import "FXForms.h"
 
 @interface SGWebViewController : UIViewController <FXFormFieldViewController>

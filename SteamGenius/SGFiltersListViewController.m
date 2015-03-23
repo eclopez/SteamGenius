@@ -7,7 +7,6 @@
 //
 
 #import "SGFiltersListViewController.h"
-#import "BattleFilter.h"
 #import "SGEmptyView.h"
 #import "SGRepository.h"
 
