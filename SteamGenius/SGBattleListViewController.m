@@ -318,6 +318,7 @@
     NSSet *battleDeleted = [deletedObjects filteredSetUsingPredicate:battleSearch];
     
     if ([battleAdded count] > 0 || [battleUpdated count] > 0 || [battleDeleted count] > 0) {
+        [self refetch];
         [self updateRecord];
     }
     
