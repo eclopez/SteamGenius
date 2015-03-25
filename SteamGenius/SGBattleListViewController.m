@@ -196,7 +196,6 @@
     [fetchRequest setSortDescriptors:@[sortDate, sortPoints]];
     
     //STORED FILTERS
-    //NSArray *storedFilters = [SGGenericRepository findAllEntitiesOfType:@"BattleFilter" context:[self.appDelegate managedObjectContext]];
     NSPredicate *activeFilterPredicate = [NSPredicate predicateWithFormat:@"isActive = %@", [NSNumber numberWithBool:YES]];
     NSArray *storedFilters = [SGRepository findAllEntitiesOfType:@"BattleFilter" predicate:activeFilterPredicate context:[self.appDelegate managedObjectContext]];
     if ([storedFilters count] > 0) {

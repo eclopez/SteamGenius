@@ -21,7 +21,7 @@
     return [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
 }
 
-+ (NSPersistentStoreCoordinator *)getPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model applicationDocumentsDirectoryURL:(NSURL *)applicationDocumentsDirectory {
+/*+ (NSPersistentStoreCoordinator *)getPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model applicationDocumentsDirectoryURL:(NSURL *)applicationDocumentsDirectory {
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
     NSDictionary *options = @{ NSMigratePersistentStoresAutomaticallyOption : @YES, NSInferMappingModelAutomaticallyOption: @YES };
     NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:kSQLStoreFileName];
@@ -40,9 +40,9 @@
         abort();
     }
     return coordinator;
-}
+}*/
 
-+ (NSPersistentStoreCoordinator *)getMigratedPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model applicationDocumentsDirectoryURL:(NSURL *)applicationDocumentsDirectory {
++ (NSPersistentStoreCoordinator *)getPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model applicationDocumentsDirectoryURL:(NSURL *)applicationDocumentsDirectory {
     NSFileManager *manager = [NSFileManager defaultManager];
     
     NSURL *oldStoreURL = [applicationDocumentsDirectory URLByAppendingPathComponent:kSQLStoreFileName];
@@ -74,15 +74,41 @@
         [coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:oldStoreURL options:options error:&error];
         NSPersistentStore *sourceStore = [coordinator persistentStoreForURL:oldStoreURL];
         if (sourceStore != nil) {
-            // Perform the migration
+            NSLog(@"Source Store before migration: %hhd", [manager fileExistsAtPath:oldStoreURL.path]);
             NSPersistentStore *destinationStore = [coordinator migratePersistentStore:sourceStore toURL:currentStoreURL options:options withType:NSSQLiteStoreType error:&error];
             if (destinationStore != nil) {
                 // Remove old data
+                if ([manager fileExistsAtPath:oldStoreURL.path]) {
+                    [manager removeItemAtPath:oldStoreURL.path error:&error];
+                    if (error) {
+                        NSLog(@"Error deleting sqlite database, %@: %@", error, [error localizedDescription]);
+                    }
+                    NSLog(@"Source store after migration: %hhd", [manager fileExistsAtPath:oldStoreURL.path]);
+                }
             } else {
                 // Handle error
+                NSLog(@"Error migrating sqlite database %@: %@", error, [error localizedDescription]);
             }
         }
     }
+    return coordinator;
+}
+
++ (NSPersistentStoreCoordinator *)getReadOnlyPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model {
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSURL *currentStoreURL = [[manager containerURLForSecurityApplicationGroupIdentifier:kAppGroupIdentifier] URLByAppendingPathComponent:kSQLStoreFileName];
+    BOOL currentStoreExists = [manager fileExistsAtPath:currentStoreURL.path];
+    
+    if (!currentStoreExists) {
+        return nil;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
+    NSDictionary *options = @{ NSMigratePersistentStoresAutomaticallyOption : @YES, NSInferMappingModelAutomaticallyOption: @YES };
+    if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:currentStoreURL options:options error:nil]) {
+        return nil;
+    }
+    
     return coordinator;
 }
 

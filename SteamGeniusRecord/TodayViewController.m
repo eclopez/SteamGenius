@@ -17,25 +17,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    NSUInteger wins = [[SGRepository findAllEntitiesOfType:@"Battle" predicate:nil context:self.managedObjectContext] count];
-    _hello.text = [@(wins) stringValue];
+    self.preferredContentSize = CGSizeMake(0.f, 100.f);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    // Perform any setup necessary in order to update the view.
-    
     // If an error is encountered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
     // If there's an update, use NCUpdateResultNewData
-
+    [self updateWidget];
     completionHandler(NCUpdateResultNewData);
+}
+
+- (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets {
+    return UIEdgeInsetsZero;
+}
+
+#pragma mark - Data Methods
+
+- (void)updateWidget {
+    [self managedObjectModel];
+    [self persistentStoreCoordinator];
+    NSLog(@"Persistent store: %@", _persistentStoreCoordinator);
+    if (_persistentStoreCoordinator) {
+        NSPredicate *wins = [NSPredicate predicateWithFormat:@"result.winValue > %@", @0];
+        NSPredicate *draws = [NSPredicate predicateWithFormat:@"result.winValue == %@", @0];
+        NSPredicate *losses = [NSPredicate predicateWithFormat:@"result.winValue < %@", @0];
+        
+        NSArray *battles = [SGRepository findAllEntitiesOfType:@"Battle" predicate:nil context:self.managedObjectContext];
+        
+        NSUInteger numberOfWins = [[battles filteredArrayUsingPredicate:wins] count];
+        NSUInteger numberOfDraws = [[battles filteredArrayUsingPredicate:draws] count];
+        NSUInteger numberOfLosses = [[battles filteredArrayUsingPredicate:losses] count];
+        
+        self.wins.text = [@(numberOfWins) stringValue];
+        self.draws.text = [@(numberOfDraws) stringValue];
+        self.losses.text = [@(numberOfLosses) stringValue];
+    }
 }
 
 #pragma mark - Core Data stack
@@ -43,11 +64,6 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
-- (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.eriklopez.SteamGenius" in the application's documents directory.
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
 
 - (NSManagedObjectModel *)managedObjectModel {
     if (_managedObjectModel != nil) {
@@ -61,8 +77,7 @@
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    //_persistentStoreCoordinator = [SGCoreDataObjects getPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel] applicationDocumentsDirectoryURL:[self applicationDocumentsDirectory]];
-    _persistentStoreCoordinator = [SGCoreDataObjects getMigratedPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel] applicationDocumentsDirectoryURL:[self applicationDocumentsDirectory]];
+    _persistentStoreCoordinator = [SGCoreDataObjects getReadOnlyPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel]];
     return _persistentStoreCoordinator;
 }
 

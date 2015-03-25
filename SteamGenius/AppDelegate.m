@@ -123,8 +123,7 @@
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    //_persistentStoreCoordinator = [SGCoreDataObjects getPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel] applicationDocumentsDirectoryURL:[self applicationDocumentsDirectory]];
-    _persistentStoreCoordinator = [SGCoreDataObjects getMigratedPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel] applicationDocumentsDirectoryURL:[self applicationDocumentsDirectory]];
+    _persistentStoreCoordinator = [SGCoreDataObjects getPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel] applicationDocumentsDirectoryURL:[self applicationDocumentsDirectory]];
     return _persistentStoreCoordinator;
 }
 

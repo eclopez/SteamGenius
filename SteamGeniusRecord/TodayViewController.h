@@ -11,7 +11,9 @@
 
 @interface TodayViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *hello;
+@property (weak, nonatomic) IBOutlet UILabel *wins;
+@property (weak, nonatomic) IBOutlet UILabel *losses;
+@property (weak, nonatomic) IBOutlet UILabel *draws;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

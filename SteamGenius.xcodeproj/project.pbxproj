@@ -1389,6 +1389,7 @@
 		0318D2EE1ABF0D3C00E9C8A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1414,6 +1415,7 @@
 		0318D2EF1ABF0D3C00E9C8A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -1659,6 +1661,7 @@
 				0318D2EF1ABF0D3C00E9C8A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0318D2F41ABF0D3C00E9C8A5 /* Build configuration list for PBXNativeTarget "SteamGeniusKitTests" */ = {
 			isa = XCConfigurationList;
@@ -1667,6 +1670,7 @@
 				0318D2F11ABF0D3C00E9C8A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0318D3B01AC04CFC00E9C8A5 /* Build configuration list for PBXNativeTarget "SteamGeniusRecord" */ = {
 			isa = XCConfigurationList;
@@ -1675,6 +1679,7 @@
 				0318D3B21AC04CFC00E9C8A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0349E2A019C17F510091FF21 /* Build configuration list for PBXProject "SteamGenius" */ = {
 			isa = XCConfigurationList;
