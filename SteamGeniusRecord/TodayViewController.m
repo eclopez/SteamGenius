@@ -41,7 +41,6 @@
 - (void)updateWidget {
     [self managedObjectModel];
     [self persistentStoreCoordinator];
-    NSLog(@"Persistent store: %@", _persistentStoreCoordinator);
     if (_persistentStoreCoordinator) {
         NSPredicate *wins = [NSPredicate predicateWithFormat:@"result.winValue > %@", @0];
         NSPredicate *draws = [NSPredicate predicateWithFormat:@"result.winValue == %@", @0];

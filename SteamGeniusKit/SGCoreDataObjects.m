@@ -74,7 +74,6 @@
         [coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:oldStoreURL options:options error:&error];
         NSPersistentStore *sourceStore = [coordinator persistentStoreForURL:oldStoreURL];
         if (sourceStore != nil) {
-            NSLog(@"Source Store before migration: %hhd", [manager fileExistsAtPath:oldStoreURL.path]);
             NSPersistentStore *destinationStore = [coordinator migratePersistentStore:sourceStore toURL:currentStoreURL options:options withType:NSSQLiteStoreType error:&error];
             if (destinationStore != nil) {
                 // Remove old data
@@ -83,7 +82,6 @@
                     if (error) {
                         NSLog(@"Error deleting sqlite database, %@: %@", error, [error localizedDescription]);
                     }
-                    NSLog(@"Source store after migration: %hhd", [manager fileExistsAtPath:oldStoreURL.path]);
                 }
             } else {
                 // Handle error
