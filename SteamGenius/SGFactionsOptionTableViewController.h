@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import SteamGeniusKit;
 #import "FXForms.h"
 #import "Faction.h"
 

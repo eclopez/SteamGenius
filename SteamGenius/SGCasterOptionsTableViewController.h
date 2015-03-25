@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import SteamGeniusKit;
 #import "FXForms.h"
-#import "Faction.h"
 
 @interface SGCasterOptionsTableViewController : UITableViewController <FXFormFieldViewController, NSFetchedResultsControllerDelegate>
 

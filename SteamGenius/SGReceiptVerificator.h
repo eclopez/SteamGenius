@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <StoreKit/StoreKit.h>
+@import Foundation;
+@import StoreKit;
 #import "RMStore.h"
 
 @interface SGReceiptVerificator : NSObject <RMStoreReceiptVerificator, SKRequestDelegate>

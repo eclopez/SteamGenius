@@ -6,13 +6,9 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import SteamGeniusKit;
 #import "FXForms.h"
-#import "Faction.h"
-#import "Opponent.h"
-#import "Result.h"
-#import "Scenario.h"
-#import "Event.h"
 
 @interface SGBattleForm : NSObject <FXForm>
 

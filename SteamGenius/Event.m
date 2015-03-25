@@ -2,8 +2,8 @@
 //  Event.m
 //  SteamGenius
 //
-//  Created by Erik Lopez on 9/19/14.
-//  Copyright (c) 2014 Erik Lopez. All rights reserved.
+//  Created by Erik Lopez on 3/22/15.
+//  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
 #import "Event.h"

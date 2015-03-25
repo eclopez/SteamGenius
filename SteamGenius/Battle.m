@@ -2,7 +2,7 @@
 //  Battle.m
 //  SteamGenius
 //
-//  Created by Erik Lopez on 3/14/15.
+//  Created by Erik Lopez on 3/22/15.
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
@@ -20,8 +20,8 @@
 @dynamic date;
 @dynamic killPoints;
 @dynamic notes;
-@dynamic points;
 @dynamic opponentControlPoints;
+@dynamic points;
 @dynamic event;
 @dynamic opponent;
 @dynamic opponentCaster;

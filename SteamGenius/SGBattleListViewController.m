@@ -10,12 +10,6 @@
 #import "SGSettingsManager.h"
 #import "SGBattleDetailViewController.h"
 #import "SGBattleInfoCell.h"
-#import "Faction.h"
-#import "Battle.h"
-#import "Caster.h"
-#import "Model.h"
-#import "Result.h"
-#import "SGGenericRepository.h"
 #import "BattleFilter.h"
 #import "SGEmptyView.h"
 
@@ -202,9 +196,8 @@
     [fetchRequest setSortDescriptors:@[sortDate, sortPoints]];
     
     //STORED FILTERS
-    //NSArray *storedFilters = [SGGenericRepository findAllEntitiesOfType:@"BattleFilter" context:[self.appDelegate managedObjectContext]];
     NSPredicate *activeFilterPredicate = [NSPredicate predicateWithFormat:@"isActive = %@", [NSNumber numberWithBool:YES]];
-    NSArray *storedFilters = [SGGenericRepository findAllEntitiesOfType:@"BattleFilter" predicate:activeFilterPredicate context:[self.appDelegate managedObjectContext]];
+    NSArray *storedFilters = [SGRepository findAllEntitiesOfType:@"BattleFilter" predicate:activeFilterPredicate context:[self.appDelegate managedObjectContext]];
     if ([storedFilters count] > 0) {
         NSMutableArray *predicates = [NSMutableArray array];
         for (BattleFilter *filter in storedFilters) {
@@ -358,7 +351,7 @@
     NSUInteger numberOfDraws = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:draws] count];
     NSUInteger numberOfLosses = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:losses] count];
     NSUInteger numberOfTotal = [self.fetchedResultsController.fetchedObjects count];
-    NSUInteger totalBattles = [[SGGenericRepository findAllEntitiesOfType:@"Battle" predicate:nil context:[self.appDelegate managedObjectContext]] count];
+    NSUInteger totalBattles = [[SGRepository findAllEntitiesOfType:@"Battle" predicate:nil context:[self.appDelegate managedObjectContext]] count];
     
     self.winTotal.text = [@(numberOfWins) stringValue];
     self.drawTotal.text = [@(numberOfDraws) stringValue];

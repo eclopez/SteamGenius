@@ -8,11 +8,6 @@
 
 #import "SGBattleForm.h"
 #import "AppDelegate.h"
-#import "SGGenericRepository.h"
-#import "Battle.h"
-#import "Caster.h"
-#import "Model.h"
-#import "Result.h"
 #import "SGFactionsOptionTableViewController.h"
 #import "SGCasterOptionsTableViewController.h"
 #import "SGGenericAddOptionsTableViewController.h"
@@ -162,7 +157,7 @@
     for (id sortKey in sortKeys) {
         [sortDescriptors addObject:[[NSSortDescriptor alloc] initWithKey:sortKey ascending:[[sortKeys objectForKey:sortKey] boolValue]]];
     }
-    return [[SGGenericRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
+    return [[SGRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 @end

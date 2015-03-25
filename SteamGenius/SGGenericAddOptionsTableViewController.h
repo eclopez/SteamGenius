@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+@import UIKit;
+@import CoreData;
 #import "AppDelegate.h"
 #import "FXForms.h"
 #import "SGLongPressTableViewCell.h"

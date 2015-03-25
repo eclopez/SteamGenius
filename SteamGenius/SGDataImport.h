@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+@import Foundation;
+@import SteamGeniusKit;
 
 typedef NS_ENUM(NSInteger, SGEntityType) {
     SGEntityType_Game,

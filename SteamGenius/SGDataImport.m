@@ -8,7 +8,6 @@
 
 #import "SGDataImport.h"
 #import "AppDelegate.h"
-#import "SGGenericRepository.h"
 #import "SGRepository.h"
 #import "DataVersion.h"
 
@@ -20,7 +19,7 @@
     DataVersion *entityDataVersion;
     NSInteger entityVersion;
     
-    DataVersion *dataVersion = [SGGenericRepository findOneEntityOfType:@"DataVersion" entityKey:entityName keyField:@"name" context:context];
+    DataVersion *dataVersion = [SGRepository findOneEntityOfType:@"DataVersion" entityKey:entityName keyField:@"name" context:context];
     if (dataVersion != nil) {
         entityDataVersion = dataVersion;
     } else {

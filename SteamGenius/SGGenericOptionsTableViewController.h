@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+@import UIKit;
+@import CoreData;
 #import "FXForms.h"
 
 @interface SGGenericOptionsTableViewController : UITableViewController <FXFormFieldViewController>

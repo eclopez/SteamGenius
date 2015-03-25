@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
-#import <StoreKit/StoreKit.h>
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import StoreKit;
 #import "FXForms.h"
 
 @interface SGProductsTableViewController : UITableViewController

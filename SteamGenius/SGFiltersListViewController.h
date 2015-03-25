@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import SteamGeniusKit;
 #import "AppDelegate.h"
 
 @interface SGFiltersListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>

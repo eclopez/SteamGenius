@@ -8,9 +8,6 @@
 
 #import "SGCasterOptionsTableViewController.h"
 #import "AppDelegate.h"
-#import "Caster.h"
-#import "Model.h"
-#import "SGGenericRepository.h"
 
 @interface SGCasterOptionsTableViewController ()
 

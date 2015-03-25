@@ -6,17 +6,9 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
 #import "SGFiltersForm.h"
 #import "AppDelegate.h"
-#import "SGGenericRepository.h"
 #import "SGFactionsOptionTableViewController.h"
-#import "Faction.h"
-#import "Model.h"
-#import "Opponent.h"
-#import "Scenario.h"
-#import "Event.h"
-#import "Result.h"
 
 @implementation SGFiltersForm
 
@@ -255,7 +247,7 @@
     for (id sortKey in sortKeys) {
         [sortDescriptors addObject:[[NSSortDescriptor alloc] initWithKey:sortKey ascending:[[sortKeys objectForKey:sortKey] boolValue]]];
     }
-    return [[SGGenericRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
+    return [[SGRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 @end

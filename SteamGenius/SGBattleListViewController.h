@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
-#import <CoreData/CoreData.h>
+@import UIKit;
+@import QuartzCore;
+@import SteamGeniusKit;
 #import "AppDelegate.h"
 
 @interface SGBattleListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>

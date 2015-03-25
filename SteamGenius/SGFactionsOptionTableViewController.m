@@ -7,9 +7,6 @@
 //
 
 #import "SGFactionsOptionTableViewController.h"
-#import "Game.h"
-#import "Faction.h"
-#import "Caster.h"
 #import "SGColorCircleView.h"
 
 @interface SGFactionsOptionTableViewController ()

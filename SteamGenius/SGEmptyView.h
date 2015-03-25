@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface SGEmptyView : UIView
 
