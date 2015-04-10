@@ -1,8 +1,8 @@
 //
-//  Scenario.h
+//  Opponent.h
 //  SteamGenius
 //
-//  Created by Erik Lopez on 3/22/15.
+//  Created by Erik Lopez on 3/25/15.
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
@@ -11,13 +11,13 @@
 
 @class Battle;
 
-@interface Scenario : NSManagedObject
+@interface Opponent : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *battles;
 @end
 
-@interface Scenario (CoreDataGeneratedAccessors)
+@interface Opponent (CoreDataGeneratedAccessors)
 
 - (void)addBattlesObject:(Battle *)value;
 - (void)removeBattlesObject:(Battle *)value;

@@ -7,12 +7,6 @@
 //
 
 #import "SGBattleDetailViewController.h"
-#import "Caster.h"
-#import "Model.h"
-#import "Opponent.h"
-#import "Result.h"
-#import "Scenario.h"
-#import "Event.h"
 #import "SGBattleFormViewController.h"
 #import "SGEmptyView.h"
 #import "AppDelegate.h"

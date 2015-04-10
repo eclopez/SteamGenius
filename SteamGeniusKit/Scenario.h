@@ -1,8 +1,8 @@
 //
-//  Result.h
+//  Scenario.h
 //  SteamGenius
 //
-//  Created by Erik Lopez on 3/22/15.
+//  Created by Erik Lopez on 3/25/15.
 //  Copyright (c) 2015 Erik Lopez. All rights reserved.
 //
 
@@ -11,15 +11,13 @@
 
 @class Battle;
 
-@interface Result : NSManagedObject
+@interface Scenario : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * displayOrder;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * winValue;
 @property (nonatomic, retain) NSSet *battles;
 @end
 
-@interface Result (CoreDataGeneratedAccessors)
+@interface Scenario (CoreDataGeneratedAccessors)
 
 - (void)addBattlesObject:(Battle *)value;
 - (void)removeBattlesObject:(Battle *)value;

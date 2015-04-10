@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FXForms.h"
-#import "Event.h"
+@import SteamGeniusKit;
 
 @interface SGEventForm : NSObject<FXForm>
 

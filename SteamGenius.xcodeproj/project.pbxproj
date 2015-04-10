@@ -17,31 +17,8 @@
 		0318D2ED1ABF0D3C00E9C8A5 /* SteamGeniusKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0318D2D51ABF0D3C00E9C8A5 /* SteamGeniusKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0318D2F71ABF0D8700E9C8A5 /* SGCoreDataObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D2F51ABF0D8700E9C8A5 /* SGCoreDataObjects.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0318D2F81ABF0D8700E9C8A5 /* SGCoreDataObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D2F61ABF0D8700E9C8A5 /* SGCoreDataObjects.m */; };
-		0318D2FB1ABF25A300E9C8A5 /* SteamGenius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0325713619C491B300634776 /* SteamGenius.xcdatamodeld */; };
 		0318D36D1ABF2BC100E9C8A5 /* SGRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D36B1ABF2BC100E9C8A5 /* SGRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0318D36E1ABF2BC100E9C8A5 /* SGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D36C1ABF2BC100E9C8A5 /* SGRepository.m */; };
-		0318D3721ABFD4D600E9C8A5 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3701ABFD4D600E9C8A5 /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D3731ABFD4D600E9C8A5 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3711ABFD4D600E9C8A5 /* Model.m */; };
-		0318D3761ABFD4D700E9C8A5 /* Result.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3741ABFD4D700E9C8A5 /* Result.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D3771ABFD4D700E9C8A5 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3751ABFD4D700E9C8A5 /* Result.m */; };
-		0318D37A1ABFD4D700E9C8A5 /* BattleFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3781ABFD4D700E9C8A5 /* BattleFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D37B1ABFD4D700E9C8A5 /* BattleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3791ABFD4D700E9C8A5 /* BattleFilter.m */; };
-		0318D37E1ABFD4D700E9C8A5 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D37C1ABFD4D700E9C8A5 /* Event.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D37F1ABFD4D700E9C8A5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D37D1ABFD4D700E9C8A5 /* Event.m */; };
-		0318D3821ABFD4D700E9C8A5 /* Scenario.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3801ABFD4D700E9C8A5 /* Scenario.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D3831ABFD4D700E9C8A5 /* Scenario.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3811ABFD4D700E9C8A5 /* Scenario.m */; };
-		0318D3871ABFD4D700E9C8A5 /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3851ABFD4D700E9C8A5 /* Faction.m */; };
-		0318D38A1ABFD4D700E9C8A5 /* Battle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3881ABFD4D700E9C8A5 /* Battle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D38B1ABFD4D700E9C8A5 /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3891ABFD4D700E9C8A5 /* Battle.m */; };
-		0318D38E1ABFD4D700E9C8A5 /* Opponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D38C1ABFD4D700E9C8A5 /* Opponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D38F1ABFD4D700E9C8A5 /* Opponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D38D1ABFD4D700E9C8A5 /* Opponent.m */; };
-		0318D3921ABFD4D700E9C8A5 /* Caster.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3901ABFD4D700E9C8A5 /* Caster.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D3931ABFD4D700E9C8A5 /* Caster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3911ABFD4D700E9C8A5 /* Caster.m */; };
-		0318D3961ABFD4D800E9C8A5 /* DataVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3941ABFD4D800E9C8A5 /* DataVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D3971ABFD4D800E9C8A5 /* DataVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3951ABFD4D800E9C8A5 /* DataVersion.m */; };
-		0318D39A1ABFD4D800E9C8A5 /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3981ABFD4D800E9C8A5 /* Game.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D39B1ABFD4D800E9C8A5 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3991ABFD4D800E9C8A5 /* Game.m */; };
-		0318D39D1AC0444500E9C8A5 /* Faction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D3841ABFD4D700E9C8A5 /* Faction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0318D3A41AC04CFC00E9C8A5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0318D3A31AC04CFC00E9C8A5 /* NotificationCenter.framework */; };
 		0318D3AA1AC04CFC00E9C8A5 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3A91AC04CFC00E9C8A5 /* TodayViewController.m */; };
 		0318D3AC1AC04CFC00E9C8A5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0318D3AB1AC04CFC00E9C8A5 /* MainInterface.storyboard */; };
@@ -50,10 +27,6 @@
 		031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6AB619CEA5D0000B7D26 /* SGResizableImageViewCell.m */; };
 		031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D6ACD19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m */; };
 		0325712F19C376E900634776 /* SGDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325712E19C376E900634776 /* SGDismissSegue.m */; };
-		0325713C19C492BA00634776 /* Game.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325713B19C492BA00634776 /* Game.plist */; };
-		0325713E19C4932600634776 /* Faction.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325713D19C4932600634776 /* Faction.plist */; };
-		0325714019C4987C00634776 /* Result.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325713F19C4987C00634776 /* Result.plist */; };
-		0325714219C49AD900634776 /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0325714119C49AD900634776 /* Model.plist */; };
 		0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715519C7DB1F00634776 /* SGSettingsForm.m */; };
 		0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715819C7DE1000634776 /* SGSettingsFormViewController.m */; };
 		032812921AB38B0C00F23BF9 /* SGReceiptVerificator.m in Sources */ = {isa = PBXBuildFile; fileRef = 032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */; };
@@ -86,6 +59,33 @@
 		038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAEC19CD3FA600A224F7 /* SGDataImport.m */; };
 		038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF319CDE70C00A224F7 /* SGBattleForm.m */; };
 		038DAAF819CDE8C500A224F7 /* SGBattleFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */; };
+		0395226C1AC39B3200A6380C /* SteamGenius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0325713619C491B300634776 /* SteamGenius.xcdatamodeld */; };
+		0395226F1AC39B6B00A6380C /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395226D1AC39B6B00A6380C /* Event.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		039522701AC39B6B00A6380C /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395226E1AC39B6B00A6380C /* Event.m */; };
+		039522731AC39B6C00A6380C /* Opponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522711AC39B6C00A6380C /* Opponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		039522741AC39B6C00A6380C /* Opponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522721AC39B6C00A6380C /* Opponent.m */; };
+		039522771AC39B6C00A6380C /* BattleFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522751AC39B6C00A6380C /* BattleFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		039522781AC39B6C00A6380C /* BattleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522761AC39B6C00A6380C /* BattleFilter.m */; };
+		0395227B1AC39B6C00A6380C /* Faction.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522791AC39B6C00A6380C /* Faction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0395227C1AC39B6C00A6380C /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395227A1AC39B6C00A6380C /* Faction.m */; };
+		0395227F1AC39B6C00A6380C /* DataVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395227D1AC39B6C00A6380C /* DataVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		039522801AC39B6C00A6380C /* DataVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395227E1AC39B6C00A6380C /* DataVersion.m */; };
+		039522831AC39B6C00A6380C /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522811AC39B6C00A6380C /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		039522841AC39B6C00A6380C /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522821AC39B6C00A6380C /* Model.m */; };
+		039522871AC39B6C00A6380C /* Caster.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522851AC39B6C00A6380C /* Caster.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		039522881AC39B6C00A6380C /* Caster.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522861AC39B6C00A6380C /* Caster.m */; };
+		0395228B1AC39B6C00A6380C /* Result.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522891AC39B6C00A6380C /* Result.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0395228C1AC39B6C00A6380C /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395228A1AC39B6C00A6380C /* Result.m */; };
+		0395228F1AC39B6C00A6380C /* Scenario.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395228D1AC39B6C00A6380C /* Scenario.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		039522901AC39B6C00A6380C /* Scenario.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395228E1AC39B6C00A6380C /* Scenario.m */; };
+		039522931AC39B6C00A6380C /* Battle.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522911AC39B6C00A6380C /* Battle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		039522941AC39B6C00A6380C /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522921AC39B6C00A6380C /* Battle.m */; };
+		039522971AC39B6C00A6380C /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522951AC39B6C00A6380C /* Game.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		039522981AC39B6C00A6380C /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522961AC39B6C00A6380C /* Game.m */; };
+		0395229E1AC44FB600A6380C /* Faction.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0395229A1AC44FB600A6380C /* Faction.plist */; };
+		0395229F1AC44FB600A6380C /* Game.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0395229B1AC44FB600A6380C /* Game.plist */; };
+		039522A01AC44FB600A6380C /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0395229C1AC44FB600A6380C /* Model.plist */; };
+		039522A11AC44FB600A6380C /* Result.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0395229D1AC44FB600A6380C /* Result.plist */; };
 		03AF5B691A49225D005C4A1B /* SGDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF5B681A49225D005C4A1B /* SGDisplayTableViewCell.m */; };
 		03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C0B2251A75542A00D20829 /* SGEmptyView.m */; };
 		03C301191A36B3580053882A /* SGColorCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C301181A36B3580053882A /* SGColorCircleView.m */; };
@@ -177,28 +177,6 @@
 		0318D2F61ABF0D8700E9C8A5 /* SGCoreDataObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCoreDataObjects.m; sourceTree = "<group>"; };
 		0318D36B1ABF2BC100E9C8A5 /* SGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGRepository.h; sourceTree = "<group>"; };
 		0318D36C1ABF2BC100E9C8A5 /* SGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGRepository.m; sourceTree = "<group>"; };
-		0318D3701ABFD4D600E9C8A5 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
-		0318D3711ABFD4D600E9C8A5 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
-		0318D3741ABFD4D700E9C8A5 /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
-		0318D3751ABFD4D700E9C8A5 /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
-		0318D3781ABFD4D700E9C8A5 /* BattleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleFilter.h; sourceTree = "<group>"; };
-		0318D3791ABFD4D700E9C8A5 /* BattleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleFilter.m; sourceTree = "<group>"; };
-		0318D37C1ABFD4D700E9C8A5 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		0318D37D1ABFD4D700E9C8A5 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		0318D3801ABFD4D700E9C8A5 /* Scenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
-		0318D3811ABFD4D700E9C8A5 /* Scenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scenario.m; sourceTree = "<group>"; };
-		0318D3841ABFD4D700E9C8A5 /* Faction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faction.h; sourceTree = "<group>"; };
-		0318D3851ABFD4D700E9C8A5 /* Faction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faction.m; sourceTree = "<group>"; };
-		0318D3881ABFD4D700E9C8A5 /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
-		0318D3891ABFD4D700E9C8A5 /* Battle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Battle.m; sourceTree = "<group>"; };
-		0318D38C1ABFD4D700E9C8A5 /* Opponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opponent.h; sourceTree = "<group>"; };
-		0318D38D1ABFD4D700E9C8A5 /* Opponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opponent.m; sourceTree = "<group>"; };
-		0318D3901ABFD4D700E9C8A5 /* Caster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caster.h; sourceTree = "<group>"; };
-		0318D3911ABFD4D700E9C8A5 /* Caster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caster.m; sourceTree = "<group>"; };
-		0318D3941ABFD4D800E9C8A5 /* DataVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVersion.h; sourceTree = "<group>"; };
-		0318D3951ABFD4D800E9C8A5 /* DataVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVersion.m; sourceTree = "<group>"; };
-		0318D3981ABFD4D800E9C8A5 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		0318D3991ABFD4D800E9C8A5 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		0318D39C1ABFDEC500E9C8A5 /* SteamGenius.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SteamGenius.entitlements; sourceTree = "<group>"; };
 		0318D3A21AC04CFC00E9C8A5 /* SteamGeniusRecord.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SteamGeniusRecord.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0318D3A31AC04CFC00E9C8A5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -214,10 +192,6 @@
 		0325712D19C376E900634776 /* SGDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDismissSegue.h; sourceTree = "<group>"; };
 		0325712E19C376E900634776 /* SGDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDismissSegue.m; sourceTree = "<group>"; };
 		0325713719C491B300634776 /* SteamGenius.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SteamGenius.xcdatamodel; sourceTree = "<group>"; };
-		0325713B19C492BA00634776 /* Game.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Game.plist; sourceTree = "<group>"; };
-		0325713D19C4932600634776 /* Faction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Faction.plist; sourceTree = "<group>"; };
-		0325713F19C4987C00634776 /* Result.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Result.plist; sourceTree = "<group>"; };
-		0325714119C49AD900634776 /* Model.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Model.plist; sourceTree = "<group>"; };
 		0325715419C7DB1F00634776 /* SGSettingsForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSettingsForm.h; sourceTree = "<group>"; };
 		0325715519C7DB1F00634776 /* SGSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsForm.m; sourceTree = "<group>"; };
 		0325715719C7DE1000634776 /* SGSettingsFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSettingsFormViewController.h; sourceTree = "<group>"; };
@@ -278,6 +252,32 @@
 		038DAAF319CDE70C00A224F7 /* SGBattleForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleForm.m; sourceTree = "<group>"; };
 		038DAAF619CDE8C500A224F7 /* SGBattleFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleFormViewController.h; sourceTree = "<group>"; };
 		038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleFormViewController.m; sourceTree = "<group>"; };
+		0395226D1AC39B6B00A6380C /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		0395226E1AC39B6B00A6380C /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		039522711AC39B6C00A6380C /* Opponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opponent.h; sourceTree = "<group>"; };
+		039522721AC39B6C00A6380C /* Opponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opponent.m; sourceTree = "<group>"; };
+		039522751AC39B6C00A6380C /* BattleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleFilter.h; sourceTree = "<group>"; };
+		039522761AC39B6C00A6380C /* BattleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleFilter.m; sourceTree = "<group>"; };
+		039522791AC39B6C00A6380C /* Faction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faction.h; sourceTree = "<group>"; };
+		0395227A1AC39B6C00A6380C /* Faction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faction.m; sourceTree = "<group>"; };
+		0395227D1AC39B6C00A6380C /* DataVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVersion.h; sourceTree = "<group>"; };
+		0395227E1AC39B6C00A6380C /* DataVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVersion.m; sourceTree = "<group>"; };
+		039522811AC39B6C00A6380C /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		039522821AC39B6C00A6380C /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		039522851AC39B6C00A6380C /* Caster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caster.h; sourceTree = "<group>"; };
+		039522861AC39B6C00A6380C /* Caster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caster.m; sourceTree = "<group>"; };
+		039522891AC39B6C00A6380C /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
+		0395228A1AC39B6C00A6380C /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
+		0395228D1AC39B6C00A6380C /* Scenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
+		0395228E1AC39B6C00A6380C /* Scenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scenario.m; sourceTree = "<group>"; };
+		039522911AC39B6C00A6380C /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
+		039522921AC39B6C00A6380C /* Battle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Battle.m; sourceTree = "<group>"; };
+		039522951AC39B6C00A6380C /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		039522961AC39B6C00A6380C /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		0395229A1AC44FB600A6380C /* Faction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Faction.plist; sourceTree = "<group>"; };
+		0395229B1AC44FB600A6380C /* Game.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Game.plist; sourceTree = "<group>"; };
+		0395229C1AC44FB600A6380C /* Model.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Model.plist; sourceTree = "<group>"; };
+		0395229D1AC44FB600A6380C /* Result.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Result.plist; sourceTree = "<group>"; };
 		03AF5B671A49225D005C4A1B /* SGDisplayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDisplayTableViewCell.h; sourceTree = "<group>"; };
 		03AF5B681A49225D005C4A1B /* SGDisplayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDisplayTableViewCell.m; sourceTree = "<group>"; };
 		03C0B2241A75542A00D20829 /* SGEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmptyView.h; sourceTree = "<group>"; };
@@ -413,7 +413,7 @@
 				0318D2F51ABF0D8700E9C8A5 /* SGCoreDataObjects.h */,
 				0318D2F61ABF0D8700E9C8A5 /* SGCoreDataObjects.m */,
 				0318D36A1ABF2B6900E9C8A5 /* Repository */,
-				038DAAC419CCFBBD00A224F7 /* Entity Classes */,
+				039522991AC39B7000A6380C /* Entity Classes */,
 			);
 			name = "Data Store";
 			sourceTree = "<group>";
@@ -497,17 +497,6 @@
 				038DAAEA19CD3EC100A224F7 /* Import */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		0325713A19C4929900634776 /* Raw Data */ = {
-			isa = PBXGroup;
-			children = (
-				0325713B19C492BA00634776 /* Game.plist */,
-				0325713D19C4932600634776 /* Faction.plist */,
-				0325713F19C4987C00634776 /* Result.plist */,
-				0325714119C49AD900634776 /* Model.plist */,
-			);
-			name = "Raw Data";
 			sourceTree = "<group>";
 		};
 		032C1CF519D7D87900FBDB49 /* Cells */ = {
@@ -763,42 +752,23 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		038DAAC419CCFBBD00A224F7 /* Entity Classes */ = {
+		038DAAC419CCFBBD00A224F7 /* Raw Data */ = {
 			isa = PBXGroup;
 			children = (
-				0318D3981ABFD4D800E9C8A5 /* Game.h */,
-				0318D3991ABFD4D800E9C8A5 /* Game.m */,
-				0318D3941ABFD4D800E9C8A5 /* DataVersion.h */,
-				0318D3951ABFD4D800E9C8A5 /* DataVersion.m */,
-				0318D3901ABFD4D700E9C8A5 /* Caster.h */,
-				0318D3911ABFD4D700E9C8A5 /* Caster.m */,
-				0318D38C1ABFD4D700E9C8A5 /* Opponent.h */,
-				0318D38D1ABFD4D700E9C8A5 /* Opponent.m */,
-				0318D3881ABFD4D700E9C8A5 /* Battle.h */,
-				0318D3891ABFD4D700E9C8A5 /* Battle.m */,
-				0318D3841ABFD4D700E9C8A5 /* Faction.h */,
-				0318D3851ABFD4D700E9C8A5 /* Faction.m */,
-				0318D3801ABFD4D700E9C8A5 /* Scenario.h */,
-				0318D3811ABFD4D700E9C8A5 /* Scenario.m */,
-				0318D37C1ABFD4D700E9C8A5 /* Event.h */,
-				0318D37D1ABFD4D700E9C8A5 /* Event.m */,
-				0318D3781ABFD4D700E9C8A5 /* BattleFilter.h */,
-				0318D3791ABFD4D700E9C8A5 /* BattleFilter.m */,
-				0318D3741ABFD4D700E9C8A5 /* Result.h */,
-				0318D3751ABFD4D700E9C8A5 /* Result.m */,
-				0318D3701ABFD4D600E9C8A5 /* Model.h */,
-				0318D3711ABFD4D600E9C8A5 /* Model.m */,
+				0395229A1AC44FB600A6380C /* Faction.plist */,
+				0395229B1AC44FB600A6380C /* Game.plist */,
+				0395229C1AC44FB600A6380C /* Model.plist */,
+				0395229D1AC44FB600A6380C /* Result.plist */,
 			);
-			name = "Entity Classes";
-			path = ../SteamGenius;
+			name = "Raw Data";
 			sourceTree = "<group>";
 		};
 		038DAAEA19CD3EC100A224F7 /* Import */ = {
 			isa = PBXGroup;
 			children = (
-				0325713A19C4929900634776 /* Raw Data */,
 				038DAAEB19CD3FA600A224F7 /* SGDataImport.h */,
 				038DAAEC19CD3FA600A224F7 /* SGDataImport.m */,
+				038DAAC419CCFBBD00A224F7 /* Raw Data */,
 			);
 			name = Import;
 			sourceTree = "<group>";
@@ -835,6 +805,35 @@
 				0325715819C7DE1000634776 /* SGSettingsFormViewController.m */,
 			);
 			name = Form;
+			sourceTree = "<group>";
+		};
+		039522991AC39B7000A6380C /* Entity Classes */ = {
+			isa = PBXGroup;
+			children = (
+				039522951AC39B6C00A6380C /* Game.h */,
+				039522961AC39B6C00A6380C /* Game.m */,
+				039522911AC39B6C00A6380C /* Battle.h */,
+				039522921AC39B6C00A6380C /* Battle.m */,
+				0395228D1AC39B6C00A6380C /* Scenario.h */,
+				0395228E1AC39B6C00A6380C /* Scenario.m */,
+				039522891AC39B6C00A6380C /* Result.h */,
+				0395228A1AC39B6C00A6380C /* Result.m */,
+				039522851AC39B6C00A6380C /* Caster.h */,
+				039522861AC39B6C00A6380C /* Caster.m */,
+				039522811AC39B6C00A6380C /* Model.h */,
+				039522821AC39B6C00A6380C /* Model.m */,
+				0395227D1AC39B6C00A6380C /* DataVersion.h */,
+				0395227E1AC39B6C00A6380C /* DataVersion.m */,
+				039522791AC39B6C00A6380C /* Faction.h */,
+				0395227A1AC39B6C00A6380C /* Faction.m */,
+				039522751AC39B6C00A6380C /* BattleFilter.h */,
+				039522761AC39B6C00A6380C /* BattleFilter.m */,
+				039522711AC39B6C00A6380C /* Opponent.h */,
+				039522721AC39B6C00A6380C /* Opponent.m */,
+				0395226D1AC39B6B00A6380C /* Event.h */,
+				0395226E1AC39B6B00A6380C /* Event.m */,
+			);
+			name = "Entity Classes";
 			sourceTree = "<group>";
 		};
 		03AF5B5E1A477C13005C4A1B /* Views */ = {
@@ -971,20 +970,20 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0318D3921ABFD4D700E9C8A5 /* Caster.h in Headers */,
-				0318D3961ABFD4D800E9C8A5 /* DataVersion.h in Headers */,
-				0318D39A1ABFD4D800E9C8A5 /* Game.h in Headers */,
 				0318D2DA1ABF0D3C00E9C8A5 /* SteamGeniusKit.h in Headers */,
 				0318D2F71ABF0D8700E9C8A5 /* SGCoreDataObjects.h in Headers */,
-				0318D37A1ABFD4D700E9C8A5 /* BattleFilter.h in Headers */,
-				0318D38A1ABFD4D700E9C8A5 /* Battle.h in Headers */,
-				0318D3761ABFD4D700E9C8A5 /* Result.h in Headers */,
-				0318D3821ABFD4D700E9C8A5 /* Scenario.h in Headers */,
-				0318D39D1AC0444500E9C8A5 /* Faction.h in Headers */,
-				0318D38E1ABFD4D700E9C8A5 /* Opponent.h in Headers */,
-				0318D3721ABFD4D600E9C8A5 /* Model.h in Headers */,
-				0318D37E1ABFD4D700E9C8A5 /* Event.h in Headers */,
+				039522971AC39B6C00A6380C /* Game.h in Headers */,
+				0395227B1AC39B6C00A6380C /* Faction.h in Headers */,
+				0395227F1AC39B6C00A6380C /* DataVersion.h in Headers */,
+				039522871AC39B6C00A6380C /* Caster.h in Headers */,
+				039522771AC39B6C00A6380C /* BattleFilter.h in Headers */,
+				039522931AC39B6C00A6380C /* Battle.h in Headers */,
 				0318D36D1ABF2BC100E9C8A5 /* SGRepository.h in Headers */,
+				039522831AC39B6C00A6380C /* Model.h in Headers */,
+				0395228F1AC39B6C00A6380C /* Scenario.h in Headers */,
+				0395228B1AC39B6C00A6380C /* Result.h in Headers */,
+				039522731AC39B6C00A6380C /* Opponent.h in Headers */,
+				0395226F1AC39B6B00A6380C /* Event.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,17 +1176,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0325714019C4987C00634776 /* Result.plist in Resources */,
+				039522A01AC44FB600A6380C /* Model.plist in Resources */,
+				0395229F1AC44FB600A6380C /* Game.plist in Resources */,
 				0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */,
-				0325713C19C492BA00634776 /* Game.plist in Resources */,
 				0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */,
 				0349E2BF19C17F510091FF21 /* LaunchScreen.xib in Resources */,
+				0395229E1AC44FB600A6380C /* Faction.plist in Resources */,
 				0344A7A71A8EA41A00F92946 /* SGProducts.plist in Resources */,
 				0349E2BC19C17F510091FF21 /* Images.xcassets in Resources */,
-				0325714219C49AD900634776 /* Model.plist in Resources */,
 				03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */,
-				0325713E19C4932600634776 /* Faction.plist in Resources */,
 				0318D2CF1ABF07C400E9C8A5 /* Podfile in Resources */,
+				039522A11AC44FB600A6380C /* Result.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1253,20 +1252,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039522801AC39B6C00A6380C /* DataVersion.m in Sources */,
+				039522701AC39B6B00A6380C /* Event.m in Sources */,
+				0395226C1AC39B3200A6380C /* SteamGenius.xcdatamodeld in Sources */,
+				039522841AC39B6C00A6380C /* Model.m in Sources */,
+				039522941AC39B6C00A6380C /* Battle.m in Sources */,
+				039522981AC39B6C00A6380C /* Game.m in Sources */,
 				0318D2F81ABF0D8700E9C8A5 /* SGCoreDataObjects.m in Sources */,
-				0318D3931ABFD4D700E9C8A5 /* Caster.m in Sources */,
-				0318D3871ABFD4D700E9C8A5 /* Faction.m in Sources */,
-				0318D3971ABFD4D800E9C8A5 /* DataVersion.m in Sources */,
-				0318D3831ABFD4D700E9C8A5 /* Scenario.m in Sources */,
-				0318D39B1ABFD4D800E9C8A5 /* Game.m in Sources */,
+				039522781AC39B6C00A6380C /* BattleFilter.m in Sources */,
+				0395228C1AC39B6C00A6380C /* Result.m in Sources */,
+				039522741AC39B6C00A6380C /* Opponent.m in Sources */,
+				0395227C1AC39B6C00A6380C /* Faction.m in Sources */,
+				039522901AC39B6C00A6380C /* Scenario.m in Sources */,
 				0318D36E1ABF2BC100E9C8A5 /* SGRepository.m in Sources */,
-				0318D3771ABFD4D700E9C8A5 /* Result.m in Sources */,
-				0318D37B1ABFD4D700E9C8A5 /* BattleFilter.m in Sources */,
-				0318D38F1ABFD4D700E9C8A5 /* Opponent.m in Sources */,
-				0318D2FB1ABF25A300E9C8A5 /* SteamGenius.xcdatamodeld in Sources */,
-				0318D38B1ABFD4D700E9C8A5 /* Battle.m in Sources */,
-				0318D3731ABFD4D600E9C8A5 /* Model.m in Sources */,
-				0318D37F1ABFD4D700E9C8A5 /* Event.m in Sources */,
+				039522881AC39B6C00A6380C /* Caster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
