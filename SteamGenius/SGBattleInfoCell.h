@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "SGColorCircleView.h"
 
 @interface SGBattleInfoCell : UITableViewCell

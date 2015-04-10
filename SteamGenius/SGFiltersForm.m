@@ -9,6 +9,12 @@
 #import "SGFiltersForm.h"
 #import "AppDelegate.h"
 #import "SGFactionsOptionTableViewController.h"
+#import "SteamGeniusKit.h"
+#import "Model.h"
+#import "Result.h"
+#import "Scenario.h"
+#import "Event.h"
+#import "Opponent.h"
 
 @implementation SGFiltersForm
 
@@ -247,7 +253,7 @@
     for (id sortKey in sortKeys) {
         [sortDescriptors addObject:[[NSSortDescriptor alloc] initWithKey:sortKey ascending:[[sortKeys objectForKey:sortKey] boolValue]]];
     }
-    return [[SGRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
+    return [[SGKRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-@import SteamGeniusKit;
+#import "SteamGeniusKit.h"
 #import "FXForms.h"
 #import "Faction.h"
 

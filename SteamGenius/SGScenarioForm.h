@@ -7,7 +7,7 @@
 //
 
 @import Foundation;
-@import SteamGeniusKit;
+#import "Scenario.h"
 #import "FXForms.h"
 
 @interface SGScenarioForm : NSObject<FXForm>

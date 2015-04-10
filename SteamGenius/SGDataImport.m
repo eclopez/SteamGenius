@@ -9,6 +9,7 @@
 #import "SGDataImport.h"
 #import "AppDelegate.h"
 #import "SGRepository.h"
+#import "SteamGeniusKit.h"
 #import "DataVersion.h"
 
 @implementation SGDataImport
@@ -19,7 +20,7 @@
     DataVersion *entityDataVersion;
     NSInteger entityVersion;
     
-    DataVersion *dataVersion = [SGRepository findOneEntityOfType:@"DataVersion" entityKey:entityName keyField:@"name" context:context];
+    DataVersion *dataVersion = [SGKRepository findOneEntityOfType:@"DataVersion" entityKey:entityName keyField:@"name" context:context];
     if (dataVersion != nil) {
         entityDataVersion = dataVersion;
     } else {

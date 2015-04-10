@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Erik Lopez. All rights reserved.
 //
 
-@import SteamGeniusKit;
+#import "SteamGeniusKit.h"
 #import "FXForms.h"
 #import "Battle.h"
 #import "AppDelegate.h"

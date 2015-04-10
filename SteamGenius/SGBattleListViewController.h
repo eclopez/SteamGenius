@@ -8,7 +8,7 @@
 
 @import UIKit;
 @import QuartzCore;
-@import SteamGeniusKit;
+#import "SteamGeniusKit.h"
 #import "AppDelegate.h"
 
 @interface SGBattleListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>

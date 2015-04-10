@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-@import SteamGeniusKit;
+#import "SteamGeniusKit.h"
 #import "AppDelegate.h"
 
 @interface SGFiltersListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>

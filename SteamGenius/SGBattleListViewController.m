@@ -12,6 +12,7 @@
 #import "SGBattleInfoCell.h"
 #import "BattleFilter.h"
 #import "SGEmptyView.h"
+#import "SGRepository.h"
 
 #define kEmptyTableMessage @"No battles found."
 
@@ -197,7 +198,7 @@
     
     //STORED FILTERS
     NSPredicate *activeFilterPredicate = [NSPredicate predicateWithFormat:@"isActive = %@", [NSNumber numberWithBool:YES]];
-    NSArray *storedFilters = [SGRepository findAllEntitiesOfType:@"BattleFilter" predicate:activeFilterPredicate context:[self.appDelegate managedObjectContext]];
+    NSArray *storedFilters = [SGKRepository findAllEntitiesOfType:@"BattleFilter" predicate:activeFilterPredicate context:[self.appDelegate managedObjectContext]];
     if ([storedFilters count] > 0) {
         NSMutableArray *predicates = [NSMutableArray array];
         for (BattleFilter *filter in storedFilters) {
@@ -351,7 +352,7 @@
     NSUInteger numberOfDraws = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:draws] count];
     NSUInteger numberOfLosses = [[self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:losses] count];
     NSUInteger numberOfTotal = [self.fetchedResultsController.fetchedObjects count];
-    NSUInteger totalBattles = [[SGRepository findAllEntitiesOfType:@"Battle" predicate:nil context:[self.appDelegate managedObjectContext]] count];
+    NSUInteger totalBattles = [[SGKRepository findAllEntitiesOfType:@"Battle" predicate:nil context:[self.appDelegate managedObjectContext]] count];
     
     self.winTotal.text = [@(numberOfWins) stringValue];
     self.drawTotal.text = [@(numberOfDraws) stringValue];

@@ -8,8 +8,7 @@
 
 @import UIKit;
 @import CoreData;
-@import StoreKit;
-@import SteamGeniusKit;
+#import "SteamGeniusKit.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

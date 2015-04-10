@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.preferredContentSize = CGSizeMake(0.f, 100.f);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +45,7 @@
         NSPredicate *draws = [NSPredicate predicateWithFormat:@"result.winValue == %@", @0];
         NSPredicate *losses = [NSPredicate predicateWithFormat:@"result.winValue < %@", @0];
         
-        NSArray *battles = [SGRepository findAllEntitiesOfType:@"Battle" predicate:nil context:self.managedObjectContext];
+        NSArray *battles = [SGKRepository findAllEntitiesOfType:@"Battle" predicate:nil context:self.managedObjectContext];
         
         NSUInteger numberOfWins = [[battles filteredArrayUsingPredicate:wins] count];
         NSUInteger numberOfDraws = [[battles filteredArrayUsingPredicate:draws] count];
@@ -68,7 +67,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    _managedObjectModel = [SGCoreDataObjects getManagedObjectModel];
+    _managedObjectModel = [SGKCoreDataStack getManagedObjectModel];
     return _managedObjectModel;
 }
 
@@ -76,7 +75,7 @@
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    _persistentStoreCoordinator = [SGCoreDataObjects getReadOnlyPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel]];
+    _persistentStoreCoordinator = [SGKCoreDataStack getReadOnlyPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel]];
     return _persistentStoreCoordinator;
 }
 
@@ -84,7 +83,7 @@
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
-    _managedObjectContext = [SGCoreDataObjects getManagedObjectContextForPersistentStoreCoordinator:[self persistentStoreCoordinator]];
+    _managedObjectContext = [SGKCoreDataStack getManagedObjectContextForPersistentStoreCoordinator:[self persistentStoreCoordinator]];
     return _managedObjectContext;
 }
 

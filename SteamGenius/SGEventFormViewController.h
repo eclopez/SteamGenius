@@ -7,7 +7,7 @@
 //
 
 #import "FXForms.h"
-@import SteamGeniusKit;
+#import "Event.h"
 
 @interface SGEventFormViewController : FXFormViewController <FXFormFieldViewController>
 

@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-@import SteamGeniusKit;
+#import "Faction.h"
 #import "FXForms.h"
 
 @interface SGCasterOptionsTableViewController : UITableViewController <FXFormFieldViewController, NSFetchedResultsControllerDelegate>

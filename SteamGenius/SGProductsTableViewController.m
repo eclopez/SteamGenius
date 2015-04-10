@@ -96,14 +96,14 @@
     static NSString *CellIdentifier = @"ProductCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     switch (indexPath.section) {
         case 0:
         {   SKProduct *product = [[RMStore defaultStore] productForIdentifier:[_productIdentifiers objectAtIndex:indexPath.row]];
-            cell.textLabel.text = [NSString stringWithFormat:@"%@ – %@", product.localizedTitle, [RMStore localizedPriceOfProduct:product]];
-            cell.detailTextLabel.text = product.localizedDescription;
+            cell.textLabel.text = [NSString stringWithFormat:@"%@", product.localizedTitle];
+            cell.detailTextLabel.text = [RMStore localizedPriceOfProduct:product];
             cell.detailTextLabel.numberOfLines = 0;
             cell.accessoryType = UITableViewCellAccessoryNone;
             
@@ -150,7 +150,7 @@
 {
     switch (section) {
         case 0:
-            return @"Current premium features include:\n– Removing all ads.\n\nMany more features are planned!";
+            return @"Current premium features include:\n\n1. Removing all ads.\n\nMany more features are planned!";
         default:
             return @"";
     }

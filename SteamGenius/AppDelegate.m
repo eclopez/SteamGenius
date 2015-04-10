@@ -115,7 +115,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    _managedObjectModel = [SGCoreDataObjects getManagedObjectModel];
+    _managedObjectModel = [SGKCoreDataStack getManagedObjectModel];
     return _managedObjectModel;
 }
 
@@ -123,7 +123,7 @@
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    _persistentStoreCoordinator = [SGCoreDataObjects getPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel] applicationDocumentsDirectoryURL:[self applicationDocumentsDirectory]];
+    _persistentStoreCoordinator = [SGKCoreDataStack getPersistentStoreCoordinatorForManagedObjectModel:[self managedObjectModel] applicationDocumentsDirectoryURL:[self applicationDocumentsDirectory]];
     return _persistentStoreCoordinator;
 }
 
@@ -131,7 +131,7 @@
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
-    _managedObjectContext = [SGCoreDataObjects getManagedObjectContextForPersistentStoreCoordinator:[self persistentStoreCoordinator]];
+    _managedObjectContext = [SGKCoreDataStack getManagedObjectContextForPersistentStoreCoordinator:[self persistentStoreCoordinator]];
     return _managedObjectContext;
 }
 

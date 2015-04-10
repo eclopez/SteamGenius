@@ -7,7 +7,7 @@
 //
 
 @import Foundation;
-@import SteamGeniusKit;
+#import "Opponent.h"
 #import "FXForms.h"
 
 @interface SGOpponentForm : NSObject <FXForm>

@@ -12,6 +12,8 @@
 #import "SGCasterOptionsTableViewController.h"
 #import "SGGenericAddOptionsTableViewController.h"
 #import "SGGenericOptionsTableViewController.h"
+#import "SGRepository.h"
+#import "SteamGeniusKit.h"
 
 @implementation SGBattleForm
 
@@ -157,7 +159,7 @@
     for (id sortKey in sortKeys) {
         [sortDescriptors addObject:[[NSSortDescriptor alloc] initWithKey:sortKey ascending:[[sortKeys objectForKey:sortKey] boolValue]]];
     }
-    return [[SGRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
+    return [[SGKRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 @end

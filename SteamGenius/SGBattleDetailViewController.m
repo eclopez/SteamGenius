@@ -10,6 +10,12 @@
 #import "SGBattleFormViewController.h"
 #import "SGEmptyView.h"
 #import "AppDelegate.h"
+#import "Model.h"
+#import "Caster.h"
+#import "Opponent.h"
+#import "Scenario.h"
+#import "Event.h"
+#import "Result.h"
 
 #define kEmptyTableMessage @"No battle selected."
 

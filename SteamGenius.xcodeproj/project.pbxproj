@@ -9,16 +9,34 @@
 /* Begin PBXBuildFile section */
 		03032A9A19ED974900A15C54 /* SGFiltersForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9919ED974900A15C54 /* SGFiltersForm.m */; };
 		03032A9D19ED9D2D00A15C54 /* SGFiltersFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */; };
+		030ADECE1AD8723100E6A1CF /* DataVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADECD1AD8723100E6A1CF /* DataVersion.m */; };
+		030ADED11AD8723200E6A1CF /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADED01AD8723200E6A1CF /* Model.m */; };
+		030ADED41AD8723200E6A1CF /* Scenario.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADED31AD8723200E6A1CF /* Scenario.m */; };
+		030ADED71AD8723200E6A1CF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADED61AD8723200E6A1CF /* Game.m */; };
+		030ADEDA1AD8723200E6A1CF /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADED91AD8723200E6A1CF /* Faction.m */; };
+		030ADEDD1AD8723300E6A1CF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEDC1AD8723300E6A1CF /* Event.m */; };
+		030ADEE01AD8723300E6A1CF /* Opponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEDF1AD8723300E6A1CF /* Opponent.m */; };
+		030ADEE31AD8723300E6A1CF /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEE21AD8723300E6A1CF /* Result.m */; };
+		030ADEE61AD8723300E6A1CF /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEE51AD8723300E6A1CF /* Battle.m */; };
+		030ADEE91AD8723300E6A1CF /* Caster.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEE81AD8723300E6A1CF /* Caster.m */; };
+		030ADEEC1AD8723400E6A1CF /* BattleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEEB1AD8723400E6A1CF /* BattleFilter.m */; };
+		030ADEEF1AD8725600E6A1CF /* BattleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEEE1AD8725600E6A1CF /* BattleFilter.m */; };
+		030ADEF21AD8725700E6A1CF /* DataVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEF11AD8725700E6A1CF /* DataVersion.m */; };
+		030ADEF51AD8725700E6A1CF /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEF41AD8725700E6A1CF /* Result.m */; };
+		030ADEF81AD8725700E6A1CF /* Scenario.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEF71AD8725700E6A1CF /* Scenario.m */; };
+		030ADEFB1AD8725700E6A1CF /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEFA1AD8725700E6A1CF /* Battle.m */; };
+		030ADEFE1AD8725700E6A1CF /* Caster.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADEFD1AD8725700E6A1CF /* Caster.m */; };
+		030ADF011AD8725700E6A1CF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADF001AD8725700E6A1CF /* Game.m */; };
+		030ADF041AD8725700E6A1CF /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADF031AD8725700E6A1CF /* Model.m */; };
+		030ADF071AD8725700E6A1CF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADF061AD8725700E6A1CF /* Event.m */; };
+		030ADF0A1AD8725700E6A1CF /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADF091AD8725700E6A1CF /* Faction.m */; };
+		030ADF0D1AD8725700E6A1CF /* Opponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADF0C1AD8725700E6A1CF /* Opponent.m */; };
 		0318D2CF1ABF07C400E9C8A5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0318D2CE1ABF07C400E9C8A5 /* Podfile */; };
 		0318D2DA1ABF0D3C00E9C8A5 /* SteamGeniusKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D2D91ABF0D3C00E9C8A5 /* SteamGeniusKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0318D2E01ABF0D3C00E9C8A5 /* SteamGeniusKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0318D2D51ABF0D3C00E9C8A5 /* SteamGeniusKit.framework */; };
 		0318D2E91ABF0D3C00E9C8A5 /* SteamGeniusKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D2E81ABF0D3C00E9C8A5 /* SteamGeniusKitTests.m */; };
 		0318D2EC1ABF0D3C00E9C8A5 /* SteamGeniusKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0318D2D51ABF0D3C00E9C8A5 /* SteamGeniusKit.framework */; };
 		0318D2ED1ABF0D3C00E9C8A5 /* SteamGeniusKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0318D2D51ABF0D3C00E9C8A5 /* SteamGeniusKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0318D2F71ABF0D8700E9C8A5 /* SGCoreDataObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D2F51ABF0D8700E9C8A5 /* SGCoreDataObjects.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D2F81ABF0D8700E9C8A5 /* SGCoreDataObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D2F61ABF0D8700E9C8A5 /* SGCoreDataObjects.m */; };
-		0318D36D1ABF2BC100E9C8A5 /* SGRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D36B1ABF2BC100E9C8A5 /* SGRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0318D36E1ABF2BC100E9C8A5 /* SGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D36C1ABF2BC100E9C8A5 /* SGRepository.m */; };
 		0318D3A41AC04CFC00E9C8A5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0318D3A31AC04CFC00E9C8A5 /* NotificationCenter.framework */; };
 		0318D3AA1AC04CFC00E9C8A5 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D3A91AC04CFC00E9C8A5 /* TodayViewController.m */; };
 		0318D3AC1AC04CFC00E9C8A5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0318D3AB1AC04CFC00E9C8A5 /* MainInterface.storyboard */; };
@@ -30,6 +48,10 @@
 		0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715519C7DB1F00634776 /* SGSettingsForm.m */; };
 		0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715819C7DE1000634776 /* SGSettingsFormViewController.m */; };
 		032812921AB38B0C00F23BF9 /* SGReceiptVerificator.m in Sources */ = {isa = PBXBuildFile; fileRef = 032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */; };
+		0343F5121AD8791900D6E786 /* SGKRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 0343F5101AD8791900D6E786 /* SGKRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0343F5131AD8791900D6E786 /* SGKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0343F5111AD8791900D6E786 /* SGKRepository.m */; };
+		0343F5161AD879C900D6E786 /* SGKCoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0343F5141AD879C900D6E786 /* SGKCoreDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0343F5171AD879C900D6E786 /* SGKCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0343F5151AD879C900D6E786 /* SGKCoreDataStack.m */; };
 		0344A7A71A8EA41A00F92946 /* SGProducts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0344A7A61A8EA41A00F92946 /* SGProducts.plist */; };
 		0349E2AB19C17F510091FF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AA19C17F510091FF21 /* main.m */; };
 		0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AD19C17F510091FF21 /* AppDelegate.m */; };
@@ -60,28 +82,6 @@
 		038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF319CDE70C00A224F7 /* SGBattleForm.m */; };
 		038DAAF819CDE8C500A224F7 /* SGBattleFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */; };
 		0395226C1AC39B3200A6380C /* SteamGenius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0325713619C491B300634776 /* SteamGenius.xcdatamodeld */; };
-		0395226F1AC39B6B00A6380C /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395226D1AC39B6B00A6380C /* Event.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		039522701AC39B6B00A6380C /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395226E1AC39B6B00A6380C /* Event.m */; };
-		039522731AC39B6C00A6380C /* Opponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522711AC39B6C00A6380C /* Opponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		039522741AC39B6C00A6380C /* Opponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522721AC39B6C00A6380C /* Opponent.m */; };
-		039522771AC39B6C00A6380C /* BattleFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522751AC39B6C00A6380C /* BattleFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		039522781AC39B6C00A6380C /* BattleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522761AC39B6C00A6380C /* BattleFilter.m */; };
-		0395227B1AC39B6C00A6380C /* Faction.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522791AC39B6C00A6380C /* Faction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0395227C1AC39B6C00A6380C /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395227A1AC39B6C00A6380C /* Faction.m */; };
-		0395227F1AC39B6C00A6380C /* DataVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395227D1AC39B6C00A6380C /* DataVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		039522801AC39B6C00A6380C /* DataVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395227E1AC39B6C00A6380C /* DataVersion.m */; };
-		039522831AC39B6C00A6380C /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522811AC39B6C00A6380C /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		039522841AC39B6C00A6380C /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522821AC39B6C00A6380C /* Model.m */; };
-		039522871AC39B6C00A6380C /* Caster.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522851AC39B6C00A6380C /* Caster.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		039522881AC39B6C00A6380C /* Caster.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522861AC39B6C00A6380C /* Caster.m */; };
-		0395228B1AC39B6C00A6380C /* Result.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522891AC39B6C00A6380C /* Result.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0395228C1AC39B6C00A6380C /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395228A1AC39B6C00A6380C /* Result.m */; };
-		0395228F1AC39B6C00A6380C /* Scenario.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395228D1AC39B6C00A6380C /* Scenario.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		039522901AC39B6C00A6380C /* Scenario.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395228E1AC39B6C00A6380C /* Scenario.m */; };
-		039522931AC39B6C00A6380C /* Battle.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522911AC39B6C00A6380C /* Battle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		039522941AC39B6C00A6380C /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522921AC39B6C00A6380C /* Battle.m */; };
-		039522971AC39B6C00A6380C /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = 039522951AC39B6C00A6380C /* Game.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		039522981AC39B6C00A6380C /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 039522961AC39B6C00A6380C /* Game.m */; };
 		0395229E1AC44FB600A6380C /* Faction.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0395229A1AC44FB600A6380C /* Faction.plist */; };
 		0395229F1AC44FB600A6380C /* Game.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0395229B1AC44FB600A6380C /* Game.plist */; };
 		039522A01AC44FB600A6380C /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0395229C1AC44FB600A6380C /* Model.plist */; };
@@ -95,6 +95,7 @@
 		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
 		03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */; };
 		03E3C6F21A79EB0B009CCCD5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */; };
+		03FB29641AD86E26009DE99B /* SGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FB29631AD86E26009DE99B /* SGRepository.m */; };
 		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +167,50 @@
 		03032A9919ED974900A15C54 /* SGFiltersForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersForm.m; sourceTree = "<group>"; };
 		03032A9B19ED9D2D00A15C54 /* SGFiltersFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFiltersFormViewController.h; sourceTree = "<group>"; };
 		03032A9C19ED9D2D00A15C54 /* SGFiltersFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersFormViewController.m; sourceTree = "<group>"; };
+		030ADECC1AD8723100E6A1CF /* DataVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVersion.h; sourceTree = "<group>"; };
+		030ADECD1AD8723100E6A1CF /* DataVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVersion.m; sourceTree = "<group>"; };
+		030ADECF1AD8723200E6A1CF /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		030ADED01AD8723200E6A1CF /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		030ADED21AD8723200E6A1CF /* Scenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
+		030ADED31AD8723200E6A1CF /* Scenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scenario.m; sourceTree = "<group>"; };
+		030ADED51AD8723200E6A1CF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		030ADED61AD8723200E6A1CF /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		030ADED81AD8723200E6A1CF /* Faction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faction.h; sourceTree = "<group>"; };
+		030ADED91AD8723200E6A1CF /* Faction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faction.m; sourceTree = "<group>"; };
+		030ADEDB1AD8723300E6A1CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		030ADEDC1AD8723300E6A1CF /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		030ADEDE1AD8723300E6A1CF /* Opponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opponent.h; sourceTree = "<group>"; };
+		030ADEDF1AD8723300E6A1CF /* Opponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opponent.m; sourceTree = "<group>"; };
+		030ADEE11AD8723300E6A1CF /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
+		030ADEE21AD8723300E6A1CF /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
+		030ADEE41AD8723300E6A1CF /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
+		030ADEE51AD8723300E6A1CF /* Battle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Battle.m; sourceTree = "<group>"; };
+		030ADEE71AD8723300E6A1CF /* Caster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caster.h; sourceTree = "<group>"; };
+		030ADEE81AD8723300E6A1CF /* Caster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caster.m; sourceTree = "<group>"; };
+		030ADEEA1AD8723400E6A1CF /* BattleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleFilter.h; sourceTree = "<group>"; };
+		030ADEEB1AD8723400E6A1CF /* BattleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleFilter.m; sourceTree = "<group>"; };
+		030ADEED1AD8725600E6A1CF /* BattleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleFilter.h; sourceTree = "<group>"; };
+		030ADEEE1AD8725600E6A1CF /* BattleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleFilter.m; sourceTree = "<group>"; };
+		030ADEF01AD8725700E6A1CF /* DataVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVersion.h; sourceTree = "<group>"; };
+		030ADEF11AD8725700E6A1CF /* DataVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVersion.m; sourceTree = "<group>"; };
+		030ADEF31AD8725700E6A1CF /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
+		030ADEF41AD8725700E6A1CF /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
+		030ADEF61AD8725700E6A1CF /* Scenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
+		030ADEF71AD8725700E6A1CF /* Scenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scenario.m; sourceTree = "<group>"; };
+		030ADEF91AD8725700E6A1CF /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
+		030ADEFA1AD8725700E6A1CF /* Battle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Battle.m; sourceTree = "<group>"; };
+		030ADEFC1AD8725700E6A1CF /* Caster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caster.h; sourceTree = "<group>"; };
+		030ADEFD1AD8725700E6A1CF /* Caster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caster.m; sourceTree = "<group>"; };
+		030ADEFF1AD8725700E6A1CF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		030ADF001AD8725700E6A1CF /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		030ADF021AD8725700E6A1CF /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		030ADF031AD8725700E6A1CF /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		030ADF051AD8725700E6A1CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		030ADF061AD8725700E6A1CF /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		030ADF081AD8725700E6A1CF /* Faction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faction.h; sourceTree = "<group>"; };
+		030ADF091AD8725700E6A1CF /* Faction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faction.m; sourceTree = "<group>"; };
+		030ADF0B1AD8725700E6A1CF /* Opponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opponent.h; sourceTree = "<group>"; };
+		030ADF0C1AD8725700E6A1CF /* Opponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opponent.m; sourceTree = "<group>"; };
 		0318D2CE1ABF07C400E9C8A5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		0318D2D51ABF0D3C00E9C8A5 /* SteamGeniusKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SteamGeniusKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0318D2D81ABF0D3C00E9C8A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,10 +218,6 @@
 		0318D2DF1ABF0D3C00E9C8A5 /* SteamGeniusKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteamGeniusKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0318D2E71ABF0D3C00E9C8A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0318D2E81ABF0D3C00E9C8A5 /* SteamGeniusKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteamGeniusKitTests.m; sourceTree = "<group>"; };
-		0318D2F51ABF0D8700E9C8A5 /* SGCoreDataObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCoreDataObjects.h; sourceTree = "<group>"; };
-		0318D2F61ABF0D8700E9C8A5 /* SGCoreDataObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCoreDataObjects.m; sourceTree = "<group>"; };
-		0318D36B1ABF2BC100E9C8A5 /* SGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGRepository.h; sourceTree = "<group>"; };
-		0318D36C1ABF2BC100E9C8A5 /* SGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGRepository.m; sourceTree = "<group>"; };
 		0318D39C1ABFDEC500E9C8A5 /* SteamGenius.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SteamGenius.entitlements; sourceTree = "<group>"; };
 		0318D3A21AC04CFC00E9C8A5 /* SteamGeniusRecord.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SteamGeniusRecord.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0318D3A31AC04CFC00E9C8A5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -198,6 +239,10 @@
 		0325715819C7DE1000634776 /* SGSettingsFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsFormViewController.m; sourceTree = "<group>"; };
 		032812901AB38B0C00F23BF9 /* SGReceiptVerificator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGReceiptVerificator.h; sourceTree = "<group>"; };
 		032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGReceiptVerificator.m; sourceTree = "<group>"; };
+		0343F5101AD8791900D6E786 /* SGKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKRepository.h; sourceTree = "<group>"; };
+		0343F5111AD8791900D6E786 /* SGKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKRepository.m; sourceTree = "<group>"; };
+		0343F5141AD879C900D6E786 /* SGKCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCoreDataStack.h; sourceTree = "<group>"; };
+		0343F5151AD879C900D6E786 /* SGKCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCoreDataStack.m; sourceTree = "<group>"; };
 		0344A7A61A8EA41A00F92946 /* SGProducts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGProducts.plist; sourceTree = "<group>"; };
 		0349E2A519C17F510091FF21 /* SteamGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteamGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0349E2A919C17F510091FF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -252,28 +297,6 @@
 		038DAAF319CDE70C00A224F7 /* SGBattleForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleForm.m; sourceTree = "<group>"; };
 		038DAAF619CDE8C500A224F7 /* SGBattleFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleFormViewController.h; sourceTree = "<group>"; };
 		038DAAF719CDE8C500A224F7 /* SGBattleFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleFormViewController.m; sourceTree = "<group>"; };
-		0395226D1AC39B6B00A6380C /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		0395226E1AC39B6B00A6380C /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		039522711AC39B6C00A6380C /* Opponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opponent.h; sourceTree = "<group>"; };
-		039522721AC39B6C00A6380C /* Opponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opponent.m; sourceTree = "<group>"; };
-		039522751AC39B6C00A6380C /* BattleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleFilter.h; sourceTree = "<group>"; };
-		039522761AC39B6C00A6380C /* BattleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleFilter.m; sourceTree = "<group>"; };
-		039522791AC39B6C00A6380C /* Faction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faction.h; sourceTree = "<group>"; };
-		0395227A1AC39B6C00A6380C /* Faction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faction.m; sourceTree = "<group>"; };
-		0395227D1AC39B6C00A6380C /* DataVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVersion.h; sourceTree = "<group>"; };
-		0395227E1AC39B6C00A6380C /* DataVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVersion.m; sourceTree = "<group>"; };
-		039522811AC39B6C00A6380C /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
-		039522821AC39B6C00A6380C /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
-		039522851AC39B6C00A6380C /* Caster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caster.h; sourceTree = "<group>"; };
-		039522861AC39B6C00A6380C /* Caster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caster.m; sourceTree = "<group>"; };
-		039522891AC39B6C00A6380C /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
-		0395228A1AC39B6C00A6380C /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
-		0395228D1AC39B6C00A6380C /* Scenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
-		0395228E1AC39B6C00A6380C /* Scenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scenario.m; sourceTree = "<group>"; };
-		039522911AC39B6C00A6380C /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
-		039522921AC39B6C00A6380C /* Battle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Battle.m; sourceTree = "<group>"; };
-		039522951AC39B6C00A6380C /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		039522961AC39B6C00A6380C /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		0395229A1AC44FB600A6380C /* Faction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Faction.plist; sourceTree = "<group>"; };
 		0395229B1AC44FB600A6380C /* Game.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Game.plist; sourceTree = "<group>"; };
 		0395229C1AC44FB600A6380C /* Model.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Model.plist; sourceTree = "<group>"; };
@@ -296,6 +319,8 @@
 		03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGProductsTableViewController.m; sourceTree = "<group>"; };
 		03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		03F10A761AB4DCC700F3F727 /* SteamGenius 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SteamGenius 2.xcdatamodel"; sourceTree = "<group>"; };
+		03FB29621AD86E26009DE99B /* SGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGRepository.h; sourceTree = "<group>"; };
+		03FB29631AD86E26009DE99B /* SGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGRepository.m; sourceTree = "<group>"; };
 		6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -371,6 +396,64 @@
 			name = Form;
 			sourceTree = "<group>";
 		};
+		030ADECA1AD871C200E6A1CF /* Entity Classes */ = {
+			isa = PBXGroup;
+			children = (
+				030ADEEA1AD8723400E6A1CF /* BattleFilter.h */,
+				030ADEEB1AD8723400E6A1CF /* BattleFilter.m */,
+				030ADEE71AD8723300E6A1CF /* Caster.h */,
+				030ADEE81AD8723300E6A1CF /* Caster.m */,
+				030ADEE41AD8723300E6A1CF /* Battle.h */,
+				030ADEE51AD8723300E6A1CF /* Battle.m */,
+				030ADEE11AD8723300E6A1CF /* Result.h */,
+				030ADEE21AD8723300E6A1CF /* Result.m */,
+				030ADEDE1AD8723300E6A1CF /* Opponent.h */,
+				030ADEDF1AD8723300E6A1CF /* Opponent.m */,
+				030ADEDB1AD8723300E6A1CF /* Event.h */,
+				030ADEDC1AD8723300E6A1CF /* Event.m */,
+				030ADED81AD8723200E6A1CF /* Faction.h */,
+				030ADED91AD8723200E6A1CF /* Faction.m */,
+				030ADED51AD8723200E6A1CF /* Game.h */,
+				030ADED61AD8723200E6A1CF /* Game.m */,
+				030ADED21AD8723200E6A1CF /* Scenario.h */,
+				030ADED31AD8723200E6A1CF /* Scenario.m */,
+				030ADECF1AD8723200E6A1CF /* Model.h */,
+				030ADED01AD8723200E6A1CF /* Model.m */,
+				030ADECC1AD8723100E6A1CF /* DataVersion.h */,
+				030ADECD1AD8723100E6A1CF /* DataVersion.m */,
+			);
+			name = "Entity Classes";
+			sourceTree = "<group>";
+		};
+		030ADECB1AD871D300E6A1CF /* Entity Classes */ = {
+			isa = PBXGroup;
+			children = (
+				030ADF0B1AD8725700E6A1CF /* Opponent.h */,
+				030ADF0C1AD8725700E6A1CF /* Opponent.m */,
+				030ADF081AD8725700E6A1CF /* Faction.h */,
+				030ADF091AD8725700E6A1CF /* Faction.m */,
+				030ADF051AD8725700E6A1CF /* Event.h */,
+				030ADF061AD8725700E6A1CF /* Event.m */,
+				030ADF021AD8725700E6A1CF /* Model.h */,
+				030ADF031AD8725700E6A1CF /* Model.m */,
+				030ADEFF1AD8725700E6A1CF /* Game.h */,
+				030ADF001AD8725700E6A1CF /* Game.m */,
+				030ADEFC1AD8725700E6A1CF /* Caster.h */,
+				030ADEFD1AD8725700E6A1CF /* Caster.m */,
+				030ADEF91AD8725700E6A1CF /* Battle.h */,
+				030ADEFA1AD8725700E6A1CF /* Battle.m */,
+				030ADEF61AD8725700E6A1CF /* Scenario.h */,
+				030ADEF71AD8725700E6A1CF /* Scenario.m */,
+				030ADEF31AD8725700E6A1CF /* Result.h */,
+				030ADEF41AD8725700E6A1CF /* Result.m */,
+				030ADEF01AD8725700E6A1CF /* DataVersion.h */,
+				030ADEF11AD8725700E6A1CF /* DataVersion.m */,
+				030ADEED1AD8725600E6A1CF /* BattleFilter.h */,
+				030ADEEE1AD8725600E6A1CF /* BattleFilter.m */,
+			);
+			name = "Entity Classes";
+			sourceTree = "<group>";
+		};
 		0318D2D61ABF0D3C00E9C8A5 /* SteamGeniusKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,26 +493,16 @@
 			isa = PBXGroup;
 			children = (
 				0325713619C491B300634776 /* SteamGenius.xcdatamodeld */,
-				0318D2F51ABF0D8700E9C8A5 /* SGCoreDataObjects.h */,
-				0318D2F61ABF0D8700E9C8A5 /* SGCoreDataObjects.m */,
-				0318D36A1ABF2B6900E9C8A5 /* Repository */,
-				039522991AC39B7000A6380C /* Entity Classes */,
+				0343F5141AD879C900D6E786 /* SGKCoreDataStack.h */,
+				0343F5151AD879C900D6E786 /* SGKCoreDataStack.m */,
 			);
 			name = "Data Store";
-			sourceTree = "<group>";
-		};
-		0318D36A1ABF2B6900E9C8A5 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				0318D36B1ABF2BC100E9C8A5 /* SGRepository.h */,
-				0318D36C1ABF2BC100E9C8A5 /* SGRepository.m */,
-			);
-			name = Repository;
 			sourceTree = "<group>";
 		};
 		0318D36F1ABFD0B500E9C8A5 /* Service API */ = {
 			isa = PBXGroup;
 			children = (
+				0343F50F1AD878D600D6E786 /* Access Methods */,
 				0318D2FA1ABF253500E9C8A5 /* Data Store */,
 			);
 			name = "Service API";
@@ -442,6 +515,7 @@
 				0318D3A81AC04CFC00E9C8A5 /* TodayViewController.h */,
 				0318D3A91AC04CFC00E9C8A5 /* TodayViewController.m */,
 				0318D3AB1AC04CFC00E9C8A5 /* MainInterface.storyboard */,
+				030ADECB1AD871D300E6A1CF /* Entity Classes */,
 				0318D3A61AC04CFC00E9C8A5 /* Supporting Files */,
 			);
 			path = SteamGeniusRecord;
@@ -494,7 +568,10 @@
 		0325713919C491C300634776 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				030ADECA1AD871C200E6A1CF /* Entity Classes */,
 				038DAAEA19CD3EC100A224F7 /* Import */,
+				03FB29621AD86E26009DE99B /* SGRepository.h */,
+				03FB29631AD86E26009DE99B /* SGRepository.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -516,6 +593,15 @@
 				0349E2DB19C1D8EC0091FF21 /* Manager */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		0343F50F1AD878D600D6E786 /* Access Methods */ = {
+			isa = PBXGroup;
+			children = (
+				0343F5101AD8791900D6E786 /* SGKRepository.h */,
+				0343F5111AD8791900D6E786 /* SGKRepository.m */,
+			);
+			name = "Access Methods";
 			sourceTree = "<group>";
 		};
 		0349E29C19C17F510091FF21 = {
@@ -807,35 +893,6 @@
 			name = Form;
 			sourceTree = "<group>";
 		};
-		039522991AC39B7000A6380C /* Entity Classes */ = {
-			isa = PBXGroup;
-			children = (
-				039522951AC39B6C00A6380C /* Game.h */,
-				039522961AC39B6C00A6380C /* Game.m */,
-				039522911AC39B6C00A6380C /* Battle.h */,
-				039522921AC39B6C00A6380C /* Battle.m */,
-				0395228D1AC39B6C00A6380C /* Scenario.h */,
-				0395228E1AC39B6C00A6380C /* Scenario.m */,
-				039522891AC39B6C00A6380C /* Result.h */,
-				0395228A1AC39B6C00A6380C /* Result.m */,
-				039522851AC39B6C00A6380C /* Caster.h */,
-				039522861AC39B6C00A6380C /* Caster.m */,
-				039522811AC39B6C00A6380C /* Model.h */,
-				039522821AC39B6C00A6380C /* Model.m */,
-				0395227D1AC39B6C00A6380C /* DataVersion.h */,
-				0395227E1AC39B6C00A6380C /* DataVersion.m */,
-				039522791AC39B6C00A6380C /* Faction.h */,
-				0395227A1AC39B6C00A6380C /* Faction.m */,
-				039522751AC39B6C00A6380C /* BattleFilter.h */,
-				039522761AC39B6C00A6380C /* BattleFilter.m */,
-				039522711AC39B6C00A6380C /* Opponent.h */,
-				039522721AC39B6C00A6380C /* Opponent.m */,
-				0395226D1AC39B6B00A6380C /* Event.h */,
-				0395226E1AC39B6B00A6380C /* Event.m */,
-			);
-			name = "Entity Classes";
-			sourceTree = "<group>";
-		};
 		03AF5B5E1A477C13005C4A1B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -971,19 +1028,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0318D2DA1ABF0D3C00E9C8A5 /* SteamGeniusKit.h in Headers */,
-				0318D2F71ABF0D8700E9C8A5 /* SGCoreDataObjects.h in Headers */,
-				039522971AC39B6C00A6380C /* Game.h in Headers */,
-				0395227B1AC39B6C00A6380C /* Faction.h in Headers */,
-				0395227F1AC39B6C00A6380C /* DataVersion.h in Headers */,
-				039522871AC39B6C00A6380C /* Caster.h in Headers */,
-				039522771AC39B6C00A6380C /* BattleFilter.h in Headers */,
-				039522931AC39B6C00A6380C /* Battle.h in Headers */,
-				0318D36D1ABF2BC100E9C8A5 /* SGRepository.h in Headers */,
-				039522831AC39B6C00A6380C /* Model.h in Headers */,
-				0395228F1AC39B6C00A6380C /* Scenario.h in Headers */,
-				0395228B1AC39B6C00A6380C /* Result.h in Headers */,
-				039522731AC39B6C00A6380C /* Opponent.h in Headers */,
-				0395226F1AC39B6B00A6380C /* Event.h in Headers */,
+				0343F5121AD8791900D6E786 /* SGKRepository.h in Headers */,
+				0343F5161AD879C900D6E786 /* SGKCoreDataStack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1252,20 +1298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				039522801AC39B6C00A6380C /* DataVersion.m in Sources */,
-				039522701AC39B6B00A6380C /* Event.m in Sources */,
 				0395226C1AC39B3200A6380C /* SteamGenius.xcdatamodeld in Sources */,
-				039522841AC39B6C00A6380C /* Model.m in Sources */,
-				039522941AC39B6C00A6380C /* Battle.m in Sources */,
-				039522981AC39B6C00A6380C /* Game.m in Sources */,
-				0318D2F81ABF0D8700E9C8A5 /* SGCoreDataObjects.m in Sources */,
-				039522781AC39B6C00A6380C /* BattleFilter.m in Sources */,
-				0395228C1AC39B6C00A6380C /* Result.m in Sources */,
-				039522741AC39B6C00A6380C /* Opponent.m in Sources */,
-				0395227C1AC39B6C00A6380C /* Faction.m in Sources */,
-				039522901AC39B6C00A6380C /* Scenario.m in Sources */,
-				0318D36E1ABF2BC100E9C8A5 /* SGRepository.m in Sources */,
-				039522881AC39B6C00A6380C /* Caster.m in Sources */,
+				0343F5131AD8791900D6E786 /* SGKRepository.m in Sources */,
+				0343F5171AD879C900D6E786 /* SGKCoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1282,6 +1317,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0318D3AA1AC04CFC00E9C8A5 /* TodayViewController.m in Sources */,
+				030ADF0A1AD8725700E6A1CF /* Faction.m in Sources */,
+				030ADEF81AD8725700E6A1CF /* Scenario.m in Sources */,
+				030ADF071AD8725700E6A1CF /* Event.m in Sources */,
+				030ADF0D1AD8725700E6A1CF /* Opponent.m in Sources */,
+				030ADEF21AD8725700E6A1CF /* DataVersion.m in Sources */,
+				030ADF041AD8725700E6A1CF /* Model.m in Sources */,
+				030ADF011AD8725700E6A1CF /* Game.m in Sources */,
+				030ADEFB1AD8725700E6A1CF /* Battle.m in Sources */,
+				030ADEFE1AD8725700E6A1CF /* Caster.m in Sources */,
+				030ADEF51AD8725700E6A1CF /* Result.m in Sources */,
+				030ADEEF1AD8725600E6A1CF /* BattleFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1293,11 +1339,16 @@
 				03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */,
 				031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */,
 				03032A9A19ED974900A15C54 /* SGFiltersForm.m in Sources */,
+				030ADEDA1AD8723200E6A1CF /* Faction.m in Sources */,
 				038DAAF819CDE8C500A224F7 /* SGBattleFormViewController.m in Sources */,
+				030ADEE31AD8723300E6A1CF /* Result.m in Sources */,
+				030ADEDD1AD8723300E6A1CF /* Event.m in Sources */,
+				030ADEEC1AD8723400E6A1CF /* BattleFilter.m in Sources */,
 				0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */,
 				0351035D19DD8D3F0032E215 /* SGBattleInfoCell.m in Sources */,
 				0352E8D21A5C52D600007098 /* SGBattleDetailViewController.m in Sources */,
 				036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */,
+				030ADEE61AD8723300E6A1CF /* Battle.m in Sources */,
 				03C5F6CF1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
 				0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */,
@@ -1307,19 +1358,26 @@
 				03032A9D19ED9D2D00A15C54 /* SGFiltersFormViewController.m in Sources */,
 				0369596E19D6041C0096CEBC /* SGEventFormViewController.m in Sources */,
 				03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */,
+				030ADED41AD8723200E6A1CF /* Scenario.m in Sources */,
 				0349E2AB19C17F510091FF21 /* main.m in Sources */,
 				038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */,
 				032812921AB38B0C00F23BF9 /* SGReceiptVerificator.m in Sources */,
 				0351036619DE54C50032E215 /* SGBattleListViewController.m in Sources */,
 				0369595819D542860096CEBC /* SGOpponentFormViewController.m in Sources */,
 				03AF5B691A49225D005C4A1B /* SGDisplayTableViewCell.m in Sources */,
+				030ADECE1AD8723100E6A1CF /* DataVersion.m in Sources */,
 				0369596619D5F9AE0096CEBC /* SGScenarioFormViewController.m in Sources */,
+				030ADEE91AD8723300E6A1CF /* Caster.m in Sources */,
 				03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */,
 				03C301191A36B3580053882A /* SGColorCircleView.m in Sources */,
+				03FB29641AD86E26009DE99B /* SGRepository.m in Sources */,
 				0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */,
+				030ADEE01AD8723300E6A1CF /* Opponent.m in Sources */,
 				0369595E19D5F4680096CEBC /* SGGenericOptionsTableViewController.m in Sources */,
+				030ADED11AD8723200E6A1CF /* Model.m in Sources */,
 				037708D61A5B185300295E1A /* SGWebViewController.m in Sources */,
 				038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */,
+				030ADED71AD8723200E6A1CF /* Game.m in Sources */,
 				0369594919D4D1BB0096CEBC /* SGGenericAddOptionsTableViewController.m in Sources */,
 				0369595419D5418B0096CEBC /* SGOpponentForm.m in Sources */,
 				031D6AB719CEA5D0000B7D26 /* SGResizableImageViewCell.m in Sources */,

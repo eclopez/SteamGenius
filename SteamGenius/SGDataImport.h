@@ -7,7 +7,7 @@
 //
 
 @import Foundation;
-@import SteamGeniusKit;
+#import "SteamGeniusKit.h"
 
 typedef NS_ENUM(NSInteger, SGEntityType) {
     SGEntityType_Game,

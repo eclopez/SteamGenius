@@ -7,7 +7,6 @@
 //
 
 @import Foundation;
-@import SteamGeniusKit;
 #import "FXForms.h"
 
 @interface SGFiltersForm : NSObject <FXForm>

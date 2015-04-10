@@ -7,7 +7,11 @@
 //
 
 @import Foundation;
-@import SteamGeniusKit;
+#import "Caster.h"
+#import "Opponent.h"
+#import "Result.h"
+#import "Scenario.h"
+#import "Event.h"
 #import "FXForms.h"
 
 @interface SGBattleForm : NSObject <FXForm>

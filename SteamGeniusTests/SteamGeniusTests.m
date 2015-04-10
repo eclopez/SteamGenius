@@ -9,8 +9,9 @@
 @import UIKit;
 @import CoreData;
 @import XCTest;
-@import SteamGeniusKit;
+#import "SteamGeniusKit.h"
 #import "SGDataImport.h"
+#import "SGRepository.h"
 
 @interface SteamGeniusTests : XCTestCase
 
@@ -96,9 +97,9 @@
     [SGRepository initWithOpponentNamed:@"Clayton" context:_moc];
     
     // Act
-    Opponent *jeff = [SGRepository findOneEntityOfType:@"Opponent" entityKey:@"Jeff" keyField:@"name" context:_moc];
+    Opponent *jeff = [SGKRepository findOneEntityOfType:@"Opponent" entityKey:@"Jeff" keyField:@"name" context:_moc];
     jeff.name = @"Ian";
-    Opponent *ian = [SGRepository findOneEntityOfType:@"Opponent" entityKey:@"Ian" keyField:@"name" context:_moc];
+    Opponent *ian = [SGKRepository findOneEntityOfType:@"Opponent" entityKey:@"Ian" keyField:@"name" context:_moc];
     
     // Assert
     XCTAssertEqual(jeff, ian);
@@ -112,7 +113,7 @@
     [SGRepository initWithOpponentNamed:@"Clayton" context:_moc];
     
     // Act
-    Opponent *jeff = [SGRepository findOneEntityOfType:@"Opponent" entityKey:@"Jeff" keyField:@"name" context:_moc];
+    Opponent *jeff = [SGKRepository findOneEntityOfType:@"Opponent" entityKey:@"Jeff" keyField:@"name" context:_moc];
     [_moc deleteObject:jeff];
     
     
@@ -135,12 +136,12 @@
     [SGRepository initWithOpponentNamed:@"Jeff" context:_moc];
     [SGRepository initWithOpponentNamed:@"Clayton" context:_moc];
     
-    Model *playerModel = [SGRepository findOneEntityOfType:@"Model" entityKey:@"Issyria, Sibyl of Dawn" keyField:@"name" context:_moc];
-    Caster *playerCaster = [SGRepository findOneEntityOfType:@"Caster" entityKey:playerModel keyField:@"model" context:_moc];
-    Model *opponentModel = [SGRepository findOneEntityOfType:@"Model" entityKey:@"Makeda" keyField:@"name" context:_moc];
-    Caster *opponentCaster = [SGRepository findOneEntityOfType:@"Caster" entityKey:opponentModel keyField:@"model" context:_moc];
-    Result *result = [SGRepository findOneEntityOfType:@"Result" entityKey:@3 keyField:@"displayOrder" context:_moc];
-    Opponent *opponent = [SGRepository findOneEntityOfType:@"Opponent" entityKey:@"Jeff" keyField:@"name" context:_moc];
+    Model *playerModel = [SGKRepository findOneEntityOfType:@"Model" entityKey:@"Issyria, Sibyl of Dawn" keyField:@"name" context:_moc];
+    Caster *playerCaster = [SGKRepository findOneEntityOfType:@"Caster" entityKey:playerModel keyField:@"model" context:_moc];
+    Model *opponentModel = [SGKRepository findOneEntityOfType:@"Model" entityKey:@"Makeda" keyField:@"name" context:_moc];
+    Caster *opponentCaster = [SGKRepository findOneEntityOfType:@"Caster" entityKey:opponentModel keyField:@"model" context:_moc];
+    Result *result = [SGKRepository findOneEntityOfType:@"Result" entityKey:@3 keyField:@"displayOrder" context:_moc];
+    Opponent *opponent = [SGKRepository findOneEntityOfType:@"Opponent" entityKey:@"Jeff" keyField:@"name" context:_moc];
     
     [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil opponentControlPoints:nil event:nil notes:nil context:_moc];
     [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:opponent date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil opponentControlPoints:nil event:nil notes:nil context:_moc];
@@ -184,9 +185,9 @@
     [SGRepository initWithEventNamed:@"Fun time" location:@"Basement" date:[NSDate date] isTournament:NO context:_moc];
     
     // Act
-    Event *journeyman = [SGRepository findOneEntityOfType:@"Event" entityKey:@"Journeyman" keyField:@"name" context:_moc];
+    Event *journeyman = [SGKRepository findOneEntityOfType:@"Event" entityKey:@"Journeyman" keyField:@"name" context:_moc];
     journeyman.name = @"Saturday night";
-    Event *saturday = [SGRepository findOneEntityOfType:@"Event" entityKey:@"Saturday night" keyField:@"name" context:_moc];
+    Event *saturday = [SGKRepository findOneEntityOfType:@"Event" entityKey:@"Saturday night" keyField:@"name" context:_moc];
     
     // Assert
     XCTAssertEqual(journeyman, saturday);
@@ -201,7 +202,7 @@
     [SGRepository initWithEventNamed:@"Fun time" location:@"Basement" date:[NSDate date] isTournament:NO context:_moc];
     
     // Act
-    Event *event = [SGRepository findOneEntityOfType:@"Event" entityKey:@"Steamroller 2014" keyField:@"name" context:_moc];
+    Event *event = [SGKRepository findOneEntityOfType:@"Event" entityKey:@"Steamroller 2014" keyField:@"name" context:_moc];
     [_moc deleteObject:event];
     
     // Assert
@@ -224,12 +225,12 @@
     [SGRepository initWithEventNamed:@"Steamroller 2014" location:@"Gencon" date:[NSDate date] isTournament:YES context:_moc];
     [SGRepository initWithEventNamed:@"Fun time" location:@"Basement" date:[NSDate date] isTournament:NO context:_moc];
     
-    Model *playerModel = [SGRepository findOneEntityOfType:@"Model" entityKey:@"Issyria, Sibyl of Dawn" keyField:@"name" context:_moc];
-    Caster *playerCaster = [SGRepository findOneEntityOfType:@"Caster" entityKey:playerModel keyField:@"model" context:_moc];
-    Model *opponentModel = [SGRepository findOneEntityOfType:@"Model" entityKey:@"Makeda" keyField:@"name" context:_moc];
-    Caster *opponentCaster = [SGRepository findOneEntityOfType:@"Caster" entityKey:opponentModel keyField:@"model" context:_moc];
-    Result *result = [SGRepository findOneEntityOfType:@"Result" entityKey:@3 keyField:@"displayOrder" context:_moc];
-    Event *event = [SGRepository findOneEntityOfType:@"Event" entityKey:@"Steamroller 2014" keyField:@"name" context:_moc];
+    Model *playerModel = [SGKRepository findOneEntityOfType:@"Model" entityKey:@"Issyria, Sibyl of Dawn" keyField:@"name" context:_moc];
+    Caster *playerCaster = [SGKRepository findOneEntityOfType:@"Caster" entityKey:playerModel keyField:@"model" context:_moc];
+    Model *opponentModel = [SGKRepository findOneEntityOfType:@"Model" entityKey:@"Makeda" keyField:@"name" context:_moc];
+    Caster *opponentCaster = [SGKRepository findOneEntityOfType:@"Caster" entityKey:opponentModel keyField:@"model" context:_moc];
+    Result *result = [SGKRepository findOneEntityOfType:@"Result" entityKey:@3 keyField:@"displayOrder" context:_moc];
+    Event *event = [SGKRepository findOneEntityOfType:@"Event" entityKey:@"Steamroller 2014" keyField:@"name" context:_moc];
     
     [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil opponentControlPoints:nil event:event notes:nil context:_moc];
     [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:nil controlPoints:nil opponentControlPoints:nil event:event notes:nil context:_moc];
@@ -275,9 +276,9 @@
     [SGRepository initWithScenarioNamed:@"Misdirected Rage" context:_moc];
     
     // Act
-    Scenario *bunnyFooFoo = [SGRepository findOneEntityOfType:@"Scenario" entityKey:@"Bunny Foo Foo" keyField:@"name" context:_moc];
+    Scenario *bunnyFooFoo = [SGKRepository findOneEntityOfType:@"Scenario" entityKey:@"Bunny Foo Foo" keyField:@"name" context:_moc];
     bunnyFooFoo.name = @"Forest hopping";
-    Scenario *forest = [SGRepository findOneEntityOfType:@"Scenario" entityKey:@"Forest hopping" keyField:@"name" context:_moc];
+    Scenario *forest = [SGKRepository findOneEntityOfType:@"Scenario" entityKey:@"Forest hopping" keyField:@"name" context:_moc];
     
     // Assert
     XCTAssertEqual(bunnyFooFoo, forest);
@@ -293,7 +294,7 @@
     [SGRepository initWithScenarioNamed:@"Misdirected Rage" context:_moc];
     
     // Act
-    Scenario *scenario = [SGRepository findOneEntityOfType:@"Scenario" entityKey:@"Mangled Metal" keyField:@"name" context:_moc];
+    Scenario *scenario = [SGKRepository findOneEntityOfType:@"Scenario" entityKey:@"Mangled Metal" keyField:@"name" context:_moc];
     [_moc deleteObject:scenario];
     
     // Assert
@@ -317,12 +318,12 @@
     [SGRepository initWithScenarioNamed:@"Burned Popcorn" context:_moc];
     [SGRepository initWithScenarioNamed:@"Misdirected Rage" context:_moc];
     
-    Model *playerModel = [SGRepository findOneEntityOfType:@"Model" entityKey:@"Issyria, Sibyl of Dawn" keyField:@"name" context:_moc];
-    Caster *playerCaster = [SGRepository findOneEntityOfType:@"Caster" entityKey:playerModel keyField:@"model" context:_moc];
-    Model *opponentModel = [SGRepository findOneEntityOfType:@"Model" entityKey:@"Makeda" keyField:@"name" context:_moc];
-    Caster *opponentCaster = [SGRepository findOneEntityOfType:@"Caster" entityKey:opponentModel keyField:@"model" context:_moc];
-    Result *result = [SGRepository findOneEntityOfType:@"Result" entityKey:@3 keyField:@"displayOrder" context:_moc];
-    Scenario *scenario = [SGRepository findOneEntityOfType:@"Scenario" entityKey:@"Mangled Metal" keyField:@"name" context:_moc];
+    Model *playerModel = [SGKRepository findOneEntityOfType:@"Model" entityKey:@"Issyria, Sibyl of Dawn" keyField:@"name" context:_moc];
+    Caster *playerCaster = [SGKRepository findOneEntityOfType:@"Caster" entityKey:playerModel keyField:@"model" context:_moc];
+    Model *opponentModel = [SGKRepository findOneEntityOfType:@"Model" entityKey:@"Makeda" keyField:@"name" context:_moc];
+    Caster *opponentCaster = [SGKRepository findOneEntityOfType:@"Caster" entityKey:opponentModel keyField:@"model" context:_moc];
+    Result *result = [SGKRepository findOneEntityOfType:@"Result" entityKey:@3 keyField:@"displayOrder" context:_moc];
+    Scenario *scenario = [SGKRepository findOneEntityOfType:@"Scenario" entityKey:@"Mangled Metal" keyField:@"name" context:_moc];
     
     [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil opponentControlPoints:nil event:nil notes:nil context:_moc];
     [SGRepository initWithPlayerCaster:playerCaster opponentCaster:opponentCaster opponent:nil date:[NSDate date] points:@25 result:result killPoints:nil scenario:scenario controlPoints:nil opponentControlPoints:nil event:nil notes:nil context:_moc];
@@ -361,7 +362,7 @@
 - (NSManagedObjectContext *)managedObjectContextForTests {
     static NSManagedObjectModel *model = nil;
     if (!model) {
-        model = [SGCoreDataObjects getManagedObjectModel];
+        model = [SGKCoreDataStack getManagedObjectModel];
     }
     
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];

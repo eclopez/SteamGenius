@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-@import SteamGeniusKit;
+#import "SteamGeniusKit.h"
 
 @interface TodayViewController : UIViewController
 
