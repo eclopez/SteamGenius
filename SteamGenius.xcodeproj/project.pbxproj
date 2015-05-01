@@ -77,6 +77,8 @@
 		03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */; };
 		037708D61A5B185300295E1A /* SGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037708D51A5B185300295E1A /* SGWebViewController.m */; };
 		037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037708D71A5B6F8800295E1A /* WebKit.framework */; };
+		0388EA471AF30E5C006AA52D /* SGFactionsOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */; };
+		0388EA4A1AF30E7E006AA52D /* SGFactionIconsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388EA491AF30E7E006AA52D /* SGFactionIconsViewController.m */; };
 		038DAAE919CD019000A224F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038DAAE719CCFEF400A224F7 /* CoreData.framework */; };
 		038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAEC19CD3FA600A224F7 /* SGDataImport.m */; };
 		038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF319CDE70C00A224F7 /* SGBattleForm.m */; };
@@ -90,7 +92,6 @@
 		03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C0B2251A75542A00D20829 /* SGEmptyView.m */; };
 		03C301191A36B3580053882A /* SGColorCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C301181A36B3580053882A /* SGColorCircleView.m */; };
 		03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */; };
-		03C5F6CF1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */; };
 		03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3010E1A36A79B0053882A /* iAd.framework */; };
 		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
 		03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */; };
@@ -290,6 +291,10 @@
 		037708D41A5B185300295E1A /* SGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGWebViewController.h; sourceTree = "<group>"; };
 		037708D51A5B185300295E1A /* SGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGWebViewController.m; sourceTree = "<group>"; };
 		037708D71A5B6F8800295E1A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0388EA451AF30E5C006AA52D /* SGFactionsOptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionsOptionTableViewController.h; sourceTree = "<group>"; };
+		0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionsOptionTableViewController.m; sourceTree = "<group>"; };
+		0388EA481AF30E7E006AA52D /* SGFactionIconsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionIconsViewController.h; sourceTree = "<group>"; };
+		0388EA491AF30E7E006AA52D /* SGFactionIconsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionIconsViewController.m; sourceTree = "<group>"; };
 		038DAAE719CCFEF400A224F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		038DAAEB19CD3FA600A224F7 /* SGDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDataImport.h; sourceTree = "<group>"; };
 		038DAAEC19CD3FA600A224F7 /* SGDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDataImport.m; sourceTree = "<group>"; };
@@ -311,8 +316,6 @@
 		03C301181A36B3580053882A /* SGColorCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGColorCircleView.m; sourceTree = "<group>"; };
 		03C5D29F1A45BAB400788E0C /* SGFiltersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFiltersListViewController.h; sourceTree = "<group>"; };
 		03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersListViewController.m; sourceTree = "<group>"; };
-		03C5F6CD1A828C9E00462CC2 /* SGFactionsOptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionsOptionTableViewController.h; sourceTree = "<group>"; };
-		03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionsOptionTableViewController.m; sourceTree = "<group>"; };
 		03D30CE81A5D22D000C62504 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		03D30CE91A5D22D000C62504 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGProductsTableViewController.h; sourceTree = "<group>"; };
@@ -838,6 +841,15 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		0388EA3B1AF25C24006AA52D /* Faction Icon Picker */ = {
+			isa = PBXGroup;
+			children = (
+				0388EA481AF30E7E006AA52D /* SGFactionIconsViewController.h */,
+				0388EA491AF30E7E006AA52D /* SGFactionIconsViewController.m */,
+			);
+			name = "Faction Icon Picker";
+			sourceTree = "<group>";
+		};
 		038DAAC419CCFBBD00A224F7 /* Raw Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -969,8 +981,8 @@
 		03C5F6CC1A828C7200462CC2 /* Factions */ = {
 			isa = PBXGroup;
 			children = (
-				03C5F6CD1A828C9E00462CC2 /* SGFactionsOptionTableViewController.h */,
-				03C5F6CE1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m */,
+				0388EA451AF30E5C006AA52D /* SGFactionsOptionTableViewController.h */,
+				0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */,
 			);
 			name = Factions;
 			sourceTree = "<group>";
@@ -988,6 +1000,7 @@
 		03E3C6ED1A78B8CF009CCCD5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0388EA3B1AF25C24006AA52D /* Faction Icon Picker */,
 				037708D41A5B185300295E1A /* SGWebViewController.h */,
 				037708D51A5B185300295E1A /* SGWebViewController.m */,
 				03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */,
@@ -1337,6 +1350,7 @@
 			files = (
 				0369596A19D5FC0B0096CEBC /* SGEventForm.m in Sources */,
 				03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */,
+				0388EA4A1AF30E7E006AA52D /* SGFactionIconsViewController.m in Sources */,
 				031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */,
 				03032A9A19ED974900A15C54 /* SGFiltersForm.m in Sources */,
 				030ADEDA1AD8723200E6A1CF /* Faction.m in Sources */,
@@ -1349,9 +1363,9 @@
 				0352E8D21A5C52D600007098 /* SGBattleDetailViewController.m in Sources */,
 				036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */,
 				030ADEE61AD8723300E6A1CF /* Battle.m in Sources */,
-				03C5F6CF1A828C9E00462CC2 /* SGFactionsOptionTableViewController.m in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
 				0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */,
+				0388EA471AF30E5C006AA52D /* SGFactionsOptionTableViewController.m in Sources */,
 				0369596319D5F9640096CEBC /* SGScenarioForm.m in Sources */,
 				0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */,
 				03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */,

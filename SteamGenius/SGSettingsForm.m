@@ -7,9 +7,12 @@
 //
 
 #import "SGSettingsForm.h"
+#import "AppDelegate.h"
 #import "SGSettingsManager.h"
 #import "SGProductsTableViewController.h"
 #import "SGWebViewController.h"
+#import "SGFactionsOptionTableViewController.h"
+#import "SGFactionIconsViewController.h"
 
 @implementation SGSettingsForm
 
@@ -22,6 +25,18 @@
               FXFormFieldOptions: [self themes],
               FXFormFieldDefaultValue: [self currentTheme],
               FXFormFieldAction: updateTheme };
+}
+
+- (NSDictionary *)factionIconsField {
+    return @{ FXFormFieldTitle: @"Faction Icons",
+              FXFormFieldType: @"image",
+              FXFormFieldViewController: [[SGFactionsOptionTableViewController alloc] init:^(UINavigationController *navController, FXFormField *field, Faction *faction){
+                  SGFactionIconsViewController *factionIconsPickerViewController = [[SGFactionIconsViewController alloc] init];
+                  factionIconsPickerViewController.faction = faction;
+                  factionIconsPickerViewController.navController = navController;
+                  [navController presentViewController:factionIconsPickerViewController animated:YES completion:nil];
+              }],
+              FXFormFieldOptions: [self sortedObjectArray:@"Game" sortKeys:@{ @"name": [NSNumber numberWithBool:NO] }] };;
 }
 
 - (NSDictionary *)productsField {
@@ -47,6 +62,15 @@
 
 - (NSArray *)themes {
     return [[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SGTheme" ofType:@"plist"]] valueForKeyPath:@"@unionOfObjects.name"];
+}
+
+- (NSArray *)sortedObjectArray:(NSString *)entityName sortKeys:(NSDictionary *)sortKeys {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSMutableArray *sortDescriptors = [[NSMutableArray alloc] init];
+    for (id sortKey in sortKeys) {
+        [sortDescriptors addObject:[[NSSortDescriptor alloc] initWithKey:sortKey ascending:[[sortKeys objectForKey:sortKey] boolValue]]];
+    }
+    return [[SGKRepository findAllEntitiesOfType:entityName predicate:nil context:appDelegate.managedObjectContext] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 @end

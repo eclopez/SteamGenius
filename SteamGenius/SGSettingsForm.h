@@ -12,6 +12,7 @@
 @interface SGSettingsForm : NSObject <FXForm>
 
 @property (nonatomic, copy) NSNumber *theme;
+@property (nonatomic, copy) NSString *factionIcons;
 @property (strong, nonatomic) NSString *products;
 @property (nonatomic, strong) NSString *donate;
 

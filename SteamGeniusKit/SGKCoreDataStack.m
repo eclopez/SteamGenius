@@ -12,7 +12,44 @@
 #define kSQLStoreFileName @"SteamGenius.sqlite"
 #define kAppGroupIdentifier @"group.com.eriklopez.SteamGenius"
 
+#define kSharedIconsDirectoryName @"faction-icons"
+
 @implementation SGKCoreDataStack
+
+#pragma mark - Documents Directory
+
++ (NSURL *)sharedDocumentsDirectory
+{
+    NSFileManager *manager = [NSFileManager defaultManager];
+    return [manager containerURLForSecurityApplicationGroupIdentifier:kAppGroupIdentifier];
+}
+
++ (NSURL *)sharedIconsDirectory
+{
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSURL *iconsDirectoryURL = [[self sharedDocumentsDirectory] URLByAppendingPathComponent:kSharedIconsDirectoryName];
+    
+    BOOL isDirectory;
+    NSError *error;
+    
+    if (![manager fileExistsAtPath:iconsDirectoryURL.path isDirectory:&isDirectory]) {
+        if (![manager createDirectoryAtPath:iconsDirectoryURL.path withIntermediateDirectories:YES attributes:nil error:&error]) {
+            // HANDLE ERROR
+            NSLog(@"Error creating icons directory in app group: %@", error.localizedDescription);
+        }
+    }
+    
+    return iconsDirectoryURL;
+}
+
++ (BOOL)factionIconExists:(NSString *)factionName
+{
+    NSFileManager *manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:[[self sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", factionName]].path]) {
+        return YES;
+    }
+    return NO;
+}
 
 #pragma mark - Core Data stack
 
@@ -21,33 +58,11 @@
     return [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
 }
 
-/*+ (NSPersistentStoreCoordinator *)getPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model applicationDocumentsDirectoryURL:(NSURL *)applicationDocumentsDirectory {
- NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
- NSDictionary *options = @{ NSMigratePersistentStoresAutomaticallyOption : @YES, NSInferMappingModelAutomaticallyOption: @YES };
- NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:kSQLStoreFileName];
- NSError *error = nil;
- NSString *failureReason = @"There was an error creating or loading the application's saved data.";
- if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
- NSDictionary *d = @{ NSLocalizedDescriptionKey : @"Failed to intialize the application's saved data.",
- NSLocalizedFailureReasonErrorKey : failureReason,
- NSUnderlyingErrorKey : error };
- error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:d];
- // Replace this with code to handle the error appropriately.
- // abort() causes the application to generate a crash log and terminate.
- // You should not use this function in a shipping application, although it may be useful during development.
- #warning Handle this error.
- NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
- abort();
- }
- return coordinator;
- }*/
-
 + (NSPersistentStoreCoordinator *)getPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model applicationDocumentsDirectoryURL:(NSURL *)applicationDocumentsDirectory {
     NSFileManager *manager = [NSFileManager defaultManager];
     
     NSURL *oldStoreURL = [applicationDocumentsDirectory URLByAppendingPathComponent:kSQLStoreFileName];
-    NSURL *currentStoreURL = [[manager containerURLForSecurityApplicationGroupIdentifier:kAppGroupIdentifier] URLByAppendingPathComponent:kSQLStoreFileName];
-    
+    NSURL *currentStoreURL = [[self sharedDocumentsDirectory] URLByAppendingPathComponent:kSQLStoreFileName];
     BOOL oldStoreExists = [manager fileExistsAtPath:oldStoreURL.path];
     BOOL currentStoreExists = [manager fileExistsAtPath:currentStoreURL.path];
     
@@ -93,13 +108,9 @@
 }
 
 + (NSPersistentStoreCoordinator *)getReadOnlyPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model {
-    NSFileManager *manager = [NSFileManager defaultManager];
-    NSURL *currentStoreURL = [[manager containerURLForSecurityApplicationGroupIdentifier:kAppGroupIdentifier] URLByAppendingPathComponent:kSQLStoreFileName];
-    BOOL currentStoreExists = [manager fileExistsAtPath:currentStoreURL.path];
-    
-    if (!currentStoreExists) {
-        return nil;
-    }
+    NSURL *currentStoreURL = [[self sharedDocumentsDirectory] URLByAppendingPathComponent:kSQLStoreFileName];
+    BOOL currentStoreExists = [[NSFileManager defaultManager] fileExistsAtPath:currentStoreURL.path];
+    if (!currentStoreExists) { return nil; }
     
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
     NSDictionary *options = @{ NSMigratePersistentStoresAutomaticallyOption : @YES, NSInferMappingModelAutomaticallyOption: @YES };
@@ -111,9 +122,7 @@
 }
 
 + (NSManagedObjectContext *)getManagedObjectContextForPersistentStoreCoordinator:(NSPersistentStoreCoordinator *)coordinator {
-    if (!coordinator) {
-        return nil;
-    }
+    if (!coordinator) { return nil; }
     NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
     [context setPersistentStoreCoordinator:coordinator];
     return context;
