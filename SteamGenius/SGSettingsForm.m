@@ -27,6 +27,7 @@
               FXFormFieldAction: updateTheme };
 }
 
+#warning Check for in app purchase
 - (NSDictionary *)factionIconsField {
     return @{ FXFormFieldTitle: @"Faction Icons",
               FXFormFieldType: @"image",

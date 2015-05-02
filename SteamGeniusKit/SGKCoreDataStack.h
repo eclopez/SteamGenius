@@ -11,8 +11,6 @@
 
 @interface SGKCoreDataStack : NSObject
 
-+ (NSURL *)sharedIconsDirectory;
-+ (BOOL)factionIconExists:(NSString *)factionName;
 + (NSManagedObjectModel *)getManagedObjectModel;
 + (NSPersistentStoreCoordinator *)getPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model applicationDocumentsDirectoryURL:(NSURL *)applicationDocumentsDirectory;
 + (NSPersistentStoreCoordinator *)getReadOnlyPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model;

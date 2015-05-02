@@ -31,17 +31,18 @@
 
 - (void)clearSelection
 {
-    NSString *path = [SGKCoreDataStack sharedIconsDirectory].path;
+    NSString *path = [SGKFileAccess sharedIconsDirectory].path;
     NSString *iconPath = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", self.faction.shortName]];
     NSError *error;
     
-    if ([SGKCoreDataStack factionIconExists:self.faction.shortName]) {
+    if ([SGKFileAccess factionIconExists:self.faction.shortName]) {
         NSFileManager *manager = [NSFileManager defaultManager];
         BOOL deleted = [manager removeItemAtPath:iconPath error:&error];
         if (deleted) {
-            // Deleted file.
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"factionIconCleared" object:self];
         } else {
             // Could not delete file.
+#warning Handle error.
         }
     }
     [self reloadParentTable];
@@ -60,7 +61,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    NSString *path = [SGKCoreDataStack sharedIconsDirectory].path;
+    NSString *path = [SGKFileAccess sharedIconsDirectory].path;
     NSString *iconPath = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", self.faction.shortName]];
     
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
@@ -68,6 +69,7 @@
         UIImage *factionIcon = [info objectForKey:UIImagePickerControllerOriginalImage];
         NSData *data = UIImagePNGRepresentation(factionIcon);
         [data writeToFile:iconPath atomically:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"factionIconSelected" object:self];
     }
     
     [self reloadParentTable];

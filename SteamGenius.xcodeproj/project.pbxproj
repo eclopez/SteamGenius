@@ -79,6 +79,8 @@
 		037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037708D71A5B6F8800295E1A /* WebKit.framework */; };
 		0388EA471AF30E5C006AA52D /* SGFactionsOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */; };
 		0388EA4A1AF30E7E006AA52D /* SGFactionIconsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388EA491AF30E7E006AA52D /* SGFactionIconsViewController.m */; };
+		0388EA4E1AF4BCD0006AA52D /* SGKFileAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 0388EA4C1AF4BCD0006AA52D /* SGKFileAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0388EA4F1AF4BCD0006AA52D /* SGKFileAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388EA4D1AF4BCD0006AA52D /* SGKFileAccess.m */; };
 		038DAAE919CD019000A224F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038DAAE719CCFEF400A224F7 /* CoreData.framework */; };
 		038DAAED19CD3FA600A224F7 /* SGDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAEC19CD3FA600A224F7 /* SGDataImport.m */; };
 		038DAAF419CDE70C00A224F7 /* SGBattleForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 038DAAF319CDE70C00A224F7 /* SGBattleForm.m */; };
@@ -90,7 +92,6 @@
 		039522A11AC44FB600A6380C /* Result.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0395229D1AC44FB600A6380C /* Result.plist */; };
 		03AF5B691A49225D005C4A1B /* SGDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF5B681A49225D005C4A1B /* SGDisplayTableViewCell.m */; };
 		03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C0B2251A75542A00D20829 /* SGEmptyView.m */; };
-		03C301191A36B3580053882A /* SGColorCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C301181A36B3580053882A /* SGColorCircleView.m */; };
 		03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */; };
 		03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3010E1A36A79B0053882A /* iAd.framework */; };
 		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
@@ -295,6 +296,8 @@
 		0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionsOptionTableViewController.m; sourceTree = "<group>"; };
 		0388EA481AF30E7E006AA52D /* SGFactionIconsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionIconsViewController.h; sourceTree = "<group>"; };
 		0388EA491AF30E7E006AA52D /* SGFactionIconsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionIconsViewController.m; sourceTree = "<group>"; };
+		0388EA4C1AF4BCD0006AA52D /* SGKFileAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKFileAccess.h; sourceTree = "<group>"; };
+		0388EA4D1AF4BCD0006AA52D /* SGKFileAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKFileAccess.m; sourceTree = "<group>"; };
 		038DAAE719CCFEF400A224F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		038DAAEB19CD3FA600A224F7 /* SGDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDataImport.h; sourceTree = "<group>"; };
 		038DAAEC19CD3FA600A224F7 /* SGDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDataImport.m; sourceTree = "<group>"; };
@@ -312,8 +315,6 @@
 		03C0B2251A75542A00D20829 /* SGEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmptyView.m; sourceTree = "<group>"; };
 		03C3010E1A36A79B0053882A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		03C301101A36A8AE0053882A /* libAdapterIAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdapterIAd.a; path = "../../../Downloads/LibAdapterIAd-1.0.0/libAdapterIAd.a"; sourceTree = "<group>"; };
-		03C301171A36B3580053882A /* SGColorCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGColorCircleView.h; sourceTree = "<group>"; };
-		03C301181A36B3580053882A /* SGColorCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGColorCircleView.m; sourceTree = "<group>"; };
 		03C5D29F1A45BAB400788E0C /* SGFiltersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFiltersListViewController.h; sourceTree = "<group>"; };
 		03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersListViewController.m; sourceTree = "<group>"; };
 		03D30CE81A5D22D000C62504 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
@@ -492,21 +493,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0318D2FA1ABF253500E9C8A5 /* Data Store */ = {
+		0318D2FA1ABF253500E9C8A5 /* Model and Stack */ = {
 			isa = PBXGroup;
 			children = (
 				0325713619C491B300634776 /* SteamGenius.xcdatamodeld */,
 				0343F5141AD879C900D6E786 /* SGKCoreDataStack.h */,
 				0343F5151AD879C900D6E786 /* SGKCoreDataStack.m */,
 			);
-			name = "Data Store";
+			name = "Model and Stack";
 			sourceTree = "<group>";
 		};
 		0318D36F1ABFD0B500E9C8A5 /* Service API */ = {
 			isa = PBXGroup;
 			children = (
-				0343F50F1AD878D600D6E786 /* Access Methods */,
-				0318D2FA1ABF253500E9C8A5 /* Data Store */,
+				0388EA4B1AF4BCB6006AA52D /* File Access */,
+				0343F50F1AD878D600D6E786 /* Data Access */,
+				0318D2FA1ABF253500E9C8A5 /* Model and Stack */,
 			);
 			name = "Service API";
 			sourceTree = "<group>";
@@ -598,13 +600,13 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
-		0343F50F1AD878D600D6E786 /* Access Methods */ = {
+		0343F50F1AD878D600D6E786 /* Data Access */ = {
 			isa = PBXGroup;
 			children = (
 				0343F5101AD8791900D6E786 /* SGKRepository.h */,
 				0343F5111AD8791900D6E786 /* SGKRepository.m */,
 			);
-			name = "Access Methods";
+			name = "Data Access";
 			sourceTree = "<group>";
 		};
 		0349E29C19C17F510091FF21 = {
@@ -850,6 +852,33 @@
 			name = "Faction Icon Picker";
 			sourceTree = "<group>";
 		};
+		0388EA4B1AF4BCB6006AA52D /* File Access */ = {
+			isa = PBXGroup;
+			children = (
+				0388EA4C1AF4BCD0006AA52D /* SGKFileAccess.h */,
+				0388EA4D1AF4BCD0006AA52D /* SGKFileAccess.m */,
+			);
+			name = "File Access";
+			sourceTree = "<group>";
+		};
+		0388EA501AF4BF42006AA52D /* Web View */ = {
+			isa = PBXGroup;
+			children = (
+				037708D41A5B185300295E1A /* SGWebViewController.h */,
+				037708D51A5B185300295E1A /* SGWebViewController.m */,
+			);
+			name = "Web View";
+			sourceTree = "<group>";
+		};
+		0388EA511AF4BF4F006AA52D /* Products Table */ = {
+			isa = PBXGroup;
+			children = (
+				03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */,
+				03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */,
+			);
+			name = "Products Table";
+			sourceTree = "<group>";
+		};
 		038DAAC419CCFBBD00A224F7 /* Raw Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -950,15 +979,6 @@
 			name = "Empty View";
 			sourceTree = "<group>";
 		};
-		03C5F6C91A828BF100462CC2 /* Color Circle */ = {
-			isa = PBXGroup;
-			children = (
-				03C301171A36B3580053882A /* SGColorCircleView.h */,
-				03C301181A36B3580053882A /* SGColorCircleView.m */,
-			);
-			name = "Color Circle";
-			sourceTree = "<group>";
-		};
 		03C5F6CA1A828C2100462CC2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -991,7 +1011,6 @@
 			isa = PBXGroup;
 			children = (
 				03C5F6CA1A828C2100462CC2 /* Cells */,
-				03C5F6C91A828BF100462CC2 /* Color Circle */,
 				03C5F6C81A828BE600462CC2 /* Empty View */,
 			);
 			name = Views;
@@ -1000,11 +1019,9 @@
 		03E3C6ED1A78B8CF009CCCD5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0388EA511AF4BF4F006AA52D /* Products Table */,
+				0388EA501AF4BF42006AA52D /* Web View */,
 				0388EA3B1AF25C24006AA52D /* Faction Icon Picker */,
-				037708D41A5B185300295E1A /* SGWebViewController.h */,
-				037708D51A5B185300295E1A /* SGWebViewController.m */,
-				03E3C6EE1A78B8E0009CCCD5 /* SGProductsTableViewController.h */,
-				03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1040,6 +1057,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0388EA4E1AF4BCD0006AA52D /* SGKFileAccess.h in Headers */,
 				0318D2DA1ABF0D3C00E9C8A5 /* SteamGeniusKit.h in Headers */,
 				0343F5121AD8791900D6E786 /* SGKRepository.h in Headers */,
 				0343F5161AD879C900D6E786 /* SGKCoreDataStack.h in Headers */,
@@ -1312,6 +1330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0395226C1AC39B3200A6380C /* SteamGenius.xcdatamodeld in Sources */,
+				0388EA4F1AF4BCD0006AA52D /* SGKFileAccess.m in Sources */,
 				0343F5131AD8791900D6E786 /* SGKRepository.m in Sources */,
 				0343F5171AD879C900D6E786 /* SGKCoreDataStack.m in Sources */,
 			);
@@ -1383,7 +1402,6 @@
 				0369596619D5F9AE0096CEBC /* SGScenarioFormViewController.m in Sources */,
 				030ADEE91AD8723300E6A1CF /* Caster.m in Sources */,
 				03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */,
-				03C301191A36B3580053882A /* SGColorCircleView.m in Sources */,
 				03FB29641AD86E26009DE99B /* SGRepository.m in Sources */,
 				0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */,
 				030ADEE01AD8723300E6A1CF /* Opponent.m in Sources */,

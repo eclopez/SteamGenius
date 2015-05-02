@@ -7,10 +7,10 @@
 //
 
 #import "SGFactionsOptionTableViewController.h"
-#import "SGColorCircleView.h"
 #import "SGResizableImageViewCell.h"
 #import "Game.h"
 #import "Caster.h"
+@import QuartzCore;
 
 @interface SGFactionsOptionTableViewController ()
 
@@ -68,14 +68,15 @@
     static NSString *CircleCellIdentifier = @"CircleCell";
     Faction *faction = [[self sortedFactionsArray:indexPath.section] objectAtIndex:indexPath.row];
     
-    if ([SGKCoreDataStack factionIconExists:faction.shortName]) {
+#warning Check for in app purchase
+    if ([SGKFileAccess factionIconExists:faction.shortName]) {
         SGResizableImageViewCell *cell = (SGResizableImageViewCell *)[tableView dequeueReusableCellWithIdentifier:FactionCellIdentifier];
         if (cell == nil) {
             cell = [[SGResizableImageViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FactionCellIdentifier];
         }
         cell.imageViewFrame = CGRectMake(6.f, 10.f, 24.f, 24.f);
         cell.textLabel.text = faction.name;
-        cell.imageView.image = [UIImage imageWithContentsOfFile:[[SGKCoreDataStack sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", faction.shortName]].path];
+        cell.imageView.image = [UIImage imageWithContentsOfFile:[[SGKFileAccess sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", faction.shortName]].path];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.f];
         cell.accessoryType = UITableViewCellAccessoryNone;
         Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
@@ -87,9 +88,11 @@
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CircleCellIdentifier];
         }
-        SGColorCircleView *circle = [[SGColorCircleView alloc] initWithFrame:CGRectMake(10.f, 14.f, 16.f, 16.f)];
-        circle.color = (UIColor *)faction.color;
+        UIView *circle = [[UIView alloc] initWithFrame:CGRectMake(10.f, 14.f, 16.f, 16.f)];
+        circle.backgroundColor = (UIColor *)faction.color;
+        circle.layer.cornerRadius = circle.bounds.size.width / 2.f;
         [cell addSubview:circle];
+        
         cell.textLabel.text = faction.name;
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.f];
         cell.accessoryType = UITableViewCellAccessoryNone;

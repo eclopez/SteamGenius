@@ -7,49 +7,12 @@
 //
 
 #import "SGKCoreDataStack.h"
+#import "SGKFileAccess.h"
 
 #define kModelFileName @"SteamGenius"
 #define kSQLStoreFileName @"SteamGenius.sqlite"
-#define kAppGroupIdentifier @"group.com.eriklopez.SteamGenius"
-
-#define kSharedIconsDirectoryName @"faction-icons"
 
 @implementation SGKCoreDataStack
-
-#pragma mark - Documents Directory
-
-+ (NSURL *)sharedDocumentsDirectory
-{
-    NSFileManager *manager = [NSFileManager defaultManager];
-    return [manager containerURLForSecurityApplicationGroupIdentifier:kAppGroupIdentifier];
-}
-
-+ (NSURL *)sharedIconsDirectory
-{
-    NSFileManager *manager = [NSFileManager defaultManager];
-    NSURL *iconsDirectoryURL = [[self sharedDocumentsDirectory] URLByAppendingPathComponent:kSharedIconsDirectoryName];
-    
-    BOOL isDirectory;
-    NSError *error;
-    
-    if (![manager fileExistsAtPath:iconsDirectoryURL.path isDirectory:&isDirectory]) {
-        if (![manager createDirectoryAtPath:iconsDirectoryURL.path withIntermediateDirectories:YES attributes:nil error:&error]) {
-            // HANDLE ERROR
-            NSLog(@"Error creating icons directory in app group: %@", error.localizedDescription);
-        }
-    }
-    
-    return iconsDirectoryURL;
-}
-
-+ (BOOL)factionIconExists:(NSString *)factionName
-{
-    NSFileManager *manager = [NSFileManager defaultManager];
-    if ([manager fileExistsAtPath:[[self sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", factionName]].path]) {
-        return YES;
-    }
-    return NO;
-}
 
 #pragma mark - Core Data stack
 
@@ -62,7 +25,7 @@
     NSFileManager *manager = [NSFileManager defaultManager];
     
     NSURL *oldStoreURL = [applicationDocumentsDirectory URLByAppendingPathComponent:kSQLStoreFileName];
-    NSURL *currentStoreURL = [[self sharedDocumentsDirectory] URLByAppendingPathComponent:kSQLStoreFileName];
+    NSURL *currentStoreURL = [[SGKFileAccess sharedDocumentsDirectory] URLByAppendingPathComponent:kSQLStoreFileName];
     BOOL oldStoreExists = [manager fileExistsAtPath:oldStoreURL.path];
     BOOL currentStoreExists = [manager fileExistsAtPath:currentStoreURL.path];
     
@@ -108,7 +71,7 @@
 }
 
 + (NSPersistentStoreCoordinator *)getReadOnlyPersistentStoreCoordinatorForManagedObjectModel:(NSManagedObjectModel *)model {
-    NSURL *currentStoreURL = [[self sharedDocumentsDirectory] URLByAppendingPathComponent:kSQLStoreFileName];
+    NSURL *currentStoreURL = [[SGKFileAccess sharedDocumentsDirectory] URLByAppendingPathComponent:kSQLStoreFileName];
     BOOL currentStoreExists = [[NSFileManager defaultManager] fileExistsAtPath:currentStoreURL.path];
     if (!currentStoreExists) { return nil; }
     
