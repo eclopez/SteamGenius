@@ -18,7 +18,8 @@
 
 @implementation SGProductsTableViewController {
     RMStoreKeychainPersistence *_persistence;
-    NSArray *_productIdentifiers;
+    NSArray *_productInfo;
+    NSMutableArray *_productIdentifiers;
     NSArray *_purchasedProductIdentifiers;
     BOOL _productsLoaded;
 }
@@ -41,7 +42,15 @@
     _persistence = store.transactionPersistor;
     _purchasedProductIdentifiers = [[_persistence purchasedProductIdentifiers] allObjects];
     
-    _productIdentifiers = [NSArray arrayWithContentsOfURL:[self getFileUrl:kProductsFile fileType:@"plist"]];
+    _productInfo = [NSArray arrayWithContentsOfURL:[self getFileUrl:kProductsFile fileType:@"plist"]];
+    _productIdentifiers = [[NSMutableArray alloc] init];
+    for (NSDictionary *productClasses in _productInfo) {
+        for (NSArray *productIds in [productClasses allValues]) {
+            for (NSString *productId in productIds) {
+                [_productIdentifiers addObject:productId];
+            }
+        }
+    }
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [store requestProducts:[NSSet setWithArray:_productIdentifiers] success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
@@ -81,14 +90,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (!_productsLoaded) return 0;
-    return 2;
+    return [_productInfo count] + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
-        case 0: return _productIdentifiers.count;
-        case 1: return 1;
-        default: return 0;
+        case 0:
+        case 1:
+            return [[[[_productInfo objectAtIndex:section] allValues] firstObject] count];
+        default:
+            return 1;
     }
 }
 
@@ -101,7 +112,9 @@
     
     switch (indexPath.section) {
         case 0:
-        {   SKProduct *product = [[RMStore defaultStore] productForIdentifier:[_productIdentifiers objectAtIndex:indexPath.row]];
+        case 1:
+        {
+            SKProduct *product = [[RMStore defaultStore] productForIdentifier:[[[[_productInfo objectAtIndex:indexPath.section] allValues] firstObject] objectAtIndex:indexPath.row]];
             cell.textLabel.text = [NSString stringWithFormat:@"%@", product.localizedTitle];
             cell.detailTextLabel.text = [RMStore localizedPriceOfProduct:product];
             cell.detailTextLabel.numberOfLines = 0;
@@ -112,10 +125,9 @@
             }
         }
             break;
-        case 1:
+        default:
             cell.textLabel.text = @"Restore Purchases";
             break;
-        default:
             break;
     }
     return cell;
@@ -127,6 +139,7 @@
     if (![RMStore canMakePayments]) return;
     switch (indexPath.section) {
         case 0:
+        case 1:
         {
             NSString *productId = [_productIdentifiers objectAtIndex:indexPath.row];
             [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -138,21 +151,20 @@
             }];
         }
             break;
-        case 1:
-            [self restorePurchases];
-            break;
         default:
+            [self restorePurchases];
             break;
     }
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     switch (section) {
         case 0:
-            return @"Current premium features include:\n\n1. Removing all ads.\n\nMany more features are planned!";
+        case 1:
+            return [[[_productInfo objectAtIndex:section] allKeys] firstObject];
         default:
-            return @"";
+            return @"Restore";
     }
 }
 

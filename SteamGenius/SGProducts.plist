@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>com.eriklopez.steamgenius.premium</string>
+	<dict>
+		<key>All Premium Features</key>
+		<array>
+			<string>com.eriklopez.steamgenius.premium</string>
+		</array>
+	</dict>
+	<dict>
+		<key>À La Carte Premium Features</key>
+		<array>
+			<string>com.eriklopez.steamgenius.adremoval</string>
+			<string>com.eriklopez.steamgenius.customfactionicons</string>
+		</array>
+	</dict>
 </array>
 </plist>
