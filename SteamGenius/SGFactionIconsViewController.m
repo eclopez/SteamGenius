@@ -61,12 +61,13 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    NSLog(@"%@", [SGKFileAccess sharedIconsDirectory]);
     NSString *path = [SGKFileAccess sharedIconsDirectory].path;
     NSString *iconPath = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", self.faction.shortName]];
     
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     if ([mediaType isEqualToString:@"public.image"]) {
-        UIImage *factionIcon = [info objectForKey:UIImagePickerControllerOriginalImage];
+        UIImage *factionIcon = [self image:[info objectForKey:UIImagePickerControllerOriginalImage] convertToSize:CGSizeMake(60.f, 60.f)];
         NSData *data = UIImagePNGRepresentation(factionIcon);
         [data writeToFile:iconPath atomically:YES];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"factionIconSelected" object:self];
@@ -88,6 +89,15 @@
 {
     SGFactionsOptionTableViewController *parent = (SGFactionsOptionTableViewController *)[self.navController topViewController];
     [parent.tableView reloadData];
+}
+
+- (UIImage *)image:(UIImage *)image convertToSize:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return outputImage;
 }
 
 @end
