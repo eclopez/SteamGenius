@@ -48,8 +48,7 @@
 #import "BannerViewController.h"
 #import "RMStore.h"
 #import "RMStoreKeychainPersistence.h"
-
-#define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
+#import "SGPurchaseValidation.h"
 
 NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
 NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
@@ -62,6 +61,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     ADBannerView *_bannerView;
     UIViewController *_contentController;
     BOOL _isPremiumPurchased;
+    BOOL _isRemoveAdsPurchased;
 }
 
 - (instancetype)initWithContentViewController:(UIViewController *)contentController
@@ -74,6 +74,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     self = [super init];
     if (self != nil) {
         _isPremiumPurchased = NO;
+        _isRemoveAdsPurchased = NO;
         [self checkPurchases];
         [[RMStore defaultStore] addStoreObserver:self];
         
@@ -145,7 +146,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     
     // Check if the banner has an ad loaded and ready for display.  Move the banner off
     // screen if it does not have an ad.
-    if (_bannerView.bannerLoaded && !_isPremiumPurchased) {
+    if (_bannerView.bannerLoaded && (!_isPremiumPurchased && !_isRemoveAdsPurchased)) {
         contentFrame.size.height -= bannerFrame.size.height;
         bannerFrame.origin.y = contentFrame.size.height;
     } else {
@@ -219,9 +220,8 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 
 - (void)checkPurchases
 {
-    RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
-    NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
-    _isPremiumPurchased = [purchases containsObject:kSteamGeniusPremiumIdentifier];
+    _isPremiumPurchased = [SGPurchaseValidation isPremiumPurchased];
+    _isRemoveAdsPurchased = [SGPurchaseValidation isAdRemovalPurchased];
 }
 
 - (void)applyPurchases

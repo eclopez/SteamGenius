@@ -107,7 +107,7 @@
     static NSString *CellIdentifier = @"ProductCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     switch (indexPath.section) {
@@ -115,8 +115,8 @@
         case 1:
         {
             SKProduct *product = [[RMStore defaultStore] productForIdentifier:[[[[_productInfo objectAtIndex:indexPath.section] allValues] firstObject] objectAtIndex:indexPath.row]];
-            cell.textLabel.text = [NSString stringWithFormat:@"%@", product.localizedTitle];
-            cell.detailTextLabel.text = [RMStore localizedPriceOfProduct:product];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ – %@", product.localizedTitle, [RMStore localizedPriceOfProduct:product]];
+            cell.detailTextLabel.text = product.localizedDescription;
             cell.detailTextLabel.numberOfLines = 0;
             cell.accessoryType = UITableViewCellAccessoryNone;
             

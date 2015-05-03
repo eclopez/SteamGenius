@@ -13,6 +13,7 @@
 #import "SGWebViewController.h"
 #import "SGFactionsOptionTableViewController.h"
 #import "SGFactionIconsViewController.h"
+#import "SGPurchaseValidation.h"
 
 @implementation SGSettingsForm
 
@@ -27,7 +28,6 @@
               FXFormFieldAction: updateTheme };
 }
 
-#warning Check for in app purchase
 - (NSDictionary *)factionIconsField {
     return @{ FXFormFieldTitle: @"Faction Icons",
               FXFormFieldType: @"image",
@@ -53,6 +53,15 @@
               FXFormFieldDefaultValue: @"gofund.me/evep0k",
               FXFormFieldTitle: @"Donate",
               FXFormFieldViewController: @"SGWebViewController" };
+}
+
+- (NSArray *)fields
+{
+    if (![SGPurchaseValidation isPremiumPurchased] && ![SGPurchaseValidation isCustomFactionIconsPurchased]) {
+        return @[ @"theme", @"products", @"donate" ];
+    } else {
+        return @[ @"theme", @"factionIcons", @"products", @"donate" ];
+    }
 }
 
 #pragma mark - Class Methods

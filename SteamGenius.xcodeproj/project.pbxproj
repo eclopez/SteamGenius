@@ -73,6 +73,7 @@
 		0369596A19D5FC0B0096CEBC /* SGEventForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369596919D5FC0B0096CEBC /* SGEventForm.m */; };
 		0369596E19D6041C0096CEBC /* SGEventFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369596D19D6041C0096CEBC /* SGEventFormViewController.m */; };
 		0369597219D621830096CEBC /* SGLongPressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369597119D621830096CEBC /* SGLongPressTableViewCell.m */; };
+		036BE6B31AF6747F004C1092 /* SGPurchaseValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE6B21AF6747F004C1092 /* SGPurchaseValidation.m */; };
 		036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */; };
 		03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */; };
 		037708D61A5B185300295E1A /* SGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037708D51A5B185300295E1A /* SGWebViewController.m */; };
@@ -286,6 +287,8 @@
 		0369596D19D6041C0096CEBC /* SGEventFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEventFormViewController.m; sourceTree = "<group>"; };
 		0369597019D621830096CEBC /* SGLongPressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLongPressTableViewCell.h; sourceTree = "<group>"; };
 		0369597119D621830096CEBC /* SGLongPressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLongPressTableViewCell.m; sourceTree = "<group>"; };
+		036BE6B11AF6747F004C1092 /* SGPurchaseValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPurchaseValidation.h; sourceTree = "<group>"; };
+		036BE6B21AF6747F004C1092 /* SGPurchaseValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPurchaseValidation.m; sourceTree = "<group>"; };
 		036BE9B419F766E30096BDE4 /* SGFilterOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFilterOptionsTableViewController.h; sourceTree = "<group>"; };
 		036BE9B519F766E30096BDE4 /* SGFilterOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFilterOptionsTableViewController.m; sourceTree = "<group>"; };
 		03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleIncRootCertificate.cer; sourceTree = "<group>"; };
@@ -730,6 +733,7 @@
 		0355CAEF1AA18D950068EF83 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				036BE6B01AF67455004C1092 /* Purchases */,
 				032812901AB38B0C00F23BF9 /* SGReceiptVerificator.h */,
 				032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */,
 			);
@@ -823,6 +827,15 @@
 				0369595D19D5F4680096CEBC /* SGGenericOptionsTableViewController.m */,
 			);
 			name = Options;
+			sourceTree = "<group>";
+		};
+		036BE6B01AF67455004C1092 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				036BE6B11AF6747F004C1092 /* SGPurchaseValidation.h */,
+				036BE6B21AF6747F004C1092 /* SGPurchaseValidation.m */,
+			);
+			name = Purchases;
 			sourceTree = "<group>";
 		};
 		036BE9B719F766F30096BDE4 /* Options */ = {
@@ -1384,6 +1397,7 @@
 				030ADEE61AD8723300E6A1CF /* Battle.m in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
 				0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */,
+				036BE6B31AF6747F004C1092 /* SGPurchaseValidation.m in Sources */,
 				0388EA471AF30E5C006AA52D /* SGFactionsOptionTableViewController.m in Sources */,
 				0369596319D5F9640096CEBC /* SGScenarioForm.m in Sources */,
 				0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */,
