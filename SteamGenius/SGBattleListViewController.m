@@ -13,6 +13,11 @@
 #import "BattleFilter.h"
 #import "SGEmptyView.h"
 #import "SGRepository.h"
+#import "RMStore.h"
+#import "RMStoreKeychainPersistence.h"
+
+#define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
+#define kSteamGeniusCustomFactionIconsIdentifier @"com.eriklopez.steamgenius.customfactionicons"
 
 #define kEmptyTableMessage @"No battles found."
 
@@ -20,11 +25,17 @@
 
 @end
 
-@implementation SGBattleListViewController
+@implementation SGBattleListViewController {
+    BOOL _isPremiumPurchased;
+    BOOL _isCustomFactionIconsPurchased;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    _isPremiumPurchased = NO;
+    _isCustomFactionIconsPurchased = NO;
+    [self checkPurchases];
     
     UIEdgeInsets battleTableInsets = UIEdgeInsetsMake(35.f, 0, 0, 0);
     self.tableView.contentInset = battleTableInsets;
@@ -116,7 +127,6 @@
             break;
     }
     
-#warning Check for in app purchase
     // Opponent caster name
     NSMutableString *oCasterName = [NSMutableString stringWithString:battle.opponentCaster.model.name];
     NSRange oCasterLineBreak = [oCasterName rangeOfString:@", "];
@@ -137,11 +147,12 @@
         [fullOpponentCasterName addAttribute:NSParagraphStyleAttributeName value:opponentStyle range:NSMakeRange(0, fullOpponentCasterName.length - 1)];
     }
     cell.opponentCasterName.attributedText = fullOpponentCasterName;
+    
     // Opponent color / icon
     [[cell.opponentFactionColor subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     cell.opponentFactionColor.layer.borderWidth = 0;
     
-    if ([SGKFileAccess factionIconExists:battle.opponentCaster.faction.shortName]) {
+    if ((_isPremiumPurchased || _isCustomFactionIconsPurchased) && [SGKFileAccess factionIconExists:battle.opponentCaster.faction.shortName]) {
         cell.opponentFactionColor.backgroundColor = [UIColor clearColor];
         UIImageView *opponentFactionIcon = [[UIImageView alloc] initWithFrame:cell.opponentFactionColor.bounds];
         opponentFactionIcon.image = [UIImage imageWithContentsOfFile:[[SGKFileAccess sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", battle.opponentCaster.faction.shortName]].path];
@@ -173,12 +184,12 @@
         [fullPlayerCasterName addAttribute:NSParagraphStyleAttributeName value:playerStyle range:NSMakeRange(0, fullPlayerCasterName.length - 1)];
     }
     cell.playerCasterName.attributedText = fullPlayerCasterName;
-#warning Check for in app purchase
-    // Player color icon
+    
+    // Player color / icon
     [[cell.playerFactionColor subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     cell.playerFactionColor.layer.borderWidth = 0;
     
-    if ([SGKFileAccess factionIconExists:battle.playerCaster.faction.shortName]) {
+    if ((_isPremiumPurchased || _isCustomFactionIconsPurchased) && [SGKFileAccess factionIconExists:battle.playerCaster.faction.shortName]) {
         cell.playerFactionColor.backgroundColor = [UIColor clearColor];
         UIImageView *playerFactionIcon = [[UIImageView alloc] initWithFrame:cell.playerFactionColor.bounds];
         playerFactionIcon.image = [UIImage imageWithContentsOfFile:[[SGKFileAccess sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", battle.playerCaster.faction.shortName]].path];
@@ -421,6 +432,16 @@
     else {
         self.tableView.backgroundView = nil;
     }
+}
+
+#pragma Private Methods
+
+- (void)checkPurchases
+{
+    RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
+    NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
+    _isPremiumPurchased = [purchases containsObject:kSteamGeniusPremiumIdentifier];
+    _isCustomFactionIconsPurchased = [purchases containsObject:kSteamGeniusCustomFactionIconsIdentifier];
 }
 
 @end

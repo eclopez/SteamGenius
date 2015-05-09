@@ -11,12 +11,19 @@
 #import "Game.h"
 #import "Caster.h"
 @import QuartzCore;
+#import "RMStoreKeychainPersistence.h"
+
+#define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
+#define kSteamGeniusCustomFactionIconsIdentifier @"com.eriklopez.steamgenius.customfactionicons"
 
 @interface SGFactionsOptionTableViewController ()
 
 @end
 
-@implementation SGFactionsOptionTableViewController
+@implementation SGFactionsOptionTableViewController {
+    BOOL _isPremiumPurchased;
+    BOOL _isCustomFactionIconsPurchased;
+}
 
 - (instancetype)init
 {
@@ -37,6 +44,10 @@
     
     self.title = @"Factions";
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 36.f, 0, 0);
+    
+    _isPremiumPurchased = NO;
+    _isCustomFactionIconsPurchased = NO;
+    [self checkPurchases];
 }
 
 #pragma mark - Class Methods
@@ -67,9 +78,8 @@
     static NSString *FactionCellIdentifier = @"FactionCell";
     static NSString *CircleCellIdentifier = @"CircleCell";
     Faction *faction = [[self sortedFactionsArray:indexPath.section] objectAtIndex:indexPath.row];
-    
-#warning Check for in app purchase
-    if ([SGKFileAccess factionIconExists:faction.shortName]) {
+
+    if ((_isPremiumPurchased || _isCustomFactionIconsPurchased) && [SGKFileAccess factionIconExists:faction.shortName]) {
         SGResizableImageViewCell *cell = (SGResizableImageViewCell *)[tableView dequeueReusableCellWithIdentifier:FactionCellIdentifier];
         if (cell == nil) {
             cell = [[SGResizableImageViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FactionCellIdentifier];
@@ -119,6 +129,16 @@
         if (self.field.action) self.field.action(self);
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+#pragma Private Methods
+
+- (void)checkPurchases
+{
+    RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
+    NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
+    _isPremiumPurchased = [purchases containsObject:kSteamGeniusPremiumIdentifier];
+    _isCustomFactionIconsPurchased = [purchases containsObject:kSteamGeniusCustomFactionIconsIdentifier];
 }
 
 @end

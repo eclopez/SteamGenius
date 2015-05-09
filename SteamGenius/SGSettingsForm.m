@@ -13,7 +13,10 @@
 #import "SGWebViewController.h"
 #import "SGFactionsOptionTableViewController.h"
 #import "SGFactionIconsViewController.h"
-#import "SGPurchaseValidation.h"
+#import "RMStoreKeychainPersistence.h"
+
+#define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
+#define kSteamGeniusCustomFactionIconsIdentifier @"com.eriklopez.steamgenius.customfactionicons"
 
 @implementation SGSettingsForm
 
@@ -57,10 +60,12 @@
 
 - (NSArray *)fields
 {
-    if (![SGPurchaseValidation isPremiumPurchased] && ![SGPurchaseValidation isCustomFactionIconsPurchased]) {
-        return @[ @"theme", @"products", @"donate" ];
-    } else {
+    RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
+    NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
+    if ([purchases containsObject:kSteamGeniusPremiumIdentifier] || [purchases containsObject:kSteamGeniusCustomFactionIconsIdentifier]) {
         return @[ @"theme", @"factionIcons", @"products", @"donate" ];
+    } else {
+        return @[ @"theme", @"products", @"donate" ];
     }
 }
 

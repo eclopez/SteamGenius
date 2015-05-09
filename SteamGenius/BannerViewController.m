@@ -48,7 +48,12 @@
 #import "BannerViewController.h"
 #import "RMStore.h"
 #import "RMStoreKeychainPersistence.h"
-#import "SGPurchaseValidation.h"
+#import "RMStore.h"
+#import "RMStoreKeychainPersistence.h"
+
+#define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
+#define kSteamGeniusRemoveAdsIdentifier @"com.eriklopez.steamgenius.adremoval"
+#define kSteamGeniusCustomFactionIconsIdentifier @"com.eriklopez.steamgenius.customfactionicons"
 
 NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
 NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
@@ -146,7 +151,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     
     // Check if the banner has an ad loaded and ready for display.  Move the banner off
     // screen if it does not have an ad.
-    if (_bannerView.bannerLoaded && (!_isPremiumPurchased && !_isRemoveAdsPurchased)) {
+    if (_bannerView.bannerLoaded && (!_isPremiumPurchased || !_isRemoveAdsPurchased)) {
         contentFrame.size.height -= bannerFrame.size.height;
         bannerFrame.origin.y = contentFrame.size.height;
     } else {
@@ -220,8 +225,10 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 
 - (void)checkPurchases
 {
-    _isPremiumPurchased = [SGPurchaseValidation isPremiumPurchased];
-    _isRemoveAdsPurchased = [SGPurchaseValidation isAdRemovalPurchased];
+    RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
+    NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
+    _isPremiumPurchased = [purchases containsObject:kSteamGeniusPremiumIdentifier];
+    _isRemoveAdsPurchased = [purchases containsObject:kSteamGeniusRemoveAdsIdentifier];
 }
 
 - (void)applyPurchases
