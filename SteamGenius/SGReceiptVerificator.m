@@ -16,7 +16,17 @@
 - (void)verifyTransaction:(SKPaymentTransaction *)transaction success:(void (^)())successBlock failure:(void (^)(NSError *))failureBlock
 {
     NSMutableDictionary *purchases;
-    NSArray *identifiers = [NSArray arrayWithContentsOfURL:[self getFileUrl:kProductsFile fileType:@"plist"]];
+    
+    NSArray *products = [NSArray arrayWithContentsOfURL:[self getFileUrl:kProductsFile fileType:@"plist"]];
+    NSMutableArray *identifiers = [NSMutableArray array];
+    
+    for (NSDictionary *productDictionary in products) {
+        for (id key in productDictionary) {
+            for (NSString *productIdentifier in [productDictionary valueForKey:key]) {
+                [identifiers addObject:productIdentifier];
+            }
+        }
+    }
     __block BOOL isValid = NO;
     
     SGBase_CheckInAppPurchases(identifiers, ^(NSString *identifier, BOOL isPresent, NSDictionary *purchaseInfo) {

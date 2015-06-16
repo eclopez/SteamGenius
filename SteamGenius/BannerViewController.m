@@ -151,11 +151,14 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     
     // Check if the banner has an ad loaded and ready for display.  Move the banner off
     // screen if it does not have an ad.
-    if (_bannerView.bannerLoaded && (!_isPremiumPurchased || !_isRemoveAdsPurchased)) {
-        contentFrame.size.height -= bannerFrame.size.height;
-        bannerFrame.origin.y = contentFrame.size.height;
-    } else {
-        bannerFrame.origin.y = contentFrame.size.height;
+    if (_bannerView.bannerLoaded) {
+        if (_isPremiumPurchased || _isRemoveAdsPurchased) {
+            bannerFrame.origin.y = contentFrame.size.height;
+        }
+        else {
+            contentFrame.size.height -= bannerFrame.size.height;
+            bannerFrame.origin.y = contentFrame.size.height;
+        }
     }
     _contentController.view.frame = contentFrame;
     _bannerView.frame = bannerFrame;
