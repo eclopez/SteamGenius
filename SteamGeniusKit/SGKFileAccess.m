@@ -19,6 +19,8 @@
 + (NSURL *)sharedDocumentsDirectory
 {
     NSFileManager *manager = [NSFileManager defaultManager];
+    // Get Docs Directory for debugging
+    // NSLog(@"%@",[[manager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
     return [manager containerURLForSecurityApplicationGroupIdentifier:kAppGroupIdentifier];
 }
 

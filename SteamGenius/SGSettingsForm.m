@@ -51,11 +51,18 @@
 }
 
 - (NSDictionary *)donateField {
+    NSString *protocol = @"http://";
+    NSString *url = @"gofund.me/evep0k";
+    
+    void (^open)() = ^(void) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[protocol stringByAppendingString:url]]];
+    };
+    
     return @{ FXFormFieldHeader: @"Support SteamGenius' development",
               FXFormFieldType: @"default",
-              FXFormFieldDefaultValue: @"gofund.me/evep0k",
+              FXFormFieldDefaultValue: url,
               FXFormFieldTitle: @"Donate",
-              FXFormFieldViewController: @"SGWebViewController" };
+              FXFormFieldAction: open };
 }
 
 - (NSArray *)fields
