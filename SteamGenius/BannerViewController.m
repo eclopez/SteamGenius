@@ -48,8 +48,12 @@
 #import "BannerViewController.h"
 #import "RMStore.h"
 #import "RMStoreKeychainPersistence.h"
+#import "RMStore.h"
+#import "RMStoreKeychainPersistence.h"
 
 #define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
+#define kSteamGeniusRemoveAdsIdentifier @"com.eriklopez.steamgenius.adremoval"
+#define kSteamGeniusCustomFactionIconsIdentifier @"com.eriklopez.steamgenius.customfactionicons"
 
 NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
 NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
@@ -62,6 +66,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     ADBannerView *_bannerView;
     UIViewController *_contentController;
     BOOL _isPremiumPurchased;
+    BOOL _isRemoveAdsPurchased;
 }
 
 - (instancetype)initWithContentViewController:(UIViewController *)contentController
@@ -74,6 +79,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     self = [super init];
     if (self != nil) {
         _isPremiumPurchased = NO;
+        _isRemoveAdsPurchased = NO;
         [self checkPurchases];
         [[RMStore defaultStore] addStoreObserver:self];
         
@@ -145,11 +151,14 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     
     // Check if the banner has an ad loaded and ready for display.  Move the banner off
     // screen if it does not have an ad.
-    if (_bannerView.bannerLoaded && !_isPremiumPurchased) {
-        contentFrame.size.height -= bannerFrame.size.height;
-        bannerFrame.origin.y = contentFrame.size.height;
-    } else {
-        bannerFrame.origin.y = contentFrame.size.height;
+    if (_bannerView.bannerLoaded) {
+        if (_isPremiumPurchased || _isRemoveAdsPurchased) {
+            bannerFrame.origin.y = contentFrame.size.height;
+        }
+        else {
+            contentFrame.size.height -= bannerFrame.size.height;
+            bannerFrame.origin.y = contentFrame.size.height;
+        }
     }
     _contentController.view.frame = contentFrame;
     _bannerView.frame = bannerFrame;
@@ -222,6 +231,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
     NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
     _isPremiumPurchased = [purchases containsObject:kSteamGeniusPremiumIdentifier];
+    _isRemoveAdsPurchased = [purchases containsObject:kSteamGeniusRemoveAdsIdentifier];
 }
 
 - (void)applyPurchases

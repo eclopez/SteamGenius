@@ -7,15 +7,23 @@
 //
 
 #import "SGFactionsOptionTableViewController.h"
-#import "SGColorCircleView.h"
+#import "SGResizableImageViewCell.h"
 #import "Game.h"
 #import "Caster.h"
+@import QuartzCore;
+#import "RMStoreKeychainPersistence.h"
+
+#define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
+#define kSteamGeniusCustomFactionIconsIdentifier @"com.eriklopez.steamgenius.customfactionicons"
 
 @interface SGFactionsOptionTableViewController ()
 
 @end
 
-@implementation SGFactionsOptionTableViewController
+@implementation SGFactionsOptionTableViewController {
+    BOOL _isPremiumPurchased;
+    BOOL _isCustomFactionIconsPurchased;
+}
 
 - (instancetype)init
 {
@@ -36,6 +44,10 @@
     
     self.title = @"Factions";
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 36.f, 0, 0);
+    
+    _isPremiumPurchased = NO;
+    _isCustomFactionIconsPurchased = NO;
+    [self checkPurchases];
 }
 
 #pragma mark - Class Methods
@@ -62,27 +74,43 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"FactionCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    Faction *faction = [[self sortedFactionsArray:indexPath.section] objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = faction.name;
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:17.f];
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    
-    SGColorCircleView *circle = [[SGColorCircleView alloc] initWithFrame:CGRectMake(10.f, 14.f, 16.f, 16.f)];
-    circle.color = (UIColor *)faction.color;
-    [cell addSubview:circle];
-    
     FXFormController *form = self.field.form;
-    Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
-    cell.accessoryType = currentFaction == faction ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-    
-    return cell;
+    static NSString *FactionCellIdentifier = @"FactionCell";
+    static NSString *CircleCellIdentifier = @"CircleCell";
+    Faction *faction = [[self sortedFactionsArray:indexPath.section] objectAtIndex:indexPath.row];
+
+    if ((_isPremiumPurchased || _isCustomFactionIconsPurchased) && [SGKFileAccess factionIconExists:faction.shortName]) {
+        SGResizableImageViewCell *cell = (SGResizableImageViewCell *)[tableView dequeueReusableCellWithIdentifier:FactionCellIdentifier];
+        if (cell == nil) {
+            cell = [[SGResizableImageViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FactionCellIdentifier];
+        }
+        cell.imageViewFrame = CGRectMake(6.f, 10.f, 24.f, 24.f);
+        cell.textLabel.text = faction.name;
+        cell.imageView.image = [UIImage imageWithContentsOfFile:[[SGKFileAccess sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", faction.shortName]].path];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:17.f];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
+        cell.accessoryType = currentFaction == faction ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+        
+        return cell;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CircleCellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CircleCellIdentifier];
+        }
+        UIView *circle = [[UIView alloc] initWithFrame:CGRectMake(10.f, 14.f, 16.f, 16.f)];
+        circle.backgroundColor = (UIColor *)faction.color;
+        circle.layer.cornerRadius = circle.bounds.size.width / 2.f;
+        [cell addSubview:circle];
+        
+        cell.textLabel.text = faction.name;
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:17.f];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
+        cell.accessoryType = currentFaction == faction ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+        
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -101,6 +129,16 @@
         if (self.field.action) self.field.action(self);
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+#pragma Private Methods
+
+- (void)checkPurchases
+{
+    RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
+    NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
+    _isPremiumPurchased = [purchases containsObject:kSteamGeniusPremiumIdentifier];
+    _isCustomFactionIconsPurchased = [purchases containsObject:kSteamGeniusCustomFactionIconsIdentifier];
 }
 
 @end

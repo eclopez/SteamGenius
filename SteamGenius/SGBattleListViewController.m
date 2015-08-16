@@ -13,6 +13,11 @@
 #import "BattleFilter.h"
 #import "SGEmptyView.h"
 #import "SGRepository.h"
+#import "RMStore.h"
+#import "RMStoreKeychainPersistence.h"
+
+#define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
+#define kSteamGeniusCustomFactionIconsIdentifier @"com.eriklopez.steamgenius.customfactionicons"
 
 #define kEmptyTableMessage @"No battles found."
 
@@ -20,11 +25,17 @@
 
 @end
 
-@implementation SGBattleListViewController
+@implementation SGBattleListViewController {
+    BOOL _isPremiumPurchased;
+    BOOL _isCustomFactionIconsPurchased;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    _isPremiumPurchased = NO;
+    _isCustomFactionIconsPurchased = NO;
+    [self checkPurchases];
     
     UIEdgeInsets battleTableInsets = UIEdgeInsetsMake(35.f, 0, 0, 0);
     self.tableView.contentInset = battleTableInsets;
@@ -38,6 +49,16 @@
                                              selector:@selector(handleBattleListUpdate:)
                                                  name:NSManagedObjectContextObjectsDidChangeNotification
                                                object:[self.appDelegate managedObjectContext]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleFactionIconUpdate:)
+                                                 name:@"factionIconSelected"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleFactionIconUpdate:)
+                                                 name:@"factionIconCleared"
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -126,10 +147,22 @@
         [fullOpponentCasterName addAttribute:NSParagraphStyleAttributeName value:opponentStyle range:NSMakeRange(0, fullOpponentCasterName.length - 1)];
     }
     cell.opponentCasterName.attributedText = fullOpponentCasterName;
-    cell.opponentFactionColor.backgroundColor = (UIColor *)battle.opponentCaster.faction.color;
-    cell.opponentFactionColor.layer.cornerRadius = cell.opponentFactionColor.bounds.size.width / 2.f;
-    cell.opponentFactionColor.layer.borderWidth = 1.f;
-    cell.opponentFactionColor.layer.borderColor = [UIColor blackColor].CGColor;
+    
+    // Opponent color / icon
+    [[cell.opponentFactionColor subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    cell.opponentFactionColor.layer.borderWidth = 0;
+    
+    if ((_isPremiumPurchased || _isCustomFactionIconsPurchased) && [SGKFileAccess factionIconExists:battle.opponentCaster.faction.shortName]) {
+        cell.opponentFactionColor.backgroundColor = [UIColor clearColor];
+        UIImageView *opponentFactionIcon = [[UIImageView alloc] initWithFrame:cell.opponentFactionColor.bounds];
+        opponentFactionIcon.image = [UIImage imageWithContentsOfFile:[[SGKFileAccess sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", battle.opponentCaster.faction.shortName]].path];
+        [cell.opponentFactionColor addSubview:opponentFactionIcon];
+    } else {
+        cell.opponentFactionColor.backgroundColor = (UIColor *)battle.opponentCaster.faction.color;
+        cell.opponentFactionColor.layer.cornerRadius = cell.opponentFactionColor.bounds.size.width / 2.f;
+        cell.opponentFactionColor.layer.borderWidth = 1.f;
+        cell.opponentFactionColor.layer.borderColor = [UIColor blackColor].CGColor;
+    }
     
     // Player caster name
     NSMutableString *pCasterName = [NSMutableString stringWithString:battle.playerCaster.model.name];
@@ -151,10 +184,23 @@
         [fullPlayerCasterName addAttribute:NSParagraphStyleAttributeName value:playerStyle range:NSMakeRange(0, fullPlayerCasterName.length - 1)];
     }
     cell.playerCasterName.attributedText = fullPlayerCasterName;
-    cell.playerFactionColor.backgroundColor = (UIColor *)battle.playerCaster.faction.color;
-    cell.playerFactionColor.layer.cornerRadius = cell.playerFactionColor.bounds.size.width / 2.f;
-    cell.playerFactionColor.layer.borderWidth = 1.f;
-    cell.playerFactionColor.layer.borderColor = [UIColor blackColor].CGColor;
+    
+    // Player color / icon
+    [[cell.playerFactionColor subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    cell.playerFactionColor.layer.borderWidth = 0;
+    
+    if ((_isPremiumPurchased || _isCustomFactionIconsPurchased) && [SGKFileAccess factionIconExists:battle.playerCaster.faction.shortName]) {
+        cell.playerFactionColor.backgroundColor = [UIColor clearColor];
+        UIImageView *playerFactionIcon = [[UIImageView alloc] initWithFrame:cell.playerFactionColor.bounds];
+        playerFactionIcon.image = [UIImage imageWithContentsOfFile:[[SGKFileAccess sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", battle.playerCaster.faction.shortName]].path];
+        [cell.playerFactionColor addSubview:playerFactionIcon];
+    } else {
+        cell.playerFactionColor.backgroundColor = (UIColor *)battle.playerCaster.faction.color;
+        cell.playerFactionColor.layer.cornerRadius = cell.playerFactionColor.bounds.size.width / 2.f;
+        cell.playerFactionColor.layer.borderWidth = 1.f;
+        cell.playerFactionColor.layer.borderColor = [UIColor blackColor].CGColor;
+    }
+    
     cell.dateLabel.text = [NSDateFormatter localizedStringFromDate:battle.date
                                                          dateStyle:NSDateFormatterMediumStyle
                                                          timeStyle:NSDateFormatterNoStyle];
@@ -173,7 +219,6 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -328,6 +373,11 @@
     }
 }
 
+- (void)handleFactionIconUpdate:(NSNotification *)notification
+{
+    [self.tableView reloadData];
+}
+
 - (void)refetch {
     self.fetchedResultsController = nil;
     [self fetchResults];
@@ -382,6 +432,16 @@
     else {
         self.tableView.backgroundView = nil;
     }
+}
+
+#pragma Private Methods
+
+- (void)checkPurchases
+{
+    RMStoreKeychainPersistence *persist = [RMStore defaultStore].transactionPersistor;
+    NSArray *purchases = [[persist purchasedProductIdentifiers] allObjects];
+    _isPremiumPurchased = [purchases containsObject:kSteamGeniusPremiumIdentifier];
+    _isCustomFactionIconsPurchased = [purchases containsObject:kSteamGeniusCustomFactionIconsIdentifier];
 }
 
 @end
