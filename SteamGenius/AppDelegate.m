@@ -18,8 +18,8 @@
 // When adding new models, both model version and caster version need to be incremented.
 #define kCurrentGameVersion 1
 #define kCurrentFactionVersion 1
-#define kCurrentModelVersion 2
-#define kCurrentCasterVersion 2
+#define kCurrentModelVersion 3
+#define kCurrentCasterVersion 3
 #define kCurrentResultVersion 1
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
