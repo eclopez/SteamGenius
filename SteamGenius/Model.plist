@@ -302,26 +302,26 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
-    <dict>
-        <key>name</key>
-        <string>Major Prime Victoria Haley</string>
-        <key>factions</key>
-        <array>
-            <string>Cygnar</string>
-        </array>
-        <key>shortName</key>
-        <string>Haley</string>
-        <key>incarnation</key>
-        <integer>3</integer>
-        <key>isEpic</key>
-        <true/>
-        <key>isCavalry</key>
-        <false/>
-        <key>isBattleEngine</key>
-        <false/>
-        <key>version</key>
-        <integer>2</integer>
-    </dict>
+	<dict>
+		<key>name</key>
+		<string>Major Prime Victoria Haley</string>
+		<key>factions</key>
+		<array>
+			<string>Cygnar</string>
+		</array>
+		<key>shortName</key>
+		<string>Haley</string>
+		<key>incarnation</key>
+		<integer>3</integer>
+		<key>isEpic</key>
+		<true/>
+		<key>isCavalry</key>
+		<false/>
+		<key>isBattleEngine</key>
+		<false/>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
 	<dict>
 		<key>name</key>
 		<string>Feora, Priestess of the Flame</string>
@@ -622,26 +622,26 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
-    <dict>
-        <key>name</key>
-        <string>Anson Durst, Rock of the Faith</string>
-        <key>factions</key>
-        <array>
-            <string>Protectorate of Menoth</string>
-        </array>
-        <key>shortName</key>
-        <string>Anson</string>
-        <key>incarnation</key>
-        <integer>1</integer>
-        <key>isEpic</key>
-        <false/>
-        <key>isCavalry</key>
-        <false/>
-        <key>isBattleEngine</key>
-        <false/>
-        <key>version</key>
-        <integer>2</integer>
-    </dict>
+	<dict>
+		<key>name</key>
+		<string>Anson Durst, Rock of the Faith</string>
+		<key>factions</key>
+		<array>
+			<string>Protectorate of Menoth</string>
+		</array>
+		<key>shortName</key>
+		<string>Anson</string>
+		<key>incarnation</key>
+		<integer>1</integer>
+		<key>isEpic</key>
+		<false/>
+		<key>isCavalry</key>
+		<false/>
+		<key>isBattleEngine</key>
+		<false/>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
 	<dict>
 		<key>name</key>
 		<string>Forward Kommander Sorscha</string>
@@ -942,26 +942,26 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
-    <dict>
-        <key>name</key>
-        <string>Obavnik Kommander Zerkova</string>
-        <key>factions</key>
-        <array>
-            <string>Khador</string>
-        </array>
-        <key>shortName</key>
-        <string>Zerkova</string>
-        <key>incarnation</key>
-        <integer>2</integer>
-        <key>isEpic</key>
-        <true/>
-        <key>isCavalry</key>
-        <false/>
-        <key>isBattleEngine</key>
-        <false/>
-        <key>version</key>
-        <integer>2</integer>
-    </dict>
+	<dict>
+		<key>name</key>
+		<string>Obavnik Kommander Zerkova</string>
+		<key>factions</key>
+		<array>
+			<string>Khador</string>
+		</array>
+		<key>shortName</key>
+		<string>Zerkova</string>
+		<key>incarnation</key>
+		<integer>2</integer>
+		<key>isEpic</key>
+		<true/>
+		<key>isCavalry</key>
+		<false/>
+		<key>isBattleEngine</key>
+		<false/>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
 	<dict>
 		<key>name</key>
 		<string>Asphyxious the Hellbringer</string>
@@ -1282,26 +1282,26 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
-    <dict>
-        <key>name</key>
-        <string>Deneghra, The Soul Weaver</string>
-        <key>factions</key>
-        <array>
-            <string>Cryx</string>
-        </array>
-        <key>shortName</key>
-        <string>Deneghra</string>
-        <key>incarnation</key>
-        <integer>3</integer>
-        <key>isEpic</key>
-        <true/>
-        <key>isCavalry</key>
-        <true/>
-        <key>isBattleEngine</key>
-        <true/>
-        <key>version</key>
-        <integer>2</integer>
-    </dict>
+	<dict>
+		<key>name</key>
+		<string>Deneghra, The Soul Weaver</string>
+		<key>factions</key>
+		<array>
+			<string>Cryx</string>
+		</array>
+		<key>shortName</key>
+		<string>Deneghra</string>
+		<key>incarnation</key>
+		<integer>3</integer>
+		<key>isEpic</key>
+		<true/>
+		<key>isCavalry</key>
+		<true/>
+		<key>isBattleEngine</key>
+		<true/>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
 	<dict>
 		<key>name</key>
 		<string>Adeptis Rahn</string>
@@ -1462,26 +1462,26 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
-    <dict>
-        <key>name</key>
-        <string>Thyron, Sword of Truth</string>
-        <key>factions</key>
-        <array>
-            <string>Retribution of Scyrah</string>
-        </array>
-        <key>shortName</key>
-        <string>Thyron</string>
-        <key>incarnation</key>
-        <integer>1</integer>
-        <key>isEpic</key>
-        <false/>
-        <key>isCavalry</key>
-        <false/>
-        <key>isBattleEngine</key>
-        <false/>
-        <key>version</key>
-        <integer>2</integer>
-    </dict>
+	<dict>
+		<key>name</key>
+		<string>Thyron, Sword of Truth</string>
+		<key>factions</key>
+		<array>
+			<string>Retribution of Scyrah</string>
+		</array>
+		<key>shortName</key>
+		<string>Thyron</string>
+		<key>incarnation</key>
+		<integer>1</integer>
+		<key>isEpic</key>
+		<false/>
+		<key>isCavalry</key>
+		<false/>
+		<key>isBattleEngine</key>
+		<false/>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
 	<dict>
 		<key>name</key>
 		<string>Aurora, Numen of Aerogenesis</string>
@@ -1868,27 +1868,27 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
-    <dict>
-        <key>name</key>
-        <string>Cognifex Cyphon</string>
-        <key>factions</key>
-        <array>
-            <string>Mercenaries</string>
-            <string>Puppet Masters</string>
-        </array>
-        <key>shortName</key>
-        <string>Cyphon</string>
-        <key>incarnation</key>
-        <integer>1</integer>
-        <key>isEpic</key>
-        <false/>
-        <key>isCavalry</key>
-        <false/>
-        <key>isBattleEngine</key>
-        <false/>
-        <key>version</key>
-        <integer>2</integer>
-    </dict>
+	<dict>
+		<key>name</key>
+		<string>Cognifex Cyphon</string>
+		<key>factions</key>
+		<array>
+			<string>Mercenaries</string>
+			<string>Puppet Masters</string>
+		</array>
+		<key>shortName</key>
+		<string>Cyphon</string>
+		<key>incarnation</key>
+		<integer>1</integer>
+		<key>isEpic</key>
+		<false/>
+		<key>isCavalry</key>
+		<false/>
+		<key>isBattleEngine</key>
+		<false/>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
 	<dict>
 		<key>name</key>
 		<string>Borka Kegslayer</string>
@@ -2068,6 +2068,26 @@
 		<false/>
 		<key>version</key>
 		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hoarluk Doomshaper, Dire Prophet</string>
+		<key>factions</key>
+		<array>
+			<string>Trollblood</string>
+		</array>
+		<key>shortName</key>
+		<string>Doomshaper</string>
+		<key>incarnation</key>
+		<integer>3</integer>
+		<key>isEpic</key>
+		<true/>
+		<key>isCavalry</key>
+		<false/>
+		<key>isBattleEngine</key>
+		<false/>
+		<key>version</key>
+		<integer>3</integer>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -2409,26 +2429,26 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
-    <dict>
-        <key>name</key>
-        <string>Kromac, Champion of the Wurm</string>
-        <key>factions</key>
-        <array>
-            <string>Circle Orboros</string>
-        </array>
-        <key>shortName</key>
-        <string>Kromac</string>
-        <key>incarnation</key>
-        <integer>2</integer>
-        <key>isEpic</key>
-        <true/>
-        <key>isCavalry</key>
-        <false/>
-        <key>isBattleEngine</key>
-        <false/>
-        <key>version</key>
-        <integer>2</integer>
-    </dict>
+	<dict>
+		<key>name</key>
+		<string>Kromac, Champion of the Wurm</string>
+		<key>factions</key>
+		<array>
+			<string>Circle Orboros</string>
+		</array>
+		<key>shortName</key>
+		<string>Kromac</string>
+		<key>incarnation</key>
+		<integer>2</integer>
+		<key>isEpic</key>
+		<true/>
+		<key>isCavalry</key>
+		<false/>
+		<key>isBattleEngine</key>
+		<false/>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
 	<dict>
 		<key>name</key>
 		<string>Absylonia, Daughter of Everblight</string>
@@ -2689,26 +2709,26 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
-    <dict>
-        <key>name</key>
-        <string>Saeryn and Rhyas, Talons of Everblight</string>
-        <key>factions</key>
-        <array>
-            <string>Legion of Everblight</string>
-        </array>
-        <key>shortName</key>
-        <string>Twins</string>
-        <key>incarnation</key>
-        <integer>2</integer>
-        <key>isEpic</key>
-        <true/>
-        <key>isCavalry</key>
-        <false/>
-        <key>isBattleEngine</key>
-        <false/>
-        <key>version</key>
-        <integer>2</integer>
-    </dict>
+	<dict>
+		<key>name</key>
+		<string>Saeryn and Rhyas, Talons of Everblight</string>
+		<key>factions</key>
+		<array>
+			<string>Legion of Everblight</string>
+		</array>
+		<key>shortName</key>
+		<string>Twins</string>
+		<key>incarnation</key>
+		<integer>2</integer>
+		<key>isEpic</key>
+		<true/>
+		<key>isCavalry</key>
+		<false/>
+		<key>isBattleEngine</key>
+		<false/>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
 	<dict>
 		<key>name</key>
 		<string>Archdomina Makeda</string>
@@ -2888,6 +2908,26 @@
 		<false/>
 		<key>version</key>
 		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Zaal, the Ancestral Advocate</string>
+		<key>factions</key>
+		<array>
+			<string>Skorne</string>
+		</array>
+		<key>shortName</key>
+		<string>Zaal</string>
+		<key>incarnation</key>
+		<integer>2</integer>
+		<key>isEpic</key>
+		<true/>
+		<key>isCavalry</key>
+		<false/>
+		<key>isBattleEngine</key>
+		<false/>
+		<key>version</key>
+		<integer>3</integer>
 	</dict>
 	<dict>
 		<key>name</key>
