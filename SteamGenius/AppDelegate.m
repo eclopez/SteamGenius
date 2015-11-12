@@ -46,6 +46,15 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    if ([shortcutItem.type isEqualToString:@"com.eriklopez.steamgenius.createbattle"]) {
+        UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        UINavigationController *controller = (UINavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"CreateBattle"];
+        [navigationController presentViewController:controller animated:YES completion:nil];
+    }
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Fixes problem when date picker is showing and the app resigns active;
     // when you return, the date field is unresponsive.
