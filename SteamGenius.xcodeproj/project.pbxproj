@@ -213,7 +213,7 @@
 		030ADF091AD8725700E6A1CF /* Faction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faction.m; sourceTree = "<group>"; };
 		030ADF0B1AD8725700E6A1CF /* Opponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opponent.h; sourceTree = "<group>"; };
 		030ADF0C1AD8725700E6A1CF /* Opponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opponent.m; sourceTree = "<group>"; };
-		0318D2CE1ABF07C400E9C8A5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		0318D2CE1ABF07C400E9C8A5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0318D2D51ABF0D3C00E9C8A5 /* SteamGeniusKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SteamGeniusKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0318D2D81ABF0D3C00E9C8A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0318D2D91ABF0D3C00E9C8A5 /* SteamGeniusKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SteamGeniusKit.h; sourceTree = "<group>"; };
@@ -1636,6 +1636,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Erik Lopez (C858QMJPF2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Erik Lopez (C858QMJPF2)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1680,6 +1681,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Erik Lopez (63Z8F2HA98)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Erik Lopez (63Z8F2HA98)";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
