@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 4.3">
     <entity name="Battle" representedClassName="Battle" syncable="YES">
         <attribute name="controlPoints" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <attribute name="date" attributeType="Date" syncable="YES"/>
@@ -79,7 +79,7 @@
         <element name="Caster" positionX="169" positionY="288" width="128" height="103"/>
         <element name="DataVersion" positionX="-47" positionY="-102" width="128" height="75"/>
         <element name="Event" positionX="574" positionY="153" width="128" height="120"/>
-        <element name="Faction" positionX="-36" positionY="156" width="128" height="148"/>
+        <element name="Faction" positionX="-36" positionY="156" width="128" height="150"/>
         <element name="Game" positionX="-45" positionY="2" width="128" height="88"/>
         <element name="Model" positionX="-38" positionY="315" width="128" height="148"/>
         <element name="Opponent" positionX="378" positionY="54" width="128" height="75"/>
