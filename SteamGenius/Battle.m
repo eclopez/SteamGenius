@@ -20,6 +20,7 @@
 @dynamic date;
 @dynamic killPoints;
 @dynamic notes;
+@dynamic mark3;
 @dynamic opponentControlPoints;
 @dynamic points;
 @dynamic event;

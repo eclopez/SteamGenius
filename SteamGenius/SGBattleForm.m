@@ -33,6 +33,7 @@
         _date = battle ? battle.date : [NSDate date];
         _pointSize = battle ? battle.points : nil;
         _result = battle ? battle.result : nil;
+        _mark3 = [battle.mark3 boolValue];
         _killPoints = battle ? battle.killPoints : nil;
         _scenario = battle ? battle.scenario : nil;
         _controlPoints = battle ? battle.controlPoints : nil;
@@ -106,9 +107,13 @@
     return self.result ? self.result.name : nil;
 }
 
+- (NSDictionary *)mark3Field {
+  return @{ FXFormFieldHeader: @"Optional",
+            FXFormFieldTitle: @"Mark 3" };
+}
+
 - (NSDictionary *)killPointsField {
-    return @{ FXFormFieldHeader: @"Optional",
-              FXFormFieldType: @"unsigned" };
+    return @{ FXFormFieldType: @"unsigned" };
 }
 
 - (NSDictionary *)scenarioField {

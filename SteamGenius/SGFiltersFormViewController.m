@@ -41,7 +41,8 @@
     NSArray *validateFields;
     NSArray *validateFieldNames;
     
-    if ([[form valueForKey:@"operation"] isEqual:@"=nil"] || [[form valueForKey:@"operation"] isEqual:@"!=nil"]) {
+    if ([[form valueForKey:@"operation"] isEqual:@"=nil"] || [[form valueForKey:@"operation"] isEqual:@"!=nil"] ||
+        [[form valueForKey:@"operation"] isEqual:@"=YES"] || [[form valueForKey:@"operation"] isEqual:@"=NO"]) {
         validateFields = @[ @"attribute", @"operation" ];
         validateFieldNames = @[ @"Attribute", @"Operator" ];
     } else {
@@ -95,7 +96,8 @@
             NSPredicate *predicateTemplate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ %@ $VALUE", form.attribute, form.operation]];
             predicate = [predicateTemplate predicateWithSubstitutionVariables:@{@"VALUE": [NSNumber numberWithInteger:[form.attributeValue integerValue]]}];
         }
-        else if ([form.operation isEqualToString:@"=nil"] || [form.operation isEqualToString:@"!=nil"]) {
+        else if ([form.operation isEqualToString:@"=nil"] || [form.operation isEqualToString:@"!=nil"] ||
+                 [form.operation isEqualToString:@"=YES"] || [form.operation isEqualToString:@"=NO"]) {
             predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ %@", @"%K", form.operation], form.attribute];
         } else {
             NSPredicate *predicateTemplate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ %@ $VALUE", form.attribute, form.operation]];

@@ -140,30 +140,33 @@
             
             switch(indexPath.row) {
                 case 0:
+                cell.textLabel.text = [self.battle.mark3 boolValue] ? @"Mark 3" : @"Mark 2";
+                  break;
+                case 1:
                     cell.textLabel.text = self.battle.killPoints ? [NSString stringWithFormat:@"%@ kill points", [self.battle.killPoints stringValue]] : @"No kill points entered";
                     if (!self.battle.killPoints) {
                         isEmptyData = YES;
                     }
                     break;
-                case 1:
+                case 2:
                     cell.textLabel.text = self.battle.scenario ? self.battle.scenario.name : @"No scenario selected";
                     if (!self.battle.scenario) {
                         isEmptyData = YES;
                     }
                     break;
-                case 2:
+                case 3:
                     cell.textLabel.text = self.battle.controlPoints ? [NSString stringWithFormat:@"%@ control points", [self.battle.controlPoints stringValue]] : @"No control points entered";
                     if (!self.battle.controlPoints) {
                         isEmptyData = YES;
                     }
                     break;
-                case 3:
+                case 4:
                     cell.textLabel.text = self.battle.opponentControlPoints ? [NSString stringWithFormat:@"%@ opponent control points", [self.battle.opponentControlPoints stringValue]] : @"No opponent control points entered";
                     if (!self.battle.opponentControlPoints) {
                         isEmptyData = YES;
                     }
                     break;
-                case 4:
+                case 5:
                     cell.textLabel.text = self.battle.event ? self.battle.event.name : @"No event selected";
                     if (!self.battle.event) {
                         isEmptyData = YES;

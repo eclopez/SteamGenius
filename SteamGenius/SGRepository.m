@@ -100,7 +100,7 @@
     return e;
 }
 
-+ (Battle *)initWithPlayerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes context:(NSManagedObjectContext *)context
++ (Battle *)initWithPlayerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result mark3:(BOOL)mark3 killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes context:(NSManagedObjectContext *)context
 {
     Battle *b = [NSEntityDescription insertNewObjectForEntityForName:@"Battle" inManagedObjectContext:context];
     [b setValue:playerCaster forKey:@"playerCaster"];
@@ -109,6 +109,7 @@
     [b setValue:date forKey:@"date"];
     [b setValue:points forKey:@"points"];
     [b setValue:result forKey:@"result"];
+    [b setValue:[NSNumber numberWithBool:mark3] forKey:@"mark3"];
     [b setValue:killPoints forKey:@"killPoints"];
     [b setValue:scenario forKey:@"scenario"];
     [b setValue:controlPoints forKey:@"controlPoints"];
@@ -129,7 +130,7 @@
 
 #pragma mark - Update Methods
 
-+ (void)updateBattle:(Battle *)battle playerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes
++ (void)updateBattle:(Battle *)battle playerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result mark3:(BOOL)mark3 killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes
 {
     battle.playerCaster = playerCaster;
     battle.opponentCaster = opponentCaster;
@@ -137,6 +138,7 @@
     battle.date = date;
     battle.points = points;
     battle.result = result;
+    battle.mark3 = [NSNumber numberWithBool:mark3];
     battle.killPoints = killPoints;
     battle.scenario = scenario;
     battle.controlPoints = controlPoints;

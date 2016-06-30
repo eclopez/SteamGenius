@@ -33,11 +33,11 @@
 + (Opponent *)initWithOpponentNamed:(NSString *)opponentName context:(NSManagedObjectContext *)context;
 + (Scenario *)initWithScenarioNamed:(NSString *)scenarioName context:(NSManagedObjectContext *)context;
 + (Event *)initWithEventNamed:(NSString *)eventName location:(NSString *)location date:(NSDate *)date isTournament:(BOOL)isTournament context:(NSManagedObjectContext *)context;
-+ (Battle *)initWithPlayerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes context:(NSManagedObjectContext *)context;
++ (Battle *)initWithPlayerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result mark3:(BOOL)mark3 killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes context:(NSManagedObjectContext *)context;
 + (BattleFilter *)initWithDisplayText:(NSString *)displayText predicate:(NSPredicate *)predicate context:(NSManagedObjectContext *)context;
 
 // Update Methods
-+ (void)updateBattle:(Battle *)battle playerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes;
++ (void)updateBattle:(Battle *)battle playerCaster:(Caster *)playerCaster opponentCaster:(Caster *)opponentCaster opponent:(Opponent *)opponent date:(NSDate *)date points:(NSNumber *)points result:(Result *)result mark3:(BOOL)mark3 killPoints:(NSNumber *)killPoints scenario:(Scenario *)scenario controlPoints:(NSNumber *)controlPoints opponentControlPoints:(NSNumber *)opponentControlPoints event:(Event *)event notes:(NSString *)notes;
 + (void)updateOpponent:(Opponent *)opponent name:(NSString *)name;
 + (void)updateScenario:(Scenario *)scenario name:(NSString *)name;
 + (void)updateEvent:(Event *)event name:(NSString *)name location:(NSString *)location date:(NSDate *)date isTournament:(BOOL)isTournament;

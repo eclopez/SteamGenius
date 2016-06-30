@@ -70,6 +70,7 @@
                                   date:form.date
                                 points:form.pointSize
                                 result:form.result
+                                  mark3:form.mark3
                             killPoints:form.killPoints
                               scenario:form.scenario
                          controlPoints:form.controlPoints
@@ -83,6 +84,7 @@
                                           date:form.date
                                         points:form.pointSize
                                         result:form.result
+                                         mark3:form.mark3
                                     killPoints:form.killPoints
                                       scenario:form.scenario
                                  controlPoints:form.controlPoints

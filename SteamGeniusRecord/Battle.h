@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSNumber * killPoints;
 @property (nonatomic, retain) NSString * notes;
+@property (nonatomic, retain) NSNumber * mark3;
 @property (nonatomic, retain) NSNumber * opponentControlPoints;
 @property (nonatomic, retain) NSNumber * points;
 @property (nonatomic, retain) Event *event;

@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSNumber *pointSize;
 @property (nonatomic, strong) Result *result;
+@property (nonatomic, assign) BOOL mark3;
 @property (nonatomic, strong) NSNumber *killPoints;
 @property (nonatomic, strong) Scenario *scenario;
 @property (nonatomic, strong) NSNumber *controlPoints;
