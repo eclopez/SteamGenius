@@ -322,6 +322,26 @@
 		<key>version</key>
 		<integer>2</integer>
 	</dict>
+  <dict>
+    <key>name</key>
+    <string>Major Beth Maddox</string>
+    <key>factions</key>
+    <array>
+      <string>Cygnar</string>
+    </array>
+    <key>shortName</key>
+    <string>Maddox</string>
+    <key>incarnation</key>
+    <integer>1</integer>
+    <key>isEpic</key>
+    <false/>
+    <key>isCavalry</key>
+    <false/>
+    <key>isBattleEngine</key>
+    <false/>
+    <key>version</key>
+    <integer>4</integer>
+  </dict>
 	<dict>
 		<key>name</key>
 		<string>Feora, Priestess of the Flame</string>
@@ -642,6 +662,26 @@
 		<key>version</key>
 		<integer>2</integer>
 	</dict>
+  <dict>
+    <key>name</key>
+    <string>Malekus, The Burning Truth</string>
+    <key>factions</key>
+    <array>
+      <string>Protectorate of Menoth</string>
+    </array>
+    <key>shortName</key>
+    <string>Malekus</string>
+    <key>incarnation</key>
+    <integer>1</integer>
+    <key>isEpic</key>
+    <false/>
+    <key>isCavalry</key>
+    <false/>
+    <key>isBattleEngine</key>
+    <false/>
+    <key>version</key>
+    <integer>4</integer>
+  </dict>
 	<dict>
 		<key>name</key>
 		<string>Forward Kommander Sorscha</string>
@@ -962,6 +1002,26 @@
 		<key>version</key>
 		<integer>2</integer>
 	</dict>
+  <dict>
+    <key>name</key>
+    <string>Lord Kozlov, Viscount of Scarsgrad</string>
+    <key>factions</key>
+    <array>
+      <string>Khador</string>
+    </array>
+    <key>shortName</key>
+    <string>Kozlov</string>
+    <key>incarnation</key>
+    <integer>1</integer>
+    <key>isEpic</key>
+    <false/>
+    <key>isCavalry</key>
+    <false/>
+    <key>isBattleEngine</key>
+    <false/>
+    <key>version</key>
+    <integer>4</integer>
+  </dict>
 	<dict>
 		<key>name</key>
 		<string>Asphyxious the Hellbringer</string>
@@ -1302,6 +1362,26 @@
 		<key>version</key>
 		<integer>2</integer>
 	</dict>
+  <dict>
+    <key>name</key>
+    <string>Bane Witch Agathia</string>
+    <key>factions</key>
+    <array>
+      <string>Cryx</string>
+    </array>
+    <key>shortName</key>
+    <string>Agathia</string>
+    <key>incarnation</key>
+    <integer>1</integer>
+    <key>isEpic</key>
+    <false/>
+    <key>isCavalry</key>
+    <false/>
+    <key>isBattleEngine</key>
+    <false/>
+    <key>version</key>
+    <integer>4</integer>
+  </dict>
 	<dict>
 		<key>name</key>
 		<string>Adeptis Rahn</string>
@@ -1482,6 +1562,26 @@
 		<key>version</key>
 		<integer>2</integer>
 	</dict>
+  <dict>
+    <key>name</key>
+    <string>Magister Helynna</string>
+    <key>factions</key>
+    <array>
+      <string>Retribution of Scyrah</string>
+    </array>
+    <key>shortName</key>
+    <string>Helynna</string>
+    <key>incarnation</key>
+    <integer>1</integer>
+    <key>isEpic</key>
+    <false/>
+    <key>isCavalry</key>
+    <false/>
+    <key>isBattleEngine</key>
+    <false/>
+    <key>version</key>
+    <integer>4</integer>
+  </dict>
 	<dict>
 		<key>name</key>
 		<string>Aurora, Numen of Aerogenesis</string>
@@ -2169,6 +2269,26 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
+  <dict>
+    <key>name</key>
+    <string>Ragnor Skysplitter, The Runemaster</string>
+    <key>factions</key>
+    <array>
+      <string>Trollblood</string>
+    </array>
+    <key>shortName</key>
+    <string>Ragnor</string>
+    <key>incarnation</key>
+    <integer>1</integer>
+    <key>isEpic</key>
+    <false/>
+    <key>isCavalry</key>
+    <false/>
+    <key>isBattleEngine</key>
+    <false/>
+    <key>version</key>
+    <integer>4</integer>
+  </dict>
 	<dict>
 		<key>name</key>
 		<string>Baldur the Stonecleaver</string>
@@ -2449,6 +2569,26 @@
 		<key>version</key>
 		<integer>2</integer>
 	</dict>
+  <dict>
+    <key>name</key>
+    <string>Tanith, The Feral Song</string>
+    <key>factions</key>
+    <array>
+      <string>Circle Orboros</string>
+    </array>
+    <key>shortName</key>
+    <string>Tanith</string>
+    <key>incarnation</key>
+    <integer>1</integer>
+    <key>isEpic</key>
+    <false/>
+    <key>isCavalry</key>
+    <false/>
+    <key>isBattleEngine</key>
+    <false/>
+    <key>version</key>
+    <integer>4</integer>
+  </dict>
 	<dict>
 		<key>name</key>
 		<string>Absylonia, Daughter of Everblight</string>
@@ -2729,6 +2869,26 @@
 		<key>version</key>
 		<integer>2</integer>
 	</dict>
+  <dict>
+    <key>name</key>
+    <string>Kryssa, Conviction of Everblight</string>
+    <key>factions</key>
+    <array>
+      <string>Legion of Everblight</string>
+    </array>
+    <key>shortName</key>
+    <string>Kryssa</string>
+    <key>incarnation</key>
+    <integer>1</integer>
+    <key>isEpic</key>
+    <false/>
+    <key>isCavalry</key>
+    <false/>
+    <key>isBattleEngine</key>
+    <false/>
+    <key>version</key>
+    <integer>4</integer>
+  </dict>
 	<dict>
 		<key>name</key>
 		<string>Archdomina Makeda</string>
@@ -3009,6 +3169,26 @@
 		<key>version</key>
 		<integer>1</integer>
 	</dict>
+  <dict>
+    <key>name</key>
+    <string>Beast Master Xekaar</string>
+    <key>factions</key>
+    <array>
+      <string>Skorne</string>
+    </array>
+    <key>shortName</key>
+    <string>Xekaar</string>
+    <key>incarnation</key>
+    <integer>1</integer>
+    <key>isEpic</key>
+    <false/>
+    <key>isCavalry</key>
+    <false/>
+    <key>isBattleEngine</key>
+    <false/>
+    <key>version</key>
+    <integer>4</integer>
+  </dict>
 	<dict>
 		<key>name</key>
 		<string>Bloody Barnabas</string>
