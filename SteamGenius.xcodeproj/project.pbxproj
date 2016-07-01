@@ -98,7 +98,7 @@
 		03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */; };
 		03E3C6F21A79EB0B009CCCD5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */; };
 		03FB29641AD86E26009DE99B /* SGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FB29631AD86E26009DE99B /* SGRepository.m */; };
-		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
+		B04C1E3FDF80C6D3A4672C77 /* libPods-SteamGenius.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61131F1B70DEB29174FC2076 /* libPods-SteamGenius.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -326,9 +326,9 @@
 		03F10A761AB4DCC700F3F727 /* SteamGenius 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SteamGenius 2.xcdatamodel"; sourceTree = "<group>"; };
 		03FB29621AD86E26009DE99B /* SGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGRepository.h; sourceTree = "<group>"; };
 		03FB29631AD86E26009DE99B /* SGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGRepository.m; sourceTree = "<group>"; };
-		6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B7D266F9A754D6051E56DC4 /* Pods-SteamGenius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamGenius.release.xcconfig"; path = "Pods/Target Support Files/Pods-SteamGenius/Pods-SteamGenius.release.xcconfig"; sourceTree = "<group>"; };
+		61131F1B70DEB29174FC2076 /* libPods-SteamGenius.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamGenius.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94722EF7AD583AEF0370A6B6 /* Pods-SteamGenius.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamGenius.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SteamGenius/Pods-SteamGenius.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,7 +365,7 @@
 				037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */,
 				0318D2EC1ABF0D3C00E9C8A5 /* SteamGeniusKit.framework in Frameworks */,
 				038DAAE919CD019000A224F7 /* CoreData.framework in Frameworks */,
-				2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */,
+				B04C1E3FDF80C6D3A4672C77 /* libPods-SteamGenius.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +622,7 @@
 				0318D3A51AC04CFC00E9C8A5 /* SteamGeniusRecord */,
 				0349E2A619C17F510091FF21 /* Products */,
 				47148A91232B4766B1D74C11 /* Frameworks */,
-				DEE0111638292806E8FB355C /* Pods */,
+				D7A07E4D5ABFFD69EB086058 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1036,17 +1036,17 @@
 				03C3010E1A36A79B0053882A /* iAd.framework */,
 				0351036219DE4EC70032E215 /* QuartzCore.framework */,
 				038DAAE719CCFEF400A224F7 /* CoreData.framework */,
-				A616B079BAEC402E93CA0CE3 /* libPods.a */,
 				0318D3A31AC04CFC00E9C8A5 /* NotificationCenter.framework */,
+				61131F1B70DEB29174FC2076 /* libPods-SteamGenius.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DEE0111638292806E8FB355C /* Pods */ = {
+		D7A07E4D5ABFFD69EB086058 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */,
-				819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */,
+				94722EF7AD583AEF0370A6B6 /* Pods-SteamGenius.debug.xcconfig */,
+				1B7D266F9A754D6051E56DC4 /* Pods-SteamGenius.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1126,15 +1126,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0349E2CE19C17F510091FF21 /* Build configuration list for PBXNativeTarget "SteamGenius" */;
 			buildPhases = (
-				0A64E7D50FAE4B958F306ABD /* Check Pods Manifest.lock */,
+				9B0DAB56B7599297340D21C0 /* [CP] Check Pods Manifest.lock */,
 				0355CAF01AA18E9D0068EF83 /* Generate Receipt Validation Code for In-App Purchases */,
 				0349E2A119C17F510091FF21 /* Sources */,
 				0349E2A219C17F510091FF21 /* Frameworks */,
 				0349E2A319C17F510091FF21 /* Resources */,
-				ACD79D0B47414A8AB021F94D /* Copy Pods Resources */,
 				0318D2F31ABF0D3C00E9C8A5 /* Embed Frameworks */,
 				0318D3B31AC04CFC00E9C8A5 /* Embed App Extensions */,
-				DD5ACDDBB9114DF4D02D1FBE /* Embed Pods Frameworks */,
+				26A3E7490D09F152E1C48472 /* [CP] Embed Pods Frameworks */,
+				32493242245D996596C5C67F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1294,49 +1294,49 @@
 			shellPath = /bin/sh;
 			shellScript = "# Receigen binary\nRECEIGEN=\"/Applications/Receigen.app/Contents/MacOS/Receigen\"\n\n# Configure receipt.h settings\nCODE_PREFIX=`eval \"echo SGBase\"`\nSUCCESS_BEHAVIOR=`eval \"echo checkinapp\"`\nFAILURE_BEHAVIOR=`eval \"echo refreshreceipt\"`\n\n# Extract Info.plist information\nINPUT=\"$INFOPLIST_FILE\"\n# BUNDLE_ID=`/usr/libexec/PlistBuddy -c \"Print CFBundleIdentifier\" \"$INPUT\"`\n# Had to hard code the Bundle Id as the variable in the Info.plist was being ignored\nBUNDLE_ID=`eval \"echo com.eriklopez.SteamGenius\"`\n# On iOS, use CFBundleVersion\nBUNDLE_VERSION=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INPUT\"`\n\n# Expand information if needed\nEXPANDED_BUNDLE_ID=`eval \"echo $BUNDLE_ID\"`\nEXPANDED_BUNDLE_VERSION=`eval \"echo $BUNDLE_VERSION\"`\n\n# Make sure the destination directory exists\nmkdir -p \"$DERIVED_FILES_DIR\"\nHEADER=\"$DERIVED_FILES_DIR/receipt.h\"\n\n# Check if the generation is needed\nif [ -e \"$HEADER\" ]; then\n# On iOS, check CFBundleIdentifier and CFBundleVersion\nSKIP=`egrep -q \"CFBundleIdentifier.+:.+$EXPANDED_BUNDLE_ID\" \"$HEADER\" && egrep -q \"CFBundleVersion.+:.+$EXPANDED_BUNDLE_VERSION\" \"$HEADER\" && echo \"YES\"`\nfi\n\n# Generate the header file if needed\nif [ \"x$SKIP\" = \"x\" ]; then\n# On iOS, call Receigen with options\n\"$RECEIGEN\" --identifier \"$EXPANDED_BUNDLE_ID\" --version \"$EXPANDED_BUNDLE_VERSION\" --prefix \"$CODE_PREFIX\" --success \"$SUCCESS_BEHAVIOR\" --failure \"$FAILURE_BEHAVIOR\" --os ios > \"$HEADER\"\nfi";
 		};
-		0A64E7D50FAE4B958F306ABD /* Check Pods Manifest.lock */ = {
+		26A3E7490D09F152E1C48472 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SteamGenius/Pods-SteamGenius-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32493242245D996596C5C67F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SteamGenius/Pods-SteamGenius-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B0DAB56B7599297340D21C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		ACD79D0B47414A8AB021F94D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD5ACDDBB9114DF4D02D1FBE /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1702,7 +1702,7 @@
 		};
 		0349E2CF19C17F510091FF21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 94722EF7AD583AEF0370A6B6 /* Pods-SteamGenius.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SteamGenius/SteamGenius.entitlements;
@@ -1719,7 +1719,7 @@
 		};
 		0349E2D019C17F510091FF21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */;
+			baseConfigurationReference = 1B7D266F9A754D6051E56DC4 /* Pods-SteamGenius.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SteamGenius/SteamGenius.entitlements;

@@ -53,6 +53,13 @@
         UINavigationController *controller = (UINavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"CreateBattle"];
         [navigationController presentViewController:controller animated:YES completion:nil];
     }
+    if ([shortcutItem.type isEqualToString:@"com.eriklopez.steamgenius.viewstats"]) {
+      UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+      UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+      UINavigationController *controller = (UINavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"ViewStats"];
+      [navigationController presentViewController:controller animated:YES completion:nil];
+    }
+  
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

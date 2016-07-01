@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -95,7 +95,13 @@
                                             <segue destination="NtZ-OX-J31" kind="presentation" modalPresentationStyle="formSheet" id="dRG-Qq-y7Z"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ElI-UV-6ZF"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1lG-Rc-TYQ"/>
+                                    <barButtonItem title="Stats" id="zwN-Hg-nAe">
+                                        <connections>
+                                            <segue destination="rqz-O0-Jdi" kind="presentation" modalPresentationStyle="formSheet" id="Fwh-Xc-pLw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NEF-T3-M7E"/>
                                     <barButtonItem title="Settings" id="Rru-YG-H5B">
                                         <connections>
                                             <segue destination="e6k-f0-bzM" kind="presentation" modalPresentationStyle="formSheet" id="fHv-5T-4kl"/>
@@ -278,7 +284,7 @@
                                     <outlet property="delegate" destination="RqK-56-edQ" id="tGW-yT-29j"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5s-H2-7Rh">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B5s-H2-7Rh">
                                 <rect key="frame" x="0.0" y="64" width="600" height="37"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qGu-Bp-mb4">
@@ -556,6 +562,31 @@
             </objects>
             <point key="canvasLocation" x="1344" y="-1189"/>
         </scene>
+        <!--Stats-->
+        <scene sceneID="tAg-4G-bIe">
+            <objects>
+                <viewController id="ary-Mp-baG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YiZ-gO-zhc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fhu-RN-cVN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VPW-ZN-CJw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stats" id="jgh-Ot-3nT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="exz-zw-BeZ">
+                            <connections>
+                                <segue destination="RqK-56-edQ" kind="custom" customClass="SGDismissSegue" id="UeR-p7-bVB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVU-1S-KrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2156" y="-396"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lSn-00-nvQ">
             <objects>
@@ -666,10 +697,29 @@
             </objects>
             <point key="canvasLocation" x="1344" y="-2715"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tfo-RO-aN5">
+            <objects>
+                <navigationController storyboardIdentifier="ViewStats" automaticallyAdjustsScrollViewInsets="NO" id="rqz-O0-Jdi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sHq-OQ-kmq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ary-Mp-baG" kind="relationship" relationship="rootViewController" id="BoQ-lb-UoO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfx-09-a5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344" y="-396"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ys6-BD-Ln5"/>
-        <segue reference="hC4-bJ-CMG"/>
+        <segue reference="UeR-p7-bVB"/>
         <segue reference="jQb-ad-gCQ"/>
+        <segue reference="hC4-bJ-CMG"/>
+        <segue reference="8Yc-ar-cEc"/>
     </inferredMetricsTieBreakers>
 </document>
