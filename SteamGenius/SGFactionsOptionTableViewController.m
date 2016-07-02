@@ -50,6 +50,12 @@
     [self checkPurchases];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  [self.tableView reloadData];
+}
+
 #pragma mark - Class Methods
 
 - (NSArray *)sortedFactionsArray:(NSUInteger)section {
@@ -89,9 +95,12 @@
         cell.imageView.image = [UIImage imageWithContentsOfFile:[[SGKFileAccess sharedIconsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", faction.shortName]].path];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.f];
         cell.accessoryType = UITableViewCellAccessoryNone;
-        Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
-        cell.accessoryType = currentFaction == faction ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-        
+      
+      Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
+      if (currentFaction == faction) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+      }
+      
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CircleCellIdentifier];
@@ -106,8 +115,11 @@
         cell.textLabel.text = faction.name;
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.f];
         cell.accessoryType = UITableViewCellAccessoryNone;
+      
         Faction *currentFaction = [form valueForKey:self.field.key] ? ((Caster *)[form valueForKey:self.field.key]).faction : nil;
-        cell.accessoryType = currentFaction == faction ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+      if (currentFaction == faction) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+      }
         
         return cell;
     }
