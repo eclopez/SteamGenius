@@ -31,7 +31,6 @@
 		030ADF071AD8725700E6A1CF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADF061AD8725700E6A1CF /* Event.m */; };
 		030ADF0A1AD8725700E6A1CF /* Faction.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADF091AD8725700E6A1CF /* Faction.m */; };
 		030ADF0D1AD8725700E6A1CF /* Opponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 030ADF0C1AD8725700E6A1CF /* Opponent.m */; };
-		0318D2CF1ABF07C400E9C8A5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0318D2CE1ABF07C400E9C8A5 /* Podfile */; };
 		0318D2DA1ABF0D3C00E9C8A5 /* SteamGeniusKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0318D2D91ABF0D3C00E9C8A5 /* SteamGeniusKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0318D2E01ABF0D3C00E9C8A5 /* SteamGeniusKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0318D2D51ABF0D3C00E9C8A5 /* SteamGeniusKit.framework */; };
 		0318D2E91ABF0D3C00E9C8A5 /* SteamGeniusKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318D2E81ABF0D3C00E9C8A5 /* SteamGeniusKitTests.m */; };
@@ -48,11 +47,13 @@
 		0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715519C7DB1F00634776 /* SGSettingsForm.m */; };
 		0325715919C7DE1000634776 /* SGSettingsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325715819C7DE1000634776 /* SGSettingsFormViewController.m */; };
 		032812921AB38B0C00F23BF9 /* SGReceiptVerificator.m in Sources */ = {isa = PBXBuildFile; fileRef = 032812911AB38B0C00F23BF9 /* SGReceiptVerificator.m */; };
+		032AC6B81D275CC9007FF32E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0318D2CE1ABF07C400E9C8A5 /* Podfile */; };
 		0343F5121AD8791900D6E786 /* SGKRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 0343F5101AD8791900D6E786 /* SGKRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0343F5131AD8791900D6E786 /* SGKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0343F5111AD8791900D6E786 /* SGKRepository.m */; };
 		0343F5161AD879C900D6E786 /* SGKCoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0343F5141AD879C900D6E786 /* SGKCoreDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0343F5171AD879C900D6E786 /* SGKCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0343F5151AD879C900D6E786 /* SGKCoreDataStack.m */; };
 		0344A7A71A8EA41A00F92946 /* SGProducts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0344A7A61A8EA41A00F92946 /* SGProducts.plist */; };
+		034859981D2769D000A2F19F /* GADBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034859971D2769D000A2F19F /* GADBannerViewController.m */; };
 		0349E2AB19C17F510091FF21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AA19C17F510091FF21 /* main.m */; };
 		0349E2AE19C17F510091FF21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2AD19C17F510091FF21 /* AppDelegate.m */; };
 		0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0349E2B819C17F510091FF21 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */; };
 		037708D61A5B185300295E1A /* SGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037708D51A5B185300295E1A /* SGWebViewController.m */; };
 		037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037708D71A5B6F8800295E1A /* WebKit.framework */; };
+		0384BAD81D278351001AC9F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0384BAD71D278351001AC9F3 /* GoogleService-Info.plist */; };
 		0388EA471AF30E5C006AA52D /* SGFactionsOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */; };
 		0388EA4A1AF30E7E006AA52D /* SGFactionIconsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388EA491AF30E7E006AA52D /* SGFactionIconsViewController.m */; };
 		0388EA4E1AF4BCD0006AA52D /* SGKFileAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 0388EA4C1AF4BCD0006AA52D /* SGKFileAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -98,7 +100,7 @@
 		03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */; };
 		03E3C6F21A79EB0B009CCCD5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3C6F11A79EB0B009CCCD5 /* StoreKit.framework */; };
 		03FB29641AD86E26009DE99B /* SGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FB29631AD86E26009DE99B /* SGRepository.m */; };
-		2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A616B079BAEC402E93CA0CE3 /* libPods.a */; };
+		44EDCDD3D479046B5F2C7B9C /* libPods-SteamGenius.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC788522523BF58002DCACD /* libPods-SteamGenius.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +248,8 @@
 		0343F5141AD879C900D6E786 /* SGKCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCoreDataStack.h; sourceTree = "<group>"; };
 		0343F5151AD879C900D6E786 /* SGKCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCoreDataStack.m; sourceTree = "<group>"; };
 		0344A7A61A8EA41A00F92946 /* SGProducts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGProducts.plist; sourceTree = "<group>"; };
+		034859961D2769D000A2F19F /* GADBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewController.h; sourceTree = "<group>"; };
+		034859971D2769D000A2F19F /* GADBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADBannerViewController.m; sourceTree = "<group>"; };
 		0349E2A519C17F510091FF21 /* SteamGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteamGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0349E2A919C17F510091FF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0349E2AA19C17F510091FF21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 		037708D41A5B185300295E1A /* SGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGWebViewController.h; sourceTree = "<group>"; };
 		037708D51A5B185300295E1A /* SGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGWebViewController.m; sourceTree = "<group>"; };
 		037708D71A5B6F8800295E1A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0384BAD71D278351001AC9F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0388EA451AF30E5C006AA52D /* SGFactionsOptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionsOptionTableViewController.h; sourceTree = "<group>"; };
 		0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionsOptionTableViewController.m; sourceTree = "<group>"; };
 		0388EA481AF30E7E006AA52D /* SGFactionIconsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionIconsViewController.h; sourceTree = "<group>"; };
@@ -326,9 +331,12 @@
 		03F10A761AB4DCC700F3F727 /* SteamGenius 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SteamGenius 2.xcdatamodel"; sourceTree = "<group>"; };
 		03FB29621AD86E26009DE99B /* SGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGRepository.h; sourceTree = "<group>"; };
 		03FB29631AD86E26009DE99B /* SGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGRepository.m; sourceTree = "<group>"; };
+		08A3E333FFB5EA6C5A4D2254 /* Pods-SteamGenius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamGenius.release.xcconfig"; path = "Pods/Target Support Files/Pods-SteamGenius/Pods-SteamGenius.release.xcconfig"; sourceTree = "<group>"; };
 		6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7FC788522523BF58002DCACD /* libPods-SteamGenius.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamGenius.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9A04E8F6AA9207E3570E274 /* Pods-SteamGenius.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamGenius.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SteamGenius/Pods-SteamGenius.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,7 +373,7 @@
 				037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */,
 				0318D2EC1ABF0D3C00E9C8A5 /* SteamGeniusKit.framework in Frameworks */,
 				038DAAE919CD019000A224F7 /* CoreData.framework in Frameworks */,
-				2A5527132F8B4246ACDF4DAE /* libPods.a in Frameworks */,
+				44EDCDD3D479046B5F2C7B9C /* libPods-SteamGenius.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +618,15 @@
 			name = "Data Access";
 			sourceTree = "<group>";
 		};
+		034859951D2769A500A2F19F /* GAD Banner Ad */ = {
+			isa = PBXGroup;
+			children = (
+				034859961D2769D000A2F19F /* GADBannerViewController.h */,
+				034859971D2769D000A2F19F /* GADBannerViewController.m */,
+			);
+			name = "GAD Banner Ad";
+			sourceTree = "<group>";
+		};
 		0349E29C19C17F510091FF21 = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +675,7 @@
 		0349E2A819C17F510091FF21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0384BAD71D278351001AC9F3 /* GoogleService-Info.plist */,
 				03746D491A7F4275006F5935 /* AppleIncRootCertificate.cer */,
 				0349E2A919C17F510091FF21 /* Info.plist */,
 				0349E2E619C2C3520091FF21 /* SGTheme.plist */,
@@ -838,6 +856,7 @@
 		037708D31A5B183600295E1A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				034859951D2769A500A2F19F /* GAD Banner Ad */,
 				03C5F6CB1A828C4F00462CC2 /* Banner Ad */,
 				03C5F6CC1A828C7200462CC2 /* Factions */,
 			);
@@ -1038,6 +1057,7 @@
 				038DAAE719CCFEF400A224F7 /* CoreData.framework */,
 				A616B079BAEC402E93CA0CE3 /* libPods.a */,
 				0318D3A31AC04CFC00E9C8A5 /* NotificationCenter.framework */,
+				7FC788522523BF58002DCACD /* libPods-SteamGenius.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1047,6 +1067,8 @@
 			children = (
 				6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */,
 				819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */,
+				C9A04E8F6AA9207E3570E274 /* Pods-SteamGenius.debug.xcconfig */,
+				08A3E333FFB5EA6C5A4D2254 /* Pods-SteamGenius.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1126,15 +1148,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0349E2CE19C17F510091FF21 /* Build configuration list for PBXNativeTarget "SteamGenius" */;
 			buildPhases = (
-				0A64E7D50FAE4B958F306ABD /* Check Pods Manifest.lock */,
+				0A64E7D50FAE4B958F306ABD /* [CP] Check Pods Manifest.lock */,
 				0355CAF01AA18E9D0068EF83 /* Generate Receipt Validation Code for In-App Purchases */,
 				0349E2A119C17F510091FF21 /* Sources */,
 				0349E2A219C17F510091FF21 /* Frameworks */,
 				0349E2A319C17F510091FF21 /* Resources */,
-				ACD79D0B47414A8AB021F94D /* Copy Pods Resources */,
+				ACD79D0B47414A8AB021F94D /* [CP] Copy Pods Resources */,
 				0318D2F31ABF0D3C00E9C8A5 /* Embed Frameworks */,
 				0318D3B31AC04CFC00E9C8A5 /* Embed App Extensions */,
-				DD5ACDDBB9114DF4D02D1FBE /* Embed Pods Frameworks */,
+				DD5ACDDBB9114DF4D02D1FBE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1260,11 +1282,12 @@
 				0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */,
 				0349E2BA19C17F510091FF21 /* Main.storyboard in Resources */,
 				0349E2BF19C17F510091FF21 /* LaunchScreen.xib in Resources */,
+				0384BAD81D278351001AC9F3 /* GoogleService-Info.plist in Resources */,
 				0395229E1AC44FB600A6380C /* Faction.plist in Resources */,
 				0344A7A71A8EA41A00F92946 /* SGProducts.plist in Resources */,
 				0349E2BC19C17F510091FF21 /* Images.xcassets in Resources */,
+				032AC6B81D275CC9007FF32E /* Podfile in Resources */,
 				03746D4A1A7F4275006F5935 /* AppleIncRootCertificate.cer in Resources */,
-				0318D2CF1ABF07C400E9C8A5 /* Podfile in Resources */,
 				039522A11AC44FB600A6380C /* Result.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1294,14 +1317,14 @@
 			shellPath = /bin/sh;
 			shellScript = "# Receigen binary\nRECEIGEN=\"/Applications/Receigen.app/Contents/MacOS/Receigen\"\n\n# Configure receipt.h settings\nCODE_PREFIX=`eval \"echo SGBase\"`\nSUCCESS_BEHAVIOR=`eval \"echo checkinapp\"`\nFAILURE_BEHAVIOR=`eval \"echo refreshreceipt\"`\n\n# Extract Info.plist information\nINPUT=\"$INFOPLIST_FILE\"\n# BUNDLE_ID=`/usr/libexec/PlistBuddy -c \"Print CFBundleIdentifier\" \"$INPUT\"`\n# Had to hard code the Bundle Id as the variable in the Info.plist was being ignored\nBUNDLE_ID=`eval \"echo com.eriklopez.SteamGenius\"`\n# On iOS, use CFBundleVersion\nBUNDLE_VERSION=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INPUT\"`\n\n# Expand information if needed\nEXPANDED_BUNDLE_ID=`eval \"echo $BUNDLE_ID\"`\nEXPANDED_BUNDLE_VERSION=`eval \"echo $BUNDLE_VERSION\"`\n\n# Make sure the destination directory exists\nmkdir -p \"$DERIVED_FILES_DIR\"\nHEADER=\"$DERIVED_FILES_DIR/receipt.h\"\n\n# Check if the generation is needed\nif [ -e \"$HEADER\" ]; then\n# On iOS, check CFBundleIdentifier and CFBundleVersion\nSKIP=`egrep -q \"CFBundleIdentifier.+:.+$EXPANDED_BUNDLE_ID\" \"$HEADER\" && egrep -q \"CFBundleVersion.+:.+$EXPANDED_BUNDLE_VERSION\" \"$HEADER\" && echo \"YES\"`\nfi\n\n# Generate the header file if needed\nif [ \"x$SKIP\" = \"x\" ]; then\n# On iOS, call Receigen with options\n\"$RECEIGEN\" --identifier \"$EXPANDED_BUNDLE_ID\" --version \"$EXPANDED_BUNDLE_VERSION\" --prefix \"$CODE_PREFIX\" --success \"$SUCCESS_BEHAVIOR\" --failure \"$FAILURE_BEHAVIOR\" --os ios > \"$HEADER\"\nfi";
 		};
-		0A64E7D50FAE4B958F306ABD /* Check Pods Manifest.lock */ = {
+		0A64E7D50FAE4B958F306ABD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1309,34 +1332,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		ACD79D0B47414A8AB021F94D /* Copy Pods Resources */ = {
+		ACD79D0B47414A8AB021F94D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SteamGenius/Pods-SteamGenius-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DD5ACDDBB9114DF4D02D1FBE /* Embed Pods Frameworks */ = {
+		DD5ACDDBB9114DF4D02D1FBE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SteamGenius/Pods-SteamGenius-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1421,6 +1444,7 @@
 				03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */,
 				03FB29641AD86E26009DE99B /* SGRepository.m in Sources */,
 				0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */,
+				034859981D2769D000A2F19F /* GADBannerViewController.m in Sources */,
 				030ADEE01AD8723300E6A1CF /* Opponent.m in Sources */,
 				0369595E19D5F4680096CEBC /* SGGenericOptionsTableViewController.m in Sources */,
 				030ADED11AD8723200E6A1CF /* Model.m in Sources */,
@@ -1702,7 +1726,7 @@
 		};
 		0349E2CF19C17F510091FF21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */;
+			baseConfigurationReference = C9A04E8F6AA9207E3570E274 /* Pods-SteamGenius.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SteamGenius/SteamGenius.entitlements;
@@ -1719,7 +1743,7 @@
 		};
 		0349E2D019C17F510091FF21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */;
+			baseConfigurationReference = 08A3E333FFB5EA6C5A4D2254 /* Pods-SteamGenius.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SteamGenius/SteamGenius.entitlements;
