@@ -55,9 +55,6 @@
 #define kSteamGeniusRemoveAdsIdentifier @"com.eriklopez.steamgenius.adremoval"
 #define kSteamGeniusCustomFactionIconsIdentifier @"com.eriklopez.steamgenius.customfactionicons"
 
-NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
-NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
-
 @interface BannerViewController () <ADBannerViewDelegate, RMStoreObserver>
 
 @end

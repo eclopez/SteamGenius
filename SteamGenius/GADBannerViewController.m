@@ -14,12 +14,13 @@
 #define kSteamGeniusAdUnitId @"ca-app-pub-3586707060758787/1771896357"
 #define kSteamGeniusAdUnitTestId @"ca-app-pub-3940256099942544/2934735716"
 
-//App ID: ca-app-pub-3586707060758787~7818429959
-//Ad unit ID: ca-app-pub-3586707060758787/1771896357
-
 #define kSteamGeniusPremiumIdentifier @"com.eriklopez.steamgenius.premium"
 #define kSteamGeniusRemoveAdsIdentifier @"com.eriklopez.steamgenius.adremoval"
 #define kSteamGeniusCustomFactionIconsIdentifier @"com.eriklopez.steamgenius.customfactionicons"
+
+NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
+NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
+NSString * const BannerViewActionWillLeaveApplication = @"BannerViewActionWillLeaveApplication";
 
 @interface GADBannerViewController () <GADBannerViewDelegate, RMStoreObserver>
 
@@ -54,12 +55,15 @@
       _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerLandscape];
     }
     _bannerView.delegate = self;
-    _bannerView.adUnitID = kSteamGeniusAdUnitTestId;
+    _bannerView.adUnitID = kSteamGeniusAdUnitId;
     _bannerView.rootViewController = self;
     _contentController = contentController;
     
     _bannerView.rootViewController = self;
-    [_bannerView loadRequest:[GADRequest request]];
+    
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[ kGADSimulatorID ];
+    [_bannerView loadRequest:request];
   }
   return self;
 }
@@ -150,6 +154,8 @@
 /// to the user clicking on an ad.
 - (void)adViewWillPresentScreen:(GADBannerView *)adView {
   NSLog(@"adViewWillPresentScreen");
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionWillBegin object:self];
 }
 
 /// Tells the delegate that the full screen view will be dismissed.
@@ -160,12 +166,16 @@
 /// Tells the delegate that the full screen view has been dismissed.
 - (void)adViewDidDismissScreen:(GADBannerView *)adView {
   NSLog(@"adViewDidDismissScreen");
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionDidFinish object:self];
 }
 
 /// Tells the delegate that a user click will open another app (such as
 /// the App Store), backgrounding the current app.
 - (void)adViewWillLeaveApplication:(GADBannerView *)adView {
   NSLog(@"adViewWillLeaveApplication");
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionWillLeaveApplication object:self];
 }
 
 #pragma mark - RMStoreObserver Methods
