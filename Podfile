@@ -8,6 +8,8 @@ pod 'RMStore', '~> 0.7'
 #pod 'RMStore/AppReceiptVerificator'
 pod 'RMStore/KeychainPersistence'
 pod 'OpenSSL', '~> 1.0'
+pod 'Firebase', '~> 3.3'
+pod 'Firebase/AdMob'
 #pod 'Google-Mobile-Ads-SDK', '~> 6.12'
 pod 'PNChart'
 

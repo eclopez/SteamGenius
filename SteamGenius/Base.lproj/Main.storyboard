@@ -717,6 +717,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="pKp-ut-Wj5"/>
+        <segue reference="7dO-yB-1US"/>
         <segue reference="UeR-p7-bVB"/>
         <segue reference="jQb-ad-gCQ"/>
         <segue reference="hC4-bJ-CMG"/>
