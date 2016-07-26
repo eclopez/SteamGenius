@@ -62,7 +62,7 @@ NSString * const BannerViewActionWillLeaveApplication = @"BannerViewActionWillLe
     _bannerView.rootViewController = self;
     
     GADRequest *request = [GADRequest request];
-    request.testDevices = @[ kGADSimulatorID ];
+    request.testDevices = @[ kGADSimulatorID, @"c9e29dade9d50344b0b0d0d208e8ec7a" ];
     [_bannerView loadRequest:request];
   }
   return self;

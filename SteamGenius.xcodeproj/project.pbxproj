@@ -62,6 +62,7 @@
 		0349E2CB19C17F510091FF21 /* SteamGeniusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2CA19C17F510091FF21 /* SteamGeniusTests.m */; };
 		0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E2D619C1805E0091FF21 /* SGSettingsManager.m */; };
 		0349E2E719C2C3520091FF21 /* SGTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0349E2E619C2C3520091FF21 /* SGTheme.plist */; };
+		034D12711D2D83680053BFB7 /* SGCasterRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D12701D2D83680053BFB7 /* SGCasterRecord.swift */; };
 		0351035D19DD8D3F0032E215 /* SGBattleInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0351035C19DD8D3F0032E215 /* SGBattleInfoCell.m */; };
 		0351036619DE54C50032E215 /* SGBattleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0351036519DE54C50032E215 /* SGBattleListViewController.m */; };
 		0352E8D21A5C52D600007098 /* SGBattleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0352E8D11A5C52D600007098 /* SGBattleDetailViewController.m */; };
@@ -79,6 +80,9 @@
 		037708D61A5B185300295E1A /* SGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037708D51A5B185300295E1A /* SGWebViewController.m */; };
 		037708D81A5B6F8800295E1A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037708D71A5B6F8800295E1A /* WebKit.framework */; };
 		0384BAD81D278351001AC9F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0384BAD71D278351001AC9F3 /* GoogleService-Info.plist */; };
+		0384BADF1D2C013B001AC9F3 /* SGStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0384BADE1D2C013B001AC9F3 /* SGStatsViewController.m */; };
+		0384BAE11D2CD8BC001AC9F3 /* SGStatsViewController_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384BAE01D2CD8BC001AC9F3 /* SGStatsViewController_Swift.swift */; };
+		0384BAE31D2D5929001AC9F3 /* SGStatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384BAE21D2D5929001AC9F3 /* SGStatsData.swift */; };
 		0388EA471AF30E5C006AA52D /* SGFactionsOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */; };
 		0388EA4A1AF30E7E006AA52D /* SGFactionIconsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388EA491AF30E7E006AA52D /* SGFactionIconsViewController.m */; };
 		0388EA4E1AF4BCD0006AA52D /* SGKFileAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 0388EA4C1AF4BCD0006AA52D /* SGKFileAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,6 +99,7 @@
 		03AF5B691A49225D005C4A1B /* SGDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF5B681A49225D005C4A1B /* SGDisplayTableViewCell.m */; };
 		03C0B2261A75542A00D20829 /* SGEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C0B2251A75542A00D20829 /* SGEmptyView.m */; };
 		03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */; };
+		03C6F1211D30B3E9009E5A51 /* SGStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C6F1201D30B3E9009E5A51 /* SGStatsCell.swift */; };
 		03D30CE71A5D089E00C62504 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3010E1A36A79B0053882A /* iAd.framework */; };
 		03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D30CE91A5D22D000C62504 /* BannerViewController.m */; };
 		03E3C6F01A78B8E0009CCCD5 /* SGProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3C6EF1A78B8E0009CCCD5 /* SGProductsTableViewController.m */; };
@@ -265,6 +270,8 @@
 		0349E2D619C1805E0091FF21 /* SGSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsManager.m; sourceTree = "<group>"; };
 		0349E2D819C182610091FF21 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0349E2E619C2C3520091FF21 /* SGTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGTheme.plist; sourceTree = "<group>"; };
+		034D126F1D2D69910053BFB7 /* SteamGenius-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SteamGenius-Bridging-Header.h"; sourceTree = "<group>"; };
+		034D12701D2D83680053BFB7 /* SGCasterRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGCasterRecord.swift; sourceTree = "<group>"; };
 		0351035B19DD8D3F0032E215 /* SGBattleInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBattleInfoCell.h; sourceTree = "<group>"; };
 		0351035C19DD8D3F0032E215 /* SGBattleInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBattleInfoCell.m; sourceTree = "<group>"; };
 		0351036219DE4EC70032E215 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -297,6 +304,10 @@
 		037708D51A5B185300295E1A /* SGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGWebViewController.m; sourceTree = "<group>"; };
 		037708D71A5B6F8800295E1A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0384BAD71D278351001AC9F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0384BADD1D2C013B001AC9F3 /* SGStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGStatsViewController.h; sourceTree = "<group>"; };
+		0384BADE1D2C013B001AC9F3 /* SGStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGStatsViewController.m; sourceTree = "<group>"; };
+		0384BAE01D2CD8BC001AC9F3 /* SGStatsViewController_Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGStatsViewController_Swift.swift; sourceTree = "<group>"; };
+		0384BAE21D2D5929001AC9F3 /* SGStatsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGStatsData.swift; sourceTree = "<group>"; };
 		0388EA451AF30E5C006AA52D /* SGFactionsOptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionsOptionTableViewController.h; sourceTree = "<group>"; };
 		0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFactionsOptionTableViewController.m; sourceTree = "<group>"; };
 		0388EA481AF30E7E006AA52D /* SGFactionIconsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFactionIconsViewController.h; sourceTree = "<group>"; };
@@ -322,6 +333,7 @@
 		03C301101A36A8AE0053882A /* libAdapterIAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdapterIAd.a; path = "../../../Downloads/LibAdapterIAd-1.0.0/libAdapterIAd.a"; sourceTree = "<group>"; };
 		03C5D29F1A45BAB400788E0C /* SGFiltersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFiltersListViewController.h; sourceTree = "<group>"; };
 		03C5D2A01A45BAB400788E0C /* SGFiltersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFiltersListViewController.m; sourceTree = "<group>"; };
+		03C6F1201D30B3E9009E5A51 /* SGStatsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGStatsCell.swift; sourceTree = "<group>"; };
 		03D2C32C1D25696D006A92AF /* SteamGenius 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SteamGenius 3.xcdatamodel"; sourceTree = "<group>"; };
 		03D30CE81A5D22D000C62504 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		03D30CE91A5D22D000C62504 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
@@ -335,7 +347,6 @@
 		6CEE86B19B7A98FC4A2BFC4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC788522523BF58002DCACD /* libPods-SteamGenius.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamGenius.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		819FDD9774F6E8F4D103F84D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		A616B079BAEC402E93CA0CE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A04E8F6AA9207E3570E274 /* Pods-SteamGenius.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamGenius.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SteamGenius/Pods-SteamGenius.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -659,6 +670,7 @@
 			isa = PBXGroup;
 			children = (
 				0318D39C1ABFDEC500E9C8A5 /* SteamGenius.entitlements */,
+				034D126F1D2D69910053BFB7 /* SteamGenius-Bridging-Header.h */,
 				0349E2AC19C17F510091FF21 /* AppDelegate.h */,
 				0349E2AD19C17F510091FF21 /* AppDelegate.m */,
 				0355CAEF1AA18D950068EF83 /* Classes */,
@@ -708,6 +720,7 @@
 				031D6AB419CEA5A6000B7D26 /* Common */,
 				03032A9519ED96FE00A15C54 /* Filters */,
 				0335019C19C33A0B004AA293 /* Settings */,
+				0384BAD91D2C00BA001AC9F3 /* Stats */,
 				0349E2DA19C1D8E50091FF21 /* Battles */,
 			);
 			name = Views;
@@ -863,6 +876,18 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		0384BAD91D2C00BA001AC9F3 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				0384BADD1D2C013B001AC9F3 /* SGStatsViewController.h */,
+				0384BADE1D2C013B001AC9F3 /* SGStatsViewController.m */,
+				0384BAE01D2CD8BC001AC9F3 /* SGStatsViewController_Swift.swift */,
+				0384BAE21D2D5929001AC9F3 /* SGStatsData.swift */,
+				034D12701D2D83680053BFB7 /* SGCasterRecord.swift */,
+			);
+			name = Stats;
+			sourceTree = "<group>";
+		};
 		0388EA3B1AF25C24006AA52D /* Faction Icon Picker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,6 +1027,7 @@
 		03C5F6CA1A828C2100462CC2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				03C6F11F1D30B3D2009E5A51 /* Stats Cell */,
 				03AF5B661A4921AA005C4A1B /* Display Cell */,
 				0369597419D623260096CEBC /* Long Press Gesture Cell */,
 				0369597319D6231C0096CEBC /* Resizable Image Cell */,
@@ -1025,6 +1051,14 @@
 				0388EA461AF30E5C006AA52D /* SGFactionsOptionTableViewController.m */,
 			);
 			name = Factions;
+			sourceTree = "<group>";
+		};
+		03C6F11F1D30B3D2009E5A51 /* Stats Cell */ = {
+			isa = PBXGroup;
+			children = (
+				03C6F1201D30B3E9009E5A51 /* SGStatsCell.swift */,
+			);
+			name = "Stats Cell";
 			sourceTree = "<group>";
 		};
 		03D30CE31A5C87E100C62504 /* Views */ = {
@@ -1147,7 +1181,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0349E2CE19C17F510091FF21 /* Build configuration list for PBXNativeTarget "SteamGenius" */;
 			buildPhases = (
-				0A64E7D50FAE4B958F306ABD /* [CP] Check Pods Manifest.lock */,
+				0A64E7D50FAE4B958F306ABD /* [CP] Embed Pods Frameworks */,
 				0355CAF01AA18E9D0068EF83 /* Generate Receipt Validation Code for In-App Purchases */,
 				0349E2A119C17F510091FF21 /* Sources */,
 				0349E2A219C17F510091FF21 /* Frameworks */,
@@ -1192,6 +1226,7 @@
 		0349E29D19C17F510091FF21 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Erik Lopez";
 				TargetAttributes = {
@@ -1316,7 +1351,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Receigen binary\nRECEIGEN=\"/Applications/Receigen.app/Contents/MacOS/Receigen\"\n\n# Configure receipt.h settings\nCODE_PREFIX=`eval \"echo SGBase\"`\nSUCCESS_BEHAVIOR=`eval \"echo checkinapp\"`\nFAILURE_BEHAVIOR=`eval \"echo refreshreceipt\"`\n\n# Extract Info.plist information\nINPUT=\"$INFOPLIST_FILE\"\n# BUNDLE_ID=`/usr/libexec/PlistBuddy -c \"Print CFBundleIdentifier\" \"$INPUT\"`\n# Had to hard code the Bundle Id as the variable in the Info.plist was being ignored\nBUNDLE_ID=`eval \"echo com.eriklopez.SteamGenius\"`\n# On iOS, use CFBundleVersion\nBUNDLE_VERSION=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INPUT\"`\n\n# Expand information if needed\nEXPANDED_BUNDLE_ID=`eval \"echo $BUNDLE_ID\"`\nEXPANDED_BUNDLE_VERSION=`eval \"echo $BUNDLE_VERSION\"`\n\n# Make sure the destination directory exists\nmkdir -p \"$DERIVED_FILES_DIR\"\nHEADER=\"$DERIVED_FILES_DIR/receipt.h\"\n\n# Check if the generation is needed\nif [ -e \"$HEADER\" ]; then\n# On iOS, check CFBundleIdentifier and CFBundleVersion\nSKIP=`egrep -q \"CFBundleIdentifier.+:.+$EXPANDED_BUNDLE_ID\" \"$HEADER\" && egrep -q \"CFBundleVersion.+:.+$EXPANDED_BUNDLE_VERSION\" \"$HEADER\" && echo \"YES\"`\nfi\n\n# Generate the header file if needed\nif [ \"x$SKIP\" = \"x\" ]; then\n# On iOS, call Receigen with options\n\"$RECEIGEN\" --identifier \"$EXPANDED_BUNDLE_ID\" --version \"$EXPANDED_BUNDLE_VERSION\" --prefix \"$CODE_PREFIX\" --success \"$SUCCESS_BEHAVIOR\" --failure \"$FAILURE_BEHAVIOR\" --os ios > \"$HEADER\"\nfi";
 		};
-		0A64E7D50FAE4B958F306ABD /* [CP] Check Pods Manifest.lock */ = {
+		0A64E7D50FAE4B958F306ABD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1406,8 +1441,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0384BAE11D2CD8BC001AC9F3 /* SGStatsViewController_Swift.swift in Sources */,
 				0369596A19D5FC0B0096CEBC /* SGEventForm.m in Sources */,
 				03D30CEA1A5D22D000C62504 /* BannerViewController.m in Sources */,
+				0384BAE31D2D5929001AC9F3 /* SGStatsData.swift in Sources */,
 				0388EA4A1AF30E7E006AA52D /* SGFactionIconsViewController.m in Sources */,
 				031D6ACE19CF6A39000B7D26 /* SGCasterOptionsTableViewController.m in Sources */,
 				03032A9A19ED974900A15C54 /* SGFiltersForm.m in Sources */,
@@ -1421,6 +1458,7 @@
 				0352E8D21A5C52D600007098 /* SGBattleDetailViewController.m in Sources */,
 				036BE9B619F766E30096BDE4 /* SGFilterOptionsTableViewController.m in Sources */,
 				030ADEE61AD8723300E6A1CF /* Battle.m in Sources */,
+				03C6F1211D30B3E9009E5A51 /* SGStatsCell.swift in Sources */,
 				0325712F19C376E900634776 /* SGDismissSegue.m in Sources */,
 				0349E2D719C1805E0091FF21 /* SGSettingsManager.m in Sources */,
 				0388EA471AF30E5C006AA52D /* SGFactionsOptionTableViewController.m in Sources */,
@@ -1440,7 +1478,9 @@
 				030ADECE1AD8723100E6A1CF /* DataVersion.m in Sources */,
 				0369596619D5F9AE0096CEBC /* SGScenarioFormViewController.m in Sources */,
 				030ADEE91AD8723300E6A1CF /* Caster.m in Sources */,
+				0384BADF1D2C013B001AC9F3 /* SGStatsViewController.m in Sources */,
 				03C5D2A11A45BAB400788E0C /* SGFiltersListViewController.m in Sources */,
+				034D12711D2D83680053BFB7 /* SGCasterRecord.swift in Sources */,
 				03FB29641AD86E26009DE99B /* SGRepository.m in Sources */,
 				0325715619C7DB1F00634776 /* SGSettingsForm.m in Sources */,
 				034859981D2769D000A2F19F /* GADBannerViewController.m in Sources */,
@@ -1728,6 +1768,7 @@
 			baseConfigurationReference = C9A04E8F6AA9207E3570E274 /* Pods-SteamGenius.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SteamGenius/SteamGenius.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1737,6 +1778,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eriklopez.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SteamGenius/SteamGenius-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1745,6 +1788,7 @@
 			baseConfigurationReference = 08A3E333FFB5EA6C5A4D2254 /* Pods-SteamGenius.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SteamGenius/SteamGenius.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1754,6 +1798,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eriklopez.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SteamGenius/SteamGenius-Bridging-Header.h";
 			};
 			name = Release;
 		};
